@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFE.Shared;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,14 @@ namespace PFE
             InitializeComponent();
             hideSubMenu();
             panelChildForm.Visible = false;
+            fieldsCombo.AddItem("Informatique");
+            fieldsCombo.AddItem("University");
+            fieldsCombo.AddItem("Buisness");
+            fieldsCombo.selectedIndex = 0;
+            natureCombo.AddItem("Informatique");
+            natureCombo.AddItem("University");
+            natureCombo.AddItem("Buisness");
+            natureCombo.selectedIndex = 0;
         }
 
         private void hideSubMenu()
