@@ -17,7 +17,7 @@ namespace PFE
         {
             InitializeComponent();
             hideSubMenu();
-            panelChildForm.Visible = false;
+            panelProjectContext.Visible = false;
             fieldsCombo.AddItem("Informatique");
             fieldsCombo.AddItem("University");
             fieldsCombo.AddItem("Buisness");
@@ -30,7 +30,6 @@ namespace PFE
 
         private void hideSubMenu()
         {
-            panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
         }
@@ -48,7 +47,6 @@ namespace PFE
 
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelMediaSubMenu);
             openChildForm();
         }
 
@@ -185,18 +183,16 @@ namespace PFE
             Application.Exit();
         }
 
-        private Form activeForm = null;
         private void openChildForm()
         {
-            /*if (activeForm != null) activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
-            childForm.BringToFront();*/
-            panelChildForm.Show();
+            panelProjectContext.Show();
+        }
+
+        private void addObjectiveButton_Click(object sender, EventArgs e)
+        {
+            ObjectiveItem item = new ObjectiveItem("test", objectivesPanel.Size.Width - 20);
+            Console.WriteLine(objectivesPanel.Size.Width);
+            objectivesPanel.Controls.Add(item.panel);
         }
     }
 }

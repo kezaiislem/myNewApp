@@ -46,16 +46,11 @@ namespace PFE
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnModel = new System.Windows.Forms.Button();
-            this.panelMediaSubMenu = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelProjectContext = new System.Windows.Forms.Panel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.technologyName = new MetroFramework.Controls.MetroTextBox();
@@ -78,17 +73,25 @@ namespace PFE
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
+            this.addObjectiveButton = new Guna.UI.WinForms.GunaCircleButton();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.objectivesPanel = new System.Windows.Forms.Panel();
+            this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
-            this.panelMediaSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelChildForm.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelProjectContext.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -102,13 +105,12 @@ namespace PFE
             this.panelSideMenu.Controls.Add(this.btnEqualizer);
             this.panelSideMenu.Controls.Add(this.panelPlaylistSubMenu);
             this.panelSideMenu.Controls.Add(this.btnModel);
-            this.panelSideMenu.Controls.Add(this.panelMediaSubMenu);
             this.panelSideMenu.Controls.Add(this.btnMedia);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 600);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
             this.panelSideMenu.TabIndex = 0;
             // 
             // btnExit
@@ -122,7 +124,7 @@ namespace PFE
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::PFE.Properties.Resources.logout;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 735);
+            this.btnExit.Location = new System.Drawing.Point(0, 576);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(233, 45);
@@ -144,7 +146,7 @@ namespace PFE
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::PFE.Properties.Resources.question;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 690);
+            this.btnHelp.Location = new System.Drawing.Point(0, 531);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(233, 45);
@@ -162,7 +164,7 @@ namespace PFE
             this.panelToolsSubMenu.Controls.Add(this.button12);
             this.panelToolsSubMenu.Controls.Add(this.button13);
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 572);
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 413);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
             this.panelToolsSubMenu.Size = new System.Drawing.Size(233, 118);
             this.panelToolsSubMenu.TabIndex = 7;
@@ -235,7 +237,7 @@ namespace PFE
             this.btnTools.ForeColor = System.Drawing.Color.White;
             this.btnTools.Image = global::PFE.Properties.Resources.customer_support;
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 527);
+            this.btnTools.Location = new System.Drawing.Point(0, 368);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnTools.Size = new System.Drawing.Size(233, 45);
@@ -257,7 +259,7 @@ namespace PFE
             this.btnEqualizer.ForeColor = System.Drawing.Color.White;
             this.btnEqualizer.Image = global::PFE.Properties.Resources.equalizer;
             this.btnEqualizer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEqualizer.Location = new System.Drawing.Point(0, 482);
+            this.btnEqualizer.Location = new System.Drawing.Point(0, 323);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnEqualizer.Size = new System.Drawing.Size(233, 45);
@@ -276,7 +278,7 @@ namespace PFE
             this.panelPlaylistSubMenu.Controls.Add(this.button7);
             this.panelPlaylistSubMenu.Controls.Add(this.button8);
             this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 323);
+            this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 164);
             this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
             this.panelPlaylistSubMenu.Size = new System.Drawing.Size(233, 159);
             this.panelPlaylistSubMenu.TabIndex = 4;
@@ -368,7 +370,7 @@ namespace PFE
             this.btnModel.ForeColor = System.Drawing.Color.White;
             this.btnModel.Image = global::PFE.Properties.Resources.equalizer;
             this.btnModel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModel.Location = new System.Drawing.Point(0, 278);
+            this.btnModel.Location = new System.Drawing.Point(0, 119);
             this.btnModel.Name = "btnModel";
             this.btnModel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnModel.Size = new System.Drawing.Size(233, 45);
@@ -378,95 +380,6 @@ namespace PFE
             this.btnModel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModel.UseVisualStyleBackColor = false;
             this.btnModel.Click += new System.EventHandler(this.btnPlaylist_Click);
-            // 
-            // panelMediaSubMenu
-            // 
-            this.panelMediaSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelMediaSubMenu.Controls.Add(this.button5);
-            this.panelMediaSubMenu.Controls.Add(this.button4);
-            this.panelMediaSubMenu.Controls.Add(this.button3);
-            this.panelMediaSubMenu.Controls.Add(this.button2);
-            this.panelMediaSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMediaSubMenu.Location = new System.Drawing.Point(0, 119);
-            this.panelMediaSubMenu.Name = "panelMediaSubMenu";
-            this.panelMediaSubMenu.Size = new System.Drawing.Size(233, 159);
-            this.panelMediaSubMenu.TabIndex = 2;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 120);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(233, 40);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Open recent media";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 80);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(233, 40);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Open Disk";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 40);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(233, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Open folder";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(233, 40);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Open files";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnMedia
             // 
@@ -513,21 +426,25 @@ namespace PFE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel1.Controls.Add(this.labelPageName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(250, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 74);
+            this.panel1.Size = new System.Drawing.Size(684, 74);
             this.panel1.TabIndex = 6;
             // 
-            // panelChildForm
+            // panelProjectContext
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
-            this.panelChildForm.Controls.Add(this.bunifuCards1);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 74);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(700, 526);
-            this.panelChildForm.TabIndex = 7;
+            this.panelProjectContext.AutoScroll = true;
+            this.panelProjectContext.AutoScrollMargin = new System.Drawing.Size(0, 15);
+            this.panelProjectContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(246)))));
+            this.panelProjectContext.Controls.Add(this.bunifuCards2);
+            this.panelProjectContext.Controls.Add(this.bunifuCards1);
+            this.panelProjectContext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelProjectContext.Location = new System.Drawing.Point(250, 74);
+            this.panelProjectContext.Name = "panelProjectContext";
+            this.panelProjectContext.Size = new System.Drawing.Size(684, 487);
+            this.panelProjectContext.TabIndex = 7;
             // 
             // bunifuCards1
             // 
@@ -548,7 +465,7 @@ namespace PFE
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(674, 347);
+            this.bunifuCards1.Size = new System.Drawing.Size(641, 347);
             this.bunifuCards1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -568,7 +485,7 @@ namespace PFE
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(619, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(595, 37);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // technologyName
@@ -578,7 +495,7 @@ namespace PFE
             // 
             // 
             this.technologyName.CustomButton.Image = null;
-            this.technologyName.CustomButton.Location = new System.Drawing.Point(154, 2);
+            this.technologyName.CustomButton.Location = new System.Drawing.Point(142, 2);
             this.technologyName.CustomButton.Name = "";
             this.technologyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.technologyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -597,7 +514,7 @@ namespace PFE
             this.technologyName.SelectionLength = 0;
             this.technologyName.SelectionStart = 0;
             this.technologyName.ShortcutsEnabled = true;
-            this.technologyName.Size = new System.Drawing.Size(176, 24);
+            this.technologyName.Size = new System.Drawing.Size(164, 24);
             this.technologyName.TabIndex = 8;
             this.technologyName.UseSelectable = true;
             this.technologyName.WaterMark = "Spintechs";
@@ -620,7 +537,7 @@ namespace PFE
             this.bunifuCustomLabel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(312, 10);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(300, 10);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(51, 17);
             this.bunifuCustomLabel11.TabIndex = 3;
@@ -633,13 +550,13 @@ namespace PFE
             this.natureCombo.BorderRadius = 0;
             this.natureCombo.ForeColor = System.Drawing.Color.White;
             this.natureCombo.Items = new string[0];
-            this.natureCombo.Location = new System.Drawing.Point(441, 5);
+            this.natureCombo.Location = new System.Drawing.Point(429, 5);
             this.natureCombo.Margin = new System.Windows.Forms.Padding(5);
             this.natureCombo.Name = "natureCombo";
             this.natureCombo.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.natureCombo.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.natureCombo.selectedIndex = -1;
-            this.natureCombo.Size = new System.Drawing.Size(173, 27);
+            this.natureCombo.Size = new System.Drawing.Size(161, 27);
             this.natureCombo.TabIndex = 10;
             // 
             // bunifuSeparator1
@@ -650,9 +567,9 @@ namespace PFE
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(80, 226);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(515, 9);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(534, 9);
             this.bunifuSeparator1.TabIndex = 10;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -704,7 +621,7 @@ namespace PFE
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(619, 111);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(595, 111);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // fieldsCombo
@@ -720,7 +637,7 @@ namespace PFE
             this.fieldsCombo.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.fieldsCombo.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.fieldsCombo.selectedIndex = -1;
-            this.fieldsCombo.Size = new System.Drawing.Size(174, 25);
+            this.fieldsCombo.Size = new System.Drawing.Size(162, 25);
             this.fieldsCombo.TabIndex = 10;
             // 
             // bunifuCustomLabel5
@@ -741,7 +658,7 @@ namespace PFE
             // 
             // 
             this.companyName.CustomButton.Image = null;
-            this.companyName.CustomButton.Location = new System.Drawing.Point(154, 2);
+            this.companyName.CustomButton.Location = new System.Drawing.Point(142, 2);
             this.companyName.CustomButton.Name = "";
             this.companyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.companyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -760,7 +677,7 @@ namespace PFE
             this.companyName.SelectionLength = 0;
             this.companyName.SelectionStart = 0;
             this.companyName.ShortcutsEnabled = true;
-            this.companyName.Size = new System.Drawing.Size(176, 24);
+            this.companyName.Size = new System.Drawing.Size(164, 24);
             this.companyName.TabIndex = 8;
             this.companyName.UseSelectable = true;
             this.companyName.WaterMark = "Spintechs";
@@ -785,7 +702,7 @@ namespace PFE
             // 
             // 
             this.phoneNumber.CustomButton.Image = null;
-            this.phoneNumber.CustomButton.Location = new System.Drawing.Point(153, 1);
+            this.phoneNumber.CustomButton.Location = new System.Drawing.Point(141, 1);
             this.phoneNumber.CustomButton.Name = "";
             this.phoneNumber.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.phoneNumber.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -794,7 +711,7 @@ namespace PFE
             this.phoneNumber.CustomButton.UseSelectable = true;
             this.phoneNumber.CustomButton.Visible = false;
             this.phoneNumber.Lines = new string[0];
-            this.phoneNumber.Location = new System.Drawing.Point(439, 6);
+            this.phoneNumber.Location = new System.Drawing.Point(427, 6);
             this.phoneNumber.MaxLength = 32767;
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.PasswordChar = '\0';
@@ -804,7 +721,7 @@ namespace PFE
             this.phoneNumber.SelectionLength = 0;
             this.phoneNumber.SelectionStart = 0;
             this.phoneNumber.ShortcutsEnabled = true;
-            this.phoneNumber.Size = new System.Drawing.Size(177, 25);
+            this.phoneNumber.Size = new System.Drawing.Size(165, 25);
             this.phoneNumber.TabIndex = 9;
             this.phoneNumber.UseSelectable = true;
             this.phoneNumber.WaterMark = "0797 12 25 82";
@@ -827,7 +744,7 @@ namespace PFE
             this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(312, 10);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(300, 10);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(103, 17);
             this.bunifuCustomLabel3.TabIndex = 3;
@@ -841,7 +758,7 @@ namespace PFE
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(464, 1);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(440, 1);
             this.metroTextBox3.CustomButton.Name = "";
             this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -860,7 +777,7 @@ namespace PFE
             this.metroTextBox3.SelectionLength = 0;
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(486, 23);
+            this.metroTextBox3.Size = new System.Drawing.Size(462, 23);
             this.metroTextBox3.TabIndex = 11;
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMark = "Cité 2004 Housing";
@@ -874,7 +791,7 @@ namespace PFE
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(674, 50);
+            this.panel2.Size = new System.Drawing.Size(641, 50);
             this.panel2.TabIndex = 7;
             // 
             // bunifuCustomLabel1
@@ -885,21 +802,111 @@ namespace PFE
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
             this.bunifuCustomLabel1.Location = new System.Drawing.Point(15, 15);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(117, 20);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(98, 20);
             this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Project Context";
+            this.bunifuCustomLabel1.Text = "General Info";
             // 
             // gunaResize1
             // 
             this.gunaResize1.TargetForm = null;
+            // 
+            // addObjectiveButton
+            // 
+            this.addObjectiveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addObjectiveButton.Animated = true;
+            this.addObjectiveButton.AnimationHoverSpeed = 0.07F;
+            this.addObjectiveButton.AnimationSpeed = 0.03F;
+            this.addObjectiveButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.addObjectiveButton.BorderColor = System.Drawing.Color.Black;
+            this.addObjectiveButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.addObjectiveButton.FocusedColor = System.Drawing.Color.Empty;
+            this.addObjectiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.addObjectiveButton.ForeColor = System.Drawing.Color.White;
+            this.addObjectiveButton.Image = global::PFE.Properties.Resources.add_plus;
+            this.addObjectiveButton.ImageSize = new System.Drawing.Size(24, 24);
+            this.addObjectiveButton.Location = new System.Drawing.Point(590, 10);
+            this.addObjectiveButton.Name = "addObjectiveButton";
+            this.addObjectiveButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.addObjectiveButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.addObjectiveButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.addObjectiveButton.OnHoverImage = null;
+            this.addObjectiveButton.OnPressedColor = System.Drawing.Color.Black;
+            this.addObjectiveButton.Size = new System.Drawing.Size(30, 30);
+            this.addObjectiveButton.TabIndex = 18;
+            this.addObjectiveButton.Click += new System.EventHandler(this.addObjectiveButton_Click);
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 15;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Transparent;
+            this.bunifuCards2.Controls.Add(this.objectivesPanel);
+            this.bunifuCards2.Controls.Add(this.panel4);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(14, 391);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(641, 222);
+            this.bunifuCards2.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel4.Controls.Add(this.bunifuCustomLabel20);
+            this.panel4.Controls.Add(this.addObjectiveButton);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(641, 50);
+            this.panel4.TabIndex = 7;
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(15, 15);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(82, 20);
+            this.bunifuCustomLabel20.TabIndex = 1;
+            this.bunifuCustomLabel20.Text = "Objectives";
+            // 
+            // objectivesPanel
+            // 
+            this.objectivesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.objectivesPanel.AutoScroll = true;
+            this.objectivesPanel.BackColor = System.Drawing.Color.Transparent;
+            this.objectivesPanel.Location = new System.Drawing.Point(19, 69);
+            this.objectivesPanel.Name = "objectivesPanel";
+            this.objectivesPanel.Size = new System.Drawing.Size(599, 134);
+            this.objectivesPanel.TabIndex = 20;
+            // 
+            // labelPageName
+            // 
+            this.labelPageName.AutoSize = true;
+            this.labelPageName.BackColor = System.Drawing.Color.Transparent;
+            this.labelPageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageName.ForeColor = System.Drawing.Color.White;
+            this.labelPageName.Location = new System.Drawing.Point(28, 21);
+            this.labelPageName.Name = "labelPageName";
+            this.labelPageName.Size = new System.Drawing.Size(131, 29);
+            this.labelPageName.TabIndex = 2;
+            this.labelPageName.Text = "Dashboard";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(950, 600);
-            this.Controls.Add(this.panelChildForm);
+            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.panelProjectContext);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -912,10 +919,11 @@ namespace PFE
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
-            this.panelMediaSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelChildForm.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelProjectContext.ResumeLayout(false);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -924,6 +932,9 @@ namespace PFE
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.bunifuCards2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -931,11 +942,6 @@ namespace PFE
         #endregion
 
         private System.Windows.Forms.Panel panelSideMenu;
-        private System.Windows.Forms.Panel panelMediaSubMenu;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnMedia;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Panel panelToolsSubMenu;
@@ -954,7 +960,7 @@ namespace PFE
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panelProjectContext;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCards bunifuCards1;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
@@ -977,5 +983,11 @@ namespace PFE
         private Bunifu.Framework.UI.BunifuDropdown natureCombo;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI.WinForms.GunaResize gunaResize1;
+        private Guna.UI.WinForms.GunaCircleButton addObjectiveButton;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards2;
+        private System.Windows.Forms.Panel panel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
+        private System.Windows.Forms.Panel objectivesPanel;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelPageName;
     }
 }
