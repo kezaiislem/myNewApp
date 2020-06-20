@@ -84,7 +84,7 @@ namespace PFE.Shared
             this.label.Location = new System.Drawing.Point(53, 18);
             this.label.Name = "labelObj"+tabTndex;
             this.label.TabIndex = 1;
-            this.label.Text = "My Objective";
+            this.label.Text = text;
 
             this.panel.ResumeLayout(false);
             this.tableLayout.ResumeLayout(false);

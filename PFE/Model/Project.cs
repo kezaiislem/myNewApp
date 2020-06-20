@@ -8,12 +8,12 @@ namespace PFE.Model
 {
     public class Project
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public string companyName { get; set; }
         public string technologyName { get; set; }
         public string companyField { get; set; }
-        public string companyaAdress { get; set; }
+        public string companyAdress { get; set; }
         public string phoneNumber { get; set; }
         public List<String> objectives { get; set; }
         public Field technologyNature { get; set; }
