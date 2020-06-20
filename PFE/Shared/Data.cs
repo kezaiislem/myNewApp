@@ -11,5 +11,7 @@ namespace PFE.Shared
     {
         public static string sessionId { get; set; }
         public static User actifUser { get; set; }
+        public static Project currentProject { get; set; }
+        public static string directory { get; set; } = "C:\\Users\\ISLEM\\Desktop\\myProject.xml";
     }
 }

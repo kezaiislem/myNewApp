@@ -12,7 +12,7 @@ namespace PFE
 
         public WelcomeFrom welcomeForm { get; set; }
 
-        public List<Domain> domains = new List<Domain>();
+        public List<Field> domains = new List<Field>();
 
         private Boolean success = false;
 
@@ -29,14 +29,14 @@ namespace PFE
             if(data != "")
             {
                 Console.WriteLine("here");
-                domains = JsonConvert.DeserializeObject<List<Domain>>(data);
+                domains = JsonConvert.DeserializeObject<List<Field>>(data);
             }
             InitializeCombo();
         }
 
         private void InitializeCombo()
         {
-            foreach(Domain domain in domains)
+            foreach(Field domain in domains)
             {
                 domainComboBox.Items.Add(new ComboboxItem { Text = domain.name, Value = domain });
                 domainComboBox.SelectedIndex = 0;
@@ -54,7 +54,7 @@ namespace PFE
         private async void createProjectBtn_Click(object sender, EventArgs e)
         {
             ComboboxItem selecteditem = (ComboboxItem)domainComboBox.SelectedItem;
-            Project project = new Project { name = projectName.Text, technologyName = technologyName.Text, organization = organizationName.Text, domain = (Domain)selecteditem.Value };
+            Project project = new Project { name = projectName.Text, technologyName = technologyName.Text, companyName = organizationName.Text, technologyNature = (Field)selecteditem.Value };
             String result = await RestHelper.createProject(project);
         }
     }

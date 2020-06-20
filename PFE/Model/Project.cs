@@ -10,9 +10,14 @@ namespace PFE.Model
     {
         public string id { get; set; }
         public string name { get; set; }
+        public string companyName { get; set; }
         public string technologyName { get; set; }
-        public string organization { get; set; }
-        public Domain domain { get; set; }
+        public string companyField { get; set; }
+        public string companyaAdress { get; set; }
+        public string phoneNumber { get; set; }
+        public List<String> objectives { get; set; }
+        public Field technologyNature { get; set; }
+        public Model model { get; set; }
         public User user { get; set; }
     }
 }

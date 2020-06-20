@@ -115,6 +115,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\Factor.cs" />
+    <Compile Include="Model\Model.cs" />
+    <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\Survey.cs" />
     <Compile Include="UserContol\ObjectivesList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,7 +144,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Domain.cs" />
+    <Compile Include="Model\Field.cs" />
     <Compile Include="Model\Project.cs" />
     <Compile Include="Model\Session.cs" />
     <Compile Include="Model\User.cs" />

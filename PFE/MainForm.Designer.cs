@@ -50,7 +50,12 @@ namespace PFE
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelProjectContext = new System.Windows.Forms.Panel();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.objectivesPanel = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.technologyName = new MetroFramework.Controls.MetroTextBox();
@@ -74,11 +79,6 @@ namespace PFE
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
             this.addObjectiveButton = new Guna.UI.WinForms.GunaCircleButton();
-            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.objectivesPanel = new System.Windows.Forms.Panel();
-            this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
@@ -86,12 +86,12 @@ namespace PFE
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelProjectContext.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.bunifuCards2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -110,7 +110,7 @@ namespace PFE
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.Size = new System.Drawing.Size(200, 561);
             this.panelSideMenu.TabIndex = 0;
             // 
             // btnExit
@@ -127,7 +127,7 @@ namespace PFE
             this.btnExit.Location = new System.Drawing.Point(0, 576);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(233, 45);
+            this.btnExit.Size = new System.Drawing.Size(183, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,7 +149,7 @@ namespace PFE
             this.btnHelp.Location = new System.Drawing.Point(0, 531);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(233, 45);
+            this.btnHelp.Size = new System.Drawing.Size(183, 45);
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "  Help";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -166,7 +166,7 @@ namespace PFE
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 413);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(233, 118);
+            this.panelToolsSubMenu.Size = new System.Drawing.Size(183, 118);
             this.panelToolsSubMenu.TabIndex = 7;
             // 
             // button10
@@ -181,7 +181,7 @@ namespace PFE
             this.button10.Location = new System.Drawing.Point(0, 80);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(233, 40);
+            this.button10.Size = new System.Drawing.Size(183, 40);
             this.button10.TabIndex = 2;
             this.button10.Text = "Preferences";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,7 +200,7 @@ namespace PFE
             this.button12.Location = new System.Drawing.Point(0, 40);
             this.button12.Name = "button12";
             this.button12.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(233, 40);
+            this.button12.Size = new System.Drawing.Size(183, 40);
             this.button12.TabIndex = 1;
             this.button12.Text = "Effects and filters";
             this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,7 +219,7 @@ namespace PFE
             this.button13.Location = new System.Drawing.Point(0, 0);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(233, 40);
+            this.button13.Size = new System.Drawing.Size(183, 40);
             this.button13.TabIndex = 0;
             this.button13.Text = "Media converter";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@ namespace PFE
             this.btnTools.Location = new System.Drawing.Point(0, 368);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(233, 45);
+            this.btnTools.Size = new System.Drawing.Size(183, 45);
             this.btnTools.TabIndex = 6;
             this.btnTools.Text = "  Tools";
             this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -262,7 +262,7 @@ namespace PFE
             this.btnEqualizer.Location = new System.Drawing.Point(0, 323);
             this.btnEqualizer.Name = "btnEqualizer";
             this.btnEqualizer.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnEqualizer.Size = new System.Drawing.Size(233, 45);
+            this.btnEqualizer.Size = new System.Drawing.Size(183, 45);
             this.btnEqualizer.TabIndex = 5;
             this.btnEqualizer.Text = "  Equalizer";
             this.btnEqualizer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,7 +280,7 @@ namespace PFE
             this.panelPlaylistSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPlaylistSubMenu.Location = new System.Drawing.Point(0, 164);
             this.panelPlaylistSubMenu.Name = "panelPlaylistSubMenu";
-            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(233, 159);
+            this.panelPlaylistSubMenu.Size = new System.Drawing.Size(183, 159);
             this.panelPlaylistSubMenu.TabIndex = 4;
             // 
             // button1
@@ -295,7 +295,7 @@ namespace PFE
             this.button1.Location = new System.Drawing.Point(0, 120);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(233, 40);
+            this.button1.Size = new System.Drawing.Size(183, 40);
             this.button1.TabIndex = 3;
             this.button1.Text = "Export playlist";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,7 +314,7 @@ namespace PFE
             this.button6.Location = new System.Drawing.Point(0, 80);
             this.button6.Name = "button6";
             this.button6.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(233, 40);
+            this.button6.Size = new System.Drawing.Size(183, 40);
             this.button6.TabIndex = 2;
             this.button6.Text = "Import playlist";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -333,7 +333,7 @@ namespace PFE
             this.button7.Location = new System.Drawing.Point(0, 40);
             this.button7.Name = "button7";
             this.button7.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(233, 40);
+            this.button7.Size = new System.Drawing.Size(183, 40);
             this.button7.TabIndex = 1;
             this.button7.Text = "Managing playlist";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -352,7 +352,7 @@ namespace PFE
             this.button8.Location = new System.Drawing.Point(0, 0);
             this.button8.Name = "button8";
             this.button8.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(233, 40);
+            this.button8.Size = new System.Drawing.Size(183, 40);
             this.button8.TabIndex = 0;
             this.button8.Text = "New playlist";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,7 +373,7 @@ namespace PFE
             this.btnModel.Location = new System.Drawing.Point(0, 119);
             this.btnModel.Name = "btnModel";
             this.btnModel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnModel.Size = new System.Drawing.Size(233, 45);
+            this.btnModel.Size = new System.Drawing.Size(183, 45);
             this.btnModel.TabIndex = 3;
             this.btnModel.Text = "  Model";
             this.btnModel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -395,7 +395,7 @@ namespace PFE
             this.btnMedia.Location = new System.Drawing.Point(0, 74);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMedia.Size = new System.Drawing.Size(233, 45);
+            this.btnMedia.Size = new System.Drawing.Size(183, 45);
             this.btnMedia.TabIndex = 1;
             this.btnMedia.Text = "  Project Context";
             this.btnMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -410,13 +410,13 @@ namespace PFE
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(233, 74);
+            this.panelLogo.Size = new System.Drawing.Size(183, 74);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PFE.Properties.Resources.mauvi;
-            this.pictureBox1.Location = new System.Drawing.Point(36, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -428,10 +428,22 @@ namespace PFE
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.panel1.Controls.Add(this.labelPageName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(250, 0);
+            this.panel1.Location = new System.Drawing.Point(200, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 74);
+            this.panel1.Size = new System.Drawing.Size(925, 74);
             this.panel1.TabIndex = 6;
+            // 
+            // labelPageName
+            // 
+            this.labelPageName.AutoSize = true;
+            this.labelPageName.BackColor = System.Drawing.Color.Transparent;
+            this.labelPageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPageName.ForeColor = System.Drawing.Color.White;
+            this.labelPageName.Location = new System.Drawing.Point(28, 21);
+            this.labelPageName.Name = "labelPageName";
+            this.labelPageName.Size = new System.Drawing.Size(131, 29);
+            this.labelPageName.TabIndex = 2;
+            this.labelPageName.Text = "Dashboard";
             // 
             // panelProjectContext
             // 
@@ -441,10 +453,63 @@ namespace PFE
             this.panelProjectContext.Controls.Add(this.bunifuCards2);
             this.panelProjectContext.Controls.Add(this.bunifuCards1);
             this.panelProjectContext.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProjectContext.Location = new System.Drawing.Point(250, 74);
+            this.panelProjectContext.Location = new System.Drawing.Point(200, 74);
             this.panelProjectContext.Name = "panelProjectContext";
-            this.panelProjectContext.Size = new System.Drawing.Size(684, 487);
+            this.panelProjectContext.Size = new System.Drawing.Size(925, 487);
             this.panelProjectContext.TabIndex = 7;
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 15;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.Transparent;
+            this.bunifuCards2.Controls.Add(this.objectivesPanel);
+            this.bunifuCards2.Controls.Add(this.panel4);
+            this.bunifuCards2.LeftSahddow = false;
+            this.bunifuCards2.Location = new System.Drawing.Point(14, 391);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 20;
+            this.bunifuCards2.Size = new System.Drawing.Size(877, 222);
+            this.bunifuCards2.TabIndex = 5;
+            // 
+            // objectivesPanel
+            // 
+            this.objectivesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.objectivesPanel.AutoScroll = true;
+            this.objectivesPanel.BackColor = System.Drawing.Color.Transparent;
+            this.objectivesPanel.Location = new System.Drawing.Point(19, 69);
+            this.objectivesPanel.Name = "objectivesPanel";
+            this.objectivesPanel.Size = new System.Drawing.Size(835, 134);
+            this.objectivesPanel.TabIndex = 20;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel4.Controls.Add(this.addObjectiveButton);
+            this.panel4.Controls.Add(this.bunifuCustomLabel20);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(877, 50);
+            this.panel4.TabIndex = 7;
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(15, 15);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(82, 20);
+            this.bunifuCustomLabel20.TabIndex = 1;
+            this.bunifuCustomLabel20.Text = "Objectives";
             // 
             // bunifuCards1
             // 
@@ -465,7 +530,7 @@ namespace PFE
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(641, 347);
+            this.bunifuCards1.Size = new System.Drawing.Size(877, 347);
             this.bunifuCards1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -485,7 +550,7 @@ namespace PFE
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(595, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(831, 37);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // technologyName
@@ -495,7 +560,7 @@ namespace PFE
             // 
             // 
             this.technologyName.CustomButton.Image = null;
-            this.technologyName.CustomButton.Location = new System.Drawing.Point(142, 2);
+            this.technologyName.CustomButton.Location = new System.Drawing.Point(260, 2);
             this.technologyName.CustomButton.Name = "";
             this.technologyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.technologyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -514,7 +579,7 @@ namespace PFE
             this.technologyName.SelectionLength = 0;
             this.technologyName.SelectionStart = 0;
             this.technologyName.ShortcutsEnabled = true;
-            this.technologyName.Size = new System.Drawing.Size(164, 24);
+            this.technologyName.Size = new System.Drawing.Size(282, 24);
             this.technologyName.TabIndex = 8;
             this.technologyName.UseSelectable = true;
             this.technologyName.WaterMark = "Spintechs";
@@ -537,7 +602,7 @@ namespace PFE
             this.bunifuCustomLabel11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(300, 10);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(418, 10);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(51, 17);
             this.bunifuCustomLabel11.TabIndex = 3;
@@ -550,13 +615,13 @@ namespace PFE
             this.natureCombo.BorderRadius = 0;
             this.natureCombo.ForeColor = System.Drawing.Color.White;
             this.natureCombo.Items = new string[0];
-            this.natureCombo.Location = new System.Drawing.Point(429, 5);
+            this.natureCombo.Location = new System.Drawing.Point(547, 5);
             this.natureCombo.Margin = new System.Windows.Forms.Padding(5);
             this.natureCombo.Name = "natureCombo";
             this.natureCombo.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.natureCombo.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.natureCombo.selectedIndex = -1;
-            this.natureCombo.Size = new System.Drawing.Size(161, 27);
+            this.natureCombo.Size = new System.Drawing.Size(279, 27);
             this.natureCombo.TabIndex = 10;
             // 
             // bunifuSeparator1
@@ -567,9 +632,9 @@ namespace PFE
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(80, 226);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(534, 9);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(770, 9);
             this.bunifuSeparator1.TabIndex = 10;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
@@ -621,7 +686,7 @@ namespace PFE
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(595, 111);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 111);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // fieldsCombo
@@ -637,7 +702,7 @@ namespace PFE
             this.fieldsCombo.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.fieldsCombo.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.fieldsCombo.selectedIndex = -1;
-            this.fieldsCombo.Size = new System.Drawing.Size(162, 25);
+            this.fieldsCombo.Size = new System.Drawing.Size(280, 25);
             this.fieldsCombo.TabIndex = 10;
             // 
             // bunifuCustomLabel5
@@ -658,7 +723,7 @@ namespace PFE
             // 
             // 
             this.companyName.CustomButton.Image = null;
-            this.companyName.CustomButton.Location = new System.Drawing.Point(142, 2);
+            this.companyName.CustomButton.Location = new System.Drawing.Point(260, 2);
             this.companyName.CustomButton.Name = "";
             this.companyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.companyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -677,7 +742,7 @@ namespace PFE
             this.companyName.SelectionLength = 0;
             this.companyName.SelectionStart = 0;
             this.companyName.ShortcutsEnabled = true;
-            this.companyName.Size = new System.Drawing.Size(164, 24);
+            this.companyName.Size = new System.Drawing.Size(282, 24);
             this.companyName.TabIndex = 8;
             this.companyName.UseSelectable = true;
             this.companyName.WaterMark = "Spintechs";
@@ -702,7 +767,7 @@ namespace PFE
             // 
             // 
             this.phoneNumber.CustomButton.Image = null;
-            this.phoneNumber.CustomButton.Location = new System.Drawing.Point(141, 1);
+            this.phoneNumber.CustomButton.Location = new System.Drawing.Point(259, 1);
             this.phoneNumber.CustomButton.Name = "";
             this.phoneNumber.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.phoneNumber.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -711,7 +776,7 @@ namespace PFE
             this.phoneNumber.CustomButton.UseSelectable = true;
             this.phoneNumber.CustomButton.Visible = false;
             this.phoneNumber.Lines = new string[0];
-            this.phoneNumber.Location = new System.Drawing.Point(427, 6);
+            this.phoneNumber.Location = new System.Drawing.Point(545, 6);
             this.phoneNumber.MaxLength = 32767;
             this.phoneNumber.Name = "phoneNumber";
             this.phoneNumber.PasswordChar = '\0';
@@ -721,7 +786,7 @@ namespace PFE
             this.phoneNumber.SelectionLength = 0;
             this.phoneNumber.SelectionStart = 0;
             this.phoneNumber.ShortcutsEnabled = true;
-            this.phoneNumber.Size = new System.Drawing.Size(165, 25);
+            this.phoneNumber.Size = new System.Drawing.Size(283, 25);
             this.phoneNumber.TabIndex = 9;
             this.phoneNumber.UseSelectable = true;
             this.phoneNumber.WaterMark = "0797 12 25 82";
@@ -744,7 +809,7 @@ namespace PFE
             this.bunifuCustomLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(300, 10);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(418, 10);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(103, 17);
             this.bunifuCustomLabel3.TabIndex = 3;
@@ -758,7 +823,7 @@ namespace PFE
             // 
             // 
             this.metroTextBox3.CustomButton.Image = null;
-            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(440, 1);
+            this.metroTextBox3.CustomButton.Location = new System.Drawing.Point(676, 1);
             this.metroTextBox3.CustomButton.Name = "";
             this.metroTextBox3.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.metroTextBox3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -777,7 +842,7 @@ namespace PFE
             this.metroTextBox3.SelectionLength = 0;
             this.metroTextBox3.SelectionStart = 0;
             this.metroTextBox3.ShortcutsEnabled = true;
-            this.metroTextBox3.Size = new System.Drawing.Size(462, 23);
+            this.metroTextBox3.Size = new System.Drawing.Size(698, 23);
             this.metroTextBox3.TabIndex = 11;
             this.metroTextBox3.UseSelectable = true;
             this.metroTextBox3.WaterMark = "Cité 2004 Housing";
@@ -791,7 +856,7 @@ namespace PFE
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(641, 50);
+            this.panel2.Size = new System.Drawing.Size(877, 50);
             this.panel2.TabIndex = 7;
             // 
             // bunifuCustomLabel1
@@ -813,10 +878,9 @@ namespace PFE
             // addObjectiveButton
             // 
             this.addObjectiveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addObjectiveButton.Animated = true;
             this.addObjectiveButton.AnimationHoverSpeed = 0.07F;
             this.addObjectiveButton.AnimationSpeed = 0.03F;
-            this.addObjectiveButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.addObjectiveButton.BaseColor = System.Drawing.Color.Transparent;
             this.addObjectiveButton.BorderColor = System.Drawing.Color.Black;
             this.addObjectiveButton.DialogResult = System.Windows.Forms.DialogResult.None;
             this.addObjectiveButton.FocusedColor = System.Drawing.Color.Empty;
@@ -824,7 +888,7 @@ namespace PFE
             this.addObjectiveButton.ForeColor = System.Drawing.Color.White;
             this.addObjectiveButton.Image = global::PFE.Properties.Resources.add_plus;
             this.addObjectiveButton.ImageSize = new System.Drawing.Size(24, 24);
-            this.addObjectiveButton.Location = new System.Drawing.Point(590, 10);
+            this.addObjectiveButton.Location = new System.Drawing.Point(832, 9);
             this.addObjectiveButton.Name = "addObjectiveButton";
             this.addObjectiveButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.addObjectiveButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -832,80 +896,15 @@ namespace PFE
             this.addObjectiveButton.OnHoverImage = null;
             this.addObjectiveButton.OnPressedColor = System.Drawing.Color.Black;
             this.addObjectiveButton.Size = new System.Drawing.Size(30, 30);
-            this.addObjectiveButton.TabIndex = 18;
+            this.addObjectiveButton.TabIndex = 2;
             this.addObjectiveButton.Click += new System.EventHandler(this.addObjectiveButton_Click);
-            // 
-            // bunifuCards2
-            // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCards2.BackColor = System.Drawing.Color.White;
-            this.bunifuCards2.BorderRadius = 15;
-            this.bunifuCards2.BottomSahddow = true;
-            this.bunifuCards2.color = System.Drawing.Color.Transparent;
-            this.bunifuCards2.Controls.Add(this.objectivesPanel);
-            this.bunifuCards2.Controls.Add(this.panel4);
-            this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(14, 391);
-            this.bunifuCards2.Name = "bunifuCards2";
-            this.bunifuCards2.RightSahddow = true;
-            this.bunifuCards2.ShadowDepth = 20;
-            this.bunifuCards2.Size = new System.Drawing.Size(641, 222);
-            this.bunifuCards2.TabIndex = 5;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.panel4.Controls.Add(this.bunifuCustomLabel20);
-            this.panel4.Controls.Add(this.addObjectiveButton);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(641, 50);
-            this.panel4.TabIndex = 7;
-            // 
-            // bunifuCustomLabel20
-            // 
-            this.bunifuCustomLabel20.AutoSize = true;
-            this.bunifuCustomLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel20.Location = new System.Drawing.Point(15, 15);
-            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
-            this.bunifuCustomLabel20.Size = new System.Drawing.Size(82, 20);
-            this.bunifuCustomLabel20.TabIndex = 1;
-            this.bunifuCustomLabel20.Text = "Objectives";
-            // 
-            // objectivesPanel
-            // 
-            this.objectivesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.objectivesPanel.AutoScroll = true;
-            this.objectivesPanel.BackColor = System.Drawing.Color.Transparent;
-            this.objectivesPanel.Location = new System.Drawing.Point(19, 69);
-            this.objectivesPanel.Name = "objectivesPanel";
-            this.objectivesPanel.Size = new System.Drawing.Size(599, 134);
-            this.objectivesPanel.TabIndex = 20;
-            // 
-            // labelPageName
-            // 
-            this.labelPageName.AutoSize = true;
-            this.labelPageName.BackColor = System.Drawing.Color.Transparent;
-            this.labelPageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPageName.ForeColor = System.Drawing.Color.White;
-            this.labelPageName.Location = new System.Drawing.Point(28, 21);
-            this.labelPageName.Name = "labelPageName";
-            this.labelPageName.Size = new System.Drawing.Size(131, 29);
-            this.labelPageName.TabIndex = 2;
-            this.labelPageName.Text = "Dashboard";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(1125, 561);
             this.Controls.Add(this.panelProjectContext);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelSideMenu);
@@ -924,6 +923,9 @@ namespace PFE
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelProjectContext.ResumeLayout(false);
+            this.bunifuCards2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -932,9 +934,6 @@ namespace PFE
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.bunifuCards2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -983,11 +982,11 @@ namespace PFE
         private Bunifu.Framework.UI.BunifuDropdown natureCombo;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI.WinForms.GunaResize gunaResize1;
-        private Guna.UI.WinForms.GunaCircleButton addObjectiveButton;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
         private System.Windows.Forms.Panel objectivesPanel;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPageName;
+        private Guna.UI.WinForms.GunaCircleButton addObjectiveButton;
     }
 }

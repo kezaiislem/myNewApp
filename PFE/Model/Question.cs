@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace PFE.Model
 {
-    public class Domain
+    public class Question
     {
         public int id { get; set; }
-        public string name { get; set; }
+        public string text { get; set; }
+        public int type { get; set; }
+        public List<String> choices  { get; set; }
+
     }
 }
