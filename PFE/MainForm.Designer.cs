@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms.VisualStyles;
+﻿using MetroFramework.Controls;
+using System.Windows.Forms.VisualStyles;
 
 namespace PFE
 {
@@ -62,10 +63,12 @@ namespace PFE
             this.textBoxTechnologyName = new MetroFramework.Controls.MetroTextBox();
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.comboBoxTechnologyNature = new MetroFramework.Controls.MetroComboBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxCompanyField = new MetroFramework.Controls.MetroTextBox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBoxCompanyName = new MetroFramework.Controls.MetroTextBox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -73,10 +76,8 @@ namespace PFE
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.textBoxAdress = new MetroFramework.Controls.MetroTextBox();
-            this.comboBoxTechnologyNature = new Bunifu.UI.WinForms.BunifuDropdown();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.textBoxCompanyField = new MetroFramework.Controls.MetroTextBox();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
             this.panelPlaylistSubMenu.SuspendLayout();
@@ -510,7 +511,7 @@ namespace PFE
             this.objectivesPanel.BackColor = System.Drawing.Color.Transparent;
             this.objectivesPanel.Location = new System.Drawing.Point(19, 69);
             this.objectivesPanel.Name = "objectivesPanel";
-            this.objectivesPanel.Size = new System.Drawing.Size(979, 134);
+            this.objectivesPanel.Size = new System.Drawing.Size(1003, 134);
             this.objectivesPanel.TabIndex = 20;
             // 
             // panel4
@@ -609,7 +610,7 @@ namespace PFE
             // 
             // 
             this.textBoxTechnologyName.CustomButton.Image = null;
-            this.textBoxTechnologyName.CustomButton.Location = new System.Drawing.Point(170, 2);
+            this.textBoxTechnologyName.CustomButton.Location = new System.Drawing.Point(332, 2);
             this.textBoxTechnologyName.CustomButton.Name = "";
             this.textBoxTechnologyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.textBoxTechnologyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -656,6 +657,20 @@ namespace PFE
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(51, 17);
             this.bunifuCustomLabel11.TabIndex = 3;
             this.bunifuCustomLabel11.Text = "Nature";
+            // 
+            // comboBoxTechnologyNature
+            // 
+            this.comboBoxTechnologyNature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.comboBoxTechnologyNature.BackColor = System.Drawing.Color.White;
+            this.comboBoxTechnologyNature.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxTechnologyNature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.comboBoxTechnologyNature.FormattingEnabled = true;
+            this.comboBoxTechnologyNature.ItemHeight = 23;
+            this.comboBoxTechnologyNature.Location = new System.Drawing.Point(617, 4);
+            this.comboBoxTechnologyNature.Name = "comboBoxTechnologyNature";
+            this.comboBoxTechnologyNature.Size = new System.Drawing.Size(193, 29);
+            this.comboBoxTechnologyNature.TabIndex = 12;
+            this.comboBoxTechnologyNature.UseSelectable = true;
             // 
             // bunifuSeparator1
             // 
@@ -722,6 +737,39 @@ namespace PFE
             this.tableLayoutPanel1.Size = new System.Drawing.Size(975, 111);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
+            // textBoxCompanyField
+            // 
+            this.textBoxCompanyField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.textBoxCompanyField.CustomButton.Image = null;
+            this.textBoxCompanyField.CustomButton.Location = new System.Drawing.Point(332, 2);
+            this.textBoxCompanyField.CustomButton.Name = "";
+            this.textBoxCompanyField.CustomButton.Size = new System.Drawing.Size(19, 19);
+            this.textBoxCompanyField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBoxCompanyField.CustomButton.TabIndex = 1;
+            this.textBoxCompanyField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBoxCompanyField.CustomButton.UseSelectable = true;
+            this.textBoxCompanyField.CustomButton.Visible = false;
+            this.textBoxCompanyField.Lines = new string[0];
+            this.textBoxCompanyField.Location = new System.Drawing.Point(130, 43);
+            this.textBoxCompanyField.MaxLength = 32767;
+            this.textBoxCompanyField.Name = "textBoxCompanyField";
+            this.textBoxCompanyField.PasswordChar = '\0';
+            this.textBoxCompanyField.PromptText = "Informatique";
+            this.textBoxCompanyField.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxCompanyField.SelectedText = "";
+            this.textBoxCompanyField.SelectionLength = 0;
+            this.textBoxCompanyField.SelectionStart = 0;
+            this.textBoxCompanyField.ShortcutsEnabled = true;
+            this.textBoxCompanyField.Size = new System.Drawing.Size(354, 24);
+            this.textBoxCompanyField.TabIndex = 12;
+            this.textBoxCompanyField.UseSelectable = true;
+            this.textBoxCompanyField.WaterMark = "Informatique";
+            this.textBoxCompanyField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBoxCompanyField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -740,7 +788,7 @@ namespace PFE
             // 
             // 
             this.textBoxCompanyName.CustomButton.Image = null;
-            this.textBoxCompanyName.CustomButton.Location = new System.Drawing.Point(170, 2);
+            this.textBoxCompanyName.CustomButton.Location = new System.Drawing.Point(332, 2);
             this.textBoxCompanyName.CustomButton.Name = "";
             this.textBoxCompanyName.CustomButton.Size = new System.Drawing.Size(19, 19);
             this.textBoxCompanyName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -784,7 +832,7 @@ namespace PFE
             // 
             // 
             this.textBoxPhoneNumber.CustomButton.Image = null;
-            this.textBoxPhoneNumber.CustomButton.Location = new System.Drawing.Point(169, 1);
+            this.textBoxPhoneNumber.CustomButton.Location = new System.Drawing.Point(331, 1);
             this.textBoxPhoneNumber.CustomButton.Name = "";
             this.textBoxPhoneNumber.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.textBoxPhoneNumber.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -840,7 +888,7 @@ namespace PFE
             // 
             // 
             this.textBoxAdress.CustomButton.Image = null;
-            this.textBoxAdress.CustomButton.Location = new System.Drawing.Point(496, 1);
+            this.textBoxAdress.CustomButton.Location = new System.Drawing.Point(820, 1);
             this.textBoxAdress.CustomButton.Name = "";
             this.textBoxAdress.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.textBoxAdress.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -866,36 +914,6 @@ namespace PFE
             this.textBoxAdress.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textBoxAdress.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // comboBoxTechnologyNature
-            // 
-            this.comboBoxTechnologyNature.BackColor = System.Drawing.Color.White;
-            this.comboBoxTechnologyNature.BorderRadius = 1;
-            this.comboBoxTechnologyNature.Color = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.comboBoxTechnologyNature.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.comboBoxTechnologyNature.DisabledColor = System.Drawing.Color.Gray;
-            this.comboBoxTechnologyNature.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxTechnologyNature.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
-            this.comboBoxTechnologyNature.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxTechnologyNature.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.comboBoxTechnologyNature.FillDropDown = false;
-            this.comboBoxTechnologyNature.FillIndicator = false;
-            this.comboBoxTechnologyNature.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxTechnologyNature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.comboBoxTechnologyNature.FormattingEnabled = true;
-            this.comboBoxTechnologyNature.Icon = null;
-            this.comboBoxTechnologyNature.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.comboBoxTechnologyNature.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.comboBoxTechnologyNature.ItemBackColor = System.Drawing.Color.White;
-            this.comboBoxTechnologyNature.ItemBorderColor = System.Drawing.Color.White;
-            this.comboBoxTechnologyNature.ItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.comboBoxTechnologyNature.ItemHeight = 26;
-            this.comboBoxTechnologyNature.ItemHighLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxTechnologyNature.Location = new System.Drawing.Point(617, 3);
-            this.comboBoxTechnologyNature.Name = "comboBoxTechnologyNature";
-            this.comboBoxTechnologyNature.Size = new System.Drawing.Size(193, 32);
-            this.comboBoxTechnologyNature.TabIndex = 12;
-            this.comboBoxTechnologyNature.Text = null;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
@@ -918,39 +936,6 @@ namespace PFE
             this.bunifuCustomLabel1.TabIndex = 1;
             this.bunifuCustomLabel1.Text = "General Info";
             // 
-            // textBoxCompanyField
-            // 
-            this.textBoxCompanyField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.textBoxCompanyField.CustomButton.Image = null;
-            this.textBoxCompanyField.CustomButton.Location = new System.Drawing.Point(170, 2);
-            this.textBoxCompanyField.CustomButton.Name = "";
-            this.textBoxCompanyField.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.textBoxCompanyField.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.textBoxCompanyField.CustomButton.TabIndex = 1;
-            this.textBoxCompanyField.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.textBoxCompanyField.CustomButton.UseSelectable = true;
-            this.textBoxCompanyField.CustomButton.Visible = false;
-            this.textBoxCompanyField.Lines = new string[0];
-            this.textBoxCompanyField.Location = new System.Drawing.Point(130, 43);
-            this.textBoxCompanyField.MaxLength = 32767;
-            this.textBoxCompanyField.Name = "textBoxCompanyField";
-            this.textBoxCompanyField.PasswordChar = '\0';
-            this.textBoxCompanyField.PromptText = "Informatique";
-            this.textBoxCompanyField.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.textBoxCompanyField.SelectedText = "";
-            this.textBoxCompanyField.SelectionLength = 0;
-            this.textBoxCompanyField.SelectionStart = 0;
-            this.textBoxCompanyField.ShortcutsEnabled = true;
-            this.textBoxCompanyField.Size = new System.Drawing.Size(354, 24);
-            this.textBoxCompanyField.TabIndex = 12;
-            this.textBoxCompanyField.UseSelectable = true;
-            this.textBoxCompanyField.WaterMark = "Informatique";
-            this.textBoxCompanyField.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBoxCompanyField.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -963,10 +948,12 @@ namespace PFE
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TransparencyKey = System.Drawing.Color.Cyan;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSubMenu.ResumeLayout(false);
             this.panelPlaylistSubMenu.ResumeLayout(false);
@@ -1037,7 +1024,7 @@ namespace PFE
         private Bunifu.Framework.UI.BunifuCustomLabel labelPageName;
         private Guna.UI.WinForms.GunaCircleButton addObjectiveButton;
         private XanderUI.XUISuperButton saveButton;
-        private Bunifu.UI.WinForms.BunifuDropdown comboBoxTechnologyNature;
+        private MetroFramework.Controls.MetroComboBox comboBoxTechnologyNature;
         private MetroFramework.Controls.MetroTextBox textBoxCompanyField;
     }
 }

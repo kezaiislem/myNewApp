@@ -16,16 +16,16 @@ namespace PFE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            /*LoginForm fLogin = new LoginForm();
+            LoginForm fLogin = new LoginForm();
             if (fLogin.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new MainForm());
+                Application.Run(new WelcomeFrom());
             }
             else
             {
                 Application.Exit();
-            }*/
-            Application.Run(new MainForm());
+            }
+            //Application.Run(new MainForm());
         }
     }
 }

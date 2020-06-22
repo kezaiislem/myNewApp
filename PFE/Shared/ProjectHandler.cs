@@ -18,17 +18,17 @@ namespace PFE.Shared
             {
                 Project p = new Project { id = 2, name = projectName };
                 XmlSerializer xmlSerializer = new XmlSerializer((typeof(Project)));
-                if (File.Exists(directory + "\\" + projectName + ".xml"))
+                if (File.Exists(directory))
                 {
-                    File.Delete(directory + "\\" + projectName + ".xml");
+                    File.Delete(directory);
                 }
-                TextWriter writer = new StreamWriter(directory + "\\" + projectName + ".xml");
+                TextWriter writer = new StreamWriter(directory);
                 xmlSerializer.Serialize(writer, p);
                 Data.currentProject = p;
-                Data.directory = directory + "\\" + projectName + ".xml";
+                Data.directory = directory;
                 writer.Close();
                 return true;
-            } 
+            }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.StackTrace);
@@ -67,7 +67,6 @@ namespace PFE.Shared
                     TextReader reader = new StreamReader(directory);
                     Data.currentProject = (Project)xmlSerializer.Deserialize(reader);
                     Data.directory = directory;
-                    Console.WriteLine("EZ = " + Data.currentProject.name);
                     reader.Close();
                     return true;
                 }

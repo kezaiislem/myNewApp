@@ -42,7 +42,7 @@
             // 
             // 
             this.metroTextBoxPassword.CustomButton.Image = null;
-            this.metroTextBoxPassword.CustomButton.Location = new System.Drawing.Point(233, 1);
+            this.metroTextBoxPassword.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBoxPassword.CustomButton.Name = "";
             this.metroTextBoxPassword.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBoxPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -53,16 +53,17 @@
             this.metroTextBoxPassword.DisplayIcon = true;
             this.metroTextBoxPassword.Icon = global::PFE.Properties.Resources.key;
             this.metroTextBoxPassword.Lines = new string[0];
-            this.metroTextBoxPassword.Location = new System.Drawing.Point(20, 119);
+            this.metroTextBoxPassword.Location = new System.Drawing.Point(20, 107);
             this.metroTextBoxPassword.MaxLength = 32767;
             this.metroTextBoxPassword.Name = "metroTextBoxPassword";
             this.metroTextBoxPassword.PasswordChar = '*';
+            this.metroTextBoxPassword.PromptText = "Enter your password";
             this.metroTextBoxPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxPassword.SelectedText = "";
             this.metroTextBoxPassword.SelectionLength = 0;
             this.metroTextBoxPassword.SelectionStart = 0;
             this.metroTextBoxPassword.ShortcutsEnabled = true;
-            this.metroTextBoxPassword.Size = new System.Drawing.Size(257, 25);
+            this.metroTextBoxPassword.Size = new System.Drawing.Size(226, 25);
             this.metroTextBoxPassword.TabIndex = 0;
             this.metroTextBoxPassword.TabStop = false;
             this.metroTextBoxPassword.UseSelectable = true;
@@ -79,7 +80,7 @@
             // 
             // 
             this.metroTextBoxUsername.CustomButton.Image = null;
-            this.metroTextBoxUsername.CustomButton.Location = new System.Drawing.Point(233, 1);
+            this.metroTextBoxUsername.CustomButton.Location = new System.Drawing.Point(202, 1);
             this.metroTextBoxUsername.CustomButton.Name = "";
             this.metroTextBoxUsername.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBoxUsername.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -95,12 +96,13 @@
             this.metroTextBoxUsername.MaxLength = 32767;
             this.metroTextBoxUsername.Name = "metroTextBoxUsername";
             this.metroTextBoxUsername.PasswordChar = '\0';
+            this.metroTextBoxUsername.PromptText = "Enter your username";
             this.metroTextBoxUsername.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBoxUsername.SelectedText = "";
             this.metroTextBoxUsername.SelectionLength = 0;
             this.metroTextBoxUsername.SelectionStart = 0;
             this.metroTextBoxUsername.ShortcutsEnabled = true;
-            this.metroTextBoxUsername.Size = new System.Drawing.Size(257, 25);
+            this.metroTextBoxUsername.Size = new System.Drawing.Size(226, 25);
             this.metroTextBoxUsername.TabIndex = 2;
             this.metroTextBoxUsername.TabStop = false;
             this.metroTextBoxUsername.UseSelectable = true;
@@ -111,7 +113,7 @@
             // signinButton
             // 
             this.signinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.signinButton.Location = new System.Drawing.Point(168, 172);
+            this.signinButton.Location = new System.Drawing.Point(137, 142);
             this.signinButton.Name = "signinButton";
             this.signinButton.Size = new System.Drawing.Size(109, 25);
             this.signinButton.TabIndex = 7;
@@ -123,12 +125,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 220);
+            this.ClientSize = new System.Drawing.Size(270, 190);
             this.Controls.Add(this.signinButton);
             this.Controls.Add(this.metroTextBoxPassword);
             this.Controls.Add(this.metroTextBoxUsername);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Name = "LoginForm";
+            this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Sign in";
             this.ResumeLayout(false);

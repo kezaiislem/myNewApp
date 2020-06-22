@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using MetroFramework;
+using Newtonsoft.Json;
 using PFE.Model;
 using PFE.Shared;
+using PFE.ViewModel;
 using System;
 using System.Net.Http;
 using System.Windows.Forms;
@@ -9,23 +11,36 @@ namespace PFE
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
+
+        private LoginFormViewModel viewModel;
+
         public LoginForm()
         {
             InitializeComponent();
+            InitializeView();
+        }
+
+        private void InitializeView()
+        {
+            viewModel = new LoginFormViewModel();
+            metroTextBoxUsername.DataBindings.Add("Text", viewModel, "username");
+            metroTextBoxPassword.DataBindings.Add("Text", viewModel, "password");
         }
 
         private async void signinButton_Click(object sender, EventArgs e)
         {
-            String userName = metroTextBoxUsername.Text.ToLower();
-            String password = metroTextBoxPassword.Text;
             try
             {
-                if (userName != "" && password != "")
+                if (viewModel.username == null || viewModel.password == null)
                 {
-                    String data = await RestHelper.authentificate(userName, password);
+                    MetroMessageBox.Show(this, "\n\nUsername and Password Cant be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (viewModel.username != "" && viewModel.password != "")
+                {
+                    String data = await RestHelper.authentificate(viewModel.username.ToLower(), viewModel.password);
                     if (data == "")
                     {
-                        Console.WriteLine("Wrong User or pass");
+                        MetroMessageBox.Show(this, "\n\nWrong Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -38,7 +53,7 @@ namespace PFE
                 }
                 else
                 {
-                    Console.WriteLine("Cant be null");
+                    MetroMessageBox.Show(this, "\n\nUsername and Password Cant be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (HttpRequestException ex)

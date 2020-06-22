@@ -32,8 +32,21 @@ namespace PFE
 
         private void loadProjects_Click(object sender, EventArgs e)
         {
-            loadPanel.Show();
-            menuPanel.Hide();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Project Files | *.xml";
+                openFileDialog.FilterIndex = 0;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ProjectHandler.loadProject(openFileDialog.FileName);
+                    this.Hide();
+                    new MainForm().Show();
+                }
+            }
+            //menuPanel.Hide();
         }
 
         private void backButton_Click(object sender, EventArgs e)

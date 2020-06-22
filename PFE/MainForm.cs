@@ -1,6 +1,8 @@
-﻿using Microsoft.VisualBasic;
+﻿using MetroFramework;
+using Microsoft.VisualBasic;
 using PFE.Model;
 using PFE.Shared;
+using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,42 +13,25 @@ namespace PFE
 {
     public partial class MainForm : Form
     {
-
-        public Field selectedField { get; set; }
-        List<ComboboxItem> combos { get; set; }
-        ComboboxItem selectedItem { get; set; }
+        private MainFormViewModel viewModel { get; set; }
 
         public MainForm()
         {
             InitializeComponent();
-            //ProjectHandler.createNewProject("hohtihtrhrt", "C:\\Users\\ISLEM\\Desktop");
             loadProjectView();
-            initCombos();
             hideSubMenu();
         }
 
         public void loadProjectView()
         {
-            if (ProjectHandler.loadProject("C:\\Users\\ISLEM\\Desktop\\hohtihtrhrt.xml"))
-            {
-                textBoxTechnologyName.DataBindings.Add("Text", Data.currentProject, "technologyName");
-                textBoxAdress.DataBindings.Add("Text", Data.currentProject, "companyAdress");
-                textBoxPhoneNumber.DataBindings.Add("Text", Data.currentProject, "phoneNumber");
-                textBoxCompanyName.DataBindings.Add("Text", Data.currentProject, "companyName");
-                textBoxCompanyField.DataBindings.Add("Text", Data.currentProject, "companyField");
-            }
-        }
+            viewModel = new MainFormViewModel();
+            textBoxTechnologyName.DataBindings.Add("Text", Data.currentProject, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxAdress.DataBindings.Add("Text", Data.currentProject, "companyAdress", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxPhoneNumber.DataBindings.Add("Text", Data.currentProject, "phoneNumber", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxCompanyName.DataBindings.Add("Text", Data.currentProject, "companyName", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxCompanyField.DataBindings.Add("Text", Data.currentProject, "companyField", true, DataSourceUpdateMode.OnPropertyChanged);
 
-        public void saveProject()
-        {
-            Data.currentProject.technologyNature = (Field)((ComboboxItem)comboBoxTechnologyNature.SelectedItem).Value;
-            ProjectHandler.saveProject();
-        }
-
-        private void initCombos()
-        {
-
-            if(Data.currentProject.objectives != null)
+            if (Data.currentProject.objectives != null)
             {
                 foreach (String objective in Data.currentProject.objectives)
                 {
@@ -55,25 +40,9 @@ namespace PFE
                 }
             }
 
-            combos = new List<ComboboxItem>();
-
-            if (Data.fields.Count == 0)
-            {
-                Data.fields.Add(new Field { id = 0, name = "Informatique" });
-                Data.fields.Add(new Field { id = 1, name = "university" });
-                Data.fields.Add(new Field { id = 2, name = "Buisness" });
-                Data.fields.Add(new Field { id = 3, name = "Infos" });
-                foreach(Field it in Data.fields)
-                {
-                    combos.Add(new ComboboxItem { Text = it.name, Value = it });
-                    if (it.id == Data.currentProject.technologyNature.id)
-                    {
-                        selectedItem = combos.Last<ComboboxItem>();
-                    }
-                }
-            }
-            comboBoxTechnologyNature.DataSource = combos;
-            comboBoxTechnologyNature.SelectedItem = selectedItem;
+            viewModel.initCombos();
+            comboBoxTechnologyNature.DataSource = viewModel.combos;
+            comboBoxTechnologyNature.SelectedItem = viewModel.selectedItem;
         }
 
         private void hideSubMenu()
@@ -239,7 +208,7 @@ namespace PFE
 
         private void addObjectiveButton_Click(object sender, EventArgs e)
         {
-            string input = Interaction.InputBox("Objective Name", "Add Objective", "", -1 , -1);
+            string input = Interaction.InputBox("Objective Name", "Add Objective", "", -1, -1);
             if (input != "")
             {
                 ObjectiveItem item = new ObjectiveItem(input, objectivesPanel.Size.Width - 20);
@@ -250,13 +219,42 @@ namespace PFE
                 }
                 Data.currentProject.objectives.Add(input);
             }
-            
+
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            saveProject();
+            
+            ProjectHandler.saveProject();
             MessageBox.Show("Project Successfully Saved");
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MetroMessageBox.Show(this, "\nDo u want to save your current project ?", "Exit?", MessageBoxButtons.YesNoCancel);
+            
+            if (result == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else if (result == DialogResult.Yes)
+            {
+                e.Cancel = false;
+                if (comboBoxTechnologyNature.SelectedItem != null)
+                {
+                    Data.currentProject.technologyNature = (Field)((ComboboxItem)comboBoxTechnologyNature.SelectedItem).Value;
+                }
+                ProjectHandler.saveProject();
+            } 
+            else
+            {
+                e.Cancel = false;
+            }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

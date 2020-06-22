@@ -13,6 +13,5 @@ namespace PFE.Shared
         public static User actifUser { get; set; }
         public static Project currentProject { get; set; }
         public static string directory { get; set; }
-        public static List<Field> fields { get; set; } = new List<Field>();
     }
 }
