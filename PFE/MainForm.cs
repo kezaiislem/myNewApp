@@ -2,6 +2,7 @@
 using Microsoft.VisualBasic;
 using PFE.Model;
 using PFE.Shared;
+using PFE.UserContol;
 using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -14,41 +15,51 @@ namespace PFE
     public partial class MainForm : Form
     {
         private MainFormViewModel viewModel { get; set; }
+        private ProjectContext projectContextView { get; set; }
+        private ModelInfo modelInfoView { get; set; }
+
+        private UserControl currentView;
 
         public MainForm()
         {
             InitializeComponent();
-            loadProjectView();
+            InitializeViews();
             hideSubMenu();
-        }
-
-        public void loadProjectView()
-        {
-            viewModel = new MainFormViewModel();
-            textBoxTechnologyName.DataBindings.Add("Text", Data.currentProject, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxAdress.DataBindings.Add("Text", Data.currentProject, "companyAdress", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxPhoneNumber.DataBindings.Add("Text", Data.currentProject, "phoneNumber", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxCompanyName.DataBindings.Add("Text", Data.currentProject, "companyName", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxCompanyField.DataBindings.Add("Text", Data.currentProject, "companyField", true, DataSourceUpdateMode.OnPropertyChanged);
-
-            if (Data.currentProject.objectives != null)
-            {
-                foreach (String objective in Data.currentProject.objectives)
-                {
-                    ObjectiveItem item = new ObjectiveItem(objective, objectivesPanel.Size.Width - 20);
-                    objectivesPanel.Controls.Add(item.panel);
-                }
-            }
-
-            viewModel.initCombos();
-            comboBoxTechnologyNature.DataSource = viewModel.combos;
-            comboBoxTechnologyNature.SelectedItem = viewModel.selectedItem;
         }
 
         private void hideSubMenu()
         {
-            panelPlaylistSubMenu.Visible = false;
+            panelModelSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
+        }
+        
+        private void InitializeViews()
+        {
+
+            viewModel = new MainFormViewModel();
+
+            if (!viewModel.hasModel)
+            {
+                phase1Button.Enabled = false;
+                phase2Button.Enabled = false;
+                phase3Button.Enabled = false;
+            }
+
+            // Page Project Context
+            this.projectContextView = new ProjectContext();
+            this.projectContextView.Visible = false;
+            this.projectContextView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectContextView.AutoScaleMode = AutoScaleMode.None;
+            this.projectContextView.Name = "projectContextView";
+            this.panelCurrentView.Controls.Add(this.projectContextView);
+
+            // Page Model Info
+            this.modelInfoView = new ModelInfo();
+            this.modelInfoView.Visible = false;
+            this.modelInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.modelInfoView.AutoScaleMode = AutoScaleMode.None;
+            this.modelInfoView.Name = "projectContextView";
+            this.panelCurrentView.Controls.Add(this.modelInfoView);
         }
 
         private void showSubMenu(Panel subMenu)
@@ -64,8 +75,8 @@ namespace PFE
 
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            openChildForm();
-            Console.WriteLine(Data.currentProject.companyField);
+            switchView(projectContextView);
+            labelPageName.Text = "Project Context";
         }
 
         #region MediaSubMenu
@@ -105,15 +116,14 @@ namespace PFE
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelPlaylistSubMenu);
+            showSubMenu(panelModelSubMenu);
         }
 
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            switchView(modelInfoView);
+            labelPageName.Text = "Model Info";
             hideSubMenu();
         }
 
@@ -201,30 +211,22 @@ namespace PFE
             Application.Exit();
         }
 
-        private void openChildForm()
+        private void switchView(UserControl userControl)
         {
-            panelProjectContext.Show();
-        }
-
-        private void addObjectiveButton_Click(object sender, EventArgs e)
-        {
-            string input = Interaction.InputBox("Objective Name", "Add Objective", "", -1, -1);
-            if (input != "")
+            if( currentView == null)
             {
-                ObjectiveItem item = new ObjectiveItem(input, objectivesPanel.Size.Width - 20);
-                objectivesPanel.Controls.Add(item.panel);
-                if (Data.currentProject.objectives == null)
-                {
-                    Data.currentProject.objectives = new List<String>();
-                }
-                Data.currentProject.objectives.Add(input);
+                currentView = userControl;
             }
-
+            else
+            {
+                currentView.Hide();
+                currentView = userControl;
+            }
+            currentView.Show();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            
             ProjectHandler.saveProject();
             MessageBox.Show("Project Successfully Saved");
         }
@@ -240,10 +242,6 @@ namespace PFE
             else if (result == DialogResult.Yes)
             {
                 e.Cancel = false;
-                if (comboBoxTechnologyNature.SelectedItem != null)
-                {
-                    Data.currentProject.technologyNature = (Field)((ComboboxItem)comboBoxTechnologyNature.SelectedItem).Value;
-                }
                 ProjectHandler.saveProject();
             } 
             else
@@ -255,6 +253,11 @@ namespace PFE
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void projectContext1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

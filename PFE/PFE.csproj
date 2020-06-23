@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -125,11 +128,17 @@
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
-    <Compile Include="UserContol\ObjectivesList.cs">
+    <Compile Include="UserContol\ModelInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ObjectivesList.Designer.cs">
-      <DependentUpon>ObjectivesList.cs</DependentUpon>
+    <Compile Include="UserContol\ModelInfo.Designer.cs">
+      <DependentUpon>ModelInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\ObjectiveControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ObjectiveControl.Designer.cs">
+      <DependentUpon>ObjectiveControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ProjectContextForm.cs">
       <SubType>Form</SubType>
@@ -171,9 +180,16 @@
     <Compile Include="Shared\Data.cs" />
     <Compile Include="Shared\ObjectiveItem.cs" />
     <Compile Include="Shared\RestHelper.cs" />
+    <Compile Include="UserContol\ProjectContext.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ProjectContext.Designer.cs">
+      <DependentUpon>ProjectContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
+    <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="Welcome From.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,8 +221,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserContol\ObjectivesList.resx">
-      <DependentUpon>ObjectivesList.cs</DependentUpon>
+    <EmbeddedResource Include="UserContol\ModelInfo.resx">
+      <DependentUpon>ModelInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ObjectiveControl.resx">
+      <DependentUpon>ObjectiveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ProjectContext.resx">
+      <DependentUpon>ProjectContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome From.resx">
       <DependentUpon>Welcome From.cs</DependentUpon>
@@ -313,6 +335,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\project %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\model.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

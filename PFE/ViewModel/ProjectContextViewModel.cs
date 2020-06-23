@@ -9,22 +9,29 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    class MainFormViewModel
+    public class ProjectContextViewModel
     {
-        public Boolean hasModel { get; set; }
-        public String Title { get; set; }
+        public List<Field> fields { get; set; }
 
-        public MainFormViewModel()
+        public ComboboxItem selectedItem;
+
+        public ComboboxItem SelectedItem
         {
-            if (Data.currentProject.model == null)
-                hasModel = false;
-            else
-                hasModel = true;
+            get { return selectedItem; } 
+            set {
+                Data.currentProject.technologyNature = (Field)value.Value;
+                selectedItem = value; 
+            }
+        }
+        public List<ComboboxItem> combos { get; set; }
 
-            Title = "Dashboard";
+        public ProjectContextViewModel()
+        {
+            Task.Run(async () => await InitializeFields());
+            combos = new List<ComboboxItem>();
         }
 
-        /*private async Task InitializeFields()
+        private async Task InitializeFields()
         {
             try
             {
@@ -33,11 +40,12 @@ namespace PFE.ViewModel
                 {
                     fields = JsonConvert.DeserializeObject<List<Field>>(data);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 fields = new List<Field>();
             }
-            
+
         }
 
         public void initCombos()
@@ -54,8 +62,8 @@ namespace PFE.ViewModel
                         selectedItem = combos.Last<ComboboxItem>();
                     }
                 }
-                
+
             }
-        }*/
+        }
     }
 }
