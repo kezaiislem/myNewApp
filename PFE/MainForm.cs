@@ -17,6 +17,7 @@ namespace PFE
         private MainFormViewModel viewModel { get; set; }
         private ProjectContext projectContextView { get; set; }
         private ModelInfo modelInfoView { get; set; }
+        private PhaseControl phaseView { get; set; }
 
         private UserControl currentView;
 
@@ -40,7 +41,7 @@ namespace PFE
 
             if (!viewModel.hasModel)
             {
-                phase1Button.Enabled = false;
+                //phase1Button.Enabled = false;
                 phase2Button.Enabled = false;
                 phase3Button.Enabled = false;
             }
@@ -60,6 +61,13 @@ namespace PFE
             this.modelInfoView.AutoScaleMode = AutoScaleMode.None;
             this.modelInfoView.Name = "projectContextView";
             this.panelCurrentView.Controls.Add(this.modelInfoView);
+
+            this.phaseView = new PhaseControl(1);
+            this.phaseView.Visible = false;
+            this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.phaseView.AutoScaleMode = AutoScaleMode.None;
+            this.phaseView.Name = "projectContextView";
+            this.panelCurrentView.Controls.Add(this.phaseView);
         }
 
         private void showSubMenu(Panel subMenu)
@@ -129,9 +137,8 @@ namespace PFE
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            switchView(phaseView);
+            labelPageName.Text = "Phase 1";
             hideSubMenu();
         }
 

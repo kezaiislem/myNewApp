@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -173,15 +177,34 @@
     <Compile Include="Shared\ComboboxItem.cs" />
     <Compile Include="Shared\Data.cs" />
     <Compile Include="Shared\RestHelper.cs" />
+    <Compile Include="UserContol\PhaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\PhaseControl.Designer.cs">
+      <DependentUpon>PhaseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ProjectContext.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserContol\ProjectContext.Designer.cs">
       <DependentUpon>ProjectContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\QuestionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\QuestionControl.Designer.cs">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\SectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\SectionControl.Designer.cs">
+      <DependentUpon>SectionControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
+    <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="Welcome From.cs">
       <SubType>Form</SubType>
@@ -217,8 +240,17 @@
     <EmbeddedResource Include="UserContol\ObjectiveControl.resx">
       <DependentUpon>ObjectiveControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\PhaseControl.resx">
+      <DependentUpon>PhaseControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ProjectContext.resx">
       <DependentUpon>ProjectContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\QuestionControl.resx">
+      <DependentUpon>QuestionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\SectionControl.resx">
+      <DependentUpon>SectionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome From.resx">
       <DependentUpon>Welcome From.cs</DependentUpon>
