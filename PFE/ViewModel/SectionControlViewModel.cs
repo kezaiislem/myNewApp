@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class PhaseControlViewModel
+    public class SectionControlViewModel
     {
-        public Phase phase { get; set; }
+        public Section section { get; set; }
 
-        public PhaseControlViewModel(Phase phase)
+        public SectionControlViewModel(Section section)
         {
-            this.phase = phase;
+            this.section = section;
         }
     }
 }

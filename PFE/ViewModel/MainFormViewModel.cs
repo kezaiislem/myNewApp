@@ -13,10 +13,12 @@ namespace PFE.ViewModel
     {
         public Boolean hasModel { get; set; }
         public String Title { get; set; }
+        public Project projet { get; set; }
 
         public MainFormViewModel()
         {
-            if (Data.currentProject.model == null)
+            this.projet = Data.currentProject;
+            if (this.projet.model == null)
                 hasModel = false;
             else
                 hasModel = true;

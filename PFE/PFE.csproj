@@ -127,11 +127,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\Phase.cs" />
+    <Compile Include="Model\Section.cs" />
     <Compile Include="Model\Factor.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
+    <Compile Include="UserContol\AddSectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\AddSectionForm.Designer.cs">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ModelInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -143,12 +151,6 @@
     </Compile>
     <Compile Include="UserContol\ObjectiveControl.Designer.cs">
       <DependentUpon>ObjectiveControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectContextForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ProjectContextForm.designer.cs">
-      <DependentUpon>ProjectContextForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -204,6 +206,7 @@
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
+    <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="Welcome From.cs">
@@ -212,9 +215,6 @@
     <Compile Include="Welcome From.Designer.cs">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ProjectContextForm.resx">
-      <DependentUpon>ProjectContextForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +234,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserContol\AddSectionForm.resx">
+      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ModelInfo.resx">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </EmbeddedResource>

@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace PFE.Model
 {
-    public class Model
+    public class Phase
     {
         public int id { get; set; }
-        public List<Phase> phases { get; set; }
+        public int phaseNumber { get; set; }
+        public Survey survey { get; set; }
     }
 }

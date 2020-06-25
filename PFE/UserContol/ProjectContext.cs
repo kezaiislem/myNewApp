@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PFE.ViewModel;
 using PFE.Shared;
 using Microsoft.VisualBasic;
+using PFE.Model;
 
 namespace PFE.UserContol
 {
@@ -27,15 +28,15 @@ namespace PFE.UserContol
         public void loadProjectView()
         {
             viewModel = new ProjectContextViewModel();
-            textBoxTechnologyName.DataBindings.Add("Text", Data.currentProject, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxAdress.DataBindings.Add("Text", Data.currentProject, "companyAdress", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxPhoneNumber.DataBindings.Add("Text", Data.currentProject, "phoneNumber", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxCompanyName.DataBindings.Add("Text", Data.currentProject, "companyName", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxCompanyField.DataBindings.Add("Text", Data.currentProject, "companyField", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxTechnologyName.DataBindings.Add("Text", viewModel.project, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxAdress.DataBindings.Add("Text", viewModel.project, "companyAdress", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxPhoneNumber.DataBindings.Add("Text", viewModel.project, "phoneNumber", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxCompanyName.DataBindings.Add("Text", viewModel.project, "companyName", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxCompanyField.DataBindings.Add("Text", viewModel.project, "companyField", true, DataSourceUpdateMode.OnPropertyChanged);
 
-            if (Data.currentProject.objectives != null)
+            if (viewModel.project.objectives != null)
             {
-                foreach (String input in Data.currentProject.objectives)
+                foreach (String input in viewModel.project.objectives)
                 {
                     ObjectiveControl objective = new ObjectiveControl(input);
                     objective.Dock = DockStyle.Top;
@@ -56,11 +57,11 @@ namespace PFE.UserContol
                 ObjectiveControl objective = new ObjectiveControl(input);
                 objective.Dock = DockStyle.Top;
                 objectivesPanel.Controls.Add(objective);
-                if (Data.currentProject.objectives == null)
+                if (viewModel.project.objectives == null)
                 {
-                    Data.currentProject.objectives = new List<String>();
+                    viewModel.project.objectives = new List<String>();
                 }
-                Data.currentProject.objectives.Add(input);
+                viewModel.project.objectives.Add(input);
             }
         }
     }

@@ -3,6 +3,7 @@ using PFE.Model;
 using PFE.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,19 +15,20 @@ namespace PFE.ViewModel
         public List<Field> fields { get; set; }
 
         public ComboboxItem selectedItem;
-
         public ComboboxItem SelectedItem
         {
             get { return selectedItem; } 
             set {
-                Data.currentProject.technologyNature = (Field)value.Value;
+                this.project.technologyNature = (Field)value.Value;
                 selectedItem = value; 
             }
         }
         public List<ComboboxItem> combos { get; set; }
+        public Project project { get; set; }
 
         public ProjectContextViewModel()
         {
+            this.project = Data.currentProject;
             Task.Run(async () => await InitializeFields());
             combos = new List<ComboboxItem>();
         }

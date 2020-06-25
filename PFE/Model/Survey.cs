@@ -9,9 +9,8 @@ namespace PFE.Model
     public class Survey
     {
         public int id { get; set; }
-        public int phase { get; set; }
-        public Model model { get; set; }
-        public List<Question> questions  { get; set; }
+        public Phase phase { get; set; }
+        public List<Section> sections  { get; set; }
         public List<Answer> answers { get; set; }
     }
 }
