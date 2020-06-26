@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    class MainFormViewModel
+    public class MainFormViewModel
     {
         public Boolean hasModel { get; set; }
         public String Title { get; set; }

@@ -134,6 +134,12 @@
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
+    <Compile Include="UserContol\AddQuestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\AddQuestionForm.Designer.cs">
+      <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\AddSectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,7 @@
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
+    <Compile Include="ViewModel\ModelInfoViewModel.cs" />
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
@@ -234,6 +241,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserContol\AddQuestionForm.resx">
+      <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\AddSectionForm.resx">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
     </EmbeddedResource>

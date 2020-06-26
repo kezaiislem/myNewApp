@@ -21,22 +21,50 @@ namespace PFE.UserContol
         {
             viewModel = new SectionControlViewModel(section);
             InitializeComponent();
+            LoadQuestions();
             labelTitle.Text = this.viewModel.section.title;
             labelDescription.Text = this.viewModel.section.description;
         }
 
+        private void LoadQuestions()
+        {
+            foreach (Question question in viewModel.section.questions)
+            {
+                QuestionControl questionControl = new QuestionControl(question);
+                questionControl.Dock = DockStyle.Top;
+                questionControl.AutoScaleMode = AutoScaleMode.None;
+                mainPanel.Controls.Add(questionControl);
+                mainPanel.Controls.SetChildIndex(questionControl, 0);
+                this.viewModel.QuestionControls.Add(questionControl);
+            }
+        }
+
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
-            QuestionControl question = new QuestionControl("Question 1", 0, null);
-            question.Dock = DockStyle.Top;
-            question.AutoScaleMode = AutoScaleMode.None;
-            mainPanel.Controls.Add(question);
-            mainPanel.Controls.SetChildIndex(question, 0);
+            using (var form = new AddQuestionForm())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    addQuestion(form.text, 0);
+                }
+            }
+            
+        }
+
+        public void addQuestion(String text, int type)
+        {
+            Question question = new Question { text = text };
+            QuestionControl questionControl = new QuestionControl(question);
+            questionControl.Dock = DockStyle.Top;
+            questionControl.AutoScaleMode = AutoScaleMode.None;
+            mainPanel.Controls.Add(questionControl);
+            mainPanel.Controls.SetChildIndex(questionControl, 0);
             if (this.viewModel.section.questions == null)
             {
                 this.viewModel.section.questions = new List<Question>();
             }
-            this.viewModel.section.questions.Add(new Question { text = "Question 1" });
+            this.viewModel.section.questions.Add(question);
         }
     }
 }

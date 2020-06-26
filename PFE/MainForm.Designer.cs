@@ -267,7 +267,7 @@ namespace PFE
             this.phase3Button.Text = "Phase 3";
             this.phase3Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.phase3Button.UseVisualStyleBackColor = false;
-            this.phase3Button.Click += new System.EventHandler(this.button1_Click);
+            this.phase3Button.Click += new System.EventHandler(this.phase3Button_Click);
             // 
             // phase2Button
             // 
@@ -286,7 +286,7 @@ namespace PFE
             this.phase2Button.Text = "Phase 2";
             this.phase2Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.phase2Button.UseVisualStyleBackColor = false;
-            this.phase2Button.Click += new System.EventHandler(this.button6_Click);
+            this.phase2Button.Click += new System.EventHandler(this.phase2Button_Click);
             // 
             // phase1Button
             // 
@@ -305,7 +305,7 @@ namespace PFE
             this.phase1Button.Text = "Phase 1";
             this.phase1Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.phase1Button.UseVisualStyleBackColor = false;
-            this.phase1Button.Click += new System.EventHandler(this.button7_Click);
+            this.phase1Button.Click += new System.EventHandler(this.phase1Button_Click);
             // 
             // modelInfoButton
             // 

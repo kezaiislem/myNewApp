@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonAddSection = new Guna.UI.WinForms.GunaCircleButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSectionContent = new System.Windows.Forms.Panel();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,7 +60,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.panel2.Controls.Add(this.buttonAddSection);
             this.panel2.Controls.Add(this.metroButton1);
-            this.panel2.Controls.Add(this.bunifuCustomLabel1);
+            this.panel2.Controls.Add(this.labelPhaseTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -101,17 +101,17 @@
             this.metroButton1.Text = "Add Section";
             this.metroButton1.UseSelectable = true;
             // 
-            // bunifuCustomLabel1
+            // labelPhaseTitle
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(15, 15);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(67, 20);
-            this.bunifuCustomLabel1.TabIndex = 1;
-            this.bunifuCustomLabel1.Text = "Phase 1";
+            this.labelPhaseTitle.AutoSize = true;
+            this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
+            this.labelPhaseTitle.Location = new System.Drawing.Point(15, 15);
+            this.labelPhaseTitle.Name = "labelPhaseTitle";
+            this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
+            this.labelPhaseTitle.TabIndex = 1;
+            this.labelPhaseTitle.Text = "Sections";
             // 
             // panelSectionContent
             // 
@@ -142,7 +142,7 @@
         private Bunifu.Framework.UI.BunifuCards panelSections;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private Guna.UI.WinForms.GunaCircleButton buttonAddSection;
         private System.Windows.Forms.Panel panelSectionContent;
     }

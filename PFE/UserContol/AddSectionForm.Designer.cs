@@ -37,7 +37,6 @@
             this.textBoxTitle = new MetroFramework.Controls.MetroTextBox();
             this.textBoxDescription = new MetroFramework.Controls.MetroTextBox();
             this.comboBoxFactor = new MetroFramework.Controls.MetroComboBox();
-            this.formDropShadow1 = new XanderUI.FormDropShadow();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -97,26 +96,28 @@
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.BackColor = System.Drawing.Color.White;
+            this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
             this.buttonCancel.Location = new System.Drawing.Point(596, 144);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseCustomBackColor = true;
+            this.buttonCancel.UseCustomForeColor = true;
             this.buttonCancel.UseSelectable = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOk
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOk.BackColor = System.Drawing.Color.White;
+            this.buttonOk.BackColor = System.Drawing.Color.Transparent;
             this.buttonOk.Location = new System.Drawing.Point(686, 144);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 5;
             this.buttonOk.Text = "OK";
             this.buttonOk.UseCustomBackColor = true;
+            this.buttonOk.UseCustomForeColor = true;
             this.buttonOk.UseSelectable = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
@@ -198,11 +199,6 @@
             this.comboBoxFactor.UseCustomBackColor = true;
             this.comboBoxFactor.UseSelectable = true;
             // 
-            // formDropShadow1
-            // 
-            this.formDropShadow1.EffectedForm = this;
-            this.formDropShadow1.ShadowAngle = 5;
-            // 
             // AddSectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +234,5 @@
         private MetroFramework.Controls.MetroComboBox comboBoxFactor;
         private MetroFramework.Controls.MetroTextBox textBoxDescription;
         private MetroFramework.Controls.MetroTextBox textBoxTitle;
-        private XanderUI.FormDropShadow formDropShadow1;
     }
 }

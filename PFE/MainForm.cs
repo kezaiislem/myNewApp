@@ -8,13 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PFE
 {
     public partial class MainForm : Form
     {
-        private MainFormViewModel viewModel { get; set; }
+        public MainFormViewModel viewModel { get; set; }
         private ProjectContext projectContextView { get; set; }
         private ModelInfo modelInfoView { get; set; }
         private PhaseControl phaseView { get; set; }
@@ -55,20 +56,26 @@ namespace PFE
             this.panelCurrentView.Controls.Add(this.projectContextView);
 
             // Page Model Info
-            this.modelInfoView = new ModelInfo();
+            if (this.viewModel.projet.model == null)
+            {
+                this.viewModel.projet.model = new PFE.Model.Model();
+            }
+            this.modelInfoView = new ModelInfo(this.viewModel.projet.model, this);
             this.modelInfoView.Visible = false;
             this.modelInfoView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.modelInfoView.AutoScaleMode = AutoScaleMode.None;
             this.modelInfoView.Name = "projectContextView";
             this.panelCurrentView.Controls.Add(this.modelInfoView);
 
+            this.UpdatePhaseButtons();
+
             // Page Phase
-            this.phaseView = new PhaseControl(this.viewModel.projet.model.phases.ElementAt<Phase>(0));
+            /*this.phaseView = new PhaseControl(this.viewModel.projet.model.phases.ElementAt<Phase>(0));
             this.phaseView.Visible = false;
             this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.phaseView.AutoScaleMode = AutoScaleMode.None;
             this.phaseView.Name = "projectContextView";
-            this.panelCurrentView.Controls.Add(this.phaseView);
+            this.panelCurrentView.Controls.Add(this.phaseView);*/
         }
 
         private void showSubMenu(Panel subMenu)
@@ -136,28 +143,6 @@ namespace PFE
             hideSubMenu();
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            switchView(phaseView);
-            labelPageName.Text = "Phase 1";
-            hideSubMenu();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //..
-            //your codes
-            //..
-            hideSubMenu();
-        }
         #endregion
 
         private void btnTools_Click(object sender, EventArgs e)
@@ -266,6 +251,84 @@ namespace PFE
         private void projectContext1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void UpdatePhaseButtons()
+        {
+            if (modelInfoView.viewModel.hasPhase1)
+                phase1Button.Enabled = true;
+            else
+                phase1Button.Enabled = false;
+
+            if (modelInfoView.viewModel.hasPhase2)
+                phase2Button.Enabled = true;
+            else
+                phase2Button.Enabled = false;
+
+            if (modelInfoView.viewModel.hasPhase3)
+                phase3Button.Enabled = true;
+            else
+                phase3Button.Enabled = false;
+        }
+
+        private void phase1Button_Click(object sender, EventArgs e)
+        {
+            foreach (Phase phase in viewModel.projet.model.phases)
+            {
+                if (phase.phaseNumber == 1)
+                {
+                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView.Visible = false;
+                    this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.phaseView.AutoScaleMode = AutoScaleMode.None;
+                    this.phaseView.Name = "projectContextView";
+                    this.panelCurrentView.Controls.Add(this.phaseView);
+                }
+            }
+
+            switchView(phaseView);
+            labelPageName.Text = "Phase 1";
+            hideSubMenu();
+        }
+
+        private void phase2Button_Click(object sender, EventArgs e)
+        {
+            foreach (Phase phase in viewModel.projet.model.phases)
+            {
+                if (phase.phaseNumber == 2)
+                {
+                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView.Visible = false;
+                    this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.phaseView.AutoScaleMode = AutoScaleMode.None;
+                    this.phaseView.Name = "projectContextView";
+                    this.panelCurrentView.Controls.Add(this.phaseView);
+                }
+            }
+
+            switchView(phaseView);
+            labelPageName.Text = "Phase 2";
+            hideSubMenu();
+        }
+
+        private void phase3Button_Click(object sender, EventArgs e)
+        {
+            foreach (Phase phase in viewModel.projet.model.phases)
+            {
+                if (phase.phaseNumber == 3)
+                {
+                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView.Visible = false;
+                    this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.phaseView.AutoScaleMode = AutoScaleMode.None;
+                    this.phaseView.Name = "projectContextView";
+                    this.panelCurrentView.Controls.Add(this.phaseView);
+                }
+            }
+
+            switchView(phaseView);
+            labelPageName.Text = "Phase 3";
+            hideSubMenu();
         }
     }
 }

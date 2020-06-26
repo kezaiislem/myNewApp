@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PFE.Model;
 
 namespace PFE.UserContol
 {
     public partial class QuestionControl : UserControl
     {
-        public QuestionControl(String text, int type, string[] choices)
+        public QuestionControl(Question question)
         {
             InitializeComponent();
-            this.labelQuestion.Text = text;
+            this.labelQuestion.Text = question.text;
         }
     }
 }
