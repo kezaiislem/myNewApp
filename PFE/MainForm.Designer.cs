@@ -415,7 +415,7 @@ namespace PFE
             this.saveButton.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.saveButton.HoverTextColor = System.Drawing.Color.White;
             this.saveButton.ImagePosition = XanderUI.XUISuperButton.imgPosition.Left;
-            this.saveButton.Location = new System.Drawing.Point(1022, 20);
+            this.saveButton.Location = new System.Drawing.Point(1012, 20);
             this.saveButton.Name = "saveButton";
             this.saveButton.SelectedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.saveButton.SelectedTextColor = System.Drawing.Color.White;

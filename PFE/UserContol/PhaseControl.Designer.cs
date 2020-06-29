@@ -34,6 +34,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSectionContent = new System.Windows.Forms.Panel();
+            this.buttonShare = new XanderUI.XUIButton();
+            this.buttonHost = new XanderUI.XUIButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +54,7 @@
             this.panelSections.Name = "panelSections";
             this.panelSections.RightSahddow = true;
             this.panelSections.ShadowDepth = 50;
-            this.panelSections.Size = new System.Drawing.Size(211, 561);
+            this.panelSections.Size = new System.Drawing.Size(211, 451);
             this.panelSections.TabIndex = 7;
             // 
             // panel2
@@ -123,9 +125,54 @@
             this.panelSectionContent.Size = new System.Drawing.Size(760, 561);
             this.panelSectionContent.TabIndex = 8;
             // 
+            // buttonShare
+            // 
+            this.buttonShare.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonShare.ButtonImage = null;
+            this.buttonShare.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.buttonShare.ButtonText = "Share";
+            this.buttonShare.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.buttonShare.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonShare.CornerRadius = 20;
+            this.buttonShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShare.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonShare.HoverBackgroundColor = System.Drawing.Color.White;
+            this.buttonShare.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonShare.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.buttonShare.Location = new System.Drawing.Point(31, 536);
+            this.buttonShare.Name = "buttonShare";
+            this.buttonShare.Size = new System.Drawing.Size(211, 48);
+            this.buttonShare.TabIndex = 10;
+            this.buttonShare.TextColor = System.Drawing.Color.White;
+            this.buttonShare.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            // 
+            // buttonHost
+            // 
+            this.buttonHost.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonHost.ButtonImage = null;
+            this.buttonHost.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.buttonHost.ButtonText = "Host";
+            this.buttonHost.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.buttonHost.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonHost.CornerRadius = 20;
+            this.buttonHost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHost.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonHost.HoverBackgroundColor = System.Drawing.Color.White;
+            this.buttonHost.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonHost.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.buttonHost.Location = new System.Drawing.Point(31, 482);
+            this.buttonHost.Name = "buttonHost";
+            this.buttonHost.Size = new System.Drawing.Size(211, 48);
+            this.buttonHost.TabIndex = 9;
+            this.buttonHost.TextColor = System.Drawing.Color.White;
+            this.buttonHost.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonHost.Click += new System.EventHandler(this.buttonHost_Click);
+            // 
             // PhaseControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.buttonShare);
+            this.Controls.Add(this.buttonHost);
             this.Controls.Add(this.panelSections);
             this.Controls.Add(this.panelSectionContent);
             this.Name = "PhaseControl";
@@ -145,5 +192,7 @@
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private Guna.UI.WinForms.GunaCircleButton buttonAddSection;
         private System.Windows.Forms.Panel panelSectionContent;
+        private XanderUI.XUIButton buttonShare;
+        private XanderUI.XUIButton buttonHost;
     }
 }

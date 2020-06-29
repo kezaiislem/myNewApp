@@ -36,6 +36,26 @@ namespace PFE.Shared
             return String.Empty;
         }
 
+        public static async Task<String> getFactors()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "factors"))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
+
         public static async Task<String> authentificate(String username, String password)
         {
             using (HttpClient client = new HttpClient())
@@ -66,6 +86,31 @@ namespace PFE.Shared
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
                 using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "newproject?sessionid="+Data.sessionId, byteContent))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
+
+        public static async Task<String> hostSurvey(Phase phase)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var myContent = JsonConvert.SerializeObject(phase.survey);
+                var buffer = Encoding.UTF8.GetBytes(myContent);
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "host/" + phase.phaseNumber, byteContent))
                 {
                     using (HttpContent content = resonse.Content)
                     {

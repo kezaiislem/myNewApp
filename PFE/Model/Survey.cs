@@ -12,5 +12,6 @@ namespace PFE.Model
         public Phase phase { get; set; }
         public List<Section> sections  { get; set; }
         public List<Answer> answers { get; set; }
+        public Host host { get; set; }
     }
 }

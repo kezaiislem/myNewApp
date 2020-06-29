@@ -12,5 +12,6 @@ namespace PFE.Model
         public String title { get; set; }
         public String description { get; set; }
         public List<Question> questions { get; set; }
+        public Factor factor { get; set; }
     }
 }

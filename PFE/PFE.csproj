@@ -52,6 +52,13 @@
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -133,6 +140,7 @@
     <Compile Include="Model\Model.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\Survey.cs" />
+    <Compile Include="Model\Host.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
     <Compile Include="UserContol\AddQuestionForm.cs">
       <SubType>Form</SubType>
@@ -145,6 +153,12 @@
     </Compile>
     <Compile Include="UserContol\AddSectionForm.Designer.cs">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\HostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\HostForm.Designer.cs">
+      <DependentUpon>HostForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\ModelInfo.cs">
       <SubType>UserControl</SubType>
@@ -213,6 +227,7 @@
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
+    <Compile Include="ViewModel\AddSectionFormViewModel.cs" />
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
@@ -246,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\AddSectionForm.resx">
       <DependentUpon>AddSectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\HostForm.resx">
+      <DependentUpon>HostForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ModelInfo.resx">
       <DependentUpon>ModelInfo.cs</DependentUpon>

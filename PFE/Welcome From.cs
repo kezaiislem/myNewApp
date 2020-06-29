@@ -16,7 +16,6 @@ namespace PFE
         {
             InitializeComponent();
             projectListView.Items.Clear();
-            loadProjectsMethode();
             newProject.UseSelectable = false;
             loadProjects.UseSelectable = false;
             logOut.UseSelectable = false;
@@ -62,13 +61,13 @@ namespace PFE
 
         private void loadProjectsMethode()
         {
-            foreach( Project project in Data.actifUser.projects)
+            /*foreach( Project project in Data.actifUser.projects)
             {
                 ListViewItem item = new ListViewItem(project.name);
                 item.SubItems.Add(project.technologyName);
                 item.SubItems.Add("Mon Dpmaine");
                 projectListView.Items.Add(item);
-            }
+            }*/
         }
 
         private void logOut_Click(object sender, EventArgs e)

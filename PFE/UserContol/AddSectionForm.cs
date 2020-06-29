@@ -1,4 +1,5 @@
 ﻿using PFE.Model;
+using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,21 @@ namespace PFE.UserContol
 {
     public partial class AddSectionForm : Form
     {
-        public String Title { get; set; }
-        public Factor Factor { get; set; }
-        public String Description { get; set; }
-
+        public AddSectionFormViewModel viewModel { get; set; } 
 
         public AddSectionForm()
         {
             InitializeComponent();
+            this.viewModel = new AddSectionFormViewModel();
             InitializeView();
         }
 
         private void InitializeView()
         {
-            textBoxTitle.DataBindings.Add("Text", this, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
-            textBoxDescription.DataBindings.Add("Text", this, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
-            //comboBoxFactor.DataBindings.Add("SelectedItem", this, "Factor", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxTitle.DataBindings.Add("Text", viewModel, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxDescription.DataBindings.Add("Text", viewModel, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
+            comboBoxFactor.DataSource = viewModel.combos;
+            comboBoxFactor.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

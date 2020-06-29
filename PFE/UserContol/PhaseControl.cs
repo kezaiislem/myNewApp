@@ -12,6 +12,7 @@ using System.Web.UI.Design;
 using MetroFramework.Controls;
 using PFE.Shared;
 using PFE.Model;
+using Newtonsoft.Json;
 
 namespace PFE.UserContol
 {
@@ -53,7 +54,7 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    addSection(form.Title, form.Description, null);
+                    addSection(form.viewModel.Title, form.viewModel.Description, form.viewModel.Factor);
                 }
             }
         }
@@ -84,7 +85,7 @@ namespace PFE.UserContol
             button.Text = title;
             button.Dock = DockStyle.Top;
             button.Height = 35;
-            this.viewModel.phase.survey.sections.Add(new Section { title = title, description = description, questions = new List<Question>() });
+            this.viewModel.phase.survey.sections.Add(new Section { title = title, description = description, factor = factor, questions = new List<Question>() });
             button.Click += (s, ev) => {
                 SectionControl sectionControl = new SectionControl(this.viewModel.phase.survey.sections.Last<Section>());
                 sectionControl.Visible = true;
@@ -101,5 +102,19 @@ namespace PFE.UserContol
 
         }
 
+        private async void buttonHost_Click(object sender, EventArgs e)
+        {
+            using (var form = new HostForm())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    String res = await RestHelper.hostSurvey(this.viewModel.phase);
+                    Survey survey = JsonConvert.DeserializeObject<Survey>(res);
+                    //this.viewModel.phase.survey = survey;
+                    //ProjectHandler.saveProject();
+                }
+            }
+        }
     }
 }
