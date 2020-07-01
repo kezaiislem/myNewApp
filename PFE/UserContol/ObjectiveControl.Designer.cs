@@ -31,10 +31,13 @@
             this.objectiveCard = new Bunifu.Framework.UI.BunifuCards();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.labelObjective = new MetroFramework.Controls.MetroLabel();
+            this.textBoxEditObjective = new System.Windows.Forms.TextBox();
             this.objectiveCard.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // objectiveCard
@@ -61,7 +64,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.bunifuImageButton1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelObjective, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -83,20 +86,44 @@
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelObjective);
+            this.panel1.Controls.Add(this.textBoxEditObjective);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(53, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(894, 44);
+            this.panel1.TabIndex = 1;
+            // 
             // labelObjective
             // 
             this.labelObjective.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelObjective.AutoSize = true;
             this.labelObjective.BackColor = System.Drawing.Color.Transparent;
+            this.labelObjective.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelObjective.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.labelObjective.Location = new System.Drawing.Point(60, 15);
+            this.labelObjective.Location = new System.Drawing.Point(13, 12);
             this.labelObjective.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.labelObjective.Name = "labelObjective";
             this.labelObjective.Size = new System.Drawing.Size(86, 19);
-            this.labelObjective.TabIndex = 1;
+            this.labelObjective.TabIndex = 2;
             this.labelObjective.Text = "metroLabel1";
             this.labelObjective.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.labelObjective.UseCustomBackColor = true;
+            this.labelObjective.DoubleClick += new System.EventHandler(this.labelObjective_DoubleClick);
+            // 
+            // textBoxEditObjective
+            // 
+            this.textBoxEditObjective.BackColor = System.Drawing.Color.White;
+            this.textBoxEditObjective.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxEditObjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEditObjective.Location = new System.Drawing.Point(10, 10);
+            this.textBoxEditObjective.Name = "textBoxEditObjective";
+            this.textBoxEditObjective.Size = new System.Drawing.Size(867, 24);
+            this.textBoxEditObjective.TabIndex = 3;
+            this.textBoxEditObjective.Visible = false;
+            this.textBoxEditObjective.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEditObjective_KeyPress);
             // 
             // ObjectiveControl
             // 
@@ -106,8 +133,9 @@
             this.Size = new System.Drawing.Size(960, 60);
             this.objectiveCard.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -117,6 +145,8 @@
         private Bunifu.Framework.UI.BunifuCards objectiveCard;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLabel labelObjective;
+        private System.Windows.Forms.TextBox textBoxEditObjective;
     }
 }

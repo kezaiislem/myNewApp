@@ -38,7 +38,7 @@ namespace PFE.UserContol
             {
                 foreach (String input in viewModel.project.objectives)
                 {
-                    ObjectiveControl objective = new ObjectiveControl(input);
+                    ObjectiveControl objective = new ObjectiveControl(input, viewModel.project.objectives, viewModel.project.objectives.Count());
                     objective.Dock = DockStyle.Top;
                     objectivesPanel.Controls.Add(objective);
                 }
@@ -54,14 +54,14 @@ namespace PFE.UserContol
             string input = Interaction.InputBox("Objective Name", "Add Objective", "", -1, -1);
             if (input != "")
             {
-                ObjectiveControl objective = new ObjectiveControl(input);
-                objective.Dock = DockStyle.Top;
-                objectivesPanel.Controls.Add(objective);
                 if (viewModel.project.objectives == null)
                 {
                     viewModel.project.objectives = new List<String>();
                 }
                 viewModel.project.objectives.Add(input);
+                ObjectiveControl objective = new ObjectiveControl(input, viewModel.project.objectives, viewModel.project.objectives.Count());
+                objective.Dock = DockStyle.Top;
+                objectivesPanel.Controls.Add(objective);
             }
         }
     }

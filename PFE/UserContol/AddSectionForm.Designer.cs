@@ -1,4 +1,6 @@
-﻿namespace PFE.UserContol
+﻿using System.Windows.Forms.VisualStyles;
+
+namespace PFE.UserContol
 {
     partial class AddSectionForm
     {
@@ -97,7 +99,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCancel.Location = new System.Drawing.Point(596, 144);
+            this.buttonCancel.Location = new System.Drawing.Point(596, 175);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
@@ -111,7 +113,7 @@
             // 
             this.buttonOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOk.BackColor = System.Drawing.Color.Transparent;
-            this.buttonOk.Location = new System.Drawing.Point(686, 144);
+            this.buttonOk.Location = new System.Drawing.Point(686, 175);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(75, 23);
             this.buttonOk.TabIndex = 5;
@@ -162,9 +164,9 @@
             // 
             // 
             this.textBoxDescription.CustomButton.Image = null;
-            this.textBoxDescription.CustomButton.Location = new System.Drawing.Point(322, 1);
+            this.textBoxDescription.CustomButton.Location = new System.Drawing.Point(272, 2);
             this.textBoxDescription.CustomButton.Name = "";
-            this.textBoxDescription.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.textBoxDescription.CustomButton.Size = new System.Drawing.Size(75, 75);
             this.textBoxDescription.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.textBoxDescription.CustomButton.TabIndex = 1;
             this.textBoxDescription.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -173,14 +175,15 @@
             this.textBoxDescription.Lines = new string[0];
             this.textBoxDescription.Location = new System.Drawing.Point(126, 100);
             this.textBoxDescription.MaxLength = 32767;
+            this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.PasswordChar = '\0';
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxDescription.SelectedText = "";
             this.textBoxDescription.SelectionLength = 0;
             this.textBoxDescription.SelectionStart = 0;
             this.textBoxDescription.ShortcutsEnabled = true;
-            this.textBoxDescription.Size = new System.Drawing.Size(350, 29);
+            this.textBoxDescription.Size = new System.Drawing.Size(350, 80);
             this.textBoxDescription.TabIndex = 8;
             this.textBoxDescription.UseCustomBackColor = true;
             this.textBoxDescription.UseSelectable = true;
@@ -204,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
-            this.ClientSize = new System.Drawing.Size(797, 179);
+            this.ClientSize = new System.Drawing.Size(797, 210);
             this.Controls.Add(this.comboBoxFactor);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxTitle);

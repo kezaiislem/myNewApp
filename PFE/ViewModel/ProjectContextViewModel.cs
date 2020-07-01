@@ -64,7 +64,6 @@ namespace PFE.ViewModel
                         selectedItem = combos.Last<ComboboxItem>();
                     }
                 }
-
             }
         }
     }

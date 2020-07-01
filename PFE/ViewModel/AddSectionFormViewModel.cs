@@ -56,16 +56,12 @@ namespace PFE.ViewModel
         {
             while (factors == null) { }
 
+            combos.Add(new ComboboxItem { Text = "None", Value = null });
+            selectedItem = combos.First<ComboboxItem>();
+
             foreach (Factor factor in factors)
             {
                 combos.Add(new ComboboxItem { Text = factor.name, Value = factor });
-                /*if (Data.currentProject.technologyNature != null)
-                {
-                    if (factor.id == Data.currentProject.technologyNature.id)
-                    {
-                        selectedItem = combos.Last<ComboboxItem>();
-                    }
-                }*/
             }
         }
     }
