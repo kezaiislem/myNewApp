@@ -8,7 +8,7 @@ namespace PFE.Model
 {
     public class Section
     {
-        public int id { get; set; }
+        public int ?id { get; set; }
         public String title { get; set; }
         public String description { get; set; }
         public List<Question> questions { get; set; }

@@ -11,5 +11,10 @@ namespace PFE.Model
         public int id { get; set; }
         public String name { get; set; }
         public Boolean mtaDefault { get; set; }
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

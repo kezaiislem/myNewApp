@@ -8,7 +8,7 @@ namespace PFE.Model
 {
     public class Question
     {
-        public int id { get; set; }
+        public int ?id { get; set; }
         public string text { get; set; }
         public int type { get; set; }
         public List<String> choices  { get; set; }

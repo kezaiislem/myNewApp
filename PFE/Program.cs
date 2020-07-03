@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFE.UserContol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace PFE
             LoginForm fLogin = new LoginForm();
             /*if (fLogin.ShowDialog() == DialogResult.OK)
             {*/
-                Application.Run(new WelcomeFrom());
+                Application.Run(new SectionSugesstionForm());
             /*}
             else
             {

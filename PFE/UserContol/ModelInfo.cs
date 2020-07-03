@@ -29,6 +29,7 @@ namespace PFE.UserContol
             metroCheckBoxPhase1.DataBindings.Add("Checked", viewModel, "hasPhase1", true, DataSourceUpdateMode.OnPropertyChanged);
             metroCheckBoxPhase2.DataBindings.Add("Checked", viewModel, "hasPhase2", true, DataSourceUpdateMode.OnPropertyChanged);
             metroCheckBoxPhase3.DataBindings.Add("Checked", viewModel, "hasPhase3", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxEvaluationContext.DataBindings.Add("Text", viewModel.model, "evaluationContext", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void metroButtonSaveModel_Click(object sender, EventArgs e)

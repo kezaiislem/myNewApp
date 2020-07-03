@@ -32,6 +32,7 @@
             this.metroCheckBoxPhase2 = new MetroFramework.Controls.MetroCheckBox();
             this.metroCheckBoxPhase3 = new MetroFramework.Controls.MetroCheckBox();
             this.metroButtonSaveModel = new MetroFramework.Controls.MetroButton();
+            this.textBoxEvaluationContext = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // metroCheckBoxPhase1
@@ -74,9 +75,42 @@
             this.metroButtonSaveModel.UseSelectable = true;
             this.metroButtonSaveModel.Click += new System.EventHandler(this.metroButtonSaveModel_Click);
             // 
+            // textBoxEvaluationContext
+            // 
+            // 
+            // 
+            // 
+            this.textBoxEvaluationContext.CustomButton.Image = null;
+            this.textBoxEvaluationContext.CustomButton.Location = new System.Drawing.Point(166, 1);
+            this.textBoxEvaluationContext.CustomButton.Name = "";
+            this.textBoxEvaluationContext.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.textBoxEvaluationContext.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBoxEvaluationContext.CustomButton.TabIndex = 1;
+            this.textBoxEvaluationContext.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBoxEvaluationContext.CustomButton.UseSelectable = true;
+            this.textBoxEvaluationContext.CustomButton.Visible = false;
+            this.textBoxEvaluationContext.Lines = new string[0];
+            this.textBoxEvaluationContext.Location = new System.Drawing.Point(218, 113);
+            this.textBoxEvaluationContext.MaxLength = 32767;
+            this.textBoxEvaluationContext.Name = "textBoxEvaluationContext";
+            this.textBoxEvaluationContext.PasswordChar = '\0';
+            this.textBoxEvaluationContext.PromptText = "Evaluation Context";
+            this.textBoxEvaluationContext.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxEvaluationContext.SelectedText = "";
+            this.textBoxEvaluationContext.SelectionLength = 0;
+            this.textBoxEvaluationContext.SelectionStart = 0;
+            this.textBoxEvaluationContext.ShortcutsEnabled = true;
+            this.textBoxEvaluationContext.Size = new System.Drawing.Size(188, 23);
+            this.textBoxEvaluationContext.TabIndex = 4;
+            this.textBoxEvaluationContext.UseSelectable = true;
+            this.textBoxEvaluationContext.WaterMark = "Evaluation Context";
+            this.textBoxEvaluationContext.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBoxEvaluationContext.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // ModelInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.textBoxEvaluationContext);
             this.Controls.Add(this.metroButtonSaveModel);
             this.Controls.Add(this.metroCheckBoxPhase3);
             this.Controls.Add(this.metroCheckBoxPhase2);
@@ -94,5 +128,6 @@
         private MetroFramework.Controls.MetroCheckBox metroCheckBoxPhase2;
         private MetroFramework.Controls.MetroCheckBox metroCheckBoxPhase3;
         private MetroFramework.Controls.MetroButton metroButtonSaveModel;
+        private MetroFramework.Controls.MetroTextBox textBoxEvaluationContext;
     }
 }

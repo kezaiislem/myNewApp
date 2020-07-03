@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomObjects\CustomHostObject.cs" />
+    <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
     <Compile Include="model\Technology.cs" />
     <Compile Include="model\Section.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
+    <Compile Include="ViewModel\SectionSugesstionViewModel.cs" />
     <Compile Include="Welcome From.cs">
       <SubType>Form</SubType>
     </Compile>
