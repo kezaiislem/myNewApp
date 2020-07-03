@@ -19,7 +19,7 @@ namespace PFE.ViewModel
         {
             get { return selectedItem; } 
             set {
-                this.project.technologyNature = (Field)value.Value;
+                this.project.model.technology.technologyField = (Field)value.Value;
                 selectedItem = value; 
             }
         }
@@ -29,6 +29,10 @@ namespace PFE.ViewModel
         public ProjectContextViewModel()
         {
             this.project = Data.currentProject;
+            if(project.model.technology == null)
+            {
+                project.model.technology = new Technology();
+            }
             Task.Run(async () => await InitializeFields());
             combos = new List<ComboboxItem>();
         }
@@ -57,9 +61,9 @@ namespace PFE.ViewModel
             foreach (Field field in fields)
             {
                 combos.Add(new ComboboxItem { Text = field.name, Value = field });
-                if (Data.currentProject.technologyNature != null)
+                if (Data.currentProject.model.technology.technologyField != null)
                 {
-                    if (field.id == Data.currentProject.technologyNature.id)
+                    if (field.id == Data.currentProject.model.technology.technologyField.id)
                     {
                         selectedItem = combos.Last<ComboboxItem>();
                     }

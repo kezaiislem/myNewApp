@@ -273,11 +273,11 @@ namespace PFE
 
         private void phase1Button_Click(object sender, EventArgs e)
         {
-            foreach (Phase phase in viewModel.projet.model.phases)
+            foreach (Survey phase in viewModel.projet.model.surveys)
             {
                 if (phase.phaseNumber == 1)
                 {
-                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;
@@ -293,11 +293,11 @@ namespace PFE
 
         private void phase2Button_Click(object sender, EventArgs e)
         {
-            foreach (Phase phase in viewModel.projet.model.phases)
+            foreach (Survey phase in viewModel.projet.model.surveys)
             {
                 if (phase.phaseNumber == 2)
                 {
-                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;
@@ -313,11 +313,11 @@ namespace PFE
 
         private void phase3Button_Click(object sender, EventArgs e)
         {
-            foreach (Phase phase in viewModel.projet.model.phases)
+            foreach (Survey phase in viewModel.projet.model.surveys)
             {
                 if (phase.phaseNumber == 3)
                 {
-                    this.phaseView = new PhaseControl(phase);
+                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;

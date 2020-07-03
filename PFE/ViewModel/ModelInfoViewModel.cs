@@ -21,15 +21,15 @@ namespace PFE.ViewModel
         public ModelInfoViewModel(PFE.Model.Model model, MainForm mainForm)
         {
             this.model = model;
-            if(this.model.phases == null)
+            if(this.model.surveys == null)
             {
-                this.model.phases = new List<Phase>();
+                this.model.surveys = new List<Survey>();
             }
             else
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    switch (phase.phaseNumber)
+                    switch (survey.phaseNumber)
                     {
                         case 1 :
                             hasPhase1 = true;
@@ -52,9 +52,9 @@ namespace PFE.ViewModel
             if (this.hasPhase1)
             {
 
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 1)
+                    if (survey.phaseNumber == 1)
                     {
                         add = false;
                         break;
@@ -62,17 +62,17 @@ namespace PFE.ViewModel
                 }
                 if (add)
                 {
-                    this.model.phases.Add(new Phase { phaseNumber = 1 });
+                    this.model.surveys.Add(new Survey { phaseNumber = 1, model = this.model, sections = new List<Section>() });
                 }
                 add = true;
             } 
             else
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 1)
+                    if (survey.phaseNumber == 1)
                     {
-                        this.model.phases.Remove(phase);
+                        this.model.surveys.Remove(survey);
                         break;
                     }
                 }
@@ -80,9 +80,9 @@ namespace PFE.ViewModel
 
             if (this.hasPhase2)
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 2)
+                    if (survey.phaseNumber == 2)
                     {
                         add = false;
                         break;
@@ -90,17 +90,17 @@ namespace PFE.ViewModel
                 }
                 if (add)
                 {
-                    this.model.phases.Add(new Phase { phaseNumber = 2 });
+                    this.model.surveys.Add(new Survey { phaseNumber = 2, model = this.model, sections = new List<Section>() });
                 }
                 add = true;
             }
             else
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 2)
+                    if (survey.phaseNumber == 2)
                     {
-                        this.model.phases.Remove(phase);
+                        this.model.surveys.Remove(survey);
                         break;
                     }
                 }
@@ -108,9 +108,9 @@ namespace PFE.ViewModel
 
             if (this.hasPhase3)
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 3)
+                    if (survey.phaseNumber == 3)
                     {
                         add = false;
                         break;
@@ -118,17 +118,17 @@ namespace PFE.ViewModel
                 }
                 if (add)
                 {
-                    this.model.phases.Add(new Phase { phaseNumber = 3 });
+                    this.model.surveys.Add(new Survey { phaseNumber = 3, model = this.model, sections = new List<Section>() });
                 }
                 add = true;
             }
             else
             {
-                foreach (Phase phase in this.model.phases)
+                foreach (Survey survey in this.model.surveys)
                 {
-                    if (phase.phaseNumber == 3)
+                    if (survey.phaseNumber == 3)
                     {
-                        this.model.phases.Remove(phase);
+                        this.model.surveys.Remove(survey);
                         break;
                     }
                 }

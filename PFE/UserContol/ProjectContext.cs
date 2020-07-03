@@ -28,7 +28,7 @@ namespace PFE.UserContol
         public void loadProjectView()
         {
             viewModel = new ProjectContextViewModel();
-            textBoxTechnologyName.DataBindings.Add("Text", viewModel.project, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxTechnologyName.DataBindings.Add("Text", viewModel.project.model.technology, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxAdress.DataBindings.Add("Text", viewModel.project, "companyAdress", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxPhoneNumber.DataBindings.Add("Text", viewModel.project, "phoneNumber", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxCompanyName.DataBindings.Add("Text", viewModel.project, "companyName", true, DataSourceUpdateMode.OnPropertyChanged);

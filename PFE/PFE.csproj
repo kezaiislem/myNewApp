@@ -56,6 +56,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
@@ -133,14 +136,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Answer.cs" />
-    <Compile Include="Model\Phase.cs" />
-    <Compile Include="Model\Section.cs" />
-    <Compile Include="Model\Factor.cs" />
-    <Compile Include="Model\Model.cs" />
-    <Compile Include="Model\Question.cs" />
-    <Compile Include="Model\Survey.cs" />
-    <Compile Include="Model\Host.cs" />
+    <Compile Include="CustomObjects\CustomHostObject.cs" />
+    <Compile Include="model\Answer.cs" />
+    <Compile Include="model\Technology.cs" />
+    <Compile Include="model\Section.cs" />
+    <Compile Include="model\Factor.cs" />
+    <Compile Include="model\Model.cs" />
+    <Compile Include="model\Question.cs" />
+    <Compile Include="model\Survey.cs" />
+    <Compile Include="model\Host.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
     <Compile Include="UserContol\AddQuestionForm.cs">
       <SubType>Form</SubType>
@@ -184,10 +188,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Field.cs" />
-    <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\Session.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="model\Field.cs" />
+    <Compile Include="model\Project.cs" />
+    <Compile Include="model\Session.cs" />
+    <Compile Include="model\User.cs" />
     <Compile Include="NewProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +226,12 @@
     </Compile>
     <Compile Include="UserContol\SectionControl.Designer.cs">
       <DependentUpon>SectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\SectionSugesstionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\SectionSugesstionForm.Designer.cs">
+      <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
@@ -283,11 +293,15 @@
     <EmbeddedResource Include="UserContol\SectionControl.resx">
       <DependentUpon>SectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\SectionSugesstionForm.resx">
+      <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Welcome From.resx">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PFE.Model.Field.datasource" />
+    <None Include="Properties\DataSources\PFE.Model.Section.datasource" />
     <None Include="Properties\DataSources\PFE.Shared.ComboboxItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -400,6 +414,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer .png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

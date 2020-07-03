@@ -9,11 +9,12 @@ namespace PFE.ViewModel
 {
     public class PhaseControlViewModel
     {
-        public Phase phase { get; set; }
+        public Survey survey { get; set; }
 
-        public PhaseControlViewModel(Phase phase)
+        public PhaseControlViewModel(Survey survey, Model.Model model)
         {
-            this.phase = phase;
+            this.survey = survey;
+            this.survey.model = model;
         }
     }
 }

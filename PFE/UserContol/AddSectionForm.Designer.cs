@@ -39,6 +39,7 @@ namespace PFE.UserContol
             this.textBoxTitle = new MetroFramework.Controls.MetroTextBox();
             this.textBoxDescription = new MetroFramework.Controls.MetroTextBox();
             this.comboBoxFactor = new MetroFramework.Controls.MetroComboBox();
+            this.metroButtonImport = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -99,7 +100,7 @@ namespace PFE.UserContol
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCancel.Location = new System.Drawing.Point(596, 175);
+            this.buttonCancel.Location = new System.Drawing.Point(524, 175);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
@@ -202,12 +203,27 @@ namespace PFE.UserContol
             this.comboBoxFactor.UseCustomBackColor = true;
             this.comboBoxFactor.UseSelectable = true;
             // 
+            // metroButtonImport
+            // 
+            this.metroButtonImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButtonImport.BackColor = System.Drawing.Color.Transparent;
+            this.metroButtonImport.Location = new System.Drawing.Point(605, 175);
+            this.metroButtonImport.Name = "metroButtonImport";
+            this.metroButtonImport.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonImport.TabIndex = 10;
+            this.metroButtonImport.Text = "Import";
+            this.metroButtonImport.UseCustomBackColor = true;
+            this.metroButtonImport.UseCustomForeColor = true;
+            this.metroButtonImport.UseSelectable = true;
+            this.metroButtonImport.Click += new System.EventHandler(this.metroButtonImport_Click);
+            // 
             // AddSectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
             this.ClientSize = new System.Drawing.Size(797, 210);
+            this.Controls.Add(this.metroButtonImport);
             this.Controls.Add(this.comboBoxFactor);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxTitle);
@@ -237,5 +253,6 @@ namespace PFE.UserContol
         private MetroFramework.Controls.MetroComboBox comboBoxFactor;
         private MetroFramework.Controls.MetroTextBox textBoxDescription;
         private MetroFramework.Controls.MetroTextBox textBoxTitle;
+        private MetroFramework.Controls.MetroButton metroButtonImport;
     }
 }

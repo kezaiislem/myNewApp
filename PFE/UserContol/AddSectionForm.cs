@@ -42,5 +42,10 @@ namespace PFE.UserContol
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void metroButtonImport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace PFE.Model
 {
-    public class Phase
+    public class Technology
     {
         public int id { get; set; }
-        public int phaseNumber { get; set; }
-        public Survey survey { get; set; }
+        public string technologyName { get; set; }
+        public Field technologyField { get; set; }
     }
 }

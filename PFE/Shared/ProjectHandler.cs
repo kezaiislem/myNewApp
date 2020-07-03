@@ -1,11 +1,6 @@
 ﻿using PFE.Model;
 using System;
-using System.Collections.Generic;
-using System.Dynamic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace PFE.Shared
@@ -16,7 +11,7 @@ namespace PFE.Shared
         {
             try
             {
-                Project p = new Project { id = 2, name = projectName };
+                Project p = new Project { id = 2, name = projectName, model = new Model.Model() };
                 XmlSerializer xmlSerializer = new XmlSerializer((typeof(Project)));
                 if (File.Exists(directory))
                 {

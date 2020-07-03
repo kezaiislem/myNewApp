@@ -23,13 +23,13 @@ namespace PFE.UserContol
 
         SectionControl activeSection;
 
-        public PhaseControl(Phase phase)
+        public PhaseControl(Survey survey, Model.Model model)
         {
-            viewModel = new PhaseControlViewModel(phase);
+            viewModel = new PhaseControlViewModel(survey, model);
             InitializeComponent();
-            if( viewModel.phase.survey == null)
+            if( viewModel.survey == null)
             {
-                viewModel.phase.survey = new Survey { sections = new List<Section>() };
+                viewModel.survey = new Survey { sections = new List<Section>() };
             }
             else
             {
@@ -61,7 +61,7 @@ namespace PFE.UserContol
 
         private void loadSections()
         {
-            foreach (Section section in viewModel.phase.survey.sections)
+            foreach (Section section in viewModel.survey.sections)
             {
                 MetroButton button = new MetroButton();
                 button.Text = section.title;
@@ -85,9 +85,10 @@ namespace PFE.UserContol
             button.Text = title;
             button.Dock = DockStyle.Top;
             button.Height = 35;
-            this.viewModel.phase.survey.sections.Add(new Section { title = title, description = description, factor = factor, questions = new List<Question>() });
+            Section section = new Section { title = title, description = description, factor = factor, questions = new List<Question>() };
+            this.viewModel.survey.sections.Add(section);
             button.Click += (s, ev) => {
-                SectionControl sectionControl = new SectionControl(this.viewModel.phase.survey.sections.Last<Section>());
+                SectionControl sectionControl = new SectionControl(section);
                 sectionControl.Visible = true;
                 sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
                 sectionControl.AutoScaleMode = AutoScaleMode.None;
@@ -109,7 +110,8 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    String res = await RestHelper.hostSurvey(this.viewModel.phase);
+                    Console.WriteLine(this.viewModel.survey.model.technology.technologyName);
+                    String res = await RestHelper.hostSurvey(this.viewModel.survey);
                     Survey survey = JsonConvert.DeserializeObject<Survey>(res);
                     //this.viewModel.phase.survey = survey;
                     //ProjectHandler.saveProject();

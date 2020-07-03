@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.CustomObjects;
 using PFE.Model;
 using System;
 using System.Collections.Generic;
@@ -101,16 +102,16 @@ namespace PFE.Shared
             return String.Empty;
         }
 
-        public static async Task<String> hostSurvey(Phase phase)
+        public static async Task<String> hostSurvey(Survey survey)
         {
             using (HttpClient client = new HttpClient())
             {
-                var myContent = JsonConvert.SerializeObject(phase.survey);
+                var myContent = JsonConvert.SerializeObject(survey);
                 var buffer = Encoding.UTF8.GetBytes(myContent);
                 var byteContent = new ByteArrayContent(buffer);
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "host/" + phase.phaseNumber, byteContent))
+                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "host", byteContent))
                 {
                     using (HttpContent content = resonse.Content)
                     {
