@@ -12,12 +12,11 @@ using System.Windows.Forms;
 
 namespace PFE.UserContol
 {
-    public partial class SectionSugesstionForm : Form
+    public partial class QuestionSuggestionForm : Form
     {
+        public QuestionSuggestionViewModel viewModel { get; set; }
 
-        public SectionSugesstionViewModel viewModel { get; set; }
-
-        public SectionSugesstionForm()
+        public QuestionSuggestionForm()
         {
             InitializeComponent();
             Init();
@@ -25,7 +24,7 @@ namespace PFE.UserContol
 
         void Init()
         {
-            viewModel = new SectionSugesstionViewModel();
+            viewModel = new QuestionSuggestionViewModel();
             textBoxTechnologyName.DataBindings.Add("Text", viewModel.requestObject, "technologyName", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxTechnologyField.DataBindings.Add("Text", viewModel.requestObject, "technologyField", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxEvaluationContext.DataBindings.Add("Text", viewModel.requestObject, "evalutionContext", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -34,7 +33,7 @@ namespace PFE.UserContol
 
         private async void metroButtonSearch_Click(object sender, EventArgs e)
         {
-            List<Section> sections = await viewModel.loadSuggestions();
+            List<Question> sections = await viewModel.loadSuggestions();
             gridResult.DataSource = sections;
         }
 
@@ -48,7 +47,7 @@ namespace PFE.UserContol
         {
             if (gridResult.SelectedRows.Count > 0)
             {
-                this.viewModel.selectedItem = (Section)gridResult.SelectedRows[0].DataBoundItem;
+                this.viewModel.selectedItem = (Question)gridResult.SelectedRows[0].DataBoundItem;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

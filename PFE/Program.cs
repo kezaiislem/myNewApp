@@ -20,7 +20,7 @@ namespace PFE
             LoginForm fLogin = new LoginForm();
             /*if (fLogin.ShowDialog() == DialogResult.OK)
             {*/
-                Application.Run(new SectionSugesstionForm());
+                Application.Run(new WelcomeFrom());
             /*}
             else
             {

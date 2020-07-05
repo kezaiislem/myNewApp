@@ -1,6 +1,6 @@
 ﻿namespace PFE.UserContol
 {
-    partial class SectionSugesstionForm
+    partial class QuestionSuggestionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,12 +45,10 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.textBoxFacor = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.sectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.factorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.questionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridResult)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroButtonImport
@@ -58,7 +56,7 @@
             this.metroButtonImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.metroButtonImport.BackColor = System.Drawing.Color.Transparent;
             this.metroButtonImport.ForeColor = System.Drawing.Color.White;
-            this.metroButtonImport.Location = new System.Drawing.Point(626, 396);
+            this.metroButtonImport.Location = new System.Drawing.Point(382, 383);
             this.metroButtonImport.Name = "metroButtonImport";
             this.metroButtonImport.Size = new System.Drawing.Size(75, 23);
             this.metroButtonImport.TabIndex = 12;
@@ -73,7 +71,7 @@
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(545, 396);
+            this.buttonCancel.Location = new System.Drawing.Point(301, 383);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 11;
@@ -103,7 +101,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel2.ForeColor = System.Drawing.Color.White;
-            this.metroLabel2.Location = new System.Drawing.Point(42, 61);
+            this.metroLabel2.Location = new System.Drawing.Point(33, 59);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(111, 19);
             this.metroLabel2.TabIndex = 15;
@@ -116,7 +114,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel3.ForeColor = System.Drawing.Color.White;
-            this.metroLabel3.Location = new System.Drawing.Point(42, 95);
+            this.metroLabel3.Location = new System.Drawing.Point(33, 93);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(37, 19);
             this.metroLabel3.TabIndex = 16;
@@ -163,7 +161,7 @@
             this.metroButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.metroButtonSearch.BackColor = System.Drawing.Color.Transparent;
             this.metroButtonSearch.ForeColor = System.Drawing.Color.White;
-            this.metroButtonSearch.Location = new System.Drawing.Point(626, 131);
+            this.metroButtonSearch.Location = new System.Drawing.Point(382, 152);
             this.metroButtonSearch.Name = "metroButtonSearch";
             this.metroButtonSearch.Size = new System.Drawing.Size(75, 23);
             this.metroButtonSearch.TabIndex = 20;
@@ -194,10 +192,8 @@
             this.gridResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titleDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.factorDataGridViewTextBoxColumn});
-            this.gridResult.DataSource = this.sectionBindingSource;
+            this.textDataGridViewTextBoxColumn});
+            this.gridResult.DataSource = this.questionBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -209,7 +205,7 @@
             this.gridResult.EnableHeadersVisualStyles = false;
             this.gridResult.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.gridResult.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridResult.Location = new System.Drawing.Point(42, 169);
+            this.gridResult.Location = new System.Drawing.Point(33, 198);
             this.gridResult.MultiSelect = false;
             this.gridResult.Name = "gridResult";
             this.gridResult.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -223,7 +219,7 @@
             this.gridResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridResult.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridResult.Size = new System.Drawing.Size(659, 207);
+            this.gridResult.Size = new System.Drawing.Size(424, 169);
             this.gridResult.TabIndex = 22;
             // 
             // textBoxTechnologyField
@@ -277,7 +273,7 @@
             this.textBoxEvaluationContext.CustomButton.Visible = false;
             this.textBoxEvaluationContext.ForeColor = System.Drawing.Color.Black;
             this.textBoxEvaluationContext.Lines = new string[0];
-            this.textBoxEvaluationContext.Location = new System.Drawing.Point(511, 59);
+            this.textBoxEvaluationContext.Location = new System.Drawing.Point(167, 121);
             this.textBoxEvaluationContext.MaxLength = 32767;
             this.textBoxEvaluationContext.Name = "textBoxEvaluationContext";
             this.textBoxEvaluationContext.PasswordChar = '\0';
@@ -299,7 +295,7 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(377, 61);
+            this.metroLabel4.Location = new System.Drawing.Point(33, 123);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(117, 19);
             this.metroLabel4.TabIndex = 24;
@@ -324,7 +320,7 @@
             this.textBoxFacor.CustomButton.Visible = false;
             this.textBoxFacor.ForeColor = System.Drawing.Color.Black;
             this.textBoxFacor.Lines = new string[0];
-            this.textBoxFacor.Location = new System.Drawing.Point(511, 90);
+            this.textBoxFacor.Location = new System.Drawing.Point(167, 152);
             this.textBoxFacor.MaxLength = 32767;
             this.textBoxFacor.Name = "textBoxFacor";
             this.textBoxFacor.PasswordChar = '\0';
@@ -346,7 +342,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel5.ForeColor = System.Drawing.Color.White;
-            this.metroLabel5.Location = new System.Drawing.Point(377, 95);
+            this.metroLabel5.Location = new System.Drawing.Point(33, 157);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(45, 19);
             this.metroLabel5.TabIndex = 26;
@@ -354,36 +350,23 @@
             this.metroLabel5.UseCustomBackColor = true;
             this.metroLabel5.UseCustomForeColor = true;
             // 
-            // sectionBindingSource
+            // questionBindingSource
             // 
-            this.sectionBindingSource.DataSource = typeof(PFE.Model.Section);
+            this.questionBindingSource.DataSource = typeof(PFE.Model.Question);
             // 
-            // titleDataGridViewTextBoxColumn
+            // textDataGridViewTextBoxColumn
             // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            this.titleDataGridViewTextBoxColumn.Width = 200;
+            this.textDataGridViewTextBoxColumn.DataPropertyName = "text";
+            this.textDataGridViewTextBoxColumn.HeaderText = "Question";
+            this.textDataGridViewTextBoxColumn.Name = "textDataGridViewTextBoxColumn";
+            this.textDataGridViewTextBoxColumn.Width = 383;
             // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // factorDataGridViewTextBoxColumn
-            // 
-            this.factorDataGridViewTextBoxColumn.DataPropertyName = "factor";
-            this.factorDataGridViewTextBoxColumn.HeaderText = "Factor";
-            this.factorDataGridViewTextBoxColumn.Name = "factorDataGridViewTextBoxColumn";
-            // 
-            // SectionSugesstionForm
+            // QuestionSuggestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
-            this.ClientSize = new System.Drawing.Size(740, 440);
+            this.ClientSize = new System.Drawing.Size(485, 425);
             this.Controls.Add(this.textBoxFacor);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.textBoxEvaluationContext);
@@ -398,11 +381,11 @@
             this.Controls.Add(this.metroButtonImport);
             this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SectionSugesstionForm";
+            this.Name = "QuestionSuggestionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SectionSugesstionForm";
             ((System.ComponentModel.ISupportInitialize)(this.gridResult)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sectionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.questionBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,14 +401,12 @@
         private MetroFramework.Controls.MetroTextBox textBoxTechnologyName;
         private MetroFramework.Controls.MetroButton metroButtonSearch;
         private MetroFramework.Controls.MetroGrid gridResult;
-        private System.Windows.Forms.BindingSource sectionBindingSource;
         private MetroFramework.Controls.MetroTextBox textBoxTechnologyField;
         private MetroFramework.Controls.MetroTextBox textBoxEvaluationContext;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTextBox textBoxFacor;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn factorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn textDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource questionBindingSource;
     }
 }

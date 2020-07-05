@@ -1,4 +1,6 @@
 ﻿using PFE.Model;
+using PFE.Shared;
+using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +15,8 @@ namespace PFE.UserContol
 {
     public partial class AddQuestionForm : Form
     {
-        public String text { get; set; }
-        public String type { get; set; }
+
+        public AddQuestionFormViewModel viewModel { get; set; }
 
         public AddQuestionForm()
         {
@@ -24,8 +26,10 @@ namespace PFE.UserContol
 
         private void InitializeView()
         {
-            textBoxText.DataBindings.Add("Text", this, "text", true, DataSourceUpdateMode.OnPropertyChanged);
-            //comboBoxFactor.DataBindings.Add("SelectedItem", this, "Factor", true, DataSourceUpdateMode.OnPropertyChanged);
+            viewModel = new AddQuestionFormViewModel();
+            textBoxText.DataBindings.Add("Text", viewModel.question, "text", true, DataSourceUpdateMode.OnPropertyChanged);
+            comboBoxType.DataSource = viewModel.questionCombos;
+            comboBoxType.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -38,6 +42,25 @@ namespace PFE.UserContol
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void metroButtonImport_Click(object sender, EventArgs e)
+        {
+            using (var form = new QuestionSuggestionForm())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    /*foreach (ComboboxItem item in viewModel.combos)
+                    {
+                        if (item.Text == form.viewModel.selectedItem.factor.name)
+                        {
+                            viewModel.selectedItem = item;
+                        }
+                    }*/
+                    textBoxText.Text = form.viewModel.selectedItem.text;
+                }
+            }
         }
     }
 }

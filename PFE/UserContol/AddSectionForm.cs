@@ -1,4 +1,5 @@
 ﻿using PFE.Model;
+using PFE.Shared;
 using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,22 @@ namespace PFE.UserContol
 
         private void metroButtonImport_Click(object sender, EventArgs e)
         {
-
+            using (var form = new SectionSugesstionForm())
+            {
+                var result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    foreach ( ComboboxItem item in viewModel.combos)
+                    {
+                        if (item.Text == form.viewModel.selectedItem.factor.name)
+                        {
+                            viewModel.selectedItem = item;
+                        }
+                    }
+                    textBoxTitle.Text = form.viewModel.selectedItem.title;
+                    textBoxDescription.Text = form.viewModel.selectedItem.description;
+                }
+            }
         }
     }
 }

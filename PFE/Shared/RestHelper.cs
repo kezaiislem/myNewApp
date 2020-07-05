@@ -146,5 +146,25 @@ namespace PFE.Shared
             }
             return String.Empty;
         }
+
+        public static async Task<String> loadQuestionSuggestion(QuestionSuggestionsRequestObject requestObject)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "questionsuggestions?technologyname=" + requestObject.technologyName + "&technologyfield=" + requestObject.technologyField + "&evaluationContext=" + requestObject.evalutionContext + "&factorname=" + requestObject.factor))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
     }
 }

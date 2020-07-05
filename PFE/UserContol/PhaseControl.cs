@@ -110,7 +110,6 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Console.WriteLine(this.viewModel.survey.model.technology.technologyName);
                     String res = await RestHelper.hostSurvey(this.viewModel.survey);
                     Survey survey = JsonConvert.DeserializeObject<Survey>(res);
                     //this.viewModel.phase.survey = survey;

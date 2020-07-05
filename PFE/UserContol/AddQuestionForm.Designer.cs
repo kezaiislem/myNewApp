@@ -35,6 +35,7 @@
             this.buttonOk = new MetroFramework.Controls.MetroButton();
             this.textBoxText = new MetroFramework.Controls.MetroTextBox();
             this.comboBoxType = new MetroFramework.Controls.MetroComboBox();
+            this.metroButtonImport = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -82,7 +83,7 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.Transparent;
-            this.buttonCancel.Location = new System.Drawing.Point(590, 124);
+            this.buttonCancel.Location = new System.Drawing.Point(518, 124);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 4;
@@ -152,12 +153,27 @@
             this.comboBoxType.UseCustomBackColor = true;
             this.comboBoxType.UseSelectable = true;
             // 
+            // metroButtonImport
+            // 
+            this.metroButtonImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButtonImport.BackColor = System.Drawing.Color.Transparent;
+            this.metroButtonImport.Location = new System.Drawing.Point(599, 124);
+            this.metroButtonImport.Name = "metroButtonImport";
+            this.metroButtonImport.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonImport.TabIndex = 11;
+            this.metroButtonImport.Text = "Import";
+            this.metroButtonImport.UseCustomBackColor = true;
+            this.metroButtonImport.UseCustomForeColor = true;
+            this.metroButtonImport.UseSelectable = true;
+            this.metroButtonImport.Click += new System.EventHandler(this.metroButtonImport_Click);
+            // 
             // AddQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
             this.ClientSize = new System.Drawing.Size(791, 159);
+            this.Controls.Add(this.metroButtonImport);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.textBoxText);
             this.Controls.Add(this.buttonOk);
@@ -183,5 +199,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroComboBox comboBoxType;
         private MetroFramework.Controls.MetroTextBox textBoxText;
+        private MetroFramework.Controls.MetroButton metroButtonImport;
     }
 }

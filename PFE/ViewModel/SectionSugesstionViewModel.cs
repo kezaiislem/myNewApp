@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    class SectionSugesstionViewModel
+    public class SectionSugesstionViewModel
     {
         public SectionSuggestionsRequestObject requestObject { get; set; }
         public Section selectedItem { get; set; }

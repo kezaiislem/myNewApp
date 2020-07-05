@@ -136,7 +136,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\QuestionTypes.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
+    <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
+    <Compile Include="CustomObjects\QuestionType.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
     <Compile Include="model\Technology.cs" />
@@ -228,12 +231,19 @@
     <Compile Include="UserContol\SectionControl.Designer.cs">
       <DependentUpon>SectionControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\QuestionSuggestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\QuestionSuggestionForm.Designer.cs">
+      <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\SectionSugesstionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserContol\SectionSugesstionForm.Designer.cs">
       <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
@@ -242,6 +252,7 @@
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
+    <Compile Include="ViewModel\QuestionSugestionViewModel.cs" />
     <Compile Include="ViewModel\SectionSugesstionViewModel.cs" />
     <Compile Include="Welcome From.cs">
       <SubType>Form</SubType>
@@ -295,6 +306,9 @@
     <EmbeddedResource Include="UserContol\SectionControl.resx">
       <DependentUpon>SectionControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\QuestionSuggestionForm.resx">
+      <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\SectionSugesstionForm.resx">
       <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +317,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PFE.Model.Field.datasource" />
+    <None Include="Properties\DataSources\PFE.Model.Question.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Section.datasource" />
     <None Include="Properties\DataSources\PFE.Shared.ComboboxItem.datasource" />
     <None Include="Properties\Settings.settings">

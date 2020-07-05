@@ -46,15 +46,14 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    addQuestion(form.text, 0);
+                    addQuestion(form.viewModel.question);
                 }
             }
             
         }
 
-        public void addQuestion(String text, int type)
+        public void addQuestion(Question question)
         {
-            Question question = new Question { text = text };
             QuestionControl questionControl = new QuestionControl(question);
             questionControl.Dock = DockStyle.Top;
             questionControl.AutoScaleMode = AutoScaleMode.None;
