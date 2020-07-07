@@ -1,4 +1,5 @@
-﻿using PFE.Model;
+﻿using MetroFramework;
+using PFE.Model;
 using PFE.Shared;
 using PFE.ViewModel;
 using System;
@@ -40,8 +41,23 @@ namespace PFE.UserContol
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (checkFields())
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Question text field cant be empty", "Error", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private Boolean checkFields()
+        {
+            if (string.IsNullOrWhiteSpace(viewModel.question.text))
+                return false;
+            return true;
         }
 
         private void metroButtonImport_Click(object sender, EventArgs e)

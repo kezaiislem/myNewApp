@@ -106,15 +106,7 @@ namespace PFE.UserContol
 
         private async void buttonHost_Click(object sender, EventArgs e)
         {
-            if (this.viewModel.survey.model.technology.technologyName == "" || this.viewModel.survey.model.technology.technologyField == null || this.viewModel.survey.model.technology.technologyName == null)
-            {
-                MetroMessageBox.Show(this, "\nYou need to fill technology informations first before passing to this step. To do that Go to project context tab", "Advertissement", MessageBoxButtons.OK);
-            }
-            else if (this.viewModel.survey.model.evaluationContext == "" || this.viewModel.survey.model.evaluationContext == null )
-            {
-                MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Advertissement", MessageBoxButtons.OK);
-            }
-            else
+            if(checkFields())
             {
                 using (var form = new HostForm())
                 {
@@ -132,6 +124,21 @@ namespace PFE.UserContol
                     }
                 }
             }
+        }
+
+        private Boolean checkFields()
+        {
+            if (string.IsNullOrWhiteSpace(this.viewModel.survey.model.technology.technologyName) || this.viewModel.survey.model.technology.technologyField == null)
+            {
+                MetroMessageBox.Show(this, "\nYou need to fill technology informations first before passing to this step. To do that Go to project context tab", "Error", MessageBoxButtons.OK);
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(this.viewModel.survey.model.evaluationContext))
+            {
+                MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Error", MessageBoxButtons.OK);
+                return false;
+            }
+            return true;
         }
     }
 }
