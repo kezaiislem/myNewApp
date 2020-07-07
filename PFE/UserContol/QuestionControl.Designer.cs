@@ -30,18 +30,21 @@
         {
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.labelQuestion = new MetroFramework.Controls.MetroLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.metroRadioButton5 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton4 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelQuestion = new MetroFramework.Controls.MetroLabel();
+            this.buttonRemoveQuestion = new Bunifu.Framework.UI.BunifuImageButton();
+            this.textBoxEditQuestion = new System.Windows.Forms.TextBox();
             this.bunifuCards2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveQuestion)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -74,24 +77,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(666, 91);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.labelQuestion);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(666, 40);
-            this.panel2.TabIndex = 0;
-            // 
-            // labelQuestion
-            // 
-            this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Location = new System.Drawing.Point(17, 11);
-            this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(80, 19);
-            this.labelQuestion.TabIndex = 0;
-            this.labelQuestion.Text = "Question 1 ?";
             // 
             // panel3
             // 
@@ -156,6 +141,57 @@
             this.metroRadioButton1.Text = "Strongly Disagree";
             this.metroRadioButton1.UseSelectable = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.labelQuestion);
+            this.panel2.Controls.Add(this.buttonRemoveQuestion);
+            this.panel2.Controls.Add(this.textBoxEditQuestion);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(666, 40);
+            this.panel2.TabIndex = 0;
+            // 
+            // labelQuestion
+            // 
+            this.labelQuestion.AutoSize = true;
+            this.labelQuestion.Location = new System.Drawing.Point(17, 11);
+            this.labelQuestion.Name = "labelQuestion";
+            this.labelQuestion.Size = new System.Drawing.Size(80, 19);
+            this.labelQuestion.TabIndex = 0;
+            this.labelQuestion.Text = "Question 1 ?";
+            this.labelQuestion.DoubleClick += new System.EventHandler(this.labelQuestion_DoubleClick);
+            // 
+            // buttonRemoveQuestion
+            // 
+            this.buttonRemoveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemoveQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemoveQuestion.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveQuestion.ImageActive = null;
+            this.buttonRemoveQuestion.Location = new System.Drawing.Point(632, 8);
+            this.buttonRemoveQuestion.Name = "buttonRemoveQuestion";
+            this.buttonRemoveQuestion.Size = new System.Drawing.Size(24, 24);
+            this.buttonRemoveQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonRemoveQuestion.TabIndex = 5;
+            this.buttonRemoveQuestion.TabStop = false;
+            this.buttonRemoveQuestion.Visible = false;
+            this.buttonRemoveQuestion.Zoom = 10;
+            this.buttonRemoveQuestion.Click += new System.EventHandler(this.buttonRemoveQuestion_Click);
+            // 
+            // textBoxEditQuestion
+            // 
+            this.textBoxEditQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEditQuestion.BackColor = System.Drawing.Color.White;
+            this.textBoxEditQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxEditQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEditQuestion.Location = new System.Drawing.Point(9, 8);
+            this.textBoxEditQuestion.Name = "textBoxEditQuestion";
+            this.textBoxEditQuestion.Size = new System.Drawing.Size(617, 24);
+            this.textBoxEditQuestion.TabIndex = 6;
+            this.textBoxEditQuestion.Visible = false;
+            this.textBoxEditQuestion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEditQuestion_KeyPress);
+            // 
             // QuestionControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -164,10 +200,11 @@
             this.Size = new System.Drawing.Size(758, 107);
             this.bunifuCards2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveQuestion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +221,7 @@
         private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
         private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
+        private Bunifu.Framework.UI.BunifuImageButton buttonRemoveQuestion;
+        private System.Windows.Forms.TextBox textBoxEditQuestion;
     }
 }

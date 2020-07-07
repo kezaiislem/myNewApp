@@ -13,6 +13,7 @@ using MetroFramework.Controls;
 using PFE.Shared;
 using PFE.Model;
 using Newtonsoft.Json;
+using MetroFramework;
 
 namespace PFE.UserContol
 {
@@ -105,15 +106,30 @@ namespace PFE.UserContol
 
         private async void buttonHost_Click(object sender, EventArgs e)
         {
-            using (var form = new HostForm())
+            if (this.viewModel.survey.model.technology.technologyName == "" || this.viewModel.survey.model.technology.technologyField == null || this.viewModel.survey.model.technology.technologyName == null)
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
+                MetroMessageBox.Show(this, "\nYou need to fill technology informations first before passing to this step. To do that Go to project context tab", "Advertissement", MessageBoxButtons.OK);
+            }
+            else if (this.viewModel.survey.model.evaluationContext == "" || this.viewModel.survey.model.evaluationContext == null )
+            {
+                MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Advertissement", MessageBoxButtons.OK);
+            }
+            else
+            {
+                using (var form = new HostForm())
                 {
-                    String res = await RestHelper.hostSurvey(this.viewModel.survey);
-                    Survey survey = JsonConvert.DeserializeObject<Survey>(res);
-                    //this.viewModel.phase.survey = survey;
-                    //ProjectHandler.saveProject();
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        String res = await RestHelper.hostSurvey(this.viewModel.survey);
+                        Survey survey = JsonConvert.DeserializeObject<Survey>(res);
+                        if (survey != null)
+                        {
+                            this.viewModel.survey.host = survey.host;
+                            this.viewModel.survey.model.id = survey.model.id;
+                            ProjectHandler.saveProject();
+                        }
+                    }
                 }
             }
         }

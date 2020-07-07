@@ -30,7 +30,7 @@ namespace PFE.UserContol
         {
             foreach (Question question in viewModel.section.questions)
             {
-                QuestionControl questionControl = new QuestionControl(question);
+                QuestionControl questionControl = new QuestionControl(question, this.viewModel.section.questions);
                 questionControl.Dock = DockStyle.Top;
                 questionControl.AutoScaleMode = AutoScaleMode.None;
                 mainPanel.Controls.Add(questionControl);
@@ -54,7 +54,7 @@ namespace PFE.UserContol
 
         public void addQuestion(Question question)
         {
-            QuestionControl questionControl = new QuestionControl(question);
+            QuestionControl questionControl = new QuestionControl(question, this.viewModel.section.questions);
             questionControl.Dock = DockStyle.Top;
             questionControl.AutoScaleMode = AutoScaleMode.None;
             mainPanel.Controls.Add(questionControl);

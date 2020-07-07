@@ -26,7 +26,7 @@ namespace PFE
             labelObjective.Text = text;
             this.text = text;
             this.objectives = objectives;
-            this.index = index-1;
+            this.index = index - 1;
         }
 
         private void labelObjective_DoubleClick(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace PFE
             labelObjective.Visible = false;
             labelObjective.SendToBack();
             textBoxEditObjective.BringToFront();
+            buttonRemoveObjective.Visible = true;
         }
 
         private void textBoxEditObjective_KeyPress(object sender, KeyPressEventArgs e)
@@ -49,7 +50,14 @@ namespace PFE
                 textBoxEditObjective.SendToBack();
                 textBoxEditObjective.Text = "";
                 this.objectives[this.index] = this.text;
+                buttonRemoveObjective.Visible = false;
             }
+        }
+
+        private void buttonRemoveObjective_Click(object sender, EventArgs e)
+        {
+            objectives.RemoveAt(this.index);
+            this.Parent.Controls.Remove(this);
         }
     }
 }

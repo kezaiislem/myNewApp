@@ -36,11 +36,13 @@ namespace PFE.UserContol
 
             if (viewModel.project.objectives != null)
             {
+                int i = 1;
                 foreach (String input in viewModel.project.objectives)
                 {
-                    ObjectiveControl objective = new ObjectiveControl(input, viewModel.project.objectives, viewModel.project.objectives.Count());
+                    ObjectiveControl objective = new ObjectiveControl(input, viewModel.project.objectives, i);
                     objective.Dock = DockStyle.Top;
                     objectivesPanel.Controls.Add(objective);
+                    i++;
                 }
             }
 

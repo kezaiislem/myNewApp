@@ -32,12 +32,14 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRemoveObjective = new Bunifu.Framework.UI.BunifuImageButton();
             this.labelObjective = new MetroFramework.Controls.MetroLabel();
             this.textBoxEditObjective = new System.Windows.Forms.TextBox();
             this.objectiveCard.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveObjective)).BeginInit();
             this.SuspendLayout();
             // 
             // objectiveCard
@@ -69,6 +71,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(950, 50);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -88,6 +91,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonRemoveObjective);
             this.panel1.Controls.Add(this.labelObjective);
             this.panel1.Controls.Add(this.textBoxEditObjective);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -95,6 +99,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(894, 44);
             this.panel1.TabIndex = 1;
+            // 
+            // buttonRemoveObjective
+            // 
+            this.buttonRemoveObjective.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRemoveObjective.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemoveObjective.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveObjective.ImageActive = null;
+            this.buttonRemoveObjective.Location = new System.Drawing.Point(857, 10);
+            this.buttonRemoveObjective.Name = "buttonRemoveObjective";
+            this.buttonRemoveObjective.Size = new System.Drawing.Size(24, 24);
+            this.buttonRemoveObjective.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonRemoveObjective.TabIndex = 4;
+            this.buttonRemoveObjective.TabStop = false;
+            this.buttonRemoveObjective.Visible = false;
+            this.buttonRemoveObjective.Zoom = 10;
+            this.buttonRemoveObjective.Click += new System.EventHandler(this.buttonRemoveObjective_Click);
             // 
             // labelObjective
             // 
@@ -120,7 +140,7 @@
             this.textBoxEditObjective.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEditObjective.Location = new System.Drawing.Point(10, 10);
             this.textBoxEditObjective.Name = "textBoxEditObjective";
-            this.textBoxEditObjective.Size = new System.Drawing.Size(867, 24);
+            this.textBoxEditObjective.Size = new System.Drawing.Size(835, 24);
             this.textBoxEditObjective.TabIndex = 3;
             this.textBoxEditObjective.Visible = false;
             this.textBoxEditObjective.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxEditObjective_KeyPress);
@@ -136,6 +156,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveObjective)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +169,6 @@
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroLabel labelObjective;
         private System.Windows.Forms.TextBox textBoxEditObjective;
+        private Bunifu.Framework.UI.BunifuImageButton buttonRemoveObjective;
     }
 }
