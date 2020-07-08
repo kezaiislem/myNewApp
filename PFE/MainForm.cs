@@ -18,6 +18,7 @@ namespace PFE
         public MainFormViewModel viewModel { get; set; }
         private ProjectContext projectContextView { get; set; }
         private ModelInfo modelInfoView { get; set; }
+        private SurveysControl surveysControl { get; set; }
         private PhaseControl phaseView { get; set; }
 
         private UserControl currentView;
@@ -33,6 +34,7 @@ namespace PFE
         {
             panelModelSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
+            panelAnalisticsSubmenu.Visible = false;
         }
         
         private void InitializeViews()
@@ -46,6 +48,13 @@ namespace PFE
                 phase2Button.Enabled = false;
                 phase3Button.Enabled = false;
             }
+
+            this.surveysControl = new SurveysControl(this.viewModel.projet.model.id);
+            this.surveysControl.Visible = false;
+            this.surveysControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.surveysControl.AutoScaleMode = AutoScaleMode.None;
+            this.surveysControl.Name = "surveysView";
+            this.panelCurrentView.Controls.Add(this.surveysControl);
 
             // Page Project Context
             this.projectContextView = new ProjectContext();
@@ -185,12 +194,24 @@ namespace PFE
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            //openChildForm(new Form3());
+            showSubMenu(panelAnalisticsSubmenu);
             //..
             //your codes
             //..
+        }
+
+        #region AnalisticsSubMenu
+        private void buttonMySurveys_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            switchView(surveysControl);
+        }
+
+        private void buttonResults_Click(object sender, EventArgs e)
+        {
             hideSubMenu();
         }
+        #endregion
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -330,5 +351,6 @@ namespace PFE
             labelPageName.Text = "Phase 3";
             hideSubMenu();
         }
+
     }
 }

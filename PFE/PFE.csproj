@@ -174,6 +174,12 @@
     <Compile Include="UserContol\ModelInfo.Designer.cs">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\SurveyTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\SurveyTabControl.Designer.cs">
+      <DependentUpon>SurveyTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ObjectiveControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,12 @@
     <Compile Include="UserContol\PhaseControl.Designer.cs">
       <DependentUpon>PhaseControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\SurveysControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\SurveysControl.Designer.cs">
+      <DependentUpon>SurveysControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ProjectContext.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +261,8 @@
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
     <Compile Include="ViewModel\AddSectionFormViewModel.cs" />
+    <Compile Include="ViewModel\SurveysControlViewModel.cs" />
+    <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
@@ -291,11 +305,17 @@
     <EmbeddedResource Include="UserContol\ModelInfo.resx">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\SurveyTabControl.resx">
+      <DependentUpon>SurveyTabControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ObjectiveControl.resx">
       <DependentUpon>ObjectiveControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\PhaseControl.resx">
       <DependentUpon>PhaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\SurveysControl.resx">
+      <DependentUpon>SurveysControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ProjectContext.resx">
       <DependentUpon>ProjectContext.cs</DependentUpon>

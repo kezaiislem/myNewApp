@@ -38,7 +38,10 @@ namespace PFE
             this.panelToolsSubMenu = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
-            this.btnResults = new System.Windows.Forms.Button();
+            this.panelAnalisticsSubmenu = new System.Windows.Forms.Panel();
+            this.buttonResults = new System.Windows.Forms.Button();
+            this.buttonMySurveys = new System.Windows.Forms.Button();
+            this.btnAnalistics = new System.Windows.Forms.Button();
             this.panelModelSubMenu = new System.Windows.Forms.Panel();
             this.phase3Button = new System.Windows.Forms.Button();
             this.phase2Button = new System.Windows.Forms.Button();
@@ -55,6 +58,7 @@ namespace PFE
             this.panelCurrentView = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
             this.panelToolsSubMenu.SuspendLayout();
+            this.panelAnalisticsSubmenu.SuspendLayout();
             this.panelModelSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,7 +74,8 @@ namespace PFE
             this.panelSideMenu.Controls.Add(this.btnHelp);
             this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
             this.panelSideMenu.Controls.Add(this.btnTools);
-            this.panelSideMenu.Controls.Add(this.btnResults);
+            this.panelSideMenu.Controls.Add(this.panelAnalisticsSubmenu);
+            this.panelSideMenu.Controls.Add(this.btnAnalistics);
             this.panelSideMenu.Controls.Add(this.panelModelSubMenu);
             this.panelSideMenu.Controls.Add(this.btnModel);
             this.panelSideMenu.Controls.Add(this.ButtonProjectPlan);
@@ -93,10 +98,10 @@ namespace PFE
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
             this.buttonAbout.Image = global::PFE.Properties.Resources.about;
             this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAbout.Location = new System.Drawing.Point(0, 544);
+            this.buttonAbout.Location = new System.Drawing.Point(0, 624);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonAbout.Size = new System.Drawing.Size(200, 45);
+            this.buttonAbout.Size = new System.Drawing.Size(183, 45);
             this.buttonAbout.TabIndex = 10;
             this.buttonAbout.Text = "  About";
             this.buttonAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,10 +119,10 @@ namespace PFE
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::PFE.Properties.Resources.logout;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 636);
+            this.btnExit.Location = new System.Drawing.Point(0, 669);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(200, 45);
+            this.btnExit.Size = new System.Drawing.Size(183, 45);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "  Exit";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,10 +141,10 @@ namespace PFE
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::PFE.Properties.Resources.help;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 499);
+            this.btnHelp.Location = new System.Drawing.Point(0, 579);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnHelp.Size = new System.Drawing.Size(200, 45);
+            this.btnHelp.Size = new System.Drawing.Size(183, 45);
             this.btnHelp.TabIndex = 8;
             this.btnHelp.Text = "  Help";
             this.btnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,9 +157,9 @@ namespace PFE
             this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.panelToolsSubMenu.Controls.Add(this.button13);
             this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 459);
+            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 539);
             this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(200, 40);
+            this.panelToolsSubMenu.Size = new System.Drawing.Size(183, 40);
             this.panelToolsSubMenu.TabIndex = 7;
             // 
             // button13
@@ -169,7 +174,7 @@ namespace PFE
             this.button13.Location = new System.Drawing.Point(0, 0);
             this.button13.Name = "button13";
             this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(200, 40);
+            this.button13.Size = new System.Drawing.Size(183, 40);
             this.button13.TabIndex = 0;
             this.button13.Text = "Media converter";
             this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,10 +192,10 @@ namespace PFE
             this.btnTools.ForeColor = System.Drawing.Color.White;
             this.btnTools.Image = global::PFE.Properties.Resources.stamp;
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTools.Location = new System.Drawing.Point(0, 414);
+            this.btnTools.Location = new System.Drawing.Point(0, 494);
             this.btnTools.Name = "btnTools";
             this.btnTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnTools.Size = new System.Drawing.Size(200, 45);
+            this.btnTools.Size = new System.Drawing.Size(183, 45);
             this.btnTools.TabIndex = 6;
             this.btnTools.Text = "  Validation";
             this.btnTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,27 +203,77 @@ namespace PFE
             this.btnTools.UseVisualStyleBackColor = false;
             this.btnTools.Click += new System.EventHandler(this.btnTools_Click);
             // 
-            // btnResults
+            // panelAnalisticsSubmenu
             // 
-            this.btnResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.btnResults.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnResults.FlatAppearance.BorderSize = 0;
-            this.btnResults.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.btnResults.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.btnResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResults.ForeColor = System.Drawing.Color.White;
-            this.btnResults.Image = global::PFE.Properties.Resources.result;
-            this.btnResults.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResults.Location = new System.Drawing.Point(0, 369);
-            this.btnResults.Name = "btnResults";
-            this.btnResults.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnResults.Size = new System.Drawing.Size(200, 45);
-            this.btnResults.TabIndex = 5;
-            this.btnResults.Text = "  Results";
-            this.btnResults.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnResults.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnResults.UseVisualStyleBackColor = false;
-            this.btnResults.Click += new System.EventHandler(this.btnEqualizer_Click);
+            this.panelAnalisticsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.panelAnalisticsSubmenu.Controls.Add(this.buttonResults);
+            this.panelAnalisticsSubmenu.Controls.Add(this.buttonMySurveys);
+            this.panelAnalisticsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAnalisticsSubmenu.Location = new System.Drawing.Point(0, 414);
+            this.panelAnalisticsSubmenu.Name = "panelAnalisticsSubmenu";
+            this.panelAnalisticsSubmenu.Size = new System.Drawing.Size(183, 80);
+            this.panelAnalisticsSubmenu.TabIndex = 11;
+            this.panelAnalisticsSubmenu.Visible = false;
+            // 
+            // buttonResults
+            // 
+            this.buttonResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.buttonResults.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonResults.FlatAppearance.BorderSize = 0;
+            this.buttonResults.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonResults.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonResults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResults.ForeColor = System.Drawing.Color.White;
+            this.buttonResults.Location = new System.Drawing.Point(0, 40);
+            this.buttonResults.Name = "buttonResults";
+            this.buttonResults.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonResults.Size = new System.Drawing.Size(183, 40);
+            this.buttonResults.TabIndex = 1;
+            this.buttonResults.Text = "Results";
+            this.buttonResults.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonResults.UseVisualStyleBackColor = false;
+            this.buttonResults.Click += new System.EventHandler(this.buttonResults_Click);
+            // 
+            // buttonMySurveys
+            // 
+            this.buttonMySurveys.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
+            this.buttonMySurveys.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMySurveys.FlatAppearance.BorderSize = 0;
+            this.buttonMySurveys.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonMySurveys.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
+            this.buttonMySurveys.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMySurveys.ForeColor = System.Drawing.Color.White;
+            this.buttonMySurveys.Location = new System.Drawing.Point(0, 0);
+            this.buttonMySurveys.Name = "buttonMySurveys";
+            this.buttonMySurveys.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonMySurveys.Size = new System.Drawing.Size(183, 40);
+            this.buttonMySurveys.TabIndex = 0;
+            this.buttonMySurveys.Text = "My Surveys";
+            this.buttonMySurveys.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMySurveys.UseVisualStyleBackColor = false;
+            this.buttonMySurveys.Click += new System.EventHandler(this.buttonMySurveys_Click);
+            // 
+            // btnAnalistics
+            // 
+            this.btnAnalistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.btnAnalistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAnalistics.FlatAppearance.BorderSize = 0;
+            this.btnAnalistics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.btnAnalistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.btnAnalistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnalistics.ForeColor = System.Drawing.Color.White;
+            this.btnAnalistics.Image = global::PFE.Properties.Resources.result;
+            this.btnAnalistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalistics.Location = new System.Drawing.Point(0, 369);
+            this.btnAnalistics.Name = "btnAnalistics";
+            this.btnAnalistics.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnAnalistics.Size = new System.Drawing.Size(183, 45);
+            this.btnAnalistics.TabIndex = 5;
+            this.btnAnalistics.Text = "  Analistics";
+            this.btnAnalistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAnalistics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAnalistics.UseVisualStyleBackColor = false;
+            this.btnAnalistics.Click += new System.EventHandler(this.btnEqualizer_Click);
             // 
             // panelModelSubMenu
             // 
@@ -230,7 +285,7 @@ namespace PFE
             this.panelModelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelModelSubMenu.Location = new System.Drawing.Point(0, 209);
             this.panelModelSubMenu.Name = "panelModelSubMenu";
-            this.panelModelSubMenu.Size = new System.Drawing.Size(200, 160);
+            this.panelModelSubMenu.Size = new System.Drawing.Size(183, 160);
             this.panelModelSubMenu.TabIndex = 4;
             // 
             // phase3Button
@@ -245,7 +300,7 @@ namespace PFE
             this.phase3Button.Location = new System.Drawing.Point(0, 120);
             this.phase3Button.Name = "phase3Button";
             this.phase3Button.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.phase3Button.Size = new System.Drawing.Size(200, 40);
+            this.phase3Button.Size = new System.Drawing.Size(183, 40);
             this.phase3Button.TabIndex = 3;
             this.phase3Button.Text = "Phase 3";
             this.phase3Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -264,7 +319,7 @@ namespace PFE
             this.phase2Button.Location = new System.Drawing.Point(0, 80);
             this.phase2Button.Name = "phase2Button";
             this.phase2Button.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.phase2Button.Size = new System.Drawing.Size(200, 40);
+            this.phase2Button.Size = new System.Drawing.Size(183, 40);
             this.phase2Button.TabIndex = 2;
             this.phase2Button.Text = "Phase 2";
             this.phase2Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -283,7 +338,7 @@ namespace PFE
             this.phase1Button.Location = new System.Drawing.Point(0, 40);
             this.phase1Button.Name = "phase1Button";
             this.phase1Button.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.phase1Button.Size = new System.Drawing.Size(200, 40);
+            this.phase1Button.Size = new System.Drawing.Size(183, 40);
             this.phase1Button.TabIndex = 1;
             this.phase1Button.Text = "Phase 1";
             this.phase1Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,7 +357,7 @@ namespace PFE
             this.modelInfoButton.Location = new System.Drawing.Point(0, 0);
             this.modelInfoButton.Name = "modelInfoButton";
             this.modelInfoButton.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.modelInfoButton.Size = new System.Drawing.Size(200, 40);
+            this.modelInfoButton.Size = new System.Drawing.Size(183, 40);
             this.modelInfoButton.TabIndex = 0;
             this.modelInfoButton.Text = "Model Infos";
             this.modelInfoButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,7 +378,7 @@ namespace PFE
             this.btnModel.Location = new System.Drawing.Point(0, 164);
             this.btnModel.Name = "btnModel";
             this.btnModel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnModel.Size = new System.Drawing.Size(200, 45);
+            this.btnModel.Size = new System.Drawing.Size(183, 45);
             this.btnModel.TabIndex = 3;
             this.btnModel.Text = "  Model";
             this.btnModel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,7 +400,7 @@ namespace PFE
             this.ButtonProjectPlan.Location = new System.Drawing.Point(0, 119);
             this.ButtonProjectPlan.Name = "ButtonProjectPlan";
             this.ButtonProjectPlan.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.ButtonProjectPlan.Size = new System.Drawing.Size(200, 45);
+            this.ButtonProjectPlan.Size = new System.Drawing.Size(183, 45);
             this.ButtonProjectPlan.TabIndex = 2;
             this.ButtonProjectPlan.Text = "  Project Plan";
             this.ButtonProjectPlan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,7 +421,7 @@ namespace PFE
             this.buttonProjectContext.Location = new System.Drawing.Point(0, 74);
             this.buttonProjectContext.Name = "buttonProjectContext";
             this.buttonProjectContext.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonProjectContext.Size = new System.Drawing.Size(200, 45);
+            this.buttonProjectContext.Size = new System.Drawing.Size(183, 45);
             this.buttonProjectContext.TabIndex = 1;
             this.buttonProjectContext.Text = "  Project Context";
             this.buttonProjectContext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -381,7 +436,7 @@ namespace PFE
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 74);
+            this.panelLogo.Size = new System.Drawing.Size(183, 74);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
@@ -473,6 +528,7 @@ namespace PFE
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
             this.panelToolsSubMenu.ResumeLayout(false);
+            this.panelAnalisticsSubmenu.ResumeLayout(false);
             this.panelModelSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -490,7 +546,7 @@ namespace PFE
         private System.Windows.Forms.Panel panelToolsSubMenu;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnTools;
-        private System.Windows.Forms.Button btnResults;
+        private System.Windows.Forms.Button btnAnalistics;
         private System.Windows.Forms.Panel panelModelSubMenu;
         private System.Windows.Forms.Button phase3Button;
         private System.Windows.Forms.Button phase2Button;
@@ -506,5 +562,8 @@ namespace PFE
         private XanderUI.XUISuperButton saveButton;
         private System.Windows.Forms.Button ButtonProjectPlan;
         private System.Windows.Forms.Button buttonAbout;
+        private System.Windows.Forms.Panel panelAnalisticsSubmenu;
+        private System.Windows.Forms.Button buttonResults;
+        private System.Windows.Forms.Button buttonMySurveys;
     }
 }
