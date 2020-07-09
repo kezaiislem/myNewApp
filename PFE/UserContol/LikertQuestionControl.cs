@@ -11,20 +11,21 @@ using PFE.Model;
 
 namespace PFE.UserContol
 {
-    public partial class QuestionControl : UserControl
+    public partial class LikertQuestionControl : UserControl
     {
 
         Question question;
 
         List<Question> questions;
 
-        public QuestionControl(Question question, List<Question> questions)
+        public LikertQuestionControl(Question question, List<Question> questions)
         {
             InitializeComponent();
             this.question = question;
             this.questions = questions;
             this.labelQuestion.Text = question.text;
             textBoxEditQuestion.Text = question.text;
+            Console.WriteLine(question.choices);
         }
 
         private void buttonRemoveQuestion_Click(object sender, EventArgs e)

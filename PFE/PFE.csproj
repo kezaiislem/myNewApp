@@ -168,6 +168,18 @@
     <Compile Include="UserContol\HostForm.Designer.cs">
       <DependentUpon>HostForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\CheckBoxQuestionContol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\CheckBoxQuestionContol.Designer.cs">
+      <DependentUpon>CheckBoxQuestionContol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\RadioQuestionContol.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\RadioQuestionContol.Designer.cs">
+      <DependentUpon>RadioQuestionContol.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ModelInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,11 +243,11 @@
     <Compile Include="UserContol\ProjectContext.Designer.cs">
       <DependentUpon>ProjectContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\QuestionControl.cs">
+    <Compile Include="UserContol\LikertQuestionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\QuestionControl.Designer.cs">
-      <DependentUpon>QuestionControl.cs</DependentUpon>
+    <Compile Include="UserContol\LikertQuestionControl.Designer.cs">
+      <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\SectionControl.cs">
       <SubType>UserControl</SubType>
@@ -302,6 +314,12 @@
     <EmbeddedResource Include="UserContol\HostForm.resx">
       <DependentUpon>HostForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\CheckBoxQuestionContol.resx">
+      <DependentUpon>CheckBoxQuestionContol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\RadioQuestionContol.resx">
+      <DependentUpon>RadioQuestionContol.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ModelInfo.resx">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,8 +338,8 @@
     <EmbeddedResource Include="UserContol\ProjectContext.resx">
       <DependentUpon>ProjectContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\QuestionControl.resx">
-      <DependentUpon>QuestionControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserContol\LikertQuestionControl.resx">
+      <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\SectionControl.resx">
       <DependentUpon>SectionControl.cs</DependentUpon>
@@ -493,6 +511,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\no-wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
