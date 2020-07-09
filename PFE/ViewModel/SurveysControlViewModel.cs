@@ -21,6 +21,12 @@ namespace PFE.ViewModel
             Task.Run(async () => await getSurveys());
         }
 
+        public void refresh()
+        {
+            surveys = null;
+            Task.Run(async () => await getSurveys());
+        }
+
         private async Task getSurveys()
         {
             try

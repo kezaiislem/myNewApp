@@ -482,5 +482,17 @@
   <ItemGroup>
     <None Include="Resources\AppLogo1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-10-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\www.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-wifi.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

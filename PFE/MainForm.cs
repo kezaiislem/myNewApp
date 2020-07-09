@@ -77,14 +77,6 @@ namespace PFE
             this.panelCurrentView.Controls.Add(this.modelInfoView);
 
             this.UpdatePhaseButtons();
-
-            // Page Phase
-            /*this.phaseView = new PhaseControl(this.viewModel.projet.model.phases.ElementAt<Phase>(0));
-            this.phaseView.Visible = false;
-            this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.phaseView.AutoScaleMode = AutoScaleMode.None;
-            this.phaseView.Name = "projectContextView";
-            this.panelCurrentView.Controls.Add(this.phaseView);*/
         }
 
         private void showSubMenu(Panel subMenu)

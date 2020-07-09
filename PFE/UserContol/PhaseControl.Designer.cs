@@ -30,12 +30,12 @@
         {
             this.panelSections = new Bunifu.Framework.UI.BunifuCards();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonAddSection = new Guna.UI.WinForms.GunaCircleButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSectionContent = new System.Windows.Forms.Panel();
             this.buttonShare = new XanderUI.XUIButton();
             this.buttonHost = new XanderUI.XUIButton();
-            this.buttonAddSection = new Guna.UI.WinForms.GunaCircleButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,30 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(211, 50);
             this.panel2.TabIndex = 7;
+            // 
+            // buttonAddSection
+            // 
+            this.buttonAddSection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddSection.AnimationHoverSpeed = 0.07F;
+            this.buttonAddSection.AnimationSpeed = 0.03F;
+            this.buttonAddSection.BaseColor = System.Drawing.Color.Transparent;
+            this.buttonAddSection.BorderColor = System.Drawing.Color.Black;
+            this.buttonAddSection.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonAddSection.FocusedColor = System.Drawing.Color.Empty;
+            this.buttonAddSection.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonAddSection.ForeColor = System.Drawing.Color.White;
+            this.buttonAddSection.Image = global::PFE.Properties.Resources.add_plus;
+            this.buttonAddSection.ImageSize = new System.Drawing.Size(24, 24);
+            this.buttonAddSection.Location = new System.Drawing.Point(166, 10);
+            this.buttonAddSection.Name = "buttonAddSection";
+            this.buttonAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.buttonAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.buttonAddSection.OnHoverForeColor = System.Drawing.Color.White;
+            this.buttonAddSection.OnHoverImage = null;
+            this.buttonAddSection.OnPressedColor = System.Drawing.Color.Black;
+            this.buttonAddSection.Size = new System.Drawing.Size(30, 30);
+            this.buttonAddSection.TabIndex = 3;
+            this.buttonAddSection.Click += new System.EventHandler(this.buttonAddSection_Click);
             // 
             // metroButton1
             // 
@@ -145,30 +169,6 @@
             this.buttonHost.TextColor = System.Drawing.Color.White;
             this.buttonHost.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.buttonHost.Click += new System.EventHandler(this.buttonHost_Click);
-            // 
-            // buttonAddSection
-            // 
-            this.buttonAddSection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddSection.AnimationHoverSpeed = 0.07F;
-            this.buttonAddSection.AnimationSpeed = 0.03F;
-            this.buttonAddSection.BaseColor = System.Drawing.Color.Transparent;
-            this.buttonAddSection.BorderColor = System.Drawing.Color.Black;
-            this.buttonAddSection.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonAddSection.FocusedColor = System.Drawing.Color.Empty;
-            this.buttonAddSection.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonAddSection.ForeColor = System.Drawing.Color.White;
-            this.buttonAddSection.Image = global::PFE.Properties.Resources.add_plus;
-            this.buttonAddSection.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAddSection.Location = new System.Drawing.Point(166, 10);
-            this.buttonAddSection.Name = "buttonAddSection";
-            this.buttonAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.buttonAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.buttonAddSection.OnHoverForeColor = System.Drawing.Color.White;
-            this.buttonAddSection.OnHoverImage = null;
-            this.buttonAddSection.OnPressedColor = System.Drawing.Color.Black;
-            this.buttonAddSection.Size = new System.Drawing.Size(30, 30);
-            this.buttonAddSection.TabIndex = 3;
-            this.buttonAddSection.Click += new System.EventHandler(this.buttonAddSection_Click);
             // 
             // PhaseControl
             // 

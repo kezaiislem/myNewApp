@@ -121,6 +121,10 @@ namespace PFE.UserContol
                             this.viewModel.survey.model.id = survey.model.id;
                             ProjectHandler.saveProject();
                         }
+                        else
+                        {
+                            MessageBox.Show("This survey is already hosted. You need to delete the host from MySurveys tab in order to host it again.");
+                        }
                     }
                 }
             }

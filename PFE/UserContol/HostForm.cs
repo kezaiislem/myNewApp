@@ -29,11 +29,12 @@ namespace PFE.UserContol
             if (checkBoxTerms.Checked)
             {
                 DateTime closeDate = datePickerClose.Value;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                MessageBox.Show("You must check the option ' I accept sharing my questions ' in order to host your survey", "Advertissement", MessageBoxButtons.OK);
             }
         }
     }

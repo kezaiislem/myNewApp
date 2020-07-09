@@ -32,13 +32,14 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelSurveyTable = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.panelSurveyTableContent = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelSurveyTable.SuspendLayout();
@@ -89,6 +90,7 @@
             // panelSurveyTable
             // 
             this.panelSurveyTable.BorderColor = System.Drawing.Color.Transparent;
+            this.panelSurveyTable.Controls.Add(this.panelSurveyTableContent);
             this.panelSurveyTable.Controls.Add(this.bunifuSeparator1);
             this.panelSurveyTable.Controls.Add(this.panel1);
             this.panelSurveyTable.Location = new System.Drawing.Point(43, 92);
@@ -100,6 +102,21 @@
             this.panelSurveyTable.Size = new System.Drawing.Size(922, 393);
             this.panelSurveyTable.TabIndex = 8;
             // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(8, 58);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(906, 5);
+            this.bunifuSeparator1.TabIndex = 11;
+            this.bunifuSeparator1.Transparency = 128;
+            this.bunifuSeparator1.Vertical = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tableLayoutPanel1);
@@ -108,6 +125,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(906, 50);
             this.panel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 50);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.metroLabel4.Location = new System.Drawing.Point(693, 15);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(52, 19);
+            this.metroLabel4.TabIndex = 3;
+            this.metroLabel4.Text = "Action";
+            this.metroLabel4.UseCustomForeColor = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.metroLabel3.Location = new System.Drawing.Point(467, 15);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(49, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Status";
+            this.metroLabel3.UseCustomForeColor = true;
             // 
             // metroLabel1
             // 
@@ -137,67 +201,13 @@
             this.metroLabel2.Text = "Start Date";
             this.metroLabel2.UseCustomForeColor = true;
             // 
-            // metroLabel3
+            // panelSurveyTableContent
             // 
-            this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.metroLabel3.Location = new System.Drawing.Point(467, 15);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(49, 19);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Status";
-            this.metroLabel3.UseCustomForeColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(906, 50);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(8, 58);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(906, 5);
-            this.bunifuSeparator1.TabIndex = 11;
-            this.bunifuSeparator1.Transparency = 128;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.metroLabel4.Location = new System.Drawing.Point(693, 15);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(52, 19);
-            this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Action";
-            this.metroLabel4.UseCustomForeColor = true;
+            this.panelSurveyTableContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSurveyTableContent.Location = new System.Drawing.Point(8, 63);
+            this.panelSurveyTableContent.Name = "panelSurveyTableContent";
+            this.panelSurveyTableContent.Size = new System.Drawing.Size(906, 322);
+            this.panelSurveyTableContent.TabIndex = 12;
             // 
             // SurveysControl
             // 
@@ -205,6 +215,7 @@
             this.Controls.Add(this.bunifuCards1);
             this.Name = "SurveysControl";
             this.Size = new System.Drawing.Size(1064, 607);
+            this.VisibleChanged += new System.EventHandler(this.SurveysControl_VisibleChanged);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.bunifuCards1.ResumeLayout(false);
@@ -229,6 +240,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private System.Windows.Forms.Panel panelSurveyTableContent;
     }
 }
 

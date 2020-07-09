@@ -186,5 +186,45 @@ namespace PFE.Shared
             }
             return String.Empty;
         }
+
+        public static async Task<String> deleteSurvey(int id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.DeleteAsync(BaseUrl + "deleteSurvey/" + id))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
+
+        public static async Task<String> switchStatus(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.PutAsync(BaseUrl + "switchStatus/" + id, null))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
     }
 }

@@ -28,20 +28,29 @@ namespace PFE.UserContol
 
         private void loadSurveys()
         {
-            while(viewModel.surveys == null)
-            {
+            while(viewModel.surveys == null) { }
 
-            }
             foreach (Survey s in viewModel.surveys)
             {
                 SurveyTabControl surveyTab = new SurveyTabControl(s);
-                this.panelSurveyTable.SuspendLayout();
+                this.panelSurveyTableContent.SuspendLayout();
                 surveyTab.Dock = DockStyle.Top;
                 surveyTab.Height = 55;
                 surveyTab.Visible = true;
-                this.panelSurveyTable.Controls.Add(surveyTab);
-                this.panelSurveyTable.Controls.SetChildIndex(surveyTab, 0);
-                this.panelSurveyTable.ResumeLayout(false);
+                this.panelSurveyTableContent.Controls.Add(surveyTab);
+                this.panelSurveyTableContent.Controls.SetChildIndex(surveyTab, 0);
+                this.panelSurveyTableContent.ResumeLayout(false);
+            }
+        }
+
+        private void SurveysControl_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                this.panelSurveyTableContent.Controls.Clear();
+                this.viewModel.refresh();
+                while (viewModel.surveys == null) { }
+                this.loadSurveys();
             }
         }
     }
