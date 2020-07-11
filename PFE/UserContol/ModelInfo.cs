@@ -19,22 +19,78 @@ namespace PFE.UserContol
 
         public ModelInfo(PFE.Model.Model model, MainForm main)
         {
+            Console.WriteLine("Model " + model);
             InitializeComponent();
-            viewModel = new ModelInfoViewModel(model, main);
-            InializeView();
+            Init(model, main);
         }
 
-        public void InializeView()
+        public void Init(PFE.Model.Model model, MainForm main)
         {
+            viewModel = new ModelInfoViewModel(model, main);
+            loadExistingSurveys();
             metroCheckBoxPhase1.DataBindings.Add("Checked", viewModel, "hasPhase1", true, DataSourceUpdateMode.OnPropertyChanged);
             metroCheckBoxPhase2.DataBindings.Add("Checked", viewModel, "hasPhase2", true, DataSourceUpdateMode.OnPropertyChanged);
             metroCheckBoxPhase3.DataBindings.Add("Checked", viewModel, "hasPhase3", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxEvaluationContext.DataBindings.Add("Text", viewModel.model, "evaluationContext", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
+        private void loadExistingSurveys()
+        {
+            this.viewModel.model.surveys = viewModel.model.surveys.OrderByDescending(q => q.phaseNumber).ToList<Survey>();
+            foreach (Survey survey in this.viewModel.model.surveys)
+            {
+                survey.model = this.viewModel.model;
+                this.addSurvey(survey);
+            }
+        }
+
         private void metroButtonSaveModel_Click(object sender, EventArgs e)
         {
             viewModel.updatePhases();
+        }
+
+        private void buttonAddPhase_Click(object sender, EventArgs e)
+        {
+            if(this.viewModel.aviabePhases.Count() > 0)
+            {
+                using (var form = new AddSurveyForm(this.viewModel.aviabePhases))
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        Survey survey = new Survey
+                        {
+                            phaseNumber = form.viewModel.SelectedPhase,
+                            title = form.viewModel.Title,
+                            description = form.viewModel.Description,
+                            model = this.viewModel.model,
+                            sections = new List<Section>()
+                        };
+                        this.addSurvey(survey);
+                        this.viewModel.model.surveys.Add(survey);
+                    }
+                }
+            }
+        }
+
+        private void addSurvey(Survey survey)
+        {
+            ModelSurveyControl modelSurveyControl = new ModelSurveyControl(survey, this.viewModel.model.surveys);
+            modelSurveyControl.AutoScaleMode = AutoScaleMode.None;
+            modelSurveyControl.Dock = DockStyle.Left;
+            panelPhasesContainer.Controls.Add(modelSurveyControl);
+            switch (survey.phaseNumber)
+            {
+                case 1:
+                    panelPhasesContainer.Controls.SetChildIndex(modelSurveyControl, 2);
+                    break;
+                case 2:
+                    panelPhasesContainer.Controls.SetChildIndex(modelSurveyControl, 1);
+                    break;
+                case 3:
+                    panelPhasesContainer.Controls.SetChildIndex(modelSurveyControl, 0);
+                    break;
+            }
         }
     }
 }

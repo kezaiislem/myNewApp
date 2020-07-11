@@ -24,9 +24,9 @@ namespace PFE.UserContol
 
         SectionControl activeSection;
 
-        public PhaseControl(Survey survey, Model.Model model)
+        public PhaseControl(Survey survey)
         {
-            viewModel = new PhaseControlViewModel(survey, model);
+            viewModel = new PhaseControlViewModel(survey);
             InitializeComponent();
             if( viewModel.survey == null)
             {
@@ -143,6 +143,11 @@ namespace PFE.UserContol
                 return false;
             }
             return true;
+        }
+
+        private void buttonShare_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

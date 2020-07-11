@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class PhaseControlViewModel
+    public class ModelSurveyControlViewModel
     {
         public Survey survey { get; set; }
+        public List<Survey> surveys { get; set; }
 
-        public PhaseControlViewModel(Survey survey)
+        public ModelSurveyControlViewModel(Survey survey, List<Survey> surveys)
         {
+            this.surveys = surveys;
             this.survey = survey;
         }
     }

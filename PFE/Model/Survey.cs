@@ -10,6 +10,8 @@ namespace PFE.Model
     public class Survey
     {
         public int id { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
         public int phaseNumber { get; set; }
         public List<Section> sections  { get; set; }
         public List<Answer> answers { get; set; }

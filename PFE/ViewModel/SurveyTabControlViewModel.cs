@@ -17,9 +17,11 @@ namespace PFE.ViewModel
         public int phaseNumber { get; set; }
         public string strDate { get; set; }
         public string status { get; set; }
+        public Survey survey { get; set; }
 
         public SurveyTabControlViewModel(Survey survey)
         {
+            this.survey = survey;
             this.surveyId = survey.id;
             this.phaseNumber = survey.phaseNumber;
             this.strDate = "12/12/2020";

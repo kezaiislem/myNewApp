@@ -146,6 +146,7 @@
             this.buttonShare.TabIndex = 10;
             this.buttonShare.TextColor = System.Drawing.Color.White;
             this.buttonShare.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonShare.Click += new System.EventHandler(this.buttonShare_Click);
             // 
             // buttonHost
             // 

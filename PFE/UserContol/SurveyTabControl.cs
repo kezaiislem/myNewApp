@@ -46,6 +46,7 @@ namespace PFE
             String result = await RestHelper.deleteSurvey(this.viewModel.surveyId);
             if(string.IsNullOrWhiteSpace(result))
             {
+                this.viewModel.survey.host = null;
                 MessageBox.Show("Survey Removed Successfuly", "Success");
             } 
             else

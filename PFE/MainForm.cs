@@ -290,7 +290,7 @@ namespace PFE
             {
                 if (phase.phaseNumber == 1)
                 {
-                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
+                    this.phaseView = new PhaseControl(phase);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;
@@ -310,7 +310,7 @@ namespace PFE
             {
                 if (phase.phaseNumber == 2)
                 {
-                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
+                    this.phaseView = new PhaseControl(phase);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;
@@ -330,7 +330,7 @@ namespace PFE
             {
                 if (phase.phaseNumber == 3)
                 {
-                    this.phaseView = new PhaseControl(phase, this.viewModel.projet.model);
+                    this.phaseView = new PhaseControl(phase);
                     this.phaseView.Visible = false;
                     this.phaseView.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.phaseView.AutoScaleMode = AutoScaleMode.None;

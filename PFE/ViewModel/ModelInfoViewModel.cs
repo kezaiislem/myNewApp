@@ -17,9 +17,11 @@ namespace PFE.ViewModel
         public Boolean hasPhase1 { get; set; } = false;
         public Boolean hasPhase2 { get; set; } = false;
         public Boolean hasPhase3 { get; set; } = false;
+        public List<int> aviabePhases { get; set; } = new List<int> { 1, 2, 3 };
 
         public ModelInfoViewModel(PFE.Model.Model model, MainForm mainForm)
         {
+
             this.model = model;
             if(this.model.surveys == null)
             {
@@ -33,12 +35,15 @@ namespace PFE.ViewModel
                     {
                         case 1 :
                             hasPhase1 = true;
+                            aviabePhases.Remove(1);
                             break;
                         case 2:
                             hasPhase2 = true;
+                            aviabePhases.Remove(2);
                             break;
                         case 3:
                             hasPhase3 = true;
+                            aviabePhases.Remove(3);
                             break;
                     }
                 }
