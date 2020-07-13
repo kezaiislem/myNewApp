@@ -175,6 +175,7 @@
     <Compile Include="CustomObjects\CustomHostObject.cs" />
     <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
     <Compile Include="CustomObjects\QuestionType.cs" />
+    <Compile Include="CustomObjects\MailingRequest.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
     <Compile Include="model\Technology.cs" />
@@ -190,6 +191,12 @@
     </Compile>
     <Compile Include="UserContol\AddQuestionForm.Designer.cs">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\AddMailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\AddMailForm.Designer.cs">
+      <DependentUpon>AddMailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\HostSuccessForm.cs">
       <SubType>Form</SubType>
@@ -362,6 +369,9 @@
     </Compile>
     <EmbeddedResource Include="UserContol\AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\AddMailForm.resx">
+      <DependentUpon>AddMailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\HostSuccessForm.resx">
       <DependentUpon>HostSuccessForm.cs</DependentUpon>

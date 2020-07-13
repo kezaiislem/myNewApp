@@ -226,5 +226,30 @@ namespace PFE.Shared
             }
             return String.Empty;
         }
+
+        public static async Task<String> shareSurvey(string id, MailingRequest request)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var myContent = JsonConvert.SerializeObject(request);
+                var buffer = Encoding.UTF8.GetBytes(myContent);
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage resonse = await client.PutAsync(BaseUrl + "share/" + id, byteContent))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
     }
 }
