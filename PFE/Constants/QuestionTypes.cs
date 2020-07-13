@@ -27,6 +27,15 @@ namespace PFE.Constants
             return questionTypes;
         }
 
+        public static List<QuestionType> evaluationTypes()
+        {
+            List<QuestionType> questionTypes = new List<QuestionType>();
+            questionTypes.Add(new QuestionType(QuestionTypes.LIKERT_3));
+            questionTypes.Add(new QuestionType(QuestionTypes.LIKERT_5));
+            questionTypes.Add(new QuestionType(QuestionTypes.LIKERT_7));
+            return questionTypes;
+        }
+
         public static String getStringValue(int TYPE)
         {
             switch (TYPE)

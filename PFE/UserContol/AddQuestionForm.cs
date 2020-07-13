@@ -19,15 +19,15 @@ namespace PFE.UserContol
 
         public AddQuestionFormViewModel viewModel { get; set; }
 
-        public AddQuestionForm()
+        public AddQuestionForm(Boolean hasFactor)
         {
             InitializeComponent();
-            InitializeView();
+            InitializeView(hasFactor);
         }
 
-        private void InitializeView()
+        private void InitializeView(Boolean hasFactor)
         {
-            viewModel = new AddQuestionFormViewModel();
+            viewModel = new AddQuestionFormViewModel(hasFactor);
             textBoxText.DataBindings.Add("Text", viewModel.question, "text", true, DataSourceUpdateMode.OnPropertyChanged);
             comboBoxType.DataSource = viewModel.questionCombos;
             comboBoxType.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);

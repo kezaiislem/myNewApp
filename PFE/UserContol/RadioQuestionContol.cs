@@ -23,7 +23,7 @@ namespace PFE.UserContol
         List<Question> questions;
 
         private int radio_default_x = 30;
-        private int radio_default_y = 15;
+        private int radio_default_y = 5;
         private int distance = 25;
         private int choices_count = 0;
 

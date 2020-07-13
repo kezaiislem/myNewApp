@@ -75,8 +75,6 @@ namespace PFE
             this.modelInfoView.AutoScaleMode = AutoScaleMode.None;
             this.modelInfoView.Name = "projectContextView";
             this.panelCurrentView.Controls.Add(this.modelInfoView);
-
-            this.UpdatePhaseButtons();
         }
 
         private void showSubMenu(Panel subMenu)
@@ -133,15 +131,16 @@ namespace PFE
 
         private void btnPlaylist_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelModelSubMenu);
+            switchView(modelInfoView);
+            labelPageName.Text = "Model Info";
+            hideSubMenu();
+            //showSubMenu(panelModelSubMenu);
         }
 
         #region PlayListManagemetSubMenu
         private void button8_Click(object sender, EventArgs e)
         {
-            switchView(modelInfoView);
-            labelPageName.Text = "Model Info";
-            hideSubMenu();
+            
         }
 
         #endregion
@@ -264,24 +263,6 @@ namespace PFE
         private void projectContext1_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public void UpdatePhaseButtons()
-        {
-            if (modelInfoView.viewModel.hasPhase1)
-                phase1Button.Enabled = true;
-            else
-                phase1Button.Enabled = false;
-
-            if (modelInfoView.viewModel.hasPhase2)
-                phase2Button.Enabled = true;
-            else
-                phase2Button.Enabled = false;
-
-            if (modelInfoView.viewModel.hasPhase3)
-                phase3Button.Enabled = true;
-            else
-                phase3Button.Enabled = false;
         }
 
         private void phase1Button_Click(object sender, EventArgs e)

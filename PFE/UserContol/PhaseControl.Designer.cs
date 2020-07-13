@@ -34,8 +34,9 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSectionContent = new System.Windows.Forms.Panel();
-            this.buttonShare = new XanderUI.XUIButton();
+            this.buttonBack = new XanderUI.XUIButton();
             this.buttonHost = new XanderUI.XUIButton();
+            this.buttonShare = new XanderUI.XUIButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             this.panelSections.Name = "panelSections";
             this.panelSections.RightSahddow = true;
             this.panelSections.ShadowDepth = 50;
-            this.panelSections.Size = new System.Drawing.Size(211, 451);
+            this.panelSections.Size = new System.Drawing.Size(211, 436);
             this.panelSections.TabIndex = 7;
             // 
             // panel2
@@ -125,28 +126,28 @@
             this.panelSectionContent.Size = new System.Drawing.Size(760, 561);
             this.panelSectionContent.TabIndex = 8;
             // 
-            // buttonShare
+            // buttonBack
             // 
-            this.buttonShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonShare.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonShare.ButtonImage = null;
-            this.buttonShare.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.buttonShare.ButtonText = "Share";
-            this.buttonShare.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.buttonShare.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.buttonShare.CornerRadius = 20;
-            this.buttonShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonShare.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.buttonShare.HoverBackgroundColor = System.Drawing.Color.White;
-            this.buttonShare.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.buttonShare.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.buttonShare.Location = new System.Drawing.Point(31, 536);
-            this.buttonShare.Name = "buttonShare";
-            this.buttonShare.Size = new System.Drawing.Size(211, 48);
-            this.buttonShare.TabIndex = 10;
-            this.buttonShare.TextColor = System.Drawing.Color.White;
-            this.buttonShare.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.buttonShare.Click += new System.EventHandler(this.buttonShare_Click);
+            this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonBack.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonBack.ButtonImage = null;
+            this.buttonBack.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.buttonBack.ButtonText = "Back";
+            this.buttonBack.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.buttonBack.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonBack.CornerRadius = 20;
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonBack.HoverBackgroundColor = System.Drawing.Color.White;
+            this.buttonBack.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonBack.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.buttonBack.Location = new System.Drawing.Point(63, 559);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(140, 40);
+            this.buttonBack.TabIndex = 10;
+            this.buttonBack.TextColor = System.Drawing.Color.White;
+            this.buttonBack.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonHost
             // 
@@ -163,18 +164,42 @@
             this.buttonHost.HoverBackgroundColor = System.Drawing.Color.White;
             this.buttonHost.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.buttonHost.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.buttonHost.Location = new System.Drawing.Point(31, 482);
+            this.buttonHost.Location = new System.Drawing.Point(63, 467);
             this.buttonHost.Name = "buttonHost";
-            this.buttonHost.Size = new System.Drawing.Size(211, 48);
+            this.buttonHost.Size = new System.Drawing.Size(140, 40);
             this.buttonHost.TabIndex = 9;
             this.buttonHost.TextColor = System.Drawing.Color.White;
             this.buttonHost.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.buttonHost.Click += new System.EventHandler(this.buttonHost_Click);
             // 
+            // buttonShare
+            // 
+            this.buttonShare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonShare.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonShare.ButtonImage = null;
+            this.buttonShare.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.buttonShare.ButtonText = "Share";
+            this.buttonShare.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.buttonShare.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonShare.CornerRadius = 20;
+            this.buttonShare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonShare.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonShare.HoverBackgroundColor = System.Drawing.Color.White;
+            this.buttonShare.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.buttonShare.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.buttonShare.Location = new System.Drawing.Point(63, 513);
+            this.buttonShare.Name = "buttonShare";
+            this.buttonShare.Size = new System.Drawing.Size(140, 40);
+            this.buttonShare.TabIndex = 11;
+            this.buttonShare.TextColor = System.Drawing.Color.White;
+            this.buttonShare.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.buttonShare.Click += new System.EventHandler(this.buttonShare_Click);
+            // 
             // PhaseControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.buttonShare);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonHost);
             this.Controls.Add(this.panelSections);
             this.Controls.Add(this.panelSectionContent);
@@ -195,7 +220,8 @@
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private Guna.UI.WinForms.GunaCircleButton buttonAddSection;
         private System.Windows.Forms.Panel panelSectionContent;
-        private XanderUI.XUIButton buttonShare;
+        private XanderUI.XUIButton buttonBack;
         private XanderUI.XUIButton buttonHost;
+        private XanderUI.XUIButton buttonShare;
     }
 }

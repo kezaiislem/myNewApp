@@ -51,7 +51,7 @@ namespace PFE.UserContol
             phaseControl.Dock = System.Windows.Forms.DockStyle.Fill;
             phaseControl.AutoScaleMode = AutoScaleMode.None;
             phaseControl.Name = "projectContextView";
-            this.Parent.Parent.Parent.Controls.Add(phaseControl);
+            this.Parent.Parent.Controls.Add(phaseControl);
             phaseControl.BringToFront();
             phaseControl.Show();
         }

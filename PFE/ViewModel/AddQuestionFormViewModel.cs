@@ -15,6 +15,7 @@ namespace PFE.ViewModel
     public class AddQuestionFormViewModel
     {
         public List<QuestionType> questionCombos { get; set; }
+        public Boolean hasFactor { get; set; }
 
         public QuestionType selectedItem;
         public QuestionType SelectedItem
@@ -28,10 +29,23 @@ namespace PFE.ViewModel
 
         public Question question;
 
-        public AddQuestionFormViewModel()
+        public AddQuestionFormViewModel(Boolean hasFactor)
         {
-            this.questionCombos = QuestionTypes.questionTypes();
+            this.hasFactor = hasFactor;
+            this.initCombos();
             this.question = new Question();
+        }
+
+        private void initCombos()
+        {
+            if (this.hasFactor)
+            {
+                this.questionCombos = QuestionTypes.evaluationTypes();
+            }
+            else
+            {
+                this.questionCombos = QuestionTypes.questionTypes();
+            }
         }
     }
 }

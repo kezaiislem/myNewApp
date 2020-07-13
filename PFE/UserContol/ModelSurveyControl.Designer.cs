@@ -71,12 +71,12 @@
             // 
             // panelMain
             // 
+            this.panelMain.Controls.Add(this.panelEdit);
             this.panelMain.Controls.Add(this.tableLayoutPanel1);
             this.panelMain.Controls.Add(this.labelDescription);
             this.panelMain.Controls.Add(this.labelPhase);
             this.panelMain.Controls.Add(this.bunifuSeparator1);
             this.panelMain.Controls.Add(this.labelTitle);
-            this.panelMain.Controls.Add(this.panelEdit);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
@@ -272,7 +272,7 @@
             this.buttonApply.CausesValidation = false;
             this.buttonApply.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonApply.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonApply.ErrorImage")));
-            this.buttonApply.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonApply.Image = global::PFE.Properties.Resources.tick;
             this.buttonApply.ImageHover = null;
             this.buttonApply.InitialImage = null;
             this.buttonApply.Location = new System.Drawing.Point(129, 5);

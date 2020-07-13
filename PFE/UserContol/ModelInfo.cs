@@ -28,9 +28,6 @@ namespace PFE.UserContol
         {
             viewModel = new ModelInfoViewModel(model, main);
             loadExistingSurveys();
-            metroCheckBoxPhase1.DataBindings.Add("Checked", viewModel, "hasPhase1", true, DataSourceUpdateMode.OnPropertyChanged);
-            metroCheckBoxPhase2.DataBindings.Add("Checked", viewModel, "hasPhase2", true, DataSourceUpdateMode.OnPropertyChanged);
-            metroCheckBoxPhase3.DataBindings.Add("Checked", viewModel, "hasPhase3", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxEvaluationContext.DataBindings.Add("Text", viewModel.model, "evaluationContext", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -42,11 +39,6 @@ namespace PFE.UserContol
                 survey.model = this.viewModel.model;
                 this.addSurvey(survey);
             }
-        }
-
-        private void metroButtonSaveModel_Click(object sender, EventArgs e)
-        {
-            viewModel.updatePhases();
         }
 
         private void buttonAddPhase_Click(object sender, EventArgs e)

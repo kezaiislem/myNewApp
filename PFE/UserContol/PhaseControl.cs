@@ -120,6 +120,10 @@ namespace PFE.UserContol
                             this.viewModel.survey.host = survey.host;
                             this.viewModel.survey.model.id = survey.model.id;
                             ProjectHandler.saveProject();
+                            using (var formS = new HostSuccessForm(survey.host.id))
+                            {
+                                formS.ShowDialog();
+                            }
                         }
                         else
                         {
@@ -145,9 +149,20 @@ namespace PFE.UserContol
             return true;
         }
 
-        private void buttonShare_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void buttonShare_Click(object sender, EventArgs e)
+        {
+            if (this.viewModel.survey.host != null)
+            {
+                using (var formS = new HostSuccessForm(this.viewModel.survey.host.id))
+                {
+                    formS.ShowDialog();
+                }
+            }
         }
     }
 }

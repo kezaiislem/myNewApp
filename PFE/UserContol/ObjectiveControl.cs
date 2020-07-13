@@ -27,6 +27,8 @@ namespace PFE
             this.text = text;
             this.objectives = objectives;
             this.index = index - 1;
+            textBoxEditObjective.DataBindings.Add("Text", labelObjective, "Text", true, DataSourceUpdateMode.OnPropertyChanged);
+            labelObjective.DataBindings.Add("Text", this, "text", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void labelObjective_DoubleClick(object sender, EventArgs e)
@@ -42,13 +44,10 @@ namespace PFE
         {
             if( e.KeyChar == 13)
             {
-                text = textBoxEditObjective.Text;
-                labelObjective.Text = text;
                 textBoxEditObjective.Visible = false;
                 labelObjective.Visible = true;
                 labelObjective.BringToFront();
                 textBoxEditObjective.SendToBack();
-                textBoxEditObjective.Text = "";
                 this.objectives[this.index] = this.text;
                 buttonRemoveObjective.Visible = false;
             }

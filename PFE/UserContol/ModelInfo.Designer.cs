@@ -28,63 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroCheckBoxPhase1 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBoxPhase2 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroCheckBoxPhase3 = new MetroFramework.Controls.MetroCheckBox();
-            this.metroButtonSaveModel = new MetroFramework.Controls.MetroButton();
             this.textBoxEvaluationContext = new MetroFramework.Controls.MetroTextBox();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.buttonAddPhase = new Guna.UI.WinForms.GunaCircleButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelPhasesContainer = new System.Windows.Forms.Panel();
-            this.buttonAddPhase = new Guna.UI.WinForms.GunaCircleButton();
             this.bunifuCards2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroCheckBoxPhase1
-            // 
-            this.metroCheckBoxPhase1.AutoSize = true;
-            this.metroCheckBoxPhase1.Location = new System.Drawing.Point(227, 125);
-            this.metroCheckBoxPhase1.Name = "metroCheckBoxPhase1";
-            this.metroCheckBoxPhase1.Size = new System.Drawing.Size(63, 15);
-            this.metroCheckBoxPhase1.TabIndex = 0;
-            this.metroCheckBoxPhase1.Text = "Phase 1";
-            this.metroCheckBoxPhase1.UseSelectable = true;
-            // 
-            // metroCheckBoxPhase2
-            // 
-            this.metroCheckBoxPhase2.AutoSize = true;
-            this.metroCheckBoxPhase2.Location = new System.Drawing.Point(227, 158);
-            this.metroCheckBoxPhase2.Name = "metroCheckBoxPhase2";
-            this.metroCheckBoxPhase2.Size = new System.Drawing.Size(63, 15);
-            this.metroCheckBoxPhase2.TabIndex = 1;
-            this.metroCheckBoxPhase2.Text = "Phase 2";
-            this.metroCheckBoxPhase2.UseSelectable = true;
-            // 
-            // metroCheckBoxPhase3
-            // 
-            this.metroCheckBoxPhase3.AutoSize = true;
-            this.metroCheckBoxPhase3.Location = new System.Drawing.Point(227, 191);
-            this.metroCheckBoxPhase3.Name = "metroCheckBoxPhase3";
-            this.metroCheckBoxPhase3.Size = new System.Drawing.Size(63, 15);
-            this.metroCheckBoxPhase3.TabIndex = 2;
-            this.metroCheckBoxPhase3.Text = "Phase 3";
-            this.metroCheckBoxPhase3.UseSelectable = true;
-            // 
-            // metroButtonSaveModel
-            // 
-            this.metroButtonSaveModel.Location = new System.Drawing.Point(378, 167);
-            this.metroButtonSaveModel.Name = "metroButtonSaveModel";
-            this.metroButtonSaveModel.Size = new System.Drawing.Size(121, 23);
-            this.metroButtonSaveModel.TabIndex = 3;
-            this.metroButtonSaveModel.Text = "Save";
-            this.metroButtonSaveModel.UseSelectable = true;
-            this.metroButtonSaveModel.Click += new System.EventHandler(this.metroButtonSaveModel_Click);
             // 
             // textBoxEvaluationContext
             // 
@@ -101,7 +57,7 @@
             this.textBoxEvaluationContext.CustomButton.UseSelectable = true;
             this.textBoxEvaluationContext.CustomButton.Visible = false;
             this.textBoxEvaluationContext.Lines = new string[0];
-            this.textBoxEvaluationContext.Location = new System.Drawing.Point(170, 73);
+            this.textBoxEvaluationContext.Location = new System.Drawing.Point(188, 87);
             this.textBoxEvaluationContext.MaxLength = 32767;
             this.textBoxEvaluationContext.Name = "textBoxEvaluationContext";
             this.textBoxEvaluationContext.PasswordChar = '\0';
@@ -120,16 +76,14 @@
             // 
             // bunifuCards2
             // 
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
             this.bunifuCards2.BorderRadius = 15;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.Transparent;
             this.bunifuCards2.Controls.Add(this.metroLabel3);
-            this.bunifuCards2.Controls.Add(this.metroButtonSaveModel);
-            this.bunifuCards2.Controls.Add(this.metroCheckBoxPhase3);
             this.bunifuCards2.Controls.Add(this.textBoxEvaluationContext);
-            this.bunifuCards2.Controls.Add(this.metroCheckBoxPhase2);
-            this.bunifuCards2.Controls.Add(this.metroCheckBoxPhase1);
             this.bunifuCards2.Controls.Add(this.panel1);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(403, 18);
@@ -142,7 +96,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(35, 75);
+            this.metroLabel3.Location = new System.Drawing.Point(38, 89);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(117, 19);
             this.metroLabel3.TabIndex = 9;
@@ -174,34 +128,6 @@
             this.metroLabel1.UseCustomBackColor = true;
             this.metroLabel1.UseCustomForeColor = true;
             // 
-            // metroLabel2
-            // 
-            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroLabel2.Location = new System.Drawing.Point(15, 15);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(333, 224);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "lnformation sur le model and what to do ext";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.metroLabel2);
-            this.panel2.Location = new System.Drawing.Point(18, 18);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.panel2.Size = new System.Drawing.Size(363, 254);
-            this.panel2.TabIndex = 9;
-            // 
-            // panelPhasesContainer
-            // 
-            this.panelPhasesContainer.Location = new System.Drawing.Point(18, 291);
-            this.panelPhasesContainer.Name = "panelPhasesContainer";
-            this.panelPhasesContainer.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.panelPhasesContainer.Size = new System.Drawing.Size(1028, 298);
-            this.panelPhasesContainer.TabIndex = 11;
-            // 
             // buttonAddPhase
             // 
             this.buttonAddPhase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -226,6 +152,36 @@
             this.buttonAddPhase.TabIndex = 4;
             this.buttonAddPhase.Click += new System.EventHandler(this.buttonAddPhase_Click);
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.metroLabel2.Location = new System.Drawing.Point(15, 15);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(333, 224);
+            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.Text = "lnformation sur le model and what to do ext";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.metroLabel2);
+            this.panel2.Location = new System.Drawing.Point(18, 18);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(15);
+            this.panel2.Size = new System.Drawing.Size(363, 254);
+            this.panel2.TabIndex = 9;
+            // 
+            // panelPhasesContainer
+            // 
+            this.panelPhasesContainer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPhasesContainer.Location = new System.Drawing.Point(18, 291);
+            this.panelPhasesContainer.Name = "panelPhasesContainer";
+            this.panelPhasesContainer.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.panelPhasesContainer.Size = new System.Drawing.Size(1028, 298);
+            this.panelPhasesContainer.TabIndex = 11;
+            // 
             // ModelInfo
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -233,7 +189,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.bunifuCards2);
             this.Name = "ModelInfo";
-            this.Padding = new System.Windows.Forms.Padding(15);
             this.Size = new System.Drawing.Size(1064, 607);
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
@@ -245,11 +200,6 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroCheckBox metroCheckBoxPhase1;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBoxPhase2;
-        private MetroFramework.Controls.MetroCheckBox metroCheckBoxPhase3;
-        private MetroFramework.Controls.MetroButton metroButtonSaveModel;
         private MetroFramework.Controls.MetroTextBox textBoxEvaluationContext;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private System.Windows.Forms.Panel panel1;
