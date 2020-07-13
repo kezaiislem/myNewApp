@@ -86,7 +86,7 @@ namespace PFE.Shared
                 var byteContent = new ByteArrayContent(buffer);
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "newproject?sessionid="+Data.sessionId, byteContent))
+                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "newproject?sessionid=" + Data.sessionId, byteContent))
                 {
                     using (HttpContent content = resonse.Content)
                     {
@@ -171,7 +171,7 @@ namespace PFE.Shared
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "modelSurveys/"+id))
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "modelSurveys/" + id))
                 {
                     using (HttpContent content = resonse.Content)
                     {
@@ -237,6 +237,26 @@ namespace PFE.Shared
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
                 using (HttpResponseMessage resonse = await client.PutAsync(BaseUrl + "share/" + id, byteContent))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
+
+        public static async Task<String> getAnswers(long id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "answers/" + id))
                 {
                     using (HttpContent content = resonse.Content)
                     {

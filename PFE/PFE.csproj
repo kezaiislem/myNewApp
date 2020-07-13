@@ -228,6 +228,12 @@
     <Compile Include="UserContol\CheckBoxQuestionContol.Designer.cs">
       <DependentUpon>CheckBoxQuestionContol.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\ResultsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ResultsControl.Designer.cs">
+      <DependentUpon>ResultsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ModelSurveyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -335,6 +341,7 @@
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
     <Compile Include="ViewModel\AddSectionFormViewModel.cs" />
     <Compile Include="ViewModel\ModelSurveyControlViewModel.cs" />
+    <Compile Include="ViewModel\ResultControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
     <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
     <Compile Include="ViewModel\SectionControlViewModel.cs" />
@@ -387,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\CheckBoxQuestionContol.resx">
       <DependentUpon>CheckBoxQuestionContol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ResultsControl.resx">
+      <DependentUpon>ResultsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ModelSurveyControl.resx">
       <DependentUpon>ModelSurveyControl.cs</DependentUpon>
