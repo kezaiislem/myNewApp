@@ -12,6 +12,7 @@ namespace PFE.Model
         public string text { get; set; }
         public int type { get; set; }
         public List<String> choices { get; set; }
+        public List<Answer> answers { get; set; }
 
     }
 }

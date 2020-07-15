@@ -27,6 +27,11 @@ namespace PFE.Constants
             return questionTypes;
         }
 
+        public static List<String> likertTexts()
+        {
+            return new List<String> { "Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly disagree" };
+        }
+
         public static List<QuestionType> evaluationTypes()
         {
             List<QuestionType> questionTypes = new List<QuestionType>();

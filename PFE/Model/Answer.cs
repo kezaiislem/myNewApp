@@ -10,6 +10,7 @@ namespace PFE.Model
     {
         public int id { get; set; }
         public int value { get; set; }
+        public int[] chValues { get; set; }
         public Survey survey { get; set; }
         public Question question { get; set; }
     }

@@ -37,6 +37,7 @@
             this.buttonStatus = new JImageButton.JImageButton();
             this.buttonRemove = new JImageButton.JImageButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.buttonResults = new JImageButton.JImageButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -109,11 +110,12 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.buttonResults);
             this.panel1.Controls.Add(this.buttonStatus);
             this.panel1.Controls.Add(this.buttonRemove);
-            this.panel1.Location = new System.Drawing.Point(729, 4);
+            this.panel1.Location = new System.Drawing.Point(716, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(126, 42);
+            this.panel1.Size = new System.Drawing.Size(152, 42);
             this.panel1.TabIndex = 4;
             // 
             // buttonStatus
@@ -126,7 +128,7 @@
             this.buttonStatus.Image = global::PFE.Properties.Resources.no_wifi;
             this.buttonStatus.ImageHover = null;
             this.buttonStatus.InitialImage = null;
-            this.buttonStatus.Location = new System.Drawing.Point(73, 5);
+            this.buttonStatus.Location = new System.Drawing.Point(115, 5);
             this.buttonStatus.Name = "buttonStatus";
             this.buttonStatus.Padding = new System.Windows.Forms.Padding(2);
             this.buttonStatus.Size = new System.Drawing.Size(32, 32);
@@ -145,7 +147,7 @@
             this.buttonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
             this.buttonRemove.ImageHover = null;
             this.buttonRemove.InitialImage = null;
-            this.buttonRemove.Location = new System.Drawing.Point(23, 5);
+            this.buttonRemove.Location = new System.Drawing.Point(63, 7);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Padding = new System.Windows.Forms.Padding(2);
             this.buttonRemove.Size = new System.Drawing.Size(32, 32);
@@ -168,6 +170,25 @@
             this.bunifuSeparator1.TabIndex = 12;
             this.bunifuSeparator1.Transparency = 128;
             this.bunifuSeparator1.Vertical = false;
+            // 
+            // buttonResults
+            // 
+            this.buttonResults.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonResults.BackColor = System.Drawing.Color.Transparent;
+            this.buttonResults.CausesValidation = false;
+            this.buttonResults.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonResults.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonResults.ErrorImage")));
+            this.buttonResults.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonResults.ImageHover = null;
+            this.buttonResults.InitialImage = null;
+            this.buttonResults.Location = new System.Drawing.Point(13, 7);
+            this.buttonResults.Name = "buttonResults";
+            this.buttonResults.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonResults.Size = new System.Drawing.Size(32, 32);
+            this.buttonResults.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonResults.TabIndex = 2;
+            this.buttonResults.Zoom = 1;
+            this.buttonResults.Click += new System.EventHandler(this.buttonResults_Click);
             // 
             // SurveyTabControl
             // 
@@ -193,5 +214,6 @@
         private System.Windows.Forms.Panel panel1;
         private JImageButton.JImageButton buttonRemove;
         private JImageButton.JImageButton buttonStatus;
+        private JImageButton.JImageButton buttonResults;
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PFE.ViewModel;
 using PFE.Model;
 using PFE.Shared;
+using PFE.UserContol;
 
 namespace PFE
 {
@@ -17,6 +18,8 @@ namespace PFE
     {
 
         SurveyTabControlViewModel viewModel;
+
+        ResultsControl currentControl;
 
         public SurveyTabControl(Survey s)
         {
@@ -70,6 +73,16 @@ namespace PFE
                 }
                 metroLabelStatus.Text = viewModel.status;
             }
+        }
+
+        private void buttonResults_Click(object sender, EventArgs e)
+        {
+            ResultsControl resultsControl = new ResultsControl(this.viewModel.surveyId);
+            resultsControl.Dock = DockStyle.Fill;
+            resultsControl.AutoScaleMode = AutoScaleMode.None;
+            this.Parent.Parent.Parent.Parent.Controls.Add(resultsControl);
+            resultsControl.Show();
+            resultsControl.BringToFront();
         }
     }
 }
