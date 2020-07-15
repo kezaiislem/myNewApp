@@ -58,7 +58,6 @@ namespace PFE.UserContol
             tabCount++;
             panelSections.Controls.Add(panelSection);
             panelSections.Controls.SetChildIndex(panelSection, 0);
-            Console.WriteLine(" HERE = " + panelSection.TabIndex);
         }
 
         public void sectionClick(Section section)

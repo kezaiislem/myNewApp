@@ -33,6 +33,7 @@
             this.panelSections = new Bunifu.Framework.UI.BunifuCards();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.buttonExport = new JImageButton.JImageButton();
             this.buttonResults = new JImageButton.JImageButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +69,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel2.Controls.Add(this.buttonExport);
             this.panel2.Controls.Add(this.buttonResults);
             this.panel2.Controls.Add(this.labelPhaseTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,11 +85,29 @@
             this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
             this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
-            this.labelPhaseTitle.Location = new System.Drawing.Point(35, 10);
+            this.labelPhaseTitle.Location = new System.Drawing.Point(35, 8);
             this.labelPhaseTitle.Name = "labelPhaseTitle";
             this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
             this.labelPhaseTitle.TabIndex = 1;
             this.labelPhaseTitle.Text = "Sections";
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonExport.BackColor = System.Drawing.Color.Transparent;
+            this.buttonExport.CausesValidation = false;
+            this.buttonExport.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonExport.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonExport.ErrorImage")));
+            this.buttonExport.Image = ((System.Drawing.Image)(resources.GetObject("buttonExport.Image")));
+            this.buttonExport.ImageHover = null;
+            this.buttonExport.InitialImage = null;
+            this.buttonExport.Location = new System.Drawing.Point(165, 3);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonExport.Size = new System.Drawing.Size(32, 32);
+            this.buttonExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonExport.TabIndex = 4;
+            this.buttonExport.Zoom = 1;
             // 
             // buttonResults
             // 
@@ -99,7 +119,7 @@
             this.buttonResults.Image = ((System.Drawing.Image)(resources.GetObject("buttonResults.Image")));
             this.buttonResults.ImageHover = null;
             this.buttonResults.InitialImage = null;
-            this.buttonResults.Location = new System.Drawing.Point(11, 8);
+            this.buttonResults.Location = new System.Drawing.Point(11, 6);
             this.buttonResults.Name = "buttonResults";
             this.buttonResults.Padding = new System.Windows.Forms.Padding(2);
             this.buttonResults.Size = new System.Drawing.Size(24, 24);
@@ -128,5 +148,6 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private JImageButton.JImageButton buttonResults;
+        private JImageButton.JImageButton buttonExport;
     }
 }

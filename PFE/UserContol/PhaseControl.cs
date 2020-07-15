@@ -26,9 +26,15 @@ namespace PFE.UserContol
 
         public PhaseControl(Survey survey)
         {
-            viewModel = new PhaseControlViewModel(survey);
             InitializeComponent();
-            if( viewModel.survey == null)
+            Init(survey);
+        }
+
+        private void Init(Survey survey)
+        {
+            panelSections.Controls.SetChildIndex(panel2, 0);
+            viewModel = new PhaseControlViewModel(survey);
+            if (viewModel.survey == null)
             {
                 viewModel.survey = new Survey { sections = new List<Section>() };
             }
@@ -55,7 +61,9 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    addSection(form.viewModel.Title, form.viewModel.Description, form.viewModel.Factor);
+                    Section section = new Section { title = form.viewModel.Title, description = form.viewModel.Description, factor = form.viewModel.Factor, questions = new List<Question>() };
+                    this.viewModel.survey.sections.Add(section);
+                    addSection(section);
                 }
             }
         }
@@ -64,39 +72,39 @@ namespace PFE.UserContol
         {
             foreach (Section section in viewModel.survey.sections)
             {
-                MetroButton button = new MetroButton();
-                button.Text = section.title;
-                button.Dock = DockStyle.Top;
-                button.Height = 35;
-                button.Click += (s, ev) => {
-                    SectionControl sectionControl = new SectionControl(section);
-                    sectionControl.Visible = true;
-                    sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
-                    sectionControl.AutoScaleMode = AutoScaleMode.None;
-                    this.swichSection(sectionControl);
-                };
-                panelSections.Controls.Add(button);
-                panelSections.Controls.SetChildIndex(button, 0);
+                addSection(section);
             }
         }
 
-        private void addSection(String title, String description, Factor factor)
+        private void addSection(Section section)
         {
-            MetroButton button = new MetroButton();
-            button.Text = title;
-            button.Dock = DockStyle.Top;
-            button.Height = 35;
-            Section section = new Section { title = title, description = description, factor = factor, questions = new List<Question>() };
-            this.viewModel.survey.sections.Add(section);
-            button.Click += (s, ev) => {
-                SectionControl sectionControl = new SectionControl(section);
-                sectionControl.Visible = true;
-                sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
-                sectionControl.AutoScaleMode = AutoScaleMode.None;
-                this.swichSection(sectionControl);
-            };
-            panelSections.Controls.Add(button);
-            panelSections.Controls.SetChildIndex(button, 0);
+            Button panelSection = new Button();
+            panelSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            panelSection.Dock = System.Windows.Forms.DockStyle.Top;
+            panelSection.FlatAppearance.BorderSize = 0;
+            panelSection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            panelSection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            panelSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            panelSection.ForeColor = System.Drawing.Color.White;
+            panelSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            panelSection.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            panelSection.Height = 40;
+            panelSection.Text = section.title;
+            panelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            panelSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            panelSection.UseVisualStyleBackColor = false;
+            panelSection.Click += (s, ev) => sectionClick(section);
+            panelSections.Controls.Add(panelSection);
+            panelSections.Controls.SetChildIndex(panelSection, 0);
+        }
+
+        public void sectionClick(Section section)
+        {
+            SectionControl sectionControl = new SectionControl(section);
+            sectionControl.Visible = true;
+            sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            sectionControl.AutoScaleMode = AutoScaleMode.None;
+            this.swichSection(sectionControl);
         }
 
         public static void removeSection()
