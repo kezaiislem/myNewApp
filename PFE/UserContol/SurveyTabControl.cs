@@ -11,6 +11,7 @@ using PFE.ViewModel;
 using PFE.Model;
 using PFE.Shared;
 using PFE.UserContol;
+using PFE.CustomObjects;
 
 namespace PFE
 {
@@ -19,9 +20,7 @@ namespace PFE
 
         SurveyTabControlViewModel viewModel;
 
-        ResultsControl currentControl;
-
-        public SurveyTabControl(Survey s)
+        public SurveyTabControl (CustomSurveysObject s)
         {
             InitializeComponent();
             viewModel = new SurveyTabControlViewModel(s);
@@ -33,7 +32,8 @@ namespace PFE
             metroLabelDate.Text = viewModel.strDate;
             metroLabelPhase.Text = viewModel.phaseNumber.ToString();
             metroLabelStatus.Text = viewModel.status;
-            if(viewModel.status == "Offline")
+            labelNumberOfAnswers.Text = viewModel.answersCount.ToString();
+            if (viewModel.status == "Offline")
             {
                 this.buttonStatus.Image = global::PFE.Properties.Resources.wifi;
             }
@@ -46,17 +46,22 @@ namespace PFE
 
         private async void buttonRemove_Click(object sender, EventArgs e)
         {
-            String result = await RestHelper.deleteSurvey(this.viewModel.surveyId);
-            if(string.IsNullOrWhiteSpace(result))
+            DialogResult msgBox = MessageBox.Show("The survey will be removed completely and the project will be saved automaticly, Do you realy want to remove this survey ?", "Advertissement", MessageBoxButtons.YesNo);
+
+            if (msgBox == DialogResult.Yes)
             {
-                this.viewModel.survey.host = null;
-                MessageBox.Show("Survey Removed Successfuly", "Success");
-            } 
-            else
-            {
-                MessageBox.Show("Oops an error has been occured", "Error");
+                String result = await RestHelper.deleteSurvey(this.viewModel.surveyId);
+                if (string.IsNullOrWhiteSpace(result))
+                {
+                    this.viewModel.survey.host = null;
+                    MessageBox.Show("Survey Removed Successfuly", "Success");
+                }
+                else
+                {
+                    MessageBox.Show("Oops an error has been occured", "Error");
+                }
+                this.Parent.Controls.Remove(this);
             }
-            this.Parent.Controls.Remove(this);
         }
 
         private void buttonStatus_Click(object sender, EventArgs e)

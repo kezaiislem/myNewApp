@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.CustomObjects;
 using PFE.Model;
 using PFE.Shared;
 using PFE.UserContol;
@@ -17,16 +18,18 @@ namespace PFE.ViewModel
         public int phaseNumber { get; set; }
         public string strDate { get; set; }
         public string status { get; set; }
+        public int answersCount { get; set; }
         public Survey survey { get; set; }
 
-        public SurveyTabControlViewModel(Survey survey)
+        public SurveyTabControlViewModel(CustomSurveysObject survey)
         {
-            this.survey = survey;
-            this.surveyId = survey.id;
-            this.phaseNumber = survey.phaseNumber;
+            this.survey = survey.survey;
+            this.surveyId = survey.survey.id;
+            this.phaseNumber = survey.survey.phaseNumber;
             this.strDate = "12/12/2020";
-            this.hostId = survey.host.id;
-            if (survey.host.online)
+            this.hostId = survey.survey.host.id;
+            this.answersCount = survey.answersCount;
+            if (this.survey.host.online)
             {
                 this.status = "Online";
             }

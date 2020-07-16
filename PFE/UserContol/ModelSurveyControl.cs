@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFE.Model;
 using PFE.ViewModel;
+using PFE.Shared;
 
 namespace PFE.UserContol
 {
@@ -58,11 +59,17 @@ namespace PFE.UserContol
 
         private void ButtonRemove_Click(object sender, EventArgs e)
         {
-            if (this.viewModel.survey.host == null)
+
+            DialogResult msgBox = MessageBox.Show("The survey will be removed completely and the project will be saved automaticly, Do you realy want to remove this survey ?", "Advertissement", MessageBoxButtons.YesNo);
+            
+            if(msgBox == DialogResult.Yes)
             {
+                Task.Run(async () => await RestHelper.deleteSurvey(this.viewModel.survey.id));
                 this.viewModel.surveys.Remove(this.viewModel.survey);
                 this.Parent.Controls.Remove(this);
+                ProjectHandler.saveProject();
             }
+
         }
     }
 }

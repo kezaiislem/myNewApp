@@ -34,7 +34,6 @@ namespace PFE
         {
             panelModelSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
-            panelAnalisticsSubmenu.Visible = false;
         }
         
         private void InitializeViews()
@@ -185,24 +184,12 @@ namespace PFE
 
         private void btnEqualizer_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelAnalisticsSubmenu);
+            hideSubMenu();
+            switchView(surveysControl);
             //..
             //your codes
             //..
         }
-
-        #region AnalisticsSubMenu
-        private void buttonMySurveys_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-            switchView(surveysControl);
-        }
-
-        private void buttonResults_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-        }
-        #endregion
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -213,7 +200,7 @@ namespace PFE
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void switchView(UserControl userControl)

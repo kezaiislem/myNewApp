@@ -14,6 +14,7 @@ using PFE.Shared;
 using PFE.Model;
 using Newtonsoft.Json;
 using MetroFramework;
+using PFE.Constants;
 
 namespace PFE.UserContol
 {
@@ -154,6 +155,22 @@ namespace PFE.UserContol
                 MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Error", MessageBoxButtons.OK);
                 return false;
             }
+            
+            foreach(Section section in this.viewModel.survey.sections)
+            {
+                foreach (Question q in section.questions)
+                {
+                    if(q.type == QuestionTypes.CHECK_BOX || q.type == QuestionTypes.RADIO)
+                    {
+                        if(q.choices.Count() < 2)
+                        {
+                            MetroMessageBox.Show(this, "\nCheckbox and radio questions must have two choices or more", "Error", MessageBoxButtons.OK);
+                            return false;
+                        }
+                    }
+                }
+            }
+
             return true;
         }
 

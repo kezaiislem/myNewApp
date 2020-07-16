@@ -11,6 +11,7 @@ using PFE.ViewModel;
 using PFE.Shared;
 using Microsoft.VisualBasic;
 using PFE.Model;
+using PFE.CustomObjects;
 
 namespace PFE.UserContol
 {
@@ -30,7 +31,7 @@ namespace PFE.UserContol
         {
             while(viewModel.surveys == null) { }
 
-            foreach (Survey s in viewModel.surveys)
+            foreach (CustomSurveysObject s in viewModel.surveys)
             {
                 SurveyTabControl surveyTab = new SurveyTabControl(s);
                 this.panelSurveyTableContent.SuspendLayout();

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.CustomObjects;
 using PFE.Model;
 using PFE.Shared;
 using PFE.UserContol;
@@ -13,7 +14,7 @@ namespace PFE.ViewModel
     public class SurveysControlViewModel
     {
         public int modelId { get; set; }
-        public List<Survey> surveys { get; set; }
+        public List<CustomSurveysObject> surveys { get; set; }
 
         public SurveysControlViewModel(int modelId)
         {
@@ -34,12 +35,12 @@ namespace PFE.ViewModel
                 String data = await RestHelper.getModelSurveys(this.modelId);
                 if (data != "")
                 {
-                    this.surveys = JsonConvert.DeserializeObject<List<Survey>>(data);
+                    this.surveys = JsonConvert.DeserializeObject<List<CustomSurveysObject>>(data);
                 }
             }
             catch (Exception ex)
             {
-                this.surveys = new List<Survey>();
+                this.surveys = new List<CustomSurveysObject>();
             }
         }
     }

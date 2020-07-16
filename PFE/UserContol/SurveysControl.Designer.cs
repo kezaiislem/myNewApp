@@ -32,6 +32,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelSurveyTable = new Bunifu.UI.WinForm.BunifuShadowPanel.BunifuShadowPanel();
+            this.panelSurveyTableContent = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,7 +40,7 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.panelSurveyTableContent = new System.Windows.Forms.Panel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.panel2.SuspendLayout();
             this.bunifuCards1.SuspendLayout();
             this.panelSurveyTable.SuspendLayout();
@@ -102,6 +103,14 @@
             this.panelSurveyTable.Size = new System.Drawing.Size(922, 393);
             this.panelSurveyTable.TabIndex = 8;
             // 
+            // panelSurveyTableContent
+            // 
+            this.panelSurveyTableContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSurveyTableContent.Location = new System.Drawing.Point(8, 63);
+            this.panelSurveyTableContent.Name = "panelSurveyTableContent";
+            this.panelSurveyTableContent.Size = new System.Drawing.Size(906, 322);
+            this.panelSurveyTableContent.TabIndex = 12;
+            // 
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
@@ -128,15 +137,17 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.metroLabel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel5, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.metroLabel4, 4, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -147,12 +158,12 @@
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.metroLabel4.Location = new System.Drawing.Point(693, 15);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.metroLabel4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(52, 19);
             this.metroLabel4.TabIndex = 3;
@@ -165,7 +176,7 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.metroLabel3.Location = new System.Drawing.Point(467, 15);
+            this.metroLabel3.Location = new System.Drawing.Point(331, 15);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(49, 19);
@@ -193,7 +204,7 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.metroLabel2.Location = new System.Drawing.Point(241, 15);
+            this.metroLabel2.Location = new System.Drawing.Point(105, 15);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(76, 19);
@@ -201,13 +212,19 @@
             this.metroLabel2.Text = "Start Date";
             this.metroLabel2.UseCustomForeColor = true;
             // 
-            // panelSurveyTableContent
+            // metroLabel5
             // 
-            this.panelSurveyTableContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSurveyTableContent.Location = new System.Drawing.Point(8, 63);
-            this.panelSurveyTableContent.Name = "panelSurveyTableContent";
-            this.panelSurveyTableContent.Size = new System.Drawing.Size(906, 322);
-            this.panelSurveyTableContent.TabIndex = 12;
+            this.metroLabel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.metroLabel5.Location = new System.Drawing.Point(512, 15);
+            this.metroLabel5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(139, 19);
+            this.metroLabel5.TabIndex = 4;
+            this.metroLabel5.Text = "Number of answers";
+            this.metroLabel5.UseCustomForeColor = true;
             // 
             // SurveysControl
             // 
@@ -241,6 +258,7 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.Panel panelSurveyTableContent;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }
 

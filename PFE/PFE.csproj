@@ -12,7 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\ISLEM\Desktop\My app\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,13 +25,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4C11B24E49D5CC94F059969957C2545BA5594061</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PFE_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Atalasoft.dotImage, Version=11.2.0.372, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=AMD64">
@@ -183,6 +196,7 @@
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
+    <Compile Include="CustomObjects\CustomSurveysObject.cs" />
     <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
     <Compile Include="CustomObjects\QuestionType.cs" />
     <Compile Include="CustomObjects\MailingRequest.cs" />
@@ -467,6 +481,7 @@
       <DependentUpon>Welcome From.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="PFE_TemporaryKey.pfx" />
     <None Include="Properties\DataSources\PFE.Model.Field.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Question.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Section.datasource" />
