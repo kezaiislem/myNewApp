@@ -222,6 +222,12 @@
     <Compile Include="UserContol\AddMailForm.Designer.cs">
       <DependentUpon>AddMailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\ProjectPlanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ProjectPlanControl.Designer.cs">
+      <DependentUpon>ProjectPlanControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\QuestionResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -416,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\AddMailForm.resx">
       <DependentUpon>AddMailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ProjectPlanControl.resx">
+      <DependentUpon>ProjectPlanControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\QuestionResultControl.resx">
       <DependentUpon>QuestionResultControl.cs</DependentUpon>
