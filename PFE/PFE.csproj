@@ -25,7 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -195,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
+    <Compile Include="CustomObjects\CalendarItem.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
     <Compile Include="CustomObjects\CustomSurveysObject.cs" />
     <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
@@ -202,6 +204,7 @@
     <Compile Include="CustomObjects\MailingRequest.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
+    <Compile Include="model\ProjectEvent.cs" />
     <Compile Include="model\Technology.cs" />
     <Compile Include="model\Section.cs" />
     <Compile Include="model\Factor.cs" />
@@ -383,6 +386,7 @@
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
     <Compile Include="ViewModel\AddSectionFormViewModel.cs" />
     <Compile Include="ViewModel\ModelSurveyControlViewModel.cs" />
+    <Compile Include="ViewModel\ProjectPlanControlViewModel.cs" />
     <Compile Include="ViewModel\ResultControlViewModel.cs" />
     <Compile Include="ViewModel\SectionResultControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
@@ -669,6 +673,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calendar.NET\Calendar.NET.csproj">
+      <Project>{6cbc43b6-e950-49b2-b14a-563c50fcd5c3}</Project>
+      <Name>Calendar.NET</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets')" />

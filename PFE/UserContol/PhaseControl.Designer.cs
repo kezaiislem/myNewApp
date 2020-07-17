@@ -67,10 +67,10 @@
             this.panel2.Controls.Add(this.buttonAddSection);
             this.panel2.Controls.Add(this.metroButton1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 5);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(209, 44);
+            this.panel2.Size = new System.Drawing.Size(211, 44);
             this.panel2.TabIndex = 8;
             // 
             // buttonBack
@@ -117,7 +117,7 @@
             this.buttonAddSection.ForeColor = System.Drawing.Color.White;
             this.buttonAddSection.Image = global::PFE.Properties.Resources.add_plus;
             this.buttonAddSection.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAddSection.Location = new System.Drawing.Point(163, 5);
+            this.buttonAddSection.Location = new System.Drawing.Point(165, 5);
             this.buttonAddSection.Name = "buttonAddSection";
             this.buttonAddSection.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.buttonAddSection.OnHoverBorderColor = System.Drawing.Color.Black;
