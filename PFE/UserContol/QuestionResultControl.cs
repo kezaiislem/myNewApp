@@ -66,8 +66,8 @@ namespace PFE.UserContol
                     break;
 
                 case QuestionTypes.LIKERT_3 :
-                    counts = new int[5];
-                    choices = QuestionTypes.likertTexts();
+                    counts = new int[3];
+                    choices = QuestionTypes.likertStrings_3();
                     foreach (Answer answer in question.answers)
                     {
                         counts[answer.value - 1]++;
@@ -76,7 +76,7 @@ namespace PFE.UserContol
 
                 case QuestionTypes.LIKERT_5 :
                     counts = new int[5];
-                    choices = QuestionTypes.likertTexts();
+                    choices = QuestionTypes.likertStrings_5();
                     foreach (Answer answer in question.answers)
                     {
                         counts[answer.value - 1]++;
@@ -84,8 +84,8 @@ namespace PFE.UserContol
                     break;
 
                 case QuestionTypes.LIKERT_7 :
-                    counts = new int[5];
-                    choices = QuestionTypes.likertTexts();
+                    counts = new int[7];
+                    choices = QuestionTypes.likertStrings_7();
                     foreach (Answer answer in question.answers)
                     {
                         counts[answer.value - 1]++;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFE.Model;
+using PFE.Constants;
 
 namespace PFE.UserContol
 {
@@ -21,11 +22,34 @@ namespace PFE.UserContol
         public LikertQuestionControl(Question question, List<Question> questions)
         {
             InitializeComponent();
+            Init(question.type);
             this.question = question;
             this.questions = questions;
             this.labelQuestion.Text = question.text;
             textBoxEditQuestion.Text = question.text;
             Console.WriteLine(question.choices);
+        }
+
+        private void Init(int questionType)
+        {
+            switch (questionType)
+            {
+                case QuestionTypes.LIKERT_3 :
+                    panelLikert5.Dispose();
+                    panelLikert7.Dispose();
+                    this.Height = 135;
+                    break;
+                case QuestionTypes.LIKERT_5:
+                    panelLikert3.Dispose();
+                    panelLikert7.Dispose();
+                    this.Height = 185;
+                    break;
+                case QuestionTypes.LIKERT_7:
+                    panelLikert3.Dispose();
+                    panelLikert5.Dispose();
+                    this.Height = 235;
+                    break;
+            }
         }
 
         private void buttonRemoveQuestion_Click(object sender, EventArgs e)
