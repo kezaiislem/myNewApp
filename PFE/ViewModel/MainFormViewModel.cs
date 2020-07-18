@@ -23,6 +23,11 @@ namespace PFE.ViewModel
             else
                 hasModel = true;
 
+            if (this.projet.events == null)
+            {
+                this.projet.events = new List<model.ProjectEvent>();
+            }
+
             Title = "Dashboard";
         }
 

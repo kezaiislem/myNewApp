@@ -122,6 +122,7 @@ namespace Calendar.NET
             {
                 CustomRecurringFunction = CustomRecurringFunction,
                 Date = Date,
+                EndDate = EndDate,
                 Enabled = Enabled,
                 EventColor = EventColor,
                 EventFont = EventFont,

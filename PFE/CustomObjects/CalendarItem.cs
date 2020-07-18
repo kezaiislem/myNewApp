@@ -32,7 +32,8 @@ namespace PFE.CustomObjects
                 RecurringFrequency = RecurringFrequencies.Custom,
                 EventText = this.Event.name,
                 CustomRecurringFunction = EventDays,
-                EndDate = Event.endDate
+                EndDate = Event.endDate,
+                EventColor = Event.color
             };
         }
     }

@@ -122,6 +122,7 @@ namespace Calendar.NET
                          {
                              CustomRecurringFunction = CustomRecurringFunction,
                              Date = Date,
+                             EndDate = EndDate,
                              Enabled = Enabled,
                              EventColor = EventColor,
                              EventFont = EventFont,
@@ -133,7 +134,7 @@ namespace Calendar.NET
                              RecurringFrequency = RecurringFrequency,
                              ThisDayForwardOnly = ThisDayForwardOnly,
                              EventLengthInHours = EventLengthInHours,
-                             TooltipEnabled = TooltipEnabled
+                             TooltipEnabled = TooltipEnabled,
                          };
         }
     }

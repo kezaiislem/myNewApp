@@ -4,6 +4,7 @@ using PFE.model;
 using PFE.Model;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,14 +18,17 @@ namespace PFE.ViewModel
 
         public ProjectPlanControlViewModel(List<ProjectEvent> projectEvents)
         {
-            this.projectEvents = new List<ProjectEvent>();
-            calendarItems = new List<CalendarItem>();
+            this.projectEvents = projectEvents;
+            LoadEvents();
+        }
 
-            calendarItems.Add(new CalendarItem(new ProjectEvent { name = "Event 1", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 25) }));
-            calendarItems.Add(new CalendarItem(new ProjectEvent { name = "Event 2", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 25) }));
-            calendarItems.Add(new CalendarItem(new ProjectEvent { name = "Event 3", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 25) }));
-            calendarItems.Add(new CalendarItem(new ProjectEvent { name = "Event 4", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 25) }));
-
+        public void LoadEvents()
+        {
+            this.calendarItems = new List<CalendarItem>();
+            foreach (ProjectEvent projectEvent in this.projectEvents)
+            {
+                calendarItems.Add(new CalendarItem(new ProjectEvent { name = projectEvent.name, startDate = projectEvent.startDate, endDate = projectEvent.endDate , color = Color.Aqua}));
+            }
         }
 
         public void reloadEvents(List<IEvent> events)
@@ -32,21 +36,9 @@ namespace PFE.ViewModel
             projectEvents.Clear();
             foreach (IEvent ev in events)
             {
-                projectEvents.Add(new ProjectEvent { name = ev.EventText, startDate = ev.Date, endDate = ev.EndDate });
+                projectEvents.Add(new ProjectEvent { name = ev.EventText, startDate = ev.Date, endDate = ev.EndDate , color = ev.EventColor});
             }
         }
 
-        /*public void editEvent(IEvent evnt)
-        {
-            foreach (CalendarItem calendarItem in calendarItems)
-            {
-                if (calendarItem.customEvent == evnt)
-                {
-                    projectEvents.Remove(calendarItem.Event);
-                    calendarItems.Remove(calendarItem);
-                    break;
-                }
-            }
-        }*/
     }
 }

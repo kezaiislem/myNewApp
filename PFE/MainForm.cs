@@ -56,7 +56,7 @@ namespace PFE
             this.panelCurrentView.Controls.Add(this.projectContextView);
 
             // Page Project Plan
-            this.projectPlanView = new ProjectPlanControl();
+            this.projectPlanView = new ProjectPlanControl(this.viewModel.projet.events);
             this.projectPlanView.Visible = false;
             this.projectPlanView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.projectPlanView.AutoScaleMode = AutoScaleMode.None;

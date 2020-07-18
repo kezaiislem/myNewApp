@@ -20,18 +20,20 @@ namespace PFE.UserContol
 
         ProjectPlanControlViewModel viewModel;
 
-        public ProjectPlanControl()
+        public ProjectPlanControl(List<ProjectEvent> projectEvents)
         {
             InitializeComponent();
+            Init(projectEvents);
+        }
+
+        private void Init(List<ProjectEvent> projectEvents)
+        {
+            viewModel = new ProjectPlanControlViewModel(projectEvents);
             calendar1.PropertyChanged += CalendarChanged;
-
-            viewModel = new ProjectPlanControlViewModel(null);
-
             foreach (CalendarItem calendarItem in viewModel.calendarItems)
             {
                 calendar1.AddEvent(calendarItem.customEvent);
             }
-
         }
 
         private void CalendarChanged(object o, PropertyChangedEventArgs e)
@@ -41,7 +43,7 @@ namespace PFE.UserContol
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            ProjectEvent pe = new ProjectEvent { name = "My test event", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 23) };
+            ProjectEvent pe = new ProjectEvent { name = "My test event", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 23) , color = Color.Aqua};
             CalendarItem calendarItem = new CalendarItem(pe);
             calendar1.AddEvent(calendarItem.customEvent);
         }

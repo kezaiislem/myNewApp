@@ -60,6 +60,9 @@ namespace Calendar.NET
         private ContextMenuStrip _contextMenuStrip1;
         private System.ComponentModel.IContainer components;
         private ToolStripMenuItem _miProperties;
+        private ToolStripMenuItem _miColorRed;
+        private ToolStripMenuItem _miColorBlue;
+        private ToolStripMenuItem _miColorGreen;
 
         private const int MarginSize = 20;
 
@@ -351,6 +354,9 @@ namespace Calendar.NET
             this._btnRight = new NavigateRightButton();
             this._contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this._miProperties = new System.Windows.Forms.ToolStripMenuItem();
+            this._miColorRed = new System.Windows.Forms.ToolStripMenuItem();
+            this._miColorBlue = new System.Windows.Forms.ToolStripMenuItem();
+            this._miColorGreen = new System.Windows.Forms.ToolStripMenuItem();
             this._contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -408,7 +414,7 @@ namespace Calendar.NET
             // _contextMenuStrip1
             // 
             this._contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._miProperties});
+            this._miColorBlue, this._miColorGreen, this._miColorRed, this._miProperties});
             this._contextMenuStrip1.Name = "_contextMenuStrip1";
             this._contextMenuStrip1.Size = new System.Drawing.Size(137, 26);
             // 
@@ -416,8 +422,29 @@ namespace Calendar.NET
             // 
             this._miProperties.Name = "_miProperties";
             this._miProperties.Size = new System.Drawing.Size(136, 22);
-            this._miProperties.Text = "Properties...";
+            this._miProperties.Text = "Remove";
             this._miProperties.Click += new System.EventHandler(this.MenuItemPropertiesClick);
+            // 
+            // _miProperties
+            // 
+            this._miColorBlue.Name = "_miColorBlue";
+            this._miColorBlue.Size = new System.Drawing.Size(136, 22);
+            this._miColorBlue.Text = "Blue";
+            this._miColorBlue.Click += new System.EventHandler(this.MenuItemBlueClick);
+            // 
+            // _miProperties
+            // 
+            this._miColorRed.Name = "_miColorRed";
+            this._miColorRed.Size = new System.Drawing.Size(136, 22);
+            this._miColorRed.Text = "Red";
+            this._miColorRed.Click += new System.EventHandler(this.MenuItemRedClick);
+            // 
+            // _miProperties
+            // 
+            this._miColorGreen.Name = "_miColorGreen";
+            this._miColorGreen.Size = new System.Drawing.Size(136, 22);
+            this._miColorGreen.Text = "Green";
+            this._miColorGreen.Click += new System.EventHandler(this.MenuItemGreenClick);
             // 
             // Calendar
             // 
@@ -593,6 +620,38 @@ namespace Calendar.NET
                 Refresh();
             }*/
             _clickedEvent = null;
+        }
+
+        private void MenuItemGreenClick(object sender, EventArgs e)
+        {
+            if (_clickedEvent == null)
+                return;
+            EditEventColor(Color.Green);
+            _clickedEvent = null;
+        }
+
+        private void MenuItemBlueClick(object sender, EventArgs e)
+        {
+            if (_clickedEvent == null)
+                return;
+            EditEventColor(Color.Blue);
+            _clickedEvent = null;
+        }
+
+        private void MenuItemRedClick(object sender, EventArgs e)
+        {
+            if (_clickedEvent == null)
+                return;
+            EditEventColor(Color.Red);
+            _clickedEvent = null;
+        }
+
+        private void EditEventColor(Color color)
+        {
+            IEvent _newEvent = _clickedEvent.Event.Clone();
+            _newEvent.EventColor = color;
+            _events.Remove(_clickedEvent.Event);
+            this.AddEvent(_newEvent);
         }
 
         private void ParentResize(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFE.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace PFE.Model
         public string companyAdress { get; set; }
         public string phoneNumber { get; set; }
         public List<String> objectives { get; set; }
+        public List<ProjectEvent> events { get; set; }
         public Model model { get; set; }
         public User user { get; set; }
     }
