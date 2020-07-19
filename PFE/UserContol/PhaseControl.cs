@@ -15,6 +15,7 @@ using PFE.Model;
 using Newtonsoft.Json;
 using MetroFramework;
 using PFE.Constants;
+using PFE.model;
 
 namespace PFE.UserContol
 {
@@ -23,7 +24,7 @@ namespace PFE.UserContol
 
         PhaseControlViewModel viewModel;
 
-        SectionControl activeSection;
+        FactorControl activeSection;
 
         public PhaseControl(Survey survey)
         {
@@ -37,7 +38,7 @@ namespace PFE.UserContol
             viewModel = new PhaseControlViewModel(survey);
             if (viewModel.survey == null)
             {
-                viewModel.survey = new Survey { sections = new List<Section>() };
+                viewModel.survey = new Survey { factors = new List<Factor>() };
             }
             else
             {
@@ -45,7 +46,7 @@ namespace PFE.UserContol
             }
         }
 
-        private void swichSection(SectionControl section)
+        private void swichSection(FactorControl section)
         {
             if ( activeSection != null )
             {
@@ -62,22 +63,22 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Section section = new Section { title = form.viewModel.Title, description = form.viewModel.Description, factor = form.viewModel.Factor, questions = new List<Question>() };
-                    this.viewModel.survey.sections.Add(section);
-                    addSection(section);
+                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = new List<Question>() };
+                    this.viewModel.survey.factors.Add(factor);
+                    addFactor(factor);
                 }
             }
         }
 
         private void loadSections()
         {
-            foreach (Section section in viewModel.survey.sections)
+            foreach (Factor factor in viewModel.survey.factors)
             {
-                addSection(section);
+                addFactor(factor);
             }
         }
 
-        private void addSection(Section section)
+        private void addFactor(Factor factor)
         {
             Button panelSection = new Button();
             panelSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
@@ -90,25 +91,25 @@ namespace PFE.UserContol
             panelSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             panelSection.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             panelSection.Height = 40;
-            panelSection.Text = section.title;
+            panelSection.Text = factor.title;
             panelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             panelSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             panelSection.UseVisualStyleBackColor = false;
-            panelSection.Click += (s, ev) => sectionClick(section);
+            panelSection.Click += (s, ev) => factorClick(factor);
             panelSections.Controls.Add(panelSection);
             panelSections.Controls.SetChildIndex(panelSection, 0);
         }
 
-        public void sectionClick(Section section)
+        public void factorClick(Factor factor)
         {
-            SectionControl sectionControl = new SectionControl(section);
+            FactorControl sectionControl = new FactorControl(factor);
             sectionControl.Visible = true;
             sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
             sectionControl.AutoScaleMode = AutoScaleMode.None;
             this.swichSection(sectionControl);
         }
 
-        public static void removeSection()
+        public static void removeFactor()
         {
 
         }
@@ -156,9 +157,9 @@ namespace PFE.UserContol
                 return false;
             }
             
-            foreach(Section section in this.viewModel.survey.sections)
+            foreach(Factor factor in this.viewModel.survey.factors)
             {
-                foreach (Question q in section.questions)
+                foreach (Question q in factor.questions)
                 {
                     if(q.type == QuestionTypes.CHECK_BOX || q.type == QuestionTypes.RADIO)
                     {

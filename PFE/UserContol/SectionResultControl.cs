@@ -12,6 +12,7 @@ using PFE.ViewModel;
 using PFE.Constants;
 using LiveCharts;
 using LiveCharts.Wpf;
+using PFE.model;
 
 namespace PFE.UserContol
 {
@@ -20,17 +21,17 @@ namespace PFE.UserContol
 
         public SectionResultControlViewModel viewModel { get; set; }
 
-        public SectionResultControl(Section section)
+        public SectionResultControl(Factor factor)
         {
             InitializeComponent();
-            Init(section);
+            Init(factor);
         }
 
-        private void Init(Section section)
+        private void Init(Factor factor)
         {
-            viewModel = new SectionResultControlViewModel(section);
-            labelTitle.DataBindings.Add("Text", viewModel.section, "title", true, DataSourceUpdateMode.OnPropertyChanged);
-            foreach (Question question in section.questions)
+            viewModel = new SectionResultControlViewModel(factor);
+            labelTitle.DataBindings.Add("Text", viewModel.factor, "title", true, DataSourceUpdateMode.OnPropertyChanged);
+            foreach (Question question in factor.questions)
             {
                 addQuestion(question);
             }

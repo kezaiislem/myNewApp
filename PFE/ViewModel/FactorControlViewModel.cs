@@ -1,4 +1,5 @@
-﻿using PFE.Model;
+﻿using PFE.model;
+using PFE.Model;
 using PFE.UserContol;
 using System;
 using System.Collections.Generic;
@@ -8,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class SectionControlViewModel
+    public class FactorControlViewModel
     {
-        public Section section { get; set; }
+        public Factor factor { get; set; }
         public List<LikertQuestionControl> QuestionControls { get; set; }
 
-        public SectionControlViewModel(Section section)
+        public FactorControlViewModel(Factor factor)
         {
             this.QuestionControls = new List<LikertQuestionControl>();
-            this.section = section;
+            this.factor = factor;
         }
     }
 }

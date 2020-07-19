@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PFE.CustomObjects;
+using PFE.model;
 using PFE.Model;
 using PFE.Shared;
 using System;
@@ -13,18 +14,18 @@ namespace PFE.ViewModel
     public class SectionSugesstionViewModel
     {
         public SectionSuggestionsRequestObject requestObject { get; set; }
-        public Section selectedItem { get; set; }
+        public Factor selectedItem { get; set; }
 
         public SectionSugesstionViewModel()
         {
             requestObject = new SectionSuggestionsRequestObject();
         }
 
-        public async Task<List<Section>> loadSuggestions()
+        public async Task<List<Factor>> loadSuggestions()
         {
             String data = await RestHelper.loadSectionSuggestion(requestObject);
             Console.WriteLine(data);
-            List<Section> result = JsonConvert.DeserializeObject<List<Section>>(data);
+            List<Factor> result = JsonConvert.DeserializeObject<List<Factor>>(data);
             return result;
         }
     }

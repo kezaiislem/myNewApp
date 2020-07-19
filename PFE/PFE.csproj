@@ -204,10 +204,9 @@
     <Compile Include="CustomObjects\MailingRequest.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
+    <Compile Include="model\Factor.cs" />
     <Compile Include="model\ProjectEvent.cs" />
     <Compile Include="model\Technology.cs" />
-    <Compile Include="model\Section.cs" />
-    <Compile Include="model\Factor.cs" />
     <Compile Include="model\Model.cs" />
     <Compile Include="model\Question.cs" />
     <Compile Include="model\Survey.cs" />
@@ -366,11 +365,11 @@
     <Compile Include="UserContol\LikertQuestionControl.Designer.cs">
       <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\SectionControl.cs">
+    <Compile Include="UserContol\FactorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\SectionControl.Designer.cs">
-      <DependentUpon>SectionControl.cs</DependentUpon>
+    <Compile Include="UserContol\FactorControl.Designer.cs">
+      <DependentUpon>FactorControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\QuestionSuggestionForm.cs">
       <SubType>Form</SubType>
@@ -397,7 +396,7 @@
     <Compile Include="ViewModel\SectionResultControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
     <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
-    <Compile Include="ViewModel\SectionControlViewModel.cs" />
+    <Compile Include="ViewModel\FactorControlViewModel.cs" />
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="ViewModel\QuestionSugestionViewModel.cs" />
@@ -490,8 +489,8 @@
     <EmbeddedResource Include="UserContol\LikertQuestionControl.resx">
       <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\SectionControl.resx">
-      <DependentUpon>SectionControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserContol\FactorControl.resx">
+      <DependentUpon>FactorControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\QuestionSuggestionForm.resx">
       <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>

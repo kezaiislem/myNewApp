@@ -354,10 +354,6 @@
             this.metroLabel5.UseCustomBackColor = true;
             this.metroLabel5.UseCustomForeColor = true;
             // 
-            // sectionBindingSource
-            // 
-            this.sectionBindingSource.DataSource = typeof(PFE.Model.Section);
-            // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "title";

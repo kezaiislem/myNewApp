@@ -28,7 +28,7 @@ namespace PFE.UserContol
         {
             textBoxTitle.DataBindings.Add("Text", viewModel, "Title", true, DataSourceUpdateMode.OnPropertyChanged);
             textBoxDescription.DataBindings.Add("Text", viewModel, "Description", true, DataSourceUpdateMode.OnPropertyChanged);
-            comboBoxFactor.DataSource = viewModel.combos;
+            comboBoxFactor.DataSource = viewModel.factors;
             comboBoxFactor.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -66,13 +66,6 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    foreach ( ComboboxItem item in viewModel.combos)
-                    {
-                        if (item.Text == form.viewModel.selectedItem.factor.name)
-                        {
-                            viewModel.selectedItem = item;
-                        }
-                    }
                     textBoxTitle.Text = form.viewModel.selectedItem.title;
                     textBoxDescription.Text = form.viewModel.selectedItem.description;
                 }

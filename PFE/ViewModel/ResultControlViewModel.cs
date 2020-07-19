@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.model;
 using PFE.Model;
 using PFE.Shared;
 using System;
@@ -12,7 +13,7 @@ namespace PFE.ViewModel
     public class ResultControlViewModel{
 
         public int surveyId { get; set; }
-        public List<Section> sections { get; set; }
+        public List<Factor> factors { get; set; }
 
         public ResultControlViewModel(int surveyId)
         {
@@ -27,12 +28,12 @@ namespace PFE.ViewModel
                 String data = await RestHelper.getAnswers(this.surveyId);
                 if (data != "")
                 {
-                    sections = JsonConvert.DeserializeObject<List<Section>>(data);
+                    factors = JsonConvert.DeserializeObject<List<Factor>>(data);
                 }
             }
             catch (Exception ex)
             {
-                sections = new List<Section>();
+                factors = new List<Factor>();
             }
         }
 

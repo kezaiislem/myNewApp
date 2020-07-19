@@ -1,4 +1,5 @@
-﻿using PFE.Model;
+﻿using PFE.model;
+using PFE.Model;
 using PFE.UserContol;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace PFE.ViewModel
 {
     public class SectionResultControlViewModel
     {
-        public Section section { get; set; }
+        public Factor factor { get; set; }
 
-        public SectionResultControlViewModel(Section section)
+        public SectionResultControlViewModel(Factor factor)
         {
-            this.section = section;
+            this.factor = factor;
         }
     }
 }

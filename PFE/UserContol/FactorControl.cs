@@ -10,30 +10,31 @@ using System.Windows.Forms;
 using PFE.Model;
 using PFE.ViewModel;
 using PFE.Constants;
+using PFE.model;
 
 namespace PFE.UserContol
 {
-    public partial class SectionControl : UserControl
+    public partial class FactorControl : UserControl
     {
 
-        public SectionControlViewModel viewModel { get; set; }
+        public FactorControlViewModel viewModel { get; set; }
 
-        public SectionControl(Section section)
+        public FactorControl(Factor factor)
         {
-            viewModel = new SectionControlViewModel(section);
+            viewModel = new FactorControlViewModel(factor);
             InitializeComponent();
             LoadQuestions();
-            labelTitle.Text = this.viewModel.section.title;
-            labelDescription.Text = this.viewModel.section.description;
+            labelTitle.Text = this.viewModel.factor.title;
+            labelDescription.Text = this.viewModel.factor.description;
         }
 
         private void LoadQuestions()
         {
-            foreach (Question question in viewModel.section.questions)
+            foreach (Question question in viewModel.factor.questions)
             {
                 if (question.type == QuestionTypes.LIKERT_3 || question.type == QuestionTypes.LIKERT_5 || question.type == QuestionTypes.LIKERT_7)
                 {
-                    LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.section.questions);
+                    LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.factor.questions);
                     questionControl.Dock = DockStyle.Top;
                     questionControl.AutoScaleMode = AutoScaleMode.None;
                     mainPanel.Controls.Add(questionControl);
@@ -41,7 +42,7 @@ namespace PFE.UserContol
                 }
                 else if (question.type == QuestionTypes.RADIO)
                 {
-                    RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.section.questions);
+                    RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.factor.questions);
                     questionControl.Dock = DockStyle.Top;
                     questionControl.AutoScaleMode = AutoScaleMode.None;
                     mainPanel.Controls.Add(questionControl);
@@ -49,7 +50,7 @@ namespace PFE.UserContol
                 }
                 else if (question.type == QuestionTypes.CHECK_BOX)
                 {
-                    CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.section.questions);
+                    CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.factor.questions);
                     questionControl.Dock = DockStyle.Top;
                     questionControl.AutoScaleMode = AutoScaleMode.None;
                     mainPanel.Controls.Add(questionControl);
@@ -60,7 +61,7 @@ namespace PFE.UserContol
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
-            using (var form = new AddQuestionForm(this.viewModel.section.factor != null))
+            using (var form = new AddQuestionForm(this.viewModel.factor.title != "None"))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
@@ -75,42 +76,42 @@ namespace PFE.UserContol
         {
             if (question.type == QuestionTypes.LIKERT_3 || question.type == QuestionTypes.LIKERT_5 || question.type == QuestionTypes.LIKERT_7)
             {
-                LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.section.questions);
+                LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.factor.questions);
                 questionControl.Dock = DockStyle.Top;
                 questionControl.AutoScaleMode = AutoScaleMode.None;
                 mainPanel.Controls.Add(questionControl);
                 mainPanel.Controls.SetChildIndex(questionControl, 0);
-                if (this.viewModel.section.questions == null)
+                if (this.viewModel.factor.questions == null)
                 {
-                    this.viewModel.section.questions = new List<Question>();
+                    this.viewModel.factor.questions = new List<Question>();
                 }
-                this.viewModel.section.questions.Add(question);
+                this.viewModel.factor.questions.Add(question);
             }
             else if (question.type == QuestionTypes.RADIO)
             {
-                RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.section.questions);
+                RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.factor.questions);
                 questionControl.Dock = DockStyle.Top;
                 questionControl.AutoScaleMode = AutoScaleMode.None;
                 mainPanel.Controls.Add(questionControl);
                 mainPanel.Controls.SetChildIndex(questionControl, 0);
-                if (this.viewModel.section.questions == null)
+                if (this.viewModel.factor.questions == null)
                 {
-                    this.viewModel.section.questions = new List<Question>();
+                    this.viewModel.factor.questions = new List<Question>();
                 }
-                this.viewModel.section.questions.Add(question);
+                this.viewModel.factor.questions.Add(question);
             }
             else if (question.type == QuestionTypes.CHECK_BOX)
             {
-                CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.section.questions);
+                CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.factor.questions);
                 questionControl.Dock = DockStyle.Top;
                 questionControl.AutoScaleMode = AutoScaleMode.None;
                 mainPanel.Controls.Add(questionControl);
                 mainPanel.Controls.SetChildIndex(questionControl, 0);
-                if (this.viewModel.section.questions == null)
+                if (this.viewModel.factor.questions == null)
                 {
-                    this.viewModel.section.questions = new List<Question>();
+                    this.viewModel.factor.questions = new List<Question>();
                 }
-                this.viewModel.section.questions.Add(question);
+                this.viewModel.factor.questions.Add(question);
             }
         }
     }

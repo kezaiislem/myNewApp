@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFE.Model;
 using PFE.ViewModel;
+using PFE.model;
 
 namespace PFE.UserContol
 {
@@ -56,7 +57,7 @@ namespace PFE.UserContol
                             title = form.viewModel.Title,
                             description = form.viewModel.Description,
                             model = this.viewModel.model,
-                            sections = new List<Section>()
+                            factors = new List<Factor>()
                         };
                         this.addSurvey(survey);
                         this.viewModel.model.surveys.Add(survey);

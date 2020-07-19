@@ -37,26 +37,6 @@ namespace PFE.Shared
             return String.Empty;
         }
 
-        public static async Task<String> getFactors()
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "factors"))
-                {
-                    using (HttpContent content = resonse.Content)
-                    {
-                        string data = await content.ReadAsStringAsync();
-                        if (data != null)
-                        {
-                            Debug.WriteLine(data);
-                            return data;
-                        }
-                    }
-                }
-            }
-            return String.Empty;
-        }
-
         public static async Task<String> authentificate(String username, String password)
         {
             using (HttpClient client = new HttpClient())

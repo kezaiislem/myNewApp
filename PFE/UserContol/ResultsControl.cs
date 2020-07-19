@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PFE.Model;
 using PFE.ViewModel;
+using PFE.model;
 
 namespace PFE.UserContol
 {
@@ -28,15 +29,15 @@ namespace PFE.UserContol
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
             viewModel = new ResultControlViewModel(surveyId);
-            while(viewModel.sections == null) { }
-            foreach (Section s in viewModel.sections)
+            while(viewModel.factors == null) { }
+            foreach (Factor factor in viewModel.factors)
             {
-                addSection(s);
+                addSection(factor);
             }
 
         }
 
-        private void addSection(Section section)
+        private void addSection(Factor factor)
         {
             Button panelSection = new Button();
             panelSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
@@ -50,19 +51,19 @@ namespace PFE.UserContol
             panelSection.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             panelSection.Height = 40;
             panelSection.TabIndex = tabCount;
-            panelSection.Text = section.title;
+            panelSection.Text = factor.title;
             panelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             panelSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             panelSection.UseVisualStyleBackColor = false;
-            panelSection.Click += (s, ev) => sectionClick(section);
+            panelSection.Click += (s, ev) => sectionClick(factor);
             tabCount++;
             panelSections.Controls.Add(panelSection);
             panelSections.Controls.SetChildIndex(panelSection, 0);
         }
 
-        public void sectionClick(Section section)
+        public void sectionClick(Factor factor)
         {
-            SectionResultControl sectionResultControl = new SectionResultControl(section);
+            SectionResultControl sectionResultControl = new SectionResultControl(factor);
             if (currentSection != null)
             {
                 currentSection.Dispose();

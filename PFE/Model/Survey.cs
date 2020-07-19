@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PFE.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace PFE.Model
         public string title { get; set; }
         public string description { get; set; }
         public int phaseNumber { get; set; }
-        public List<Section> sections  { get; set; }
+        public List<Factor> factors  { get; set; }
         public List<Answer> answers { get; set; }
         public Host host { get; set; }
         [XmlIgnore]

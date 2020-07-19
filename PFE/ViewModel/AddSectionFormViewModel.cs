@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.model;
 using PFE.Model;
 using PFE.Shared;
 using System;
@@ -13,55 +14,35 @@ namespace PFE.ViewModel
     public class AddSectionFormViewModel
     {
         public List<Factor> factors { get; set; }
-
-        public ComboboxItem selectedItem;
-        public ComboboxItem SelectedItem
-        {
-            get { return selectedItem; }
-            set {
-                Factor = (Factor)value.Value;
-                selectedItem = value; 
-            }
-        }
-        public List<ComboboxItem> combos { get; set; }
+        public Factor selectedItem { get; set; }
         public String Title { get; set; }
         public Factor Factor { get; set; }
         public String Description { get; set; }
 
         public AddSectionFormViewModel()
         {
-            Task.Run(async () => await InitializeFactors());
-            combos = new List<ComboboxItem>();
-            initCombos();
+            InitializeFactors();
         }
 
-        private async Task InitializeFactors()
+        private void InitializeFactors()
         {
             try
             {
-                String data = await RestHelper.getFactors();
-                if (data != "")
-                {
-                    factors = JsonConvert.DeserializeObject<List<Factor>>(data);
-                }
+                if (factors == null)
+                    factors = new List<Factor>();
+                else
+                    factors.Clear();
+
+                factors.Add(new Factor { title = "None"});
+                factors.Add(new Factor { title = "Ease of use", description = "Ease of use description" });
+                factors.Add(new Factor { title = "Communication", description = "Communication description" });
+                factors.Add(new Factor { title = "Adaptabillity", description = "Adaptabillity description" });
+                factors.Add(new Factor { title = "Usefullness", description = "Usefullness description" });
+
             }
             catch (Exception ex)
             {
                 factors = new List<Factor>();
-            }
-
-        }
-
-        public void initCombos()
-        {
-            while (factors == null) { }
-
-            combos.Add(new ComboboxItem { Text = "None", Value = null });
-            selectedItem = combos.First<ComboboxItem>();
-
-            foreach (Factor factor in factors)
-            {
-                combos.Add(new ComboboxItem { Text = factor.name, Value = factor });
             }
         }
     }

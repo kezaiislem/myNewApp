@@ -1,4 +1,5 @@
-﻿using PFE.Model;
+﻿using PFE.model;
+using PFE.Model;
 using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -34,8 +35,8 @@ namespace PFE.UserContol
 
         private async void metroButtonSearch_Click(object sender, EventArgs e)
         {
-            List<Section> sections = await viewModel.loadSuggestions();
-            gridResult.DataSource = sections;
+            List<Factor> factors = await viewModel.loadSuggestions();
+            gridResult.DataSource = factors;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace PFE.UserContol
         {
             if (gridResult.SelectedRows.Count > 0)
             {
-                this.viewModel.selectedItem = (Section)gridResult.SelectedRows[0].DataBoundItem;
+                this.viewModel.selectedItem = (Factor)gridResult.SelectedRows[0].DataBoundItem;
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }

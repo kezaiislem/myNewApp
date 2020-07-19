@@ -1,6 +1,6 @@
 ﻿namespace PFE.UserContol
 {
-    partial class SectionControl
+    partial class FactorControl
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
