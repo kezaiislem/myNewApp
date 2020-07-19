@@ -93,6 +93,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
@@ -197,6 +200,7 @@
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
     <Compile Include="CustomObjects\CalendarItem.cs" />
+    <Compile Include="CustomObjects\CustomGridQuestion.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
     <Compile Include="CustomObjects\CustomSurveysObject.cs" />
     <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
@@ -254,11 +258,11 @@
     <Compile Include="UserContol\AddSurveyForm.Designer.cs">
       <DependentUpon>AddSurveyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddSectionForm.cs">
+    <Compile Include="UserContol\AddFactorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddSectionForm.Designer.cs">
-      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    <Compile Include="UserContol\AddFactorForm.Designer.cs">
+      <DependentUpon>AddFactorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\HostForm.cs">
       <SubType>Form</SubType>
@@ -377,11 +381,11 @@
     <Compile Include="UserContol\QuestionSuggestionForm.Designer.cs">
       <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\SectionSugesstionForm.cs">
+    <Compile Include="UserContol\FactorSugesstionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\SectionSugesstionForm.Designer.cs">
-      <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
+    <Compile Include="UserContol\FactorSugesstionForm.Designer.cs">
+      <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddSurveyFormViewModel.cs" />
     <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
@@ -389,7 +393,7 @@
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
-    <Compile Include="ViewModel\AddSectionFormViewModel.cs" />
+    <Compile Include="ViewModel\AddFactorFormViewModel.cs" />
     <Compile Include="ViewModel\ModelSurveyControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectPlanControlViewModel.cs" />
     <Compile Include="ViewModel\ResultControlViewModel.cs" />
@@ -400,7 +404,7 @@
     <Compile Include="ViewModel\PhaseControlViewModel.cs" />
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="ViewModel\QuestionSugestionViewModel.cs" />
-    <Compile Include="ViewModel\SectionSugesstionViewModel.cs" />
+    <Compile Include="ViewModel\FactorSugesstionViewModel.cs" />
     <Compile Include="Welcome From.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,8 +451,8 @@
     <EmbeddedResource Include="UserContol\AddSurveyForm.resx">
       <DependentUpon>AddSurveyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddSectionForm.resx">
-      <DependentUpon>AddSectionForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserContol\AddFactorForm.resx">
+      <DependentUpon>AddFactorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\HostForm.resx">
       <DependentUpon>HostForm.cs</DependentUpon>
@@ -495,14 +499,16 @@
     <EmbeddedResource Include="UserContol\QuestionSuggestionForm.resx">
       <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\SectionSugesstionForm.resx">
-      <DependentUpon>SectionSugesstionForm.cs</DependentUpon>
+    <EmbeddedResource Include="UserContol\FactorSugesstionForm.resx">
+      <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome From.resx">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="PFE_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\PFE.CustomObjects.CustomGridQuestion.datasource" />
+    <None Include="Properties\DataSources\PFE.model.Factor.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Field.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Question.datasource" />
     <None Include="Properties\DataSources\PFE.Model.Section.datasource" />

@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class SectionSugesstionViewModel
+    public class FactorSugesstionViewModel
     {
         public SectionSuggestionsRequestObject requestObject { get; set; }
         public Factor selectedItem { get; set; }
 
-        public SectionSugesstionViewModel()
+        public FactorSugesstionViewModel()
         {
             requestObject = new SectionSuggestionsRequestObject();
         }
@@ -26,6 +26,17 @@ namespace PFE.ViewModel
             String data = await RestHelper.loadSectionSuggestion(requestObject);
             Console.WriteLine(data);
             List<Factor> result = JsonConvert.DeserializeObject<List<Factor>>(data);
+            foreach(Factor factor in result)
+            {
+                factor.questions = new List<Question>();
+                factor.questions.Add(new Question { text = "Q1", type = 2 });
+                factor.questions.Add(new Question { text = "Q2", type = 1 });
+                factor.questions.Add(new Question { text = "Q3", type = 1 });
+                if(factor.title == "Adaptability")
+                {
+                    factor.questions.Add(new Question { text = "Q4", type = 1 });
+                }
+            }
             return result;
         }
     }

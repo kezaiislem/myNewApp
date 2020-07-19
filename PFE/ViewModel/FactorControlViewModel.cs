@@ -16,6 +16,10 @@ namespace PFE.ViewModel
 
         public FactorControlViewModel(Factor factor)
         {
+            if (factor.questions == null)
+            {
+                factor.questions = new List<Question>();
+            }
             this.QuestionControls = new List<LikertQuestionControl>();
             this.factor = factor;
         }

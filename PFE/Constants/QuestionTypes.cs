@@ -42,6 +42,11 @@ namespace PFE.Constants
             return new List<String> { "Strongly Sisagree", "Disagree", "More or less Disagree", "Neutral", "More or less Agree", "Agree", "Strongly Agree" };
         }
 
+        public static List<String> evaluationTypesStrings()
+        {
+            return new List<String> { "Likert 3", "Likert 5", "Likert 7" };
+        }
+
         public static List<QuestionType> evaluationTypes()
         {
             List<QuestionType> questionTypes = new List<QuestionType>();
@@ -64,9 +69,28 @@ namespace PFE.Constants
                 case RADIO:
                     return "Radio";
                 case CHECK_BOX:
-                    return "Chackbox";
+                    return "Checkbox";
                 default:
                     return "Not Supported";
+            }
+        }
+
+        public static int getIntValue(string TYPE)
+        {
+            switch (TYPE)
+            {
+                case "Likert 3":
+                    return LIKERT_3;
+                case "Likert 5":
+                    return LIKERT_5;
+                case "Likert 7":
+                    return LIKERT_7;
+                case "Radio":
+                    return RADIO;
+                case "Checkbox":
+                    return CHECK_BOX;
+                default:
+                    return -1;
             }
         }
     }

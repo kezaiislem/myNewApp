@@ -58,12 +58,12 @@ namespace PFE.UserContol
 
         private void buttonAddSection_Click(object sender, EventArgs e)
         {
-            using (var form = new AddSectionForm())
+            using (var form = new AddFactorForm())
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = new List<Question>() };
+                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions};
                     this.viewModel.survey.factors.Add(factor);
                     addFactor(factor);
                 }

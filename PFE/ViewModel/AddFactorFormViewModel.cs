@@ -11,15 +11,16 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class AddSectionFormViewModel
+    public class AddFactorFormViewModel
     {
         public List<Factor> factors { get; set; }
         public Factor selectedItem { get; set; }
         public String Title { get; set; }
         public Factor Factor { get; set; }
         public String Description { get; set; }
+        public List<Question> selectedQuestions { get; set; }
 
-        public AddSectionFormViewModel()
+        public AddFactorFormViewModel()
         {
             InitializeFactors();
         }

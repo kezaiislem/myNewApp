@@ -13,14 +13,14 @@ using System.Windows.Forms;
 
 namespace PFE.UserContol
 {
-    public partial class AddSectionForm : Form
+    public partial class AddFactorForm : Form
     {
-        public AddSectionFormViewModel viewModel { get; set; } 
+        public AddFactorFormViewModel viewModel { get; set; } 
 
-        public AddSectionForm()
+        public AddFactorForm()
         {
             InitializeComponent();
-            this.viewModel = new AddSectionFormViewModel();
+            this.viewModel = new AddFactorFormViewModel();
             InitializeView();
         }
 
@@ -49,7 +49,6 @@ namespace PFE.UserContol
             {
                 MessageBox.Show("Title and description cant be empty", "Error", MessageBoxButtons.OK);
             }
-            
         }
 
         private Boolean checkFields()
@@ -61,14 +60,33 @@ namespace PFE.UserContol
 
         private void metroButtonImport_Click(object sender, EventArgs e)
         {
-            using (var form = new SectionSugesstionForm())
+            using (var form = new FactorSugesstionForm())
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     textBoxTitle.Text = form.viewModel.selectedItem.title;
                     textBoxDescription.Text = form.viewModel.selectedItem.description;
+                    this.viewModel.selectedQuestions = form.viewModel.selectedItem.questions;
+                    if (checkBoxDefaultMta.Checked == true)
+                        checkBoxDefaultMta.Checked = false;
                 }
+            }
+        }
+
+        private void checkBoxDefaultMta_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            if (e.Checked)
+            {
+                comboBoxFactor.Enabled = true;
+                textBoxTitle.Enabled = false;
+                textBoxDescription.Enabled = false;
+            }
+            else
+            {
+                comboBoxFactor.Enabled = false;
+                textBoxTitle.Enabled = true;
+                textBoxDescription.Enabled = true;
             }
         }
     }

@@ -117,7 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="sectionBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="checkBoxDefaultMta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACTSURBVDhPY6ApkJe351DSMcxQ1DVsIAcr6eoXyGuZSkCN
+        Axqory8ANPC9kq7hf8qwwXd5LX0DsKEgF4IFdQzvY3MFMVhJx+A4xAyDCrChYEGgAIgGC5ABMMwYNXTU
+        0FFDRw0FC5ABcBoKxPtBbHIwSC+KoaCCFWooxVhZRz8AbCgIKOsZeqDbTipW0jaMYGBgYAAA7eDnaKFI
+        gI4AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

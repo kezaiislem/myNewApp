@@ -2,7 +2,7 @@
 
 namespace PFE.UserContol
 {
-    partial class AddSectionForm
+    partial class AddFactorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,6 +30,7 @@ namespace PFE.UserContol
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFactorForm));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -40,6 +41,8 @@ namespace PFE.UserContol
             this.textBoxDescription = new MetroFramework.Controls.MetroTextBox();
             this.comboBoxFactor = new MetroFramework.Controls.MetroComboBox();
             this.metroButtonImport = new MetroFramework.Controls.MetroButton();
+            this.checkBoxDefaultMta = new Bunifu.UI.WinForms.BunifuCheckBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -51,9 +54,9 @@ namespace PFE.UserContol
             this.metroLabel1.ForeColor = System.Drawing.Color.White;
             this.metroLabel1.Location = new System.Drawing.Point(12, 9);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(149, 25);
+            this.metroLabel1.Size = new System.Drawing.Size(139, 25);
             this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Add New Section";
+            this.metroLabel1.Text = "Add New Factor";
             this.metroLabel1.UseCustomBackColor = true;
             this.metroLabel1.UseCustomForeColor = true;
             // 
@@ -88,7 +91,7 @@ namespace PFE.UserContol
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel4.ForeColor = System.Drawing.Color.White;
-            this.metroLabel4.Location = new System.Drawing.Point(521, 57);
+            this.metroLabel4.Location = new System.Drawing.Point(524, 104);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(45, 19);
             this.metroLabel4.TabIndex = 3;
@@ -107,7 +110,6 @@ namespace PFE.UserContol
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseCustomBackColor = true;
             this.buttonCancel.UseCustomForeColor = true;
-            this.buttonCancel.UseSelectable = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOk
@@ -121,7 +123,6 @@ namespace PFE.UserContol
             this.buttonOk.Text = "OK";
             this.buttonOk.UseCustomBackColor = true;
             this.buttonOk.UseCustomForeColor = true;
-            this.buttonOk.UseSelectable = true;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // textBoxTitle
@@ -194,9 +195,10 @@ namespace PFE.UserContol
             // comboBoxFactor
             // 
             this.comboBoxFactor.BackColor = System.Drawing.Color.White;
+            this.comboBoxFactor.Enabled = false;
             this.comboBoxFactor.FormattingEnabled = true;
             this.comboBoxFactor.ItemHeight = 23;
-            this.comboBoxFactor.Location = new System.Drawing.Point(593, 53);
+            this.comboBoxFactor.Location = new System.Drawing.Point(593, 100);
             this.comboBoxFactor.Name = "comboBoxFactor";
             this.comboBoxFactor.Size = new System.Drawing.Size(168, 29);
             this.comboBoxFactor.TabIndex = 9;
@@ -214,15 +216,83 @@ namespace PFE.UserContol
             this.metroButtonImport.Text = "Import";
             this.metroButtonImport.UseCustomBackColor = true;
             this.metroButtonImport.UseCustomForeColor = true;
-            this.metroButtonImport.UseSelectable = true;
             this.metroButtonImport.Click += new System.EventHandler(this.metroButtonImport_Click);
             // 
-            // AddSectionForm
+            // checkBoxDefaultMta
+            // 
+            this.checkBoxDefaultMta.AllowBindingControlAnimation = true;
+            this.checkBoxDefaultMta.AllowBindingControlColorChanges = false;
+            this.checkBoxDefaultMta.AllowBindingControlLocation = true;
+            this.checkBoxDefaultMta.AllowCheckBoxAnimation = false;
+            this.checkBoxDefaultMta.AllowCheckmarkAnimation = true;
+            this.checkBoxDefaultMta.AllowOnHoverStates = true;
+            this.checkBoxDefaultMta.AutoCheck = true;
+            this.checkBoxDefaultMta.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxDefaultMta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBoxDefaultMta.BackgroundImage")));
+            this.checkBoxDefaultMta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.checkBoxDefaultMta.BindingControl = null;
+            this.checkBoxDefaultMta.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.checkBoxDefaultMta.Checked = false;
+            this.checkBoxDefaultMta.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.checkBoxDefaultMta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxDefaultMta.CustomCheckmarkImage = null;
+            this.checkBoxDefaultMta.Location = new System.Drawing.Point(524, 57);
+            this.checkBoxDefaultMta.MinimumSize = new System.Drawing.Size(17, 17);
+            this.checkBoxDefaultMta.Name = "checkBoxDefaultMta";
+            this.checkBoxDefaultMta.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxDefaultMta.OnCheck.BorderRadius = 2;
+            this.checkBoxDefaultMta.OnCheck.BorderThickness = 2;
+            this.checkBoxDefaultMta.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxDefaultMta.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxDefaultMta.OnCheck.CheckmarkThickness = 2;
+            this.checkBoxDefaultMta.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.checkBoxDefaultMta.OnDisable.BorderRadius = 2;
+            this.checkBoxDefaultMta.OnDisable.BorderThickness = 2;
+            this.checkBoxDefaultMta.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxDefaultMta.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.checkBoxDefaultMta.OnDisable.CheckmarkThickness = 2;
+            this.checkBoxDefaultMta.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(188)))));
+            this.checkBoxDefaultMta.OnHoverChecked.BorderRadius = 2;
+            this.checkBoxDefaultMta.OnHoverChecked.BorderThickness = 2;
+            this.checkBoxDefaultMta.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(188)))));
+            this.checkBoxDefaultMta.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxDefaultMta.OnHoverChecked.CheckmarkThickness = 2;
+            this.checkBoxDefaultMta.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(131)))), ((int)(((byte)(188)))));
+            this.checkBoxDefaultMta.OnHoverUnchecked.BorderRadius = 2;
+            this.checkBoxDefaultMta.OnHoverUnchecked.BorderThickness = 2;
+            this.checkBoxDefaultMta.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxDefaultMta.OnUncheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxDefaultMta.OnUncheck.BorderRadius = 2;
+            this.checkBoxDefaultMta.OnUncheck.BorderThickness = 2;
+            this.checkBoxDefaultMta.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxDefaultMta.Size = new System.Drawing.Size(21, 21);
+            this.checkBoxDefaultMta.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.checkBoxDefaultMta.TabIndex = 15;
+            this.checkBoxDefaultMta.ThreeState = false;
+            this.checkBoxDefaultMta.ToolTipText = null;
+            this.checkBoxDefaultMta.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxDefaultMta_CheckedChanged);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel5.ForeColor = System.Drawing.Color.White;
+            this.metroLabel5.Location = new System.Drawing.Point(561, 59);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(142, 19);
+            this.metroLabel5.TabIndex = 16;
+            this.metroLabel5.Text = "Use MTA default factor";
+            this.metroLabel5.UseCustomBackColor = true;
+            this.metroLabel5.UseCustomForeColor = true;
+            // 
+            // AddFactorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(127)))), ((int)(((byte)(168)))));
             this.ClientSize = new System.Drawing.Size(797, 210);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.checkBoxDefaultMta);
             this.Controls.Add(this.metroButtonImport);
             this.Controls.Add(this.comboBoxFactor);
             this.Controls.Add(this.textBoxDescription);
@@ -235,7 +305,7 @@ namespace PFE.UserContol
             this.Controls.Add(this.metroLabel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AddSectionForm";
+            this.Name = "AddFactorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSectionForm";
             this.ResumeLayout(false);
@@ -254,5 +324,7 @@ namespace PFE.UserContol
         private MetroFramework.Controls.MetroTextBox textBoxDescription;
         private MetroFramework.Controls.MetroTextBox textBoxTitle;
         private MetroFramework.Controls.MetroButton metroButtonImport;
+        private Bunifu.UI.WinForms.BunifuCheckBox checkBoxDefaultMta;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }
