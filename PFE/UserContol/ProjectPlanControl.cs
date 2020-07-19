@@ -43,9 +43,15 @@ namespace PFE.UserContol
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            ProjectEvent pe = new ProjectEvent { name = "My test event", startDate = DateTime.Now, endDate = new DateTime(2020, 7, 23) , color = Color.Aqua};
-            CalendarItem calendarItem = new CalendarItem(pe);
-            calendar1.AddEvent(calendarItem.customEvent);
+
+            var form = new AddEventForm();
+
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ProjectEvent pe = new ProjectEvent { name = form.text, startDate = form.startDate, endDate = form.endDate, color = "#6699ff" };
+                CalendarItem calendarItem = new CalendarItem(pe);
+                calendar1.AddEvent(calendarItem.customEvent);
+            }
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)

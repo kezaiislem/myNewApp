@@ -27,7 +27,7 @@ namespace PFE.ViewModel
             this.calendarItems = new List<CalendarItem>();
             foreach (ProjectEvent projectEvent in this.projectEvents)
             {
-                calendarItems.Add(new CalendarItem(new ProjectEvent { name = projectEvent.name, startDate = projectEvent.startDate, endDate = projectEvent.endDate , color = Color.Aqua}));
+                calendarItems.Add(new CalendarItem(projectEvent));
             }
         }
 
@@ -36,7 +36,7 @@ namespace PFE.ViewModel
             projectEvents.Clear();
             foreach (IEvent ev in events)
             {
-                projectEvents.Add(new ProjectEvent { name = ev.EventText, startDate = ev.Date, endDate = ev.EndDate , color = ev.EventColor});
+                projectEvents.Add(new ProjectEvent { name = ev.EventText, startDate = ev.Date, endDate = ev.EndDate , color = ColorTranslator.ToHtml(ev.EventColor)});
             }
         }
 

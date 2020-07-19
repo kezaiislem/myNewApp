@@ -42,10 +42,11 @@
             this.calendar1.DaysFont = new System.Drawing.Font("Arial", 10F);
             this.calendar1.DayViewTimeFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.calendar1.DimDisabledEvents = true;
+            this.calendar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.calendar1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.calendar1.HighlightCurrentDay = true;
             this.calendar1.LoadPresetHolidays = false;
-            this.calendar1.Location = new System.Drawing.Point(84, 63);
+            this.calendar1.Location = new System.Drawing.Point(0, 0);
             this.calendar1.Name = "calendar1";
             this.calendar1.ShowArrowControls = true;
             this.calendar1.ShowDashedBorderOnDisabledEvents = true;
@@ -53,13 +54,13 @@
             this.calendar1.ShowDisabledEvents = false;
             this.calendar1.ShowEventTooltips = true;
             this.calendar1.ShowTodayButton = true;
-            this.calendar1.Size = new System.Drawing.Size(902, 522);
+            this.calendar1.Size = new System.Drawing.Size(1064, 607);
             this.calendar1.TabIndex = 0;
             this.calendar1.TodayFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(441, 88);
+            this.buttonAdd.Location = new System.Drawing.Point(187, 21);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(55, 23);
             this.buttonAdd.TabIndex = 1;

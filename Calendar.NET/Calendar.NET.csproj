@@ -49,6 +49,12 @@
     <Compile Include="CustomEvent.cs" />
     <Compile Include="CustomRecurringFunctionAttribute.cs" />
     <Compile Include="EventComparer.cs" />
+    <Compile Include="EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoolButton.resx">
       <DependentUpon>CoolButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EventDetails.resx">
       <DependentUpon>EventDetails.cs</DependentUpon>

@@ -12,6 +12,6 @@ namespace PFE.model
         public string name { get; set; }
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
-        public Color color { get; set; }
+        public String color { get; set; }
     }
 }

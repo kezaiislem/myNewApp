@@ -2,6 +2,7 @@
 using PFE.model;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace PFE.CustomObjects
                 EventText = this.Event.name,
                 CustomRecurringFunction = EventDays,
                 EndDate = Event.endDate,
-                EventColor = Event.color
+                EventColor = ColorTranslator.FromHtml(Event.color)
             };
         }
     }

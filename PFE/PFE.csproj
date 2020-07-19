@@ -213,6 +213,12 @@
     <Compile Include="model\Survey.cs" />
     <Compile Include="model\Host.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
+    <Compile Include="UserContol\AddEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\AddEventForm.Designer.cs">
+      <DependentUpon>AddEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\AddQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,6 +427,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserContol\AddEventForm.resx">
+      <DependentUpon>AddEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
