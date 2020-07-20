@@ -67,9 +67,7 @@ namespace PFE.UserContol
                     foreach (DataGridViewRow row in gridResultQuestions.SelectedRows)
                     {
                         var gridQuestion = (CustomGridQuestion) row.DataBoundItem;
-                        Console.WriteLine(gridQuestion.type);
                         this.viewModel.selectedItem.questions.Add(new Question { text = gridQuestion.text, type = QuestionTypes.getIntValue(gridQuestion.type) });
-                        Console.WriteLine(this.viewModel.selectedItem.questions.ElementAt(0).type);
                     }
                 }
                 this.DialogResult = DialogResult.OK;

@@ -27,7 +27,6 @@ namespace PFE.UserContol
             this.questions = questions;
             this.labelQuestion.Text = question.text;
             textBoxEditQuestion.Text = question.text;
-            Console.WriteLine(question.choices);
         }
 
         private void Init(int questionType)

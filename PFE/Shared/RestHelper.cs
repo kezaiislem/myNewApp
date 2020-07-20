@@ -107,11 +107,11 @@ namespace PFE.Shared
             return String.Empty;
         }
 
-        public static async Task<String> loadSectionSuggestion(SectionSuggestionsRequestObject requestObject)
+        public static async Task<String> loadFactorSuggestion(SectionSuggestionsRequestObject requestObject)
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "sectionsuggestions?technologyname=" + requestObject.technologyName + "&technologyfield=" + requestObject.technologyField + "&evaluationContext=" + requestObject.evalutionContext + "&factorname=" + requestObject.factor))
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "factorsuggestions?technologyname=" + requestObject.technologyName + "&technologyfield=" + requestObject.technologyField + "&evaluationContext=" + requestObject.evalutionContext + "&factorname=" + requestObject.factor))
                 {
                     using (HttpContent content = resonse.Content)
                     {

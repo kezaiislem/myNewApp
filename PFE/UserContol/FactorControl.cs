@@ -21,10 +21,6 @@ namespace PFE.UserContol
 
         public FactorControl(Factor factor)
         {
-            foreach (Question q in factor.questions)
-            {
-                Console.WriteLine("Type = " + q.type);
-            }
             viewModel = new FactorControlViewModel(factor);
             InitializeComponent();
             LoadQuestions();

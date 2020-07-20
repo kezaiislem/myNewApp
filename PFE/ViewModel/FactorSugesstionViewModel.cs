@@ -23,21 +23,16 @@ namespace PFE.ViewModel
 
         public async Task<List<Factor>> loadSuggestions()
         {
-            String data = await RestHelper.loadSectionSuggestion(requestObject);
-            Console.WriteLine(data);
-            List<Factor> result = JsonConvert.DeserializeObject<List<Factor>>(data);
-            foreach(Factor factor in result)
+            try
             {
-                factor.questions = new List<Question>();
-                factor.questions.Add(new Question { text = "Q1", type = 2 });
-                factor.questions.Add(new Question { text = "Q2", type = 1 });
-                factor.questions.Add(new Question { text = "Q3", type = 1 });
-                if(factor.title == "Adaptability")
-                {
-                    factor.questions.Add(new Question { text = "Q4", type = 1 });
-                }
+                String data = await RestHelper.loadFactorSuggestion(requestObject);
+                List<Factor> result = JsonConvert.DeserializeObject<List<Factor>>(data);
+                return result;
             }
-            return result;
+            catch(Exception e)
+            {
+                return new List<Factor>();
+            }
         }
     }
 }

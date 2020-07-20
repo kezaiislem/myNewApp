@@ -20,7 +20,6 @@ namespace PFE.UserContol
 
         public ModelInfo(PFE.Model.Model model, MainForm main)
         {
-            Console.WriteLine("Model " + model);
             InitializeComponent();
             Init(model, main);
         }
