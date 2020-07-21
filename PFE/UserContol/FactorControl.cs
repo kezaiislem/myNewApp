@@ -34,27 +34,15 @@ namespace PFE.UserContol
             {
                 if (question.type == QuestionTypes.LIKERT_3 || question.type == QuestionTypes.LIKERT_5 || question.type == QuestionTypes.LIKERT_7)
                 {
-                    LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.factor.questions);
-                    questionControl.Dock = DockStyle.Top;
-                    questionControl.AutoScaleMode = AutoScaleMode.None;
-                    mainPanel.Controls.Add(questionControl);
-                    mainPanel.Controls.SetChildIndex(questionControl, 0);
+                    addLikertQuestion(question);
                 }
                 else if (question.type == QuestionTypes.RADIO)
                 {
-                    RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.factor.questions);
-                    questionControl.Dock = DockStyle.Top;
-                    questionControl.AutoScaleMode = AutoScaleMode.None;
-                    mainPanel.Controls.Add(questionControl);
-                    mainPanel.Controls.SetChildIndex(questionControl, 0);
+                    addRadioQuestion(question);
                 }
                 else if (question.type == QuestionTypes.CHECK_BOX)
                 {
-                    CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.factor.questions);
-                    questionControl.Dock = DockStyle.Top;
-                    questionControl.AutoScaleMode = AutoScaleMode.None;
-                    mainPanel.Controls.Add(questionControl);
-                    mainPanel.Controls.SetChildIndex(questionControl, 0);
+                    addRadioQuestion(question);
                 }
             }
         }
@@ -69,18 +57,13 @@ namespace PFE.UserContol
                     addQuestion(form.viewModel.question);
                 }
             }
-            
         }
 
         public void addQuestion(Question question)
         {
             if (question.type == QuestionTypes.LIKERT_3 || question.type == QuestionTypes.LIKERT_5 || question.type == QuestionTypes.LIKERT_7)
             {
-                LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.factor.questions);
-                questionControl.Dock = DockStyle.Top;
-                questionControl.AutoScaleMode = AutoScaleMode.None;
-                mainPanel.Controls.Add(questionControl);
-                mainPanel.Controls.SetChildIndex(questionControl, 0);
+                addLikertQuestion(question);
                 if (this.viewModel.factor.questions == null)
                 {
                     this.viewModel.factor.questions = new List<Question>();
@@ -89,11 +72,7 @@ namespace PFE.UserContol
             }
             else if (question.type == QuestionTypes.RADIO)
             {
-                RadioQuestionContol questionControl = new RadioQuestionContol(question, this.viewModel.factor.questions);
-                questionControl.Dock = DockStyle.Top;
-                questionControl.AutoScaleMode = AutoScaleMode.None;
-                mainPanel.Controls.Add(questionControl);
-                mainPanel.Controls.SetChildIndex(questionControl, 0);
+                addRadioQuestion(question);
                 if (this.viewModel.factor.questions == null)
                 {
                     this.viewModel.factor.questions = new List<Question>();
@@ -102,17 +81,31 @@ namespace PFE.UserContol
             }
             else if (question.type == QuestionTypes.CHECK_BOX)
             {
-                CheckBoxQuestionContol questionControl = new CheckBoxQuestionContol(question, this.viewModel.factor.questions);
-                questionControl.Dock = DockStyle.Top;
-                questionControl.AutoScaleMode = AutoScaleMode.None;
-                mainPanel.Controls.Add(questionControl);
-                mainPanel.Controls.SetChildIndex(questionControl, 0);
+                addRadioQuestion(question);
                 if (this.viewModel.factor.questions == null)
                 {
                     this.viewModel.factor.questions = new List<Question>();
                 }
                 this.viewModel.factor.questions.Add(question);
             }
+        }
+
+        private void addLikertQuestion(Question question)
+        {
+            LikertQuestionControl questionControl = new LikertQuestionControl(question, this.viewModel.factor.questions);
+            questionControl.Dock = DockStyle.Top;
+            questionControl.AutoScaleMode = AutoScaleMode.None;
+            mainPanel.Controls.Add(questionControl);
+            mainPanel.Controls.SetChildIndex(questionControl, 0);
+            
+        }
+        private void addRadioQuestion(Question question)
+        {
+            RadioBoxQuestionControl questionControl = new RadioBoxQuestionControl(question, this.viewModel.factor.questions);
+            questionControl.Dock = DockStyle.Top;
+            questionControl.AutoScaleMode = AutoScaleMode.None;
+            mainPanel.Controls.Add(questionControl);
+            mainPanel.Controls.SetChildIndex(questionControl, 0);
         }
     }
 }

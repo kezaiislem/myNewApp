@@ -93,5 +93,11 @@ namespace PFE.Constants
                     return -1;
             }
         }
+
+        public static List<String> getDefaultChoices()
+        {
+            return new List<string> { "choice 1", "choice 2"};
+        }
+
     }
 }

@@ -33,7 +33,7 @@ namespace PFE.UserContol
         {
             switch (questionType)
             {
-                case QuestionTypes.LIKERT_3 :
+                case QuestionTypes.LIKERT_3:
                     panelLikert5.Dispose();
                     panelLikert7.Dispose();
                     this.Height = 135;

@@ -53,10 +53,5 @@ namespace PFE.UserContol
                 calendar1.AddEvent(calendarItem.customEvent);
             }
         }
-
-        private void buttonRemove_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

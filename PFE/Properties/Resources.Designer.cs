@@ -93,6 +93,16 @@ namespace PFE.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adding_ {
+            get {
+                object obj = ResourceManager.GetObject("adding ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AppLogo1 {
             get {
                 object obj = ResourceManager.GetObject("AppLogo1", resourceCulture);

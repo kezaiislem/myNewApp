@@ -28,9 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectPlanControl));
+            this.buttonAdd = new JImageButton.JImageButton();
             this.calendar1 = new Calendar.NET.Calendar();
-            this.buttonAdd = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
+            this.buttonAdd.CausesValidation = false;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAdd.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.ErrorImage")));
+            this.buttonAdd.Image = global::PFE.Properties.Resources.adding_;
+            this.buttonAdd.ImageHover = null;
+            this.buttonAdd.InitialImage = null;
+            this.buttonAdd.Location = new System.Drawing.Point(178, 17);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonAdd.Size = new System.Drawing.Size(32, 32);
+            this.buttonAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonAdd.TabIndex = 2;
+            this.buttonAdd.Zoom = 1;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // calendar1
             // 
@@ -58,16 +78,6 @@
             this.calendar1.TabIndex = 0;
             this.calendar1.TodayFont = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(187, 21);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(55, 23);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseSelectable = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
             // ProjectPlanControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -83,6 +93,6 @@
         #endregion
 
         private Calendar.NET.Calendar calendar1;
-        private MetroFramework.Controls.MetroButton buttonAdd;
+        private JImageButton.JImageButton buttonAdd;
     }
 }

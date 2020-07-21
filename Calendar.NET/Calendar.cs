@@ -39,8 +39,6 @@ namespace Calendar.NET
         private bool _showTodayButton;
         private bool _showDateInHeader;
         private TodayButton _btnToday;
-        private NavigateLeftButton _btnLeft;
-        private NavigateRightButton _btnRight;
         private bool _showingToolTip;
         private bool _showEventTooltips;
         private bool _loadPresetHolidays;
@@ -64,7 +62,8 @@ namespace Calendar.NET
         private ToolStripMenuItem _miColorRed;
         private ToolStripMenuItem _miColorBlue;
         private ToolStripMenuItem _miColorGreen;
-
+        private JImageButton.JImageButton _btnLeft;
+        private JImageButton.JImageButton _btnRight;
         private const int MarginSize = 20;
 
         /// <summary>
@@ -350,15 +349,16 @@ namespace Calendar.NET
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calendar));
             this._btnToday = new TodayButton();
-            this._btnLeft = new NavigateLeftButton();
-            this._btnRight = new NavigateRightButton();
             this._contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this._miRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this._miEditEvent = new System.Windows.Forms.ToolStripMenuItem();
-            this._miColorRed = new System.Windows.Forms.ToolStripMenuItem();
             this._miColorBlue = new System.Windows.Forms.ToolStripMenuItem();
             this._miColorGreen = new System.Windows.Forms.ToolStripMenuItem();
+            this._miColorRed = new System.Windows.Forms.ToolStripMenuItem();
+            this._miEditEvent = new System.Windows.Forms.ToolStripMenuItem();
+            this._miRemove = new System.Windows.Forms.ToolStripMenuItem();
+            this._btnLeft = new JImageButton.JImageButton();
+            this._btnRight = new JImageButton.JImageButton();
             this._contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -372,94 +372,103 @@ namespace Calendar.NET
             this._btnToday.FocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(144)))), ((int)(((byte)(254)))));
             this._btnToday.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(198)))));
             this._btnToday.HighlightButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this._btnToday.Location = new System.Drawing.Point(19, 20);
+            this._btnToday.Location = new System.Drawing.Point(20, 20);
             this._btnToday.Name = "_btnToday";
             this._btnToday.Size = new System.Drawing.Size(72, 29);
             this._btnToday.TabIndex = 0;
             this._btnToday.TextColor = System.Drawing.Color.Black;
             this._btnToday.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnTodayButtonClicked);
             // 
-            // _btnLeft
-            // 
-            this._btnLeft.BackColor = System.Drawing.Color.Transparent;
-            this._btnLeft.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this._btnLeft.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this._btnLeft.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this._btnLeft.ButtonText = "<";
-            this._btnLeft.FocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(144)))), ((int)(((byte)(254)))));
-            this._btnLeft.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(198)))));
-            this._btnLeft.HighlightButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this._btnLeft.Location = new System.Drawing.Point(98, 20);
-            this._btnLeft.Name = "_btnLeft";
-            this._btnLeft.Size = new System.Drawing.Size(42, 29);
-            this._btnLeft.TabIndex = 1;
-            this._btnLeft.TextColor = System.Drawing.Color.Black;
-            this._btnLeft.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnLeftButtonClicked);
-            // 
-            // _btnRight
-            // 
-            this._btnRight.BackColor = System.Drawing.Color.Transparent;
-            this._btnRight.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this._btnRight.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this._btnRight.ButtonFont = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
-            this._btnRight.ButtonText = ">";
-            this._btnRight.FocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(144)))), ((int)(((byte)(254)))));
-            this._btnRight.HighlightBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(198)))), ((int)(((byte)(198)))));
-            this._btnRight.HighlightButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this._btnRight.Location = new System.Drawing.Point(138, 20);
-            this._btnRight.Name = "_btnRight";
-            this._btnRight.Size = new System.Drawing.Size(42, 29);
-            this._btnRight.TabIndex = 2;
-            this._btnRight.TextColor = System.Drawing.Color.Black;
-            this._btnRight.ButtonClicked += new CoolButton.ButtonClickedArgs(this.BtnRightButtonClicked);
-            // 
             // _contextMenuStrip1
             // 
             this._contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._miColorBlue, this._miColorGreen, this._miColorRed, this._miEditEvent, this._miRemove});
+            this._miColorBlue,
+            this._miColorGreen,
+            this._miColorRed,
+            this._miEditEvent,
+            this._miRemove});
             this._contextMenuStrip1.Name = "_contextMenuStrip1";
-            this._contextMenuStrip1.Size = new System.Drawing.Size(137, 26);
-            // 
-            // _miProperties
-            // 
-            this._miRemove.Name = "_miRemove";
-            this._miRemove.Size = new System.Drawing.Size(136, 22);
-            this._miRemove.Text = "Remove";
-            this._miRemove.Click += new System.EventHandler(this.MenuItemRemoveClick);
-            // 
-            // _miEditEvent
-            // 
-            this._miEditEvent.Name = "_miChangeName";
-            this._miEditEvent.Size = new System.Drawing.Size(136, 22);
-            this._miEditEvent.Text = "Edit ...";
-            this._miEditEvent.Click += new System.EventHandler(this.MenuItemEditEventClick);
+            this._contextMenuStrip1.Size = new System.Drawing.Size(118, 114);
             // 
             // _miColorBlue
             // 
             this._miColorBlue.Name = "_miColorBlue";
-            this._miColorBlue.Size = new System.Drawing.Size(136, 22);
+            this._miColorBlue.Size = new System.Drawing.Size(117, 22);
             this._miColorBlue.Text = "Blue";
             this._miColorBlue.Click += new System.EventHandler(this.MenuItemBlueClick);
-            // 
-            // _miColorRed
-            // 
-            this._miColorRed.Name = "_miColorRed";
-            this._miColorRed.Size = new System.Drawing.Size(136, 22);
-            this._miColorRed.Text = "Red";
-            this._miColorRed.Click += new System.EventHandler(this.MenuItemRedClick);
             // 
             // _miColorGreen
             // 
             this._miColorGreen.Name = "_miColorGreen";
-            this._miColorGreen.Size = new System.Drawing.Size(136, 22);
+            this._miColorGreen.Size = new System.Drawing.Size(117, 22);
             this._miColorGreen.Text = "Green";
             this._miColorGreen.Click += new System.EventHandler(this.MenuItemGreenClick);
+            // 
+            // _miColorRed
+            // 
+            this._miColorRed.Name = "_miColorRed";
+            this._miColorRed.Size = new System.Drawing.Size(117, 22);
+            this._miColorRed.Text = "Red";
+            this._miColorRed.Click += new System.EventHandler(this.MenuItemRedClick);
+            // 
+            // _miEditEvent
+            // 
+            this._miEditEvent.Name = "_miEditEvent";
+            this._miEditEvent.Size = new System.Drawing.Size(117, 22);
+            this._miEditEvent.Text = "Edit ...";
+            this._miEditEvent.Click += new System.EventHandler(this.MenuItemEditEventClick);
+            // 
+            // _miRemove
+            // 
+            this._miRemove.Name = "_miRemove";
+            this._miRemove.Size = new System.Drawing.Size(117, 22);
+            this._miRemove.Text = "Remove";
+            this._miRemove.Click += new System.EventHandler(this.MenuItemRemoveClick);
+            // 
+            // _btnLeft
+            // 
+            this._btnLeft.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._btnLeft.BackColor = System.Drawing.Color.Transparent;
+            this._btnLeft.CausesValidation = false;
+            this._btnLeft.Cursor = System.Windows.Forms.Cursors.Default;
+            this._btnLeft.ErrorImage = ((System.Drawing.Image)(resources.GetObject("_btnLeft.ErrorImage")));
+            this._btnLeft.Image = global::Calendar.NET.Properties.Resources.previous;
+            this._btnLeft.ImageHover = null;
+            this._btnLeft.InitialImage = null;
+            this._btnLeft.Location = new System.Drawing.Point(102, 17);
+            this._btnLeft.Name = "_btnLeft";
+            this._btnLeft.Padding = new System.Windows.Forms.Padding(2);
+            this._btnLeft.Size = new System.Drawing.Size(32, 32);
+            this._btnLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._btnLeft.TabIndex = 3;
+            this._btnLeft.Zoom = 1;
+            this._btnLeft.Click += new System.EventHandler(this.BtnLeftButtonClicked);
+            // 
+            // _btnRight
+            // 
+            this._btnRight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this._btnRight.BackColor = System.Drawing.Color.Transparent;
+            this._btnRight.CausesValidation = false;
+            this._btnRight.Cursor = System.Windows.Forms.Cursors.Default;
+            this._btnRight.ErrorImage = ((System.Drawing.Image)(resources.GetObject("_btnRight.ErrorImage")));
+            this._btnRight.Image = global::Calendar.NET.Properties.Resources.next;
+            this._btnRight.ImageHover = null;
+            this._btnRight.InitialImage = null;
+            this._btnRight.Location = new System.Drawing.Point(140, 17);
+            this._btnRight.Name = "_btnRight";
+            this._btnRight.Padding = new System.Windows.Forms.Padding(2);
+            this._btnRight.Size = new System.Drawing.Size(32, 32);
+            this._btnRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this._btnRight.TabIndex = 4;
+            this._btnRight.Zoom = 1;
+            this._btnRight.Click += new System.EventHandler(this.BtnRightButtonClicked);
             // 
             // Calendar
             // 
             this.Controls.Add(this._btnRight);
             this.Controls.Add(this._btnLeft);
             this.Controls.Add(this._btnToday);
+            this.DoubleBuffered = true;
             this.Name = "Calendar";
             this.Size = new System.Drawing.Size(512, 440);
             this.Load += new System.EventHandler(this.CalendarLoad);
@@ -467,7 +476,6 @@ namespace Calendar.NET
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CalendarMouseMove);
             this.Resize += new System.EventHandler(this.CalendarResize);
-            this.DoubleBuffered = true;
             this._contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -595,7 +603,7 @@ namespace Calendar.NET
             Refresh();
         }
 
-        private void BtnLeftButtonClicked(object sender)
+        private void BtnLeftButtonClicked(object sender, EventArgs e)
         {
             if (_calendarView == CalendarViews.Month)
                 _calendarDate = _calendarDate.AddMonths(-1);
@@ -604,7 +612,7 @@ namespace Calendar.NET
             Refresh();
         }
 
-        private void BtnRightButtonClicked(object sender)
+        private void BtnRightButtonClicked(object sender, EventArgs e)
         {
             if (_calendarView == CalendarViews.Day)
                 _calendarDate = _calendarDate.AddDays(1);

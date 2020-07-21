@@ -1,4 +1,6 @@
 ﻿using MetroFramework;
+using PFE.Constants;
+using PFE.CustomObjects;
 using PFE.Model;
 using PFE.Shared;
 using PFE.ViewModel;
@@ -43,6 +45,10 @@ namespace PFE.UserContol
         {
             if (checkFields())
             {
+                if (this.viewModel.question.type == QuestionTypes.CHECK_BOX || this.viewModel.question.type == QuestionTypes.RADIO)
+                {
+                    this.viewModel.question.choices = QuestionTypes.getDefaultChoices();
+                }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
