@@ -36,17 +36,17 @@ namespace PFE.UserContol
                 case QuestionTypes.LIKERT_3:
                     panelLikert5.Dispose();
                     panelLikert7.Dispose();
-                    this.Height = 135;
+                    this.Height = 165;
                     break;
                 case QuestionTypes.LIKERT_5:
                     panelLikert3.Dispose();
                     panelLikert7.Dispose();
-                    this.Height = 185;
+                    this.Height = 235;
                     break;
                 case QuestionTypes.LIKERT_7:
                     panelLikert3.Dispose();
                     panelLikert5.Dispose();
-                    this.Height = 235;
+                    this.Height = 305;
                     break;
             }
         }

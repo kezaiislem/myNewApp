@@ -100,9 +100,9 @@
             this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
             this.labelPhaseTitle.Location = new System.Drawing.Point(34, 10);
             this.labelPhaseTitle.Name = "labelPhaseTitle";
-            this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
+            this.labelPhaseTitle.Size = new System.Drawing.Size(55, 20);
             this.labelPhaseTitle.TabIndex = 4;
-            this.labelPhaseTitle.Text = "Sections";
+            this.labelPhaseTitle.Text = "Factor";
             // 
             // buttonAddSection
             // 

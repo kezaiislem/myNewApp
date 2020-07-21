@@ -30,32 +30,47 @@
         {
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelLikert5 = new System.Windows.Forms.Panel();
             this.panelLikert3 = new System.Windows.Forms.Panel();
-            this.metroRadioButton6 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton7 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton8 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton5 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton4 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
+            this.bunifuRadioButton6 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton7 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton8 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.panelLikert5 = new System.Windows.Forms.Panel();
+            this.bunifuRadioButton5 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton4 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton3 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton2 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton1 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.labeltext = new MetroFramework.Controls.MetroLabel();
             this.panelLikert7 = new System.Windows.Forms.Panel();
-            this.metroRadioButton15 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton12 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton13 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton14 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton9 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton10 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton11 = new MetroFramework.Controls.MetroRadioButton();
+            this.bunifuRadioButton16 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton12 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton13 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton14 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton9 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton10 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.bunifuRadioButton11 = new Bunifu.UI.WinForms.BunifuRadioButton();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelQuestion = new MetroFramework.Controls.MetroLabel();
             this.buttonRemoveQuestion = new Bunifu.Framework.UI.BunifuImageButton();
             this.textBoxEditQuestion = new System.Windows.Forms.TextBox();
             this.bunifuCards2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelLikert5.SuspendLayout();
             this.panelLikert3.SuspendLayout();
+            this.panelLikert5.SuspendLayout();
             this.panelLikert7.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveQuestion)).BeginInit();
@@ -77,209 +92,359 @@
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 50;
-            this.bunifuCards2.Size = new System.Drawing.Size(672, 225);
+            this.bunifuCards2.Size = new System.Drawing.Size(672, 290);
             this.bunifuCards2.TabIndex = 10;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panelLikert5);
             this.panel1.Controls.Add(this.panelLikert3);
+            this.panel1.Controls.Add(this.panelLikert5);
             this.panel1.Controls.Add(this.panelLikert7);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 225);
+            this.panel1.Size = new System.Drawing.Size(672, 290);
             this.panel1.TabIndex = 1;
-            // 
-            // panelLikert5
-            // 
-            this.panelLikert5.Controls.Add(this.metroRadioButton5);
-            this.panelLikert5.Controls.Add(this.metroRadioButton4);
-            this.panelLikert5.Controls.Add(this.metroRadioButton3);
-            this.panelLikert5.Controls.Add(this.metroRadioButton2);
-            this.panelLikert5.Controls.Add(this.metroRadioButton1);
-            this.panelLikert5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLikert5.Location = new System.Drawing.Point(0, 40);
-            this.panelLikert5.Name = "panelLikert5";
-            this.panelLikert5.Size = new System.Drawing.Size(672, 185);
-            this.panelLikert5.TabIndex = 1;
             // 
             // panelLikert3
             // 
-            this.panelLikert3.Controls.Add(this.metroRadioButton6);
-            this.panelLikert3.Controls.Add(this.metroRadioButton7);
-            this.panelLikert3.Controls.Add(this.metroRadioButton8);
+            this.panelLikert3.Controls.Add(this.bunifuRadioButton6);
+            this.panelLikert3.Controls.Add(this.metroLabel5);
+            this.panelLikert3.Controls.Add(this.bunifuRadioButton7);
+            this.panelLikert3.Controls.Add(this.metroLabel6);
+            this.panelLikert3.Controls.Add(this.bunifuRadioButton8);
+            this.panelLikert3.Controls.Add(this.metroLabel7);
             this.panelLikert3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLikert3.Location = new System.Drawing.Point(0, 40);
             this.panelLikert3.Name = "panelLikert3";
-            this.panelLikert3.Size = new System.Drawing.Size(672, 185);
+            this.panelLikert3.Size = new System.Drawing.Size(672, 250);
             this.panelLikert3.TabIndex = 11;
             // 
-            // metroRadioButton6
+            // bunifuRadioButton6
             // 
-            this.metroRadioButton6.AutoSize = true;
-            this.metroRadioButton6.Location = new System.Drawing.Point(29, 55);
-            this.metroRadioButton6.Name = "metroRadioButton6";
-            this.metroRadioButton6.Size = new System.Drawing.Size(54, 15);
-            this.metroRadioButton6.TabIndex = 12;
-            this.metroRadioButton6.Text = "Agree";
-            this.metroRadioButton6.UseSelectable = true;
+            this.bunifuRadioButton6.Checked = false;
+            this.bunifuRadioButton6.Location = new System.Drawing.Point(44, 45);
+            this.bunifuRadioButton6.Name = "bunifuRadioButton6";
+            this.bunifuRadioButton6.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton6.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton6.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton6.TabIndex = 27;
+            this.bunifuRadioButton6.Text = null;
             // 
-            // metroRadioButton7
+            // metroLabel5
             // 
-            this.metroRadioButton7.AutoSize = true;
-            this.metroRadioButton7.Location = new System.Drawing.Point(29, 30);
-            this.metroRadioButton7.Name = "metroRadioButton7";
-            this.metroRadioButton7.Size = new System.Drawing.Size(80, 15);
-            this.metroRadioButton7.TabIndex = 11;
-            this.metroRadioButton7.Text = "Undecided";
-            this.metroRadioButton7.UseSelectable = true;
+            this.metroLabel5.Location = new System.Drawing.Point(67, 43);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel5.TabIndex = 26;
+            this.metroLabel5.Text = "Undecided";
             // 
-            // metroRadioButton8
+            // bunifuRadioButton7
             // 
-            this.metroRadioButton8.AutoSize = true;
-            this.metroRadioButton8.Location = new System.Drawing.Point(29, 5);
-            this.metroRadioButton8.Name = "metroRadioButton8";
-            this.metroRadioButton8.Size = new System.Drawing.Size(68, 15);
-            this.metroRadioButton8.TabIndex = 10;
-            this.metroRadioButton8.Text = "Disagree";
-            this.metroRadioButton8.UseSelectable = true;
+            this.bunifuRadioButton7.Checked = false;
+            this.bunifuRadioButton7.Location = new System.Drawing.Point(44, 80);
+            this.bunifuRadioButton7.Name = "bunifuRadioButton7";
+            this.bunifuRadioButton7.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton7.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton7.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton7.TabIndex = 25;
+            this.bunifuRadioButton7.Text = null;
             // 
-            // metroRadioButton5
+            // metroLabel6
             // 
-            this.metroRadioButton5.AutoSize = true;
-            this.metroRadioButton5.Location = new System.Drawing.Point(30, 105);
-            this.metroRadioButton5.Name = "metroRadioButton5";
-            this.metroRadioButton5.Size = new System.Drawing.Size(101, 15);
-            this.metroRadioButton5.TabIndex = 10;
-            this.metroRadioButton5.Text = "Strongly Agree";
-            this.metroRadioButton5.UseSelectable = true;
+            this.metroLabel6.Location = new System.Drawing.Point(67, 78);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel6.TabIndex = 24;
+            this.metroLabel6.Text = "Agree";
             // 
-            // metroRadioButton4
+            // bunifuRadioButton8
             // 
-            this.metroRadioButton4.AutoSize = true;
-            this.metroRadioButton4.Location = new System.Drawing.Point(30, 80);
-            this.metroRadioButton4.Name = "metroRadioButton4";
-            this.metroRadioButton4.Size = new System.Drawing.Size(54, 15);
-            this.metroRadioButton4.TabIndex = 9;
-            this.metroRadioButton4.Text = "Agree";
-            this.metroRadioButton4.UseSelectable = true;
+            this.bunifuRadioButton8.Checked = true;
+            this.bunifuRadioButton8.Location = new System.Drawing.Point(44, 10);
+            this.bunifuRadioButton8.Name = "bunifuRadioButton8";
+            this.bunifuRadioButton8.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton8.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton8.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton8.TabIndex = 23;
+            this.bunifuRadioButton8.Text = null;
             // 
-            // metroRadioButton3
+            // metroLabel7
             // 
-            this.metroRadioButton3.AutoSize = true;
-            this.metroRadioButton3.Location = new System.Drawing.Point(30, 55);
-            this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(80, 15);
-            this.metroRadioButton3.TabIndex = 8;
-            this.metroRadioButton3.Text = "Undecided";
-            this.metroRadioButton3.UseSelectable = true;
+            this.metroLabel7.Location = new System.Drawing.Point(67, 8);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel7.TabIndex = 22;
+            this.metroLabel7.Text = "Disagree";
             // 
-            // metroRadioButton2
+            // panelLikert5
             // 
-            this.metroRadioButton2.AutoSize = true;
-            this.metroRadioButton2.Location = new System.Drawing.Point(30, 30);
-            this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(68, 15);
-            this.metroRadioButton2.TabIndex = 7;
-            this.metroRadioButton2.Text = "Disagree";
-            this.metroRadioButton2.UseSelectable = true;
+            this.panelLikert5.Controls.Add(this.bunifuRadioButton5);
+            this.panelLikert5.Controls.Add(this.metroLabel4);
+            this.panelLikert5.Controls.Add(this.bunifuRadioButton4);
+            this.panelLikert5.Controls.Add(this.metroLabel3);
+            this.panelLikert5.Controls.Add(this.bunifuRadioButton3);
+            this.panelLikert5.Controls.Add(this.metroLabel2);
+            this.panelLikert5.Controls.Add(this.bunifuRadioButton2);
+            this.panelLikert5.Controls.Add(this.metroLabel1);
+            this.panelLikert5.Controls.Add(this.bunifuRadioButton1);
+            this.panelLikert5.Controls.Add(this.labeltext);
+            this.panelLikert5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLikert5.Location = new System.Drawing.Point(0, 40);
+            this.panelLikert5.Name = "panelLikert5";
+            this.panelLikert5.Size = new System.Drawing.Size(672, 250);
+            this.panelLikert5.TabIndex = 1;
             // 
-            // metroRadioButton1
+            // bunifuRadioButton5
             // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(30, 5);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(115, 15);
-            this.metroRadioButton1.TabIndex = 6;
-            this.metroRadioButton1.Text = "Strongly Disagree";
-            this.metroRadioButton1.UseSelectable = true;
+            this.bunifuRadioButton5.Checked = false;
+            this.bunifuRadioButton5.Location = new System.Drawing.Point(48, 150);
+            this.bunifuRadioButton5.Name = "bunifuRadioButton5";
+            this.bunifuRadioButton5.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton5.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton5.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton5.TabIndex = 23;
+            this.bunifuRadioButton5.Text = null;
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Location = new System.Drawing.Point(71, 148);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel4.TabIndex = 22;
+            this.metroLabel4.Text = "Strongly Agree";
+            // 
+            // bunifuRadioButton4
+            // 
+            this.bunifuRadioButton4.Checked = false;
+            this.bunifuRadioButton4.Location = new System.Drawing.Point(48, 45);
+            this.bunifuRadioButton4.Name = "bunifuRadioButton4";
+            this.bunifuRadioButton4.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton4.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton4.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton4.TabIndex = 21;
+            this.bunifuRadioButton4.Text = null;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Location = new System.Drawing.Point(71, 43);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel3.TabIndex = 20;
+            this.metroLabel3.Text = "Disagree";
+            // 
+            // bunifuRadioButton3
+            // 
+            this.bunifuRadioButton3.Checked = false;
+            this.bunifuRadioButton3.Location = new System.Drawing.Point(48, 80);
+            this.bunifuRadioButton3.Name = "bunifuRadioButton3";
+            this.bunifuRadioButton3.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton3.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton3.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton3.TabIndex = 19;
+            this.bunifuRadioButton3.Text = null;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Location = new System.Drawing.Point(71, 78);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel2.TabIndex = 18;
+            this.metroLabel2.Text = "Undecided";
+            // 
+            // bunifuRadioButton2
+            // 
+            this.bunifuRadioButton2.Checked = false;
+            this.bunifuRadioButton2.Location = new System.Drawing.Point(48, 115);
+            this.bunifuRadioButton2.Name = "bunifuRadioButton2";
+            this.bunifuRadioButton2.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton2.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton2.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton2.TabIndex = 17;
+            this.bunifuRadioButton2.Text = null;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Location = new System.Drawing.Point(71, 113);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel1.TabIndex = 16;
+            this.metroLabel1.Text = "Agree";
+            // 
+            // bunifuRadioButton1
+            // 
+            this.bunifuRadioButton1.Checked = true;
+            this.bunifuRadioButton1.Location = new System.Drawing.Point(48, 10);
+            this.bunifuRadioButton1.Name = "bunifuRadioButton1";
+            this.bunifuRadioButton1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton1.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton1.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton1.TabIndex = 15;
+            this.bunifuRadioButton1.Text = null;
+            // 
+            // labeltext
+            // 
+            this.labeltext.Location = new System.Drawing.Point(71, 8);
+            this.labeltext.Name = "labeltext";
+            this.labeltext.Size = new System.Drawing.Size(562, 19);
+            this.labeltext.TabIndex = 14;
+            this.labeltext.Text = "Strongly Disagree";
             // 
             // panelLikert7
             // 
-            this.panelLikert7.Controls.Add(this.metroRadioButton15);
-            this.panelLikert7.Controls.Add(this.metroRadioButton12);
-            this.panelLikert7.Controls.Add(this.metroRadioButton13);
-            this.panelLikert7.Controls.Add(this.metroRadioButton14);
-            this.panelLikert7.Controls.Add(this.metroRadioButton9);
-            this.panelLikert7.Controls.Add(this.metroRadioButton10);
-            this.panelLikert7.Controls.Add(this.metroRadioButton11);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton16);
+            this.panelLikert7.Controls.Add(this.metroLabel15);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton12);
+            this.panelLikert7.Controls.Add(this.metroLabel11);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton13);
+            this.panelLikert7.Controls.Add(this.metroLabel12);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton14);
+            this.panelLikert7.Controls.Add(this.metroLabel13);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton9);
+            this.panelLikert7.Controls.Add(this.metroLabel8);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton10);
+            this.panelLikert7.Controls.Add(this.metroLabel9);
+            this.panelLikert7.Controls.Add(this.bunifuRadioButton11);
+            this.panelLikert7.Controls.Add(this.metroLabel10);
             this.panelLikert7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLikert7.Location = new System.Drawing.Point(0, 40);
             this.panelLikert7.Name = "panelLikert7";
-            this.panelLikert7.Size = new System.Drawing.Size(672, 185);
+            this.panelLikert7.Size = new System.Drawing.Size(672, 250);
             this.panelLikert7.TabIndex = 13;
             // 
-            // metroRadioButton15
+            // bunifuRadioButton16
             // 
-            this.metroRadioButton15.AutoSize = true;
-            this.metroRadioButton15.Location = new System.Drawing.Point(30, 155);
-            this.metroRadioButton15.Name = "metroRadioButton15";
-            this.metroRadioButton15.Size = new System.Drawing.Size(54, 15);
-            this.metroRadioButton15.TabIndex = 16;
-            this.metroRadioButton15.Text = "Strongly Agree";
-            this.metroRadioButton15.UseSelectable = true;
+            this.bunifuRadioButton16.Checked = false;
+            this.bunifuRadioButton16.Location = new System.Drawing.Point(44, 220);
+            this.bunifuRadioButton16.Name = "bunifuRadioButton16";
+            this.bunifuRadioButton16.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton16.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton16.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton16.TabIndex = 43;
+            this.bunifuRadioButton16.Text = null;
             // 
-            // metroRadioButton12
+            // metroLabel15
             // 
-            this.metroRadioButton12.AutoSize = true;
-            this.metroRadioButton12.Location = new System.Drawing.Point(30, 130);
-            this.metroRadioButton12.Name = "metroRadioButton12";
-            this.metroRadioButton12.Size = new System.Drawing.Size(54, 15);
-            this.metroRadioButton12.TabIndex = 15;
-            this.metroRadioButton12.Text = "Agree";
-            this.metroRadioButton12.UseSelectable = true;
+            this.metroLabel15.Location = new System.Drawing.Point(67, 218);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel15.TabIndex = 42;
+            this.metroLabel15.Text = "Strongly Agree";
             // 
-            // metroRadioButton13
+            // bunifuRadioButton12
             // 
-            this.metroRadioButton13.AutoSize = true;
-            this.metroRadioButton13.Location = new System.Drawing.Point(30, 105);
-            this.metroRadioButton13.Name = "metroRadioButton13";
-            this.metroRadioButton13.Size = new System.Drawing.Size(80, 15);
-            this.metroRadioButton13.TabIndex = 14;
-            this.metroRadioButton13.Text = "More or less Agree";
-            this.metroRadioButton13.UseSelectable = true;
+            this.bunifuRadioButton12.Checked = false;
+            this.bunifuRadioButton12.Location = new System.Drawing.Point(44, 150);
+            this.bunifuRadioButton12.Name = "bunifuRadioButton12";
+            this.bunifuRadioButton12.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton12.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton12.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton12.TabIndex = 39;
+            this.bunifuRadioButton12.Text = null;
             // 
-            // metroRadioButton14
+            // metroLabel11
             // 
-            this.metroRadioButton14.AutoSize = true;
-            this.metroRadioButton14.Location = new System.Drawing.Point(30, 80);
-            this.metroRadioButton14.Name = "metroRadioButton14";
-            this.metroRadioButton14.Size = new System.Drawing.Size(68, 15);
-            this.metroRadioButton14.TabIndex = 13;
-            this.metroRadioButton14.Text = "Undecided";
-            this.metroRadioButton14.UseSelectable = true;
+            this.metroLabel11.Location = new System.Drawing.Point(67, 148);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel11.TabIndex = 38;
+            this.metroLabel11.Text = "More or less Agree";
             // 
-            // metroRadioButton9
+            // bunifuRadioButton13
             // 
-            this.metroRadioButton9.AutoSize = true;
-            this.metroRadioButton9.Location = new System.Drawing.Point(30, 55);
-            this.metroRadioButton9.Name = "metroRadioButton9";
-            this.metroRadioButton9.Size = new System.Drawing.Size(54, 15);
-            this.metroRadioButton9.TabIndex = 12;
-            this.metroRadioButton9.Text = "More or less Disagree";
-            this.metroRadioButton9.UseSelectable = true;
+            this.bunifuRadioButton13.Checked = false;
+            this.bunifuRadioButton13.Location = new System.Drawing.Point(44, 185);
+            this.bunifuRadioButton13.Name = "bunifuRadioButton13";
+            this.bunifuRadioButton13.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton13.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton13.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton13.TabIndex = 37;
+            this.bunifuRadioButton13.Text = null;
             // 
-            // metroRadioButton10
+            // metroLabel12
             // 
-            this.metroRadioButton10.AutoSize = true;
-            this.metroRadioButton10.Location = new System.Drawing.Point(30, 30);
-            this.metroRadioButton10.Name = "metroRadioButton10";
-            this.metroRadioButton10.Size = new System.Drawing.Size(80, 15);
-            this.metroRadioButton10.TabIndex = 11;
-            this.metroRadioButton10.Text = "Disagree";
-            this.metroRadioButton10.UseSelectable = true;
+            this.metroLabel12.Location = new System.Drawing.Point(67, 183);
+            this.metroLabel12.Name = "metroLabel12";
+            this.metroLabel12.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel12.TabIndex = 36;
+            this.metroLabel12.Text = "Agree";
             // 
-            // metroRadioButton11
+            // bunifuRadioButton14
             // 
-            this.metroRadioButton11.AutoSize = true;
-            this.metroRadioButton11.Location = new System.Drawing.Point(30, 5);
-            this.metroRadioButton11.Name = "metroRadioButton11";
-            this.metroRadioButton11.Size = new System.Drawing.Size(68, 15);
-            this.metroRadioButton11.TabIndex = 10;
-            this.metroRadioButton11.Text = "Strongly Disagree";
-            this.metroRadioButton11.UseSelectable = true;
+            this.bunifuRadioButton14.Checked = false;
+            this.bunifuRadioButton14.Location = new System.Drawing.Point(44, 115);
+            this.bunifuRadioButton14.Name = "bunifuRadioButton14";
+            this.bunifuRadioButton14.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton14.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton14.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton14.TabIndex = 35;
+            this.bunifuRadioButton14.Text = null;
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.Location = new System.Drawing.Point(67, 113);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel13.TabIndex = 34;
+            this.metroLabel13.Text = "Undecided";
+            // 
+            // bunifuRadioButton9
+            // 
+            this.bunifuRadioButton9.Checked = false;
+            this.bunifuRadioButton9.Location = new System.Drawing.Point(44, 45);
+            this.bunifuRadioButton9.Name = "bunifuRadioButton9";
+            this.bunifuRadioButton9.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton9.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton9.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton9.TabIndex = 33;
+            this.bunifuRadioButton9.Text = null;
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.Location = new System.Drawing.Point(67, 43);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel8.TabIndex = 32;
+            this.metroLabel8.Text = "Disagree";
+            // 
+            // bunifuRadioButton10
+            // 
+            this.bunifuRadioButton10.Checked = false;
+            this.bunifuRadioButton10.Location = new System.Drawing.Point(44, 80);
+            this.bunifuRadioButton10.Name = "bunifuRadioButton10";
+            this.bunifuRadioButton10.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton10.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton10.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton10.TabIndex = 31;
+            this.bunifuRadioButton10.Text = null;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.Location = new System.Drawing.Point(67, 78);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel9.TabIndex = 30;
+            this.metroLabel9.Text = "More or less Disagree";
+            // 
+            // bunifuRadioButton11
+            // 
+            this.bunifuRadioButton11.Checked = true;
+            this.bunifuRadioButton11.Location = new System.Drawing.Point(44, 10);
+            this.bunifuRadioButton11.Name = "bunifuRadioButton11";
+            this.bunifuRadioButton11.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton11.RadioColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuRadioButton11.Size = new System.Drawing.Size(17, 17);
+            this.bunifuRadioButton11.TabIndex = 29;
+            this.bunifuRadioButton11.Text = null;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.Location = new System.Drawing.Point(67, 8);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(562, 19);
+            this.metroLabel10.TabIndex = 28;
+            this.metroLabel10.Text = "Strongly Disagree";
             // 
             // panel2
             // 
@@ -294,10 +459,10 @@
             // 
             // labelQuestion
             // 
-            this.labelQuestion.AutoSize = true;
-            this.labelQuestion.Location = new System.Drawing.Point(17, 11);
+            this.labelQuestion.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelQuestion.Location = new System.Drawing.Point(17, 14);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(80, 19);
+            this.labelQuestion.Size = new System.Drawing.Size(612, 19);
             this.labelQuestion.TabIndex = 0;
             this.labelQuestion.Text = "Question 1 ?";
             this.labelQuestion.DoubleClick += new System.EventHandler(this.labelQuestion_DoubleClick);
@@ -308,7 +473,7 @@
             this.buttonRemoveQuestion.BackColor = System.Drawing.Color.Transparent;
             this.buttonRemoveQuestion.Image = global::PFE.Properties.Resources.criss_cross;
             this.buttonRemoveQuestion.ImageActive = null;
-            this.buttonRemoveQuestion.Location = new System.Drawing.Point(638, 8);
+            this.buttonRemoveQuestion.Location = new System.Drawing.Point(638, 11);
             this.buttonRemoveQuestion.Name = "buttonRemoveQuestion";
             this.buttonRemoveQuestion.Size = new System.Drawing.Size(24, 24);
             this.buttonRemoveQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,7 +490,7 @@
             this.textBoxEditQuestion.BackColor = System.Drawing.Color.White;
             this.textBoxEditQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxEditQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEditQuestion.Location = new System.Drawing.Point(9, 8);
+            this.textBoxEditQuestion.Location = new System.Drawing.Point(9, 11);
             this.textBoxEditQuestion.Name = "textBoxEditQuestion";
             this.textBoxEditQuestion.Size = new System.Drawing.Size(623, 24);
             this.textBoxEditQuestion.TabIndex = 6;
@@ -337,15 +502,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.bunifuCards2);
             this.Name = "LikertQuestionControl";
-            this.Size = new System.Drawing.Size(758, 235);
+            this.Size = new System.Drawing.Size(758, 300);
             this.bunifuCards2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panelLikert5.ResumeLayout(false);
-            this.panelLikert5.PerformLayout();
             this.panelLikert3.ResumeLayout(false);
-            this.panelLikert3.PerformLayout();
+            this.panelLikert5.ResumeLayout(false);
             this.panelLikert7.ResumeLayout(false);
-            this.panelLikert7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveQuestion)).EndInit();
@@ -358,26 +520,41 @@
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelLikert5;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton5;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton4;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel labelQuestion;
         private Bunifu.Framework.UI.BunifuImageButton buttonRemoveQuestion;
         private System.Windows.Forms.TextBox textBoxEditQuestion;
         private System.Windows.Forms.Panel panelLikert3;
         private System.Windows.Forms.Panel panelLikert7;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton15;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton12;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton13;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton14;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton9;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton10;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton11;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton6;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton7;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton8;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton1;
+        private MetroFramework.Controls.MetroLabel labeltext;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton4;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton3;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton5;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton6;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton7;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton8;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton16;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton12;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton13;
+        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton14;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton9;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton10;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private Bunifu.UI.WinForms.BunifuRadioButton bunifuRadioButton11;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
     }
 }

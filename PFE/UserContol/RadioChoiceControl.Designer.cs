@@ -76,7 +76,7 @@
             // 
             // bunifuRadioButton1
             // 
-            this.bunifuRadioButton1.Checked = false;
+            this.bunifuRadioButton1.Checked = true;
             this.bunifuRadioButton1.Location = new System.Drawing.Point(48, 10);
             this.bunifuRadioButton1.Name = "bunifuRadioButton1";
             this.bunifuRadioButton1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
