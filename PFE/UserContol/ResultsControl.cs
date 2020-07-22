@@ -30,7 +30,7 @@ namespace PFE.UserContol
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
             viewModel = new ResultControlViewModel(surveyId);
-            while(viewModel.factors == null) { }
+            while (viewModel.factors == null) { }
             foreach (Factor factor in viewModel.factors)
             {
                 addSection(factor);
@@ -83,7 +83,18 @@ namespace PFE.UserContol
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-            Task.Run(async () => await viewModel.saveExel());
+            using (var saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.FileName = "Sheet";
+                saveFileDialog.Filter = "Exel File|*.xlsx|CSV File|*.csv";
+                saveFileDialog.Title = "Export";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Task.Run(async () => await viewModel.saveExel(saveFileDialog.FileName));
+                }
+            }
+            
         }
     }
 }

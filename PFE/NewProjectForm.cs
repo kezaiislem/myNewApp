@@ -57,7 +57,7 @@ namespace PFE
                 new MainForm().Show();
         }
 
-        private async void createProjectBtn_Click(object sender, EventArgs e)
+        private void createProjectBtn_Click(object sender, EventArgs e)
         {
             using (var saveFileDialog = new SaveFileDialog())
             {
