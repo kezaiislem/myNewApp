@@ -56,7 +56,7 @@
             this.panelSections.Name = "panelSections";
             this.panelSections.RightSahddow = true;
             this.panelSections.ShadowDepth = 50;
-            this.panelSections.Size = new System.Drawing.Size(211, 436);
+            this.panelSections.Size = new System.Drawing.Size(211, 450);
             this.panelSections.TabIndex = 7;
             // 
             // panel2
@@ -162,7 +162,7 @@
             this.buttonHost.HoverBackgroundColor = System.Drawing.Color.White;
             this.buttonHost.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.buttonHost.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.buttonHost.Location = new System.Drawing.Point(31, 467);
+            this.buttonHost.Location = new System.Drawing.Point(31, 481);
             this.buttonHost.Name = "buttonHost";
             this.buttonHost.Size = new System.Drawing.Size(211, 51);
             this.buttonHost.TabIndex = 9;
@@ -185,7 +185,7 @@
             this.buttonShare.HoverBackgroundColor = System.Drawing.Color.White;
             this.buttonShare.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.buttonShare.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.buttonShare.Location = new System.Drawing.Point(31, 524);
+            this.buttonShare.Location = new System.Drawing.Point(31, 538);
             this.buttonShare.Name = "buttonShare";
             this.buttonShare.Size = new System.Drawing.Size(211, 48);
             this.buttonShare.TabIndex = 11;

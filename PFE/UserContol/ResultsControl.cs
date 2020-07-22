@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using PFE.Model;
 using PFE.ViewModel;
 using PFE.model;
+using ClosedXML.Excel;
 
 namespace PFE.UserContol
 {
@@ -78,6 +79,11 @@ namespace PFE.UserContol
         private void buttonResults_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            Task.Run(async () => await viewModel.saveExel());
         }
     }
 }

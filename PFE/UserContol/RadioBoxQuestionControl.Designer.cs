@@ -101,8 +101,8 @@
             this.bunifuCheckBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bunifuCheckBox1.BindingControl = null;
             this.bunifuCheckBox1.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
-            this.bunifuCheckBox1.Checked = true;
-            this.bunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Checked;
+            this.bunifuCheckBox1.Checked = false;
+            this.bunifuCheckBox1.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
             this.bunifuCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuCheckBox1.CustomCheckmarkImage = null;
             this.bunifuCheckBox1.Location = new System.Drawing.Point(17, 51);

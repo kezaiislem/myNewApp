@@ -114,6 +114,15 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
     <Reference Include="FlatButton">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\FlatButton.dll</HintPath>
     </Reference>
@@ -180,6 +189,14 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -205,6 +222,7 @@
     <Compile Include="CustomObjects\CalendarItem.cs" />
     <Compile Include="CustomObjects\CustomGridQuestion.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
+    <Compile Include="CustomObjects\CustomPersonalAnswer.cs" />
     <Compile Include="CustomObjects\CustomSurveysObject.cs" />
     <Compile Include="CustomObjects\QuestionSuggestionsRequestObject.cs" />
     <Compile Include="CustomObjects\QuestionType.cs" />
@@ -708,6 +726,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\adding .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red_cross.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets')" />

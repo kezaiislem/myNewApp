@@ -32,9 +32,9 @@
             this.panelSectionContainer = new System.Windows.Forms.Panel();
             this.panelSections = new Bunifu.Framework.UI.BunifuCards();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.buttonExport = new JImageButton.JImageButton();
             this.buttonResults = new JImageButton.JImageButton();
+            this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,18 +79,6 @@
             this.panel2.Size = new System.Drawing.Size(211, 44);
             this.panel2.TabIndex = 1;
             // 
-            // labelPhaseTitle
-            // 
-            this.labelPhaseTitle.AutoSize = true;
-            this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
-            this.labelPhaseTitle.Location = new System.Drawing.Point(35, 8);
-            this.labelPhaseTitle.Name = "labelPhaseTitle";
-            this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
-            this.labelPhaseTitle.TabIndex = 1;
-            this.labelPhaseTitle.Text = "Sections";
-            // 
             // buttonExport
             // 
             this.buttonExport.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -108,6 +96,7 @@
             this.buttonExport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.buttonExport.TabIndex = 4;
             this.buttonExport.Zoom = 1;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
             // 
             // buttonResults
             // 
@@ -127,6 +116,18 @@
             this.buttonResults.TabIndex = 3;
             this.buttonResults.Zoom = 1;
             this.buttonResults.Click += new System.EventHandler(this.buttonResults_Click);
+            // 
+            // labelPhaseTitle
+            // 
+            this.labelPhaseTitle.AutoSize = true;
+            this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
+            this.labelPhaseTitle.Location = new System.Drawing.Point(35, 8);
+            this.labelPhaseTitle.Name = "labelPhaseTitle";
+            this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
+            this.labelPhaseTitle.TabIndex = 1;
+            this.labelPhaseTitle.Text = "Sections";
             // 
             // ResultsControl
             // 
