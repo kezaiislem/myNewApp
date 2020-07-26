@@ -17,6 +17,7 @@ namespace PFE.UserContol
     {
 
         public ModelInfoViewModel viewModel;
+        public PhaseControl currentControl;
 
         public ModelInfo(PFE.Model.Model model, MainForm main)
         {
@@ -70,6 +71,7 @@ namespace PFE.UserContol
             ModelSurveyControl modelSurveyControl = new ModelSurveyControl(survey, this.viewModel.model.surveys);
             modelSurveyControl.AutoScaleMode = AutoScaleMode.None;
             modelSurveyControl.Dock = DockStyle.Left;
+            modelSurveyControl.PropertyChanged += CurrentPhaseChanged;
             panelPhasesContainer.Controls.Add(modelSurveyControl);
             switch (survey.phaseNumber)
             {
@@ -82,6 +84,30 @@ namespace PFE.UserContol
                 case 3:
                     panelPhasesContainer.Controls.SetChildIndex(modelSurveyControl, 0);
                     break;
+            }
+        }
+
+        private void CurrentPhaseChanged(object o, PropertyChangedEventArgs e)
+        {
+            if (o != null)
+            {
+                currentControl = (PhaseControl)o;
+                this.Controls.Add(currentControl);
+                currentControl.BringToFront();
+                currentControl.Show();
+            }
+        }
+
+        private void ModelInfo_VisibleChanged(object sender, EventArgs e)
+        {
+            if (!this.Visible)
+            {
+                if(this.currentControl != null)
+                {
+                    this.Controls.Remove(currentControl);
+                    currentControl.Dispose();
+                    currentControl = null;
+                }
             }
         }
     }

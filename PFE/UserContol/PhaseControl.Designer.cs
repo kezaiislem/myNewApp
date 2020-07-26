@@ -202,6 +202,7 @@
             this.Controls.Add(this.panelSectionContent);
             this.Name = "PhaseControl";
             this.Size = new System.Drawing.Size(1064, 607);
+            this.VisibleChanged += new System.EventHandler(this.PhaseControl_VisibleChanged);
             this.panelSections.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

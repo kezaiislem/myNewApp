@@ -15,16 +15,27 @@ using PFE.CustomObjects;
 
 namespace PFE
 {
-    public partial class SurveyTabControl : UserControl
+    public partial class SurveyTabControl : UserControl, INotifyPropertyChanged
     {
 
         SurveyTabControlViewModel viewModel;
 
-        public SurveyTabControl (CustomSurveysObject s)
+        public SurveyTabControl(CustomSurveysObject s)
         {
             InitializeComponent();
             viewModel = new SurveyTabControlViewModel(s);
             Init();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnNotifyPropertyChanged(ResultsControl resultsControl, string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(resultsControl, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         private void Init()
@@ -39,11 +50,6 @@ namespace PFE
             }
         }
 
-        private void xuiSuperButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private async void buttonRemove_Click(object sender, EventArgs e)
         {
             DialogResult msgBox = MessageBox.Show("The survey will be removed completely and the project will be saved automaticly, Do you realy want to remove this survey ?", "Advertissement", MessageBoxButtons.YesNo);
@@ -53,6 +59,8 @@ namespace PFE
                 String result = await RestHelper.deleteSurvey(this.viewModel.surveyId);
                 if (string.IsNullOrWhiteSpace(result))
                 {
+                    Console.WriteLine(this.viewModel.survey.host.id);
+                    OnNotifyPropertyChanged(null, this.viewModel.survey.host.id);
                     this.viewModel.survey.host = null;
                     MessageBox.Show("Survey Removed Successfuly", "Success");
                 }
@@ -85,9 +93,10 @@ namespace PFE
             ResultsControl resultsControl = new ResultsControl(this.viewModel.surveyId);
             resultsControl.Dock = DockStyle.Fill;
             resultsControl.AutoScaleMode = AutoScaleMode.None;
-            this.Parent.Parent.Parent.Parent.Controls.Add(resultsControl);
-            resultsControl.Show();
-            resultsControl.BringToFront();
+            OnNotifyPropertyChanged(resultsControl, "");
+            //this.Parent.Parent.Parent.Parent.Controls.Add(resultsControl);
+            //resultsControl.Show();
+            //resultsControl.BringToFront();
         }
     }
 }

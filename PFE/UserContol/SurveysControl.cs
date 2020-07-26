@@ -15,8 +15,19 @@ using PFE.CustomObjects;
 
 namespace PFE.UserContol
 {
-    public partial class SurveysControl : UserControl
+    public partial class SurveysControl : UserControl, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private ResultsControl currentControl;
+
+        private void OnNotifyPropertyChanged(string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         SurveysControlViewModel viewModel;
 
@@ -38,6 +49,7 @@ namespace PFE.UserContol
                 surveyTab.Dock = DockStyle.Top;
                 surveyTab.Height = 55;
                 surveyTab.Visible = true;
+                surveyTab.PropertyChanged += PropretyChanged;
                 this.panelSurveyTableContent.Controls.Add(surveyTab);
                 this.panelSurveyTableContent.Controls.SetChildIndex(surveyTab, 0);
                 this.panelSurveyTableContent.ResumeLayout(false);
@@ -53,6 +65,34 @@ namespace PFE.UserContol
                 while (viewModel.surveys == null) { }
                 this.loadSurveys();
             }
+            else
+            {
+                if (this.currentControl != null)
+                {
+                    this.Controls.Remove(currentControl);
+                    currentControl.Dispose();
+                    currentControl = null;
+                }
+            }
         }
+
+        private void PropretyChanged(object o, PropertyChangedEventArgs e)
+        {
+            if(e.PropertyName != null)
+            {
+                if (o != null)
+                {
+                    currentControl = (ResultsControl)o;
+                    this.Controls.Add(currentControl);
+                    currentControl.BringToFront();
+                    currentControl.Show();
+                }
+                else
+                {
+                    OnNotifyPropertyChanged(e.PropertyName);
+                }
+            }
+        }
+
     }
 }

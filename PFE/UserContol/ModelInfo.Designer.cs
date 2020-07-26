@@ -190,6 +190,7 @@
             this.Controls.Add(this.bunifuCards2);
             this.Name = "ModelInfo";
             this.Size = new System.Drawing.Size(1064, 607);
+            this.VisibleChanged += new System.EventHandler(this.ModelInfo_VisibleChanged);
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
             this.panel1.ResumeLayout(false);

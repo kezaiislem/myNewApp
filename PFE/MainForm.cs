@@ -45,6 +45,7 @@ namespace PFE
             this.surveysControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.surveysControl.AutoScaleMode = AutoScaleMode.None;
             this.surveysControl.Name = "surveysView";
+            this.surveysControl.PropertyChanged += HostRemoved;
             this.panelCurrentView.Controls.Add(this.surveysControl);
 
             // Page Project Context
@@ -258,6 +259,14 @@ namespace PFE
             switchView(projectPlanView);
             labelPageName.Text = "Project Plan";
             hideSubMenu();
+        }
+
+        private void HostRemoved(object o, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName != null)
+            {
+                this.viewModel.RemoveHost(e.PropertyName);
+            }
         }
     }
 }

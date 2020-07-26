@@ -31,6 +31,19 @@ namespace PFE.ViewModel
             Title = "Dashboard";
         }
 
+        public void RemoveHost(string id)
+        {
+            foreach (Survey survey in projet.model.surveys)
+            {
+                if (survey.host != null && survey.host.id != null)
+                {
+                    survey.host = null;
+                    break;
+                }
+            }
+            ProjectHandler.saveProject();
+        }
+
         /*private async Task InitializeFields()
         {
             try

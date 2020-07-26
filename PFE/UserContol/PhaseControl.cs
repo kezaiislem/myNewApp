@@ -36,6 +36,10 @@ namespace PFE.UserContol
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
             viewModel = new PhaseControlViewModel(survey);
+            if (this.viewModel.survey.host == null)
+            {
+                buttonShare.Enabled = false;
+            }
             if (viewModel.survey == null)
             {
                 viewModel.survey = new Survey { factors = new List<Factor>() };
@@ -48,7 +52,7 @@ namespace PFE.UserContol
 
         private void swichSection(FactorControl section)
         {
-            if ( activeSection != null )
+            if (activeSection != null)
             {
                 this.activeSection.Dispose();
             }
@@ -63,7 +67,7 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions};
+                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions };
                     this.viewModel.survey.factors.Add(factor);
                     addFactor(factor);
                 }
@@ -116,7 +120,7 @@ namespace PFE.UserContol
 
         private async void buttonHost_Click(object sender, EventArgs e)
         {
-            if(checkFields())
+            if (checkFields())
             {
                 using (var form = new HostForm())
                 {
@@ -156,14 +160,14 @@ namespace PFE.UserContol
                 MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Error", MessageBoxButtons.OK);
                 return false;
             }
-            
-            foreach(Factor factor in this.viewModel.survey.factors)
+
+            foreach (Factor factor in this.viewModel.survey.factors)
             {
                 foreach (Question q in factor.questions)
                 {
-                    if(q.type == QuestionTypes.CHECK_BOX || q.type == QuestionTypes.RADIO)
+                    if (q.type == QuestionTypes.CHECK_BOX || q.type == QuestionTypes.RADIO)
                     {
-                        if(q.choices.Count() < 2)
+                        if (q.choices.Count() < 2)
                         {
                             MetroMessageBox.Show(this, "\nCheckbox and radio questions must have two choices or more", "Error", MessageBoxButtons.OK);
                             return false;
@@ -189,6 +193,11 @@ namespace PFE.UserContol
                     formS.ShowDialog();
                 }
             }
+        }
+
+        private void PhaseControl_VisibleChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -13,7 +13,7 @@ using PFE.Shared;
 
 namespace PFE.UserContol
 {
-    public partial class ModelSurveyControl : UserControl
+    public partial class ModelSurveyControl : UserControl, INotifyPropertyChanged
     {
 
         ModelSurveyControlViewModel viewModel;
@@ -52,24 +52,31 @@ namespace PFE.UserContol
             phaseControl.Dock = System.Windows.Forms.DockStyle.Fill;
             phaseControl.AutoScaleMode = AutoScaleMode.None;
             phaseControl.Name = "projectContextView";
-            this.Parent.Parent.Controls.Add(phaseControl);
-            phaseControl.BringToFront();
-            phaseControl.Show();
+            NotifyOnPropertyChanged(phaseControl, "");
         }
 
         private void ButtonRemove_Click(object sender, EventArgs e)
         {
-
             DialogResult msgBox = MessageBox.Show("The survey will be removed completely and the project will be saved automaticly, Do you realy want to remove this survey ?", "Advertissement", MessageBoxButtons.YesNo);
-            
-            if(msgBox == DialogResult.Yes)
+
+            if (msgBox == DialogResult.Yes)
             {
                 Task.Run(async () => await RestHelper.deleteSurvey(this.viewModel.survey.id));
                 this.viewModel.surveys.Remove(this.viewModel.survey);
                 this.Parent.Controls.Remove(this);
                 ProjectHandler.saveProject();
             }
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyOnPropertyChanged(PhaseControl phaseControl, string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(phaseControl, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
