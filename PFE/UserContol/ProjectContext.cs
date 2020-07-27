@@ -45,9 +45,7 @@ namespace PFE.UserContol
                     i++;
                 }
             }
-
-            viewModel.initCombos();
-            comboBoxTechnologyNature.DataSource = viewModel.combos;
+            comboBoxTechnologyNature.DataSource = viewModel.fields;
             comboBoxTechnologyNature.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 

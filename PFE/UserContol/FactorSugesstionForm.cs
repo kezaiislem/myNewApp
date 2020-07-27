@@ -84,22 +84,29 @@ namespace PFE.UserContol
 
         private void checkBoxImportQuestions_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
-            if (checkBoxImportQuestions.Checked)
+            try
             {
-                this.Height = PAGE_SIZE_WITH_QUESTIONS;
-                labelQuestions.Visible = true;
-                gridResultQuestions.SuspendLayout();
-                gridResultQuestions.Visible = true;
-                gridResultQuestions.ResumeLayout(false);
+                if (checkBoxImportQuestions.Checked)
+                {
+                    this.Height = PAGE_SIZE_WITH_QUESTIONS;
+                    labelQuestions.Visible = true;
+                    gridResultQuestions.SuspendLayout();
+                    gridResultQuestions.Visible = true;
+                    gridResultQuestions.ResumeLayout(false);
 
+                }
+                else
+                {
+                    this.Height = PAGE_SIZE_WITHOUT_QUESTIONS;
+                    labelQuestions.Visible = false;
+                    gridResultQuestions.SuspendLayout();
+                    gridResultQuestions.Visible = false;
+                    gridResultQuestions.ResumeLayout(false);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                this.Height = PAGE_SIZE_WITHOUT_QUESTIONS;
-                labelQuestions.Visible = false;
-                gridResultQuestions.SuspendLayout();
-                gridResultQuestions.Visible = false;
-                gridResultQuestions.ResumeLayout(false);
+                Console.WriteLine(ex.Message);
             }
         }
 

@@ -14,58 +14,45 @@ namespace PFE.ViewModel
     {
         public List<Field> fields { get; set; }
 
-        public ComboboxItem selectedItem;
-        public ComboboxItem SelectedItem
+        public Field selectedItem;
+        public Field SelectedItem
         {
-            get { return selectedItem; } 
-            set {
-                this.project.model.technology.technologyField = (Field)value.Value;
-                selectedItem = value; 
+            get { return selectedItem; }
+            set
+            {
+                this.project.model.technology.technologyField = value;
+                selectedItem = value;
             }
         }
-        public List<ComboboxItem> combos { get; set; }
         public Project project { get; set; }
 
         public ProjectContextViewModel()
         {
             this.project = Data.currentProject;
-            if(project.model.technology == null)
+            if (project.model.technology == null)
             {
                 project.model.technology = new Technology();
             }
-            Task.Run(async () => await InitializeFields());
-            combos = new List<ComboboxItem>();
+            this.fields = InitializeFields();
+            InitSelectedItem();
         }
 
-        private async Task InitializeFields()
+        private List<Field> InitializeFields()
         {
-            try
-            {
-                String data = await RestHelper.getDomains();
-                if (data != "")
-                {
-                    fields = JsonConvert.DeserializeObject<List<Field>>(data);
-                }
-            }
-            catch (Exception ex)
-            {
-                fields = new List<Field>();
-            }
-
+            return new List<Field> { new Field { id = 0, name = "Computer Science" }, 
+                                     new Field { id = 1, name = "Marketing" }, 
+                                     new Field { id = 2, name = "Buisness" } };
         }
 
-        public void initCombos()
+        public void InitSelectedItem()
         {
-            while (fields == null) { }
-
             foreach (Field field in fields)
             {
-                combos.Add(new ComboboxItem { Text = field.name, Value = field });
                 if (Data.currentProject.model.technology.technologyField != null)
                 {
                     if (field.id == Data.currentProject.model.technology.technologyField.id)
                     {
-                        selectedItem = combos.Last<ComboboxItem>();
+                        selectedItem = field;
                     }
                 }
             }

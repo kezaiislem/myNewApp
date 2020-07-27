@@ -58,14 +58,7 @@ namespace PFE.UserContol
 
         private void SurveysControl_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.Visible)
-            {
-                this.panelSurveyTableContent.Controls.Clear();
-                this.viewModel.refresh();
-                while (viewModel.surveys == null) { }
-                this.loadSurveys();
-            }
-            else
+            if (!this.Visible)
             {
                 if (this.currentControl != null)
                 {
@@ -92,6 +85,15 @@ namespace PFE.UserContol
                     OnNotifyPropertyChanged(e.PropertyName);
                 }
             }
+        }
+
+        public void reload(int modelId)
+        {
+            this.viewModel.modelId = modelId;
+            this.panelSurveyTableContent.Controls.Clear();
+            this.viewModel.refresh();
+            while (viewModel.surveys == null) { }
+            this.loadSurveys();
         }
 
     }

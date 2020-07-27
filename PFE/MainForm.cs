@@ -188,6 +188,7 @@ namespace PFE
             hideSubMenu();
             labelPageName.Text = "Results";
             switchView(surveysControl);
+            surveysControl.reload(this.viewModel.projet.model.id);
             //..
             //your codes
             //..
