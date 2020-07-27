@@ -53,7 +53,7 @@ namespace PFE.ViewModel
                 if (data != "")
                 {
                     this.personalAnswers = JsonConvert.DeserializeObject<List<CustomPersonalAnswer>>(data);
-                    buildExel(path);
+                    buildEvaluationExel(path);
                 }
             }
             catch (Exception ex)
@@ -64,47 +64,7 @@ namespace PFE.ViewModel
 
         public void buildExel(string path)
         {
-            DataTable dt = new DataTable();
-            foreach (Factor f in this.factors)
-            {
-                foreach (Question q in f.questions)
-                {
-                    dt.Columns.Add(q.text, typeof(string));
-                }
-            }
-            List<DataRow> dataRows = new List<DataRow>();
-            foreach (CustomPersonalAnswer answer in personalAnswers)
-            {
-                DataRow dataRow = dt.NewRow();
-                for (int i = 0; i < answer.answers.Count; i++)
-                {
-                    switch (answer.questions.ElementAt(i).type)
-                    {
-                        case QuestionTypes.LIKERT_3:
-                            dataRow[answer.questions.ElementAt(i).text] = QuestionTypes.likertStrings_3().ElementAt(answer.answers.ElementAt(i).value - 1);
-                            break;
-                        case QuestionTypes.LIKERT_5:
-                            dataRow[answer.questions.ElementAt(i).text] = QuestionTypes.likertStrings_5().ElementAt(answer.answers.ElementAt(i).value - 1);
-                            break;
-                        case QuestionTypes.LIKERT_7:
-                            dataRow[answer.questions.ElementAt(i).text] = QuestionTypes.likertStrings_7().ElementAt(answer.answers.ElementAt(i).value - 1);
-                            break;
-                        case QuestionTypes.RADIO:
-                            dataRow[answer.questions.ElementAt(i).text] = answer.questions.ElementAt(i).choices[answer.answers.ElementAt(i).value - 1];
-                            break;
-                        case QuestionTypes.CHECK_BOX:
-                            string value = "";
-                            foreach (int index in answer.answers.ElementAt(i).chValues)
-                            {
-                                value += answer.questions.ElementAt(i).choices[index] + ",";
-                            }
-                            value = value.Remove(value.Length - 1);
-                            dataRow[answer.questions.ElementAt(i).text] = value;
-                            break;
-                    }
-                }
-                dt.Rows.Add(dataRow);
-            }
+            DataTable dt = DataTableManager.prepareExportTable(this.factors, this.personalAnswers);
 
             if (path.EndsWith(".xlsx"))
             {
@@ -119,25 +79,7 @@ namespace PFE.ViewModel
 
         public void buildEvaluationExel(string path)
         {
-            DataTable dt = new DataTable();
-            foreach (Factor f in this.factors)
-            {
-                foreach (Question q in f.questions)
-                {
-                    dt.Columns.Add(q.text, typeof(string));
-                }
-            }
-            List<DataRow> dataRows = new List<DataRow>();
-            foreach (CustomPersonalAnswer answer in personalAnswers)
-            {
-                DataRow dataRow = dt.NewRow();
-                for (int i = 0; i < answer.answers.Count; i++)
-                {
-                    if (answer.questions.ElementAt(i).type <= QuestionTypes.LIKERT_7)
-                        dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
-                }
-                dt.Rows.Add(dataRow);
-            }
+            DataTable dt = DataTableManager.prepareEvalTable(this.factors, this.personalAnswers);
 
             if (path.EndsWith(".xlsx"))
             {

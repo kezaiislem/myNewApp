@@ -251,6 +251,7 @@
     <Compile Include="model\Question.cs" />
     <Compile Include="model\Survey.cs" />
     <Compile Include="model\Host.cs" />
+    <Compile Include="Shared\DataTableManager.cs" />
     <Compile Include="Shared\Exporter.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
     <Compile Include="Shared\RCalculator.cs" />

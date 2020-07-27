@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PFE.CustomObjects
 {
-    class CustomPersonalAnswer
+    public class CustomPersonalAnswer
     {
         public List<Answer> answers { get; set; }
         public List<Question> questions { get; set; }

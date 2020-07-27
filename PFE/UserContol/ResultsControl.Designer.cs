@@ -125,9 +125,9 @@
             this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
             this.labelPhaseTitle.Location = new System.Drawing.Point(35, 8);
             this.labelPhaseTitle.Name = "labelPhaseTitle";
-            this.labelPhaseTitle.Size = new System.Drawing.Size(71, 20);
+            this.labelPhaseTitle.Size = new System.Drawing.Size(63, 20);
             this.labelPhaseTitle.TabIndex = 1;
-            this.labelPhaseTitle.Text = "Sections";
+            this.labelPhaseTitle.Text = "Factors";
             // 
             // ResultsControl
             // 
