@@ -1,4 +1,5 @@
-﻿using RDotNet;
+﻿using PFE.CustomObjects;
+using RDotNet;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -32,27 +33,7 @@ namespace PFE.Shared
             }
         }
 
-        public static void test(string expression)
-        {
-            string result;
-            REngine engine;
-
-            //init the R engine            
-            engine = getInststance();
-
-            //calculate
-            CharacterVector vector = engine.Evaluate(expression).AsCharacter();
-            result = vector[0];
-
-            //Clear
-            Clear();
-
-            //output
-            Console.WriteLine("");
-            Console.WriteLine("Result: '{0}'", result);
-        }
-
-        public static void BartlettStats(String csvPath)
+        public static BartlettStatsResults BartlettStats(String csvPath)
         {
             REngine engine;
             //init the R engine            
@@ -67,15 +48,16 @@ namespace PFE.Shared
                 "ddl <- p*(p-1)/2\n" +
                 "pch <- pchisq(chi2,ddl,lower.tail=F)");
 
-            double chi2 = Double.Parse(engine.GetSymbol("chi2").AsCharacter()[0], CultureInfo.InvariantCulture);
-            double ddl = Double.Parse(engine.GetSymbol("ddl").AsCharacter()[0], CultureInfo.InvariantCulture);
-            double pch = Double.Parse(engine.GetSymbol("pch").AsCharacter()[0], CultureInfo.InvariantCulture);
+            BartlettStatsResults results = new BartlettStatsResults();
+            results.chi2 = Double.Parse(engine.GetSymbol("chi2").AsCharacter()[0], CultureInfo.InvariantCulture);
+            results.ddl = Double.Parse(engine.GetSymbol("ddl").AsCharacter()[0], CultureInfo.InvariantCulture);
+            results.pch = Double.Parse(engine.GetSymbol("pch").AsCharacter()[0], CultureInfo.InvariantCulture);
 
-            Console.WriteLine("chi2 = " + chi2 + " dll = " + ddl + " pch = " + pch);
             Clear();
+            return results;
         }
 
-        public static void KMOStats(String csvPath)
+        public static double KMOStats(String csvPath)
         {
             REngine engine;
             //init the R engine            
@@ -91,8 +73,8 @@ namespace PFE.Shared
 
             double kmo = Double.Parse(engine.GetSymbol("kmo").AsCharacter()[0], CultureInfo.InvariantCulture);
 
-            Console.WriteLine("KMO = " + kmo);
             Clear();
+            return kmo;
         }
 
         public static void PCA(String csvPath)

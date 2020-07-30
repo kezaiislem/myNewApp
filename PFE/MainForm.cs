@@ -18,6 +18,7 @@ namespace PFE
         public MainFormViewModel viewModel { get; set; }
         private ProjectContext projectContextView { get; set; }
         private ModelInfo modelInfoView { get; set; }
+        private ValidationControl validationView { get; set; }
         private SurveysControl surveysControl { get; set; }
         private ProjectPlanControl projectPlanView { get; set; }
 
@@ -32,7 +33,7 @@ namespace PFE
 
         private void hideSubMenu()
         {
-            panelToolsSubMenu.Visible = false;
+            //panelToolsSubMenu.Visible = false;
         }
         
         private void InitializeViews()
@@ -75,6 +76,14 @@ namespace PFE
             this.modelInfoView.AutoScaleMode = AutoScaleMode.None;
             this.modelInfoView.Name = "projectContextView";
             this.panelCurrentView.Controls.Add(this.modelInfoView);
+
+            // Page Validation
+            this.validationView = new ValidationControl(this.viewModel.projet.model);
+            this.validationView.Visible = false;
+            this.validationView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.validationView.AutoScaleMode = AutoScaleMode.None;
+            this.validationView.Name = "projectContextView";
+            this.panelCurrentView.Controls.Add(this.validationView);
         }
 
         private void showSubMenu(Panel subMenu)
@@ -147,7 +156,8 @@ namespace PFE
 
         private void btnTools_Click(object sender, EventArgs e)
         {
-            showSubMenu(panelToolsSubMenu);
+            switchView(validationView);
+            labelPageName.Text = "Validation and analystics";
         }
         #region ToolsSubMenu
         private void button13_Click(object sender, EventArgs e)
@@ -248,11 +258,6 @@ namespace PFE
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void projectContext1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void ButtonProjectPlan_Click(object sender, EventArgs e)

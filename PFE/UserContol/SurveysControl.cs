@@ -45,14 +45,12 @@ namespace PFE.UserContol
             foreach (CustomSurveysObject s in viewModel.surveys)
             {
                 SurveyTabControl surveyTab = new SurveyTabControl(s);
-                this.panelSurveyTableContent.SuspendLayout();
                 surveyTab.Dock = DockStyle.Top;
                 surveyTab.Height = 55;
                 surveyTab.Visible = true;
                 surveyTab.PropertyChanged += PropretyChanged;
                 this.panelSurveyTableContent.Controls.Add(surveyTab);
                 this.panelSurveyTableContent.Controls.SetChildIndex(surveyTab, 0);
-                this.panelSurveyTableContent.ResumeLayout(false);
             }
         }
 

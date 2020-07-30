@@ -234,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
+    <Compile Include="CustomObjects\BartlettStatsResults.cs" />
     <Compile Include="CustomObjects\CalendarItem.cs" />
     <Compile Include="CustomObjects\CustomGridQuestion.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />
@@ -278,6 +279,18 @@
     </Compile>
     <Compile Include="UserContol\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\StatisticsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\StatisticsControl.Designer.cs">
+      <DependentUpon>StatisticsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\ResultSurveyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ResultSurveyControl.Designer.cs">
+      <DependentUpon>ResultSurveyControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\RadioChoiceControl.cs">
       <SubType>UserControl</SubType>
@@ -350,6 +363,12 @@
     </Compile>
     <Compile Include="UserContol\SectionResultControl.Designer.cs">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\ValidationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ValidationControl.Designer.cs">
+      <DependentUpon>ValidationControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\SurveyTabControl.cs">
       <SubType>UserControl</SubType>
@@ -436,6 +455,7 @@
     <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
+    <Compile Include="ViewModel\ResultSurveyControlViewModel .cs" />
     <Compile Include="ViewModel\NewProjectFormViewModel.cs" />
     <Compile Include="ViewModel\ModelInfoViewModel.cs" />
     <Compile Include="ViewModel\AddFactorFormViewModel.cs" />
@@ -443,6 +463,7 @@
     <Compile Include="ViewModel\ProjectPlanControlViewModel.cs" />
     <Compile Include="ViewModel\ResultControlViewModel.cs" />
     <Compile Include="ViewModel\SectionResultControlViewModel.cs" />
+    <Compile Include="ViewModel\ValidationControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
     <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
     <Compile Include="ViewModel\FactorControlViewModel.cs" />
@@ -487,6 +508,12 @@
     <EmbeddedResource Include="UserContol\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\StatisticsControl.resx">
+      <DependentUpon>StatisticsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ResultSurveyControl.resx">
+      <DependentUpon>ResultSurveyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\RadioChoiceControl.resx">
       <DependentUpon>RadioChoiceControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\SectionResultControl.resx">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ValidationControl.resx">
+      <DependentUpon>ValidationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\SurveyTabControl.resx">
       <DependentUpon>SurveyTabControl.cs</DependentUpon>

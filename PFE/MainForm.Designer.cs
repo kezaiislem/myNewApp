@@ -36,8 +36,6 @@ namespace PFE
             this.buttonAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.panelToolsSubMenu = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
             this.btnTools = new System.Windows.Forms.Button();
             this.btnAnalistics = new System.Windows.Forms.Button();
             this.btnModel = new System.Windows.Forms.Button();
@@ -50,7 +48,6 @@ namespace PFE
             this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelCurrentView = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
-            this.panelToolsSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -63,7 +60,6 @@ namespace PFE
             this.panelSideMenu.Controls.Add(this.buttonAbout);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnHelp);
-            this.panelSideMenu.Controls.Add(this.panelToolsSubMenu);
             this.panelSideMenu.Controls.Add(this.btnTools);
             this.panelSideMenu.Controls.Add(this.btnAnalistics);
             this.panelSideMenu.Controls.Add(this.btnModel);
@@ -87,7 +83,7 @@ namespace PFE
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
             this.buttonAbout.Image = global::PFE.Properties.Resources.about;
             this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAbout.Location = new System.Drawing.Point(0, 384);
+            this.buttonAbout.Location = new System.Drawing.Point(0, 344);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonAbout.Size = new System.Drawing.Size(200, 45);
@@ -130,7 +126,7 @@ namespace PFE
             this.btnHelp.ForeColor = System.Drawing.Color.White;
             this.btnHelp.Image = global::PFE.Properties.Resources.help;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHelp.Location = new System.Drawing.Point(0, 339);
+            this.btnHelp.Location = new System.Drawing.Point(0, 299);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnHelp.Size = new System.Drawing.Size(200, 45);
@@ -140,35 +136,6 @@ namespace PFE
             this.btnHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // panelToolsSubMenu
-            // 
-            this.panelToolsSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            this.panelToolsSubMenu.Controls.Add(this.button13);
-            this.panelToolsSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolsSubMenu.Location = new System.Drawing.Point(0, 299);
-            this.panelToolsSubMenu.Name = "panelToolsSubMenu";
-            this.panelToolsSubMenu.Size = new System.Drawing.Size(200, 40);
-            this.panelToolsSubMenu.TabIndex = 7;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(49)))), ((int)(((byte)(65)))));
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(38)))), ((int)(((byte)(46)))));
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(0, 0);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(200, 40);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Media converter";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnTools
             // 
@@ -380,7 +347,6 @@ namespace PFE
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.panelSideMenu.ResumeLayout(false);
-            this.panelToolsSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -394,8 +360,6 @@ namespace PFE
         private System.Windows.Forms.Panel panelSideMenu;
         private System.Windows.Forms.Button buttonProjectContext;
         private System.Windows.Forms.Button btnHelp;
-        private System.Windows.Forms.Panel panelToolsSubMenu;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button btnTools;
         private System.Windows.Forms.Button btnAnalistics;
         private System.Windows.Forms.Button btnModel;
