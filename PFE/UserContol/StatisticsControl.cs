@@ -16,11 +16,14 @@ using Newtonsoft.Json;
 using MetroFramework;
 using PFE.Constants;
 using PFE.model;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace PFE.UserContol
 {
     public partial class StatisticsControl : UserControl
     {
+
+        StatisticsControlViewModel viewModel;
 
         public StatisticsControl(Survey survey)
         {
@@ -34,6 +37,7 @@ namespace PFE.UserContol
             panelSections.Controls.SetChildIndex(buttonFirstCollect, 0);
             panelSections.Controls.SetChildIndex(buttonSeconCollect, 0);
             panelSections.Controls.SetChildIndex(buttonConfirmatory, 0);
+            this.viewModel = new StatisticsControlViewModel(survey);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -43,7 +47,11 @@ namespace PFE.UserContol
 
         private void buttonFirstCollect_Click(object sender, EventArgs e)
         {
-
+            FirstCollectControl firstCollectConrol = new FirstCollectControl(this.viewModel.survey);
+            firstCollectConrol.Dock = DockStyle.Fill;
+            firstCollectConrol.AutoScaleMode = AutoScaleMode.None;
+            firstCollectConrol.Show();
+            this.panelStepContent.Controls.Add(firstCollectConrol);
         }
 
         private void buttonSeconCollect_Click(object sender, EventArgs e)

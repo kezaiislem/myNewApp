@@ -34,9 +34,9 @@
             this.buttonSeconCollect = new System.Windows.Forms.Button();
             this.buttonFirstCollect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonBack = new JImageButton.JImageButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panelSectionContent = new System.Windows.Forms.Panel();
+            this.panelStepContent = new System.Windows.Forms.Panel();
+            this.buttonBack = new JImageButton.JImageButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -136,6 +136,28 @@
             this.panel2.Size = new System.Drawing.Size(211, 44);
             this.panel2.TabIndex = 8;
             // 
+            // labelPhaseTitle
+            // 
+            this.labelPhaseTitle.AutoSize = true;
+            this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
+            this.labelPhaseTitle.Location = new System.Drawing.Point(34, 10);
+            this.labelPhaseTitle.Name = "labelPhaseTitle";
+            this.labelPhaseTitle.Size = new System.Drawing.Size(51, 20);
+            this.labelPhaseTitle.TabIndex = 4;
+            this.labelPhaseTitle.Text = "Steps";
+            // 
+            // panelStepContent
+            // 
+            this.panelStepContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelStepContent.Location = new System.Drawing.Point(270, 25);
+            this.panelStepContent.Name = "panelStepContent";
+            this.panelStepContent.Size = new System.Drawing.Size(760, 561);
+            this.panelStepContent.TabIndex = 8;
+            // 
             // buttonBack
             // 
             this.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -155,33 +177,11 @@
             this.buttonBack.Zoom = 1;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // labelPhaseTitle
-            // 
-            this.labelPhaseTitle.AutoSize = true;
-            this.labelPhaseTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelPhaseTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhaseTitle.ForeColor = System.Drawing.Color.White;
-            this.labelPhaseTitle.Location = new System.Drawing.Point(34, 10);
-            this.labelPhaseTitle.Name = "labelPhaseTitle";
-            this.labelPhaseTitle.Size = new System.Drawing.Size(51, 20);
-            this.labelPhaseTitle.TabIndex = 4;
-            this.labelPhaseTitle.Text = "Steps";
-            // 
-            // panelSectionContent
-            // 
-            this.panelSectionContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSectionContent.Location = new System.Drawing.Point(270, 25);
-            this.panelSectionContent.Name = "panelSectionContent";
-            this.panelSectionContent.Size = new System.Drawing.Size(760, 561);
-            this.panelSectionContent.TabIndex = 8;
-            // 
             // StatisticsControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panelSections);
-            this.Controls.Add(this.panelSectionContent);
+            this.Controls.Add(this.panelStepContent);
             this.Name = "StatisticsControl";
             this.Size = new System.Drawing.Size(1064, 607);
             this.panelSections.ResumeLayout(false);
@@ -194,7 +194,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCards panelSections;
-        private System.Windows.Forms.Panel panelSectionContent;
+        private System.Windows.Forms.Panel panelStepContent;
         private System.Windows.Forms.Panel panel2;
         private JImageButton.JImageButton buttonBack;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;

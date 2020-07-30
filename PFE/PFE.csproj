@@ -280,6 +280,12 @@
     <Compile Include="UserContol\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\FirstCollectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\FirstCollectControl.Designer.cs">
+      <DependentUpon>FirstCollectControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\StatisticsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -463,6 +469,8 @@
     <Compile Include="ViewModel\ProjectPlanControlViewModel.cs" />
     <Compile Include="ViewModel\ResultControlViewModel.cs" />
     <Compile Include="ViewModel\SectionResultControlViewModel.cs" />
+    <Compile Include="ViewModel\FirstCollectControlViewModel.cs" />
+    <Compile Include="ViewModel\StatisticsControlViewModel.cs" />
     <Compile Include="ViewModel\ValidationControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
     <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
@@ -507,6 +515,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\FirstCollectControl.resx">
+      <DependentUpon>FirstCollectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\StatisticsControl.resx">
       <DependentUpon>StatisticsControl.cs</DependentUpon>
