@@ -38,9 +38,11 @@
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.factorisationResults = new System.Windows.Forms.Panel();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.textBoxBartlett = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.textBoxKMOIndex = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.buttonACP = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -52,15 +54,13 @@
             this.labeltext = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.buttonFactorisationTest = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnRight = new JImageButton.JImageButton();
             this.btnLeft = new JImageButton.JImageButton();
+            this.btnRight = new JImageButton.JImageButton();
             this.listStatsFactors = new System.Windows.Forms.ListBox();
             this.listOriginalFactors = new System.Windows.Forms.ListBox();
             this.labelDescription = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.factorisationResults.SuspendLayout();
@@ -100,9 +100,9 @@
             // 
             this.factorisationResults.Controls.Add(this.metroLabel7);
             this.factorisationResults.Controls.Add(this.metroLabel6);
-            this.factorisationResults.Controls.Add(this.metroTextBox2);
+            this.factorisationResults.Controls.Add(this.textBoxBartlett);
             this.factorisationResults.Controls.Add(this.metroLabel5);
-            this.factorisationResults.Controls.Add(this.metroTextBox1);
+            this.factorisationResults.Controls.Add(this.textBoxKMOIndex);
             this.factorisationResults.Controls.Add(this.metroLabel4);
             this.factorisationResults.Controls.Add(this.metroLabel3);
             this.factorisationResults.Controls.Add(this.buttonACP);
@@ -113,36 +113,54 @@
             this.factorisationResults.Size = new System.Drawing.Size(760, 133);
             this.factorisationResults.TabIndex = 20;
             // 
-            // metroTextBox2
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(209, 56);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel7.TabIndex = 37;
+            this.metroLabel7.Text = "Close to 1";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(583, 56);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel6.TabIndex = 36;
+            this.metroLabel6.Text = "< 0.05";
+            // 
+            // textBoxBartlett
             // 
             // 
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(82, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Enabled = false;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(473, 54);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(104, 23);
-            this.metroTextBox2.TabIndex = 35;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxBartlett.CustomButton.Image = null;
+            this.textBoxBartlett.CustomButton.Location = new System.Drawing.Point(82, 1);
+            this.textBoxBartlett.CustomButton.Name = "";
+            this.textBoxBartlett.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.textBoxBartlett.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBoxBartlett.CustomButton.TabIndex = 1;
+            this.textBoxBartlett.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBoxBartlett.CustomButton.UseSelectable = true;
+            this.textBoxBartlett.CustomButton.Visible = false;
+            this.textBoxBartlett.Enabled = false;
+            this.textBoxBartlett.Lines = new string[0];
+            this.textBoxBartlett.Location = new System.Drawing.Point(473, 54);
+            this.textBoxBartlett.MaxLength = 32767;
+            this.textBoxBartlett.Name = "textBoxBartlett";
+            this.textBoxBartlett.PasswordChar = '\0';
+            this.textBoxBartlett.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxBartlett.SelectedText = "";
+            this.textBoxBartlett.SelectionLength = 0;
+            this.textBoxBartlett.SelectionStart = 0;
+            this.textBoxBartlett.ShortcutsEnabled = true;
+            this.textBoxBartlett.Size = new System.Drawing.Size(104, 23);
+            this.textBoxBartlett.TabIndex = 35;
+            this.textBoxBartlett.UseSelectable = true;
+            this.textBoxBartlett.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBoxBartlett.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel5
             // 
@@ -153,36 +171,36 @@
             this.metroLabel5.TabIndex = 34;
             this.metroLabel5.Text = "Bartlett index";
             // 
-            // metroTextBox1
+            // textBoxKMOIndex
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(82, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Enabled = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(99, 54);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(104, 23);
-            this.metroTextBox1.TabIndex = 33;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxKMOIndex.CustomButton.Image = null;
+            this.textBoxKMOIndex.CustomButton.Location = new System.Drawing.Point(82, 1);
+            this.textBoxKMOIndex.CustomButton.Name = "";
+            this.textBoxKMOIndex.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.textBoxKMOIndex.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBoxKMOIndex.CustomButton.TabIndex = 1;
+            this.textBoxKMOIndex.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBoxKMOIndex.CustomButton.UseSelectable = true;
+            this.textBoxKMOIndex.CustomButton.Visible = false;
+            this.textBoxKMOIndex.Enabled = false;
+            this.textBoxKMOIndex.Lines = new string[0];
+            this.textBoxKMOIndex.Location = new System.Drawing.Point(99, 54);
+            this.textBoxKMOIndex.MaxLength = 32767;
+            this.textBoxKMOIndex.Name = "textBoxKMOIndex";
+            this.textBoxKMOIndex.PasswordChar = '\0';
+            this.textBoxKMOIndex.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxKMOIndex.SelectedText = "";
+            this.textBoxKMOIndex.SelectionLength = 0;
+            this.textBoxKMOIndex.SelectionStart = 0;
+            this.textBoxKMOIndex.ShortcutsEnabled = true;
+            this.textBoxKMOIndex.Size = new System.Drawing.Size(104, 23);
+            this.textBoxKMOIndex.TabIndex = 33;
+            this.textBoxKMOIndex.UseSelectable = true;
+            this.textBoxKMOIndex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBoxKMOIndex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
@@ -290,8 +308,8 @@
             this.panel2.Controls.Add(this.labeltext);
             this.panel2.Controls.Add(this.metroLabel1);
             this.panel2.Controls.Add(this.buttonFactorisationTest);
-            this.panel2.Controls.Add(this.btnRight);
             this.panel2.Controls.Add(this.btnLeft);
+            this.panel2.Controls.Add(this.btnRight);
             this.panel2.Controls.Add(this.listStatsFactors);
             this.panel2.Controls.Add(this.listOriginalFactors);
             this.panel2.Controls.Add(this.labelDescription);
@@ -353,6 +371,7 @@
             this.checkBoxBartlett.TabIndex = 30;
             this.checkBoxBartlett.ThreeState = false;
             this.checkBoxBartlett.ToolTipText = null;
+            this.checkBoxBartlett.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxBartlett_CheckedChanged);
             // 
             // metroLabel2
             // 
@@ -415,6 +434,7 @@
             this.checkBoxKMO.TabIndex = 28;
             this.checkBoxKMO.ThreeState = false;
             this.checkBoxKMO.ToolTipText = null;
+            this.checkBoxKMO.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxKMO_CheckedChanged);
             // 
             // labeltext
             // 
@@ -499,25 +519,6 @@
             this.buttonFactorisationTest.UseDefaultRadiusAndThickness = true;
             this.buttonFactorisationTest.Click += new System.EventHandler(this.buttonFactorisationTest_Click);
             // 
-            // btnRight
-            // 
-            this.btnRight.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnRight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRight.BackColor = System.Drawing.Color.Transparent;
-            this.btnRight.CausesValidation = false;
-            this.btnRight.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnRight.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnRight.ErrorImage")));
-            this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.ImageHover = null;
-            this.btnRight.InitialImage = null;
-            this.btnRight.Location = new System.Drawing.Point(355, 141);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.Padding = new System.Windows.Forms.Padding(2);
-            this.btnRight.Size = new System.Drawing.Size(32, 32);
-            this.btnRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRight.TabIndex = 23;
-            this.btnRight.Zoom = 1;
-            // 
             // btnLeft
             // 
             this.btnLeft.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -529,13 +530,34 @@
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageHover = null;
             this.btnLeft.InitialImage = null;
-            this.btnLeft.Location = new System.Drawing.Point(355, 103);
+            this.btnLeft.Location = new System.Drawing.Point(355, 141);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Padding = new System.Windows.Forms.Padding(2);
             this.btnLeft.Size = new System.Drawing.Size(32, 32);
             this.btnLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnLeft.TabIndex = 22;
+            this.btnLeft.TabIndex = 23;
             this.btnLeft.Zoom = 1;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            // 
+            // btnRight
+            // 
+            this.btnRight.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnRight.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRight.BackColor = System.Drawing.Color.Transparent;
+            this.btnRight.CausesValidation = false;
+            this.btnRight.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnRight.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnRight.ErrorImage")));
+            this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
+            this.btnRight.ImageHover = null;
+            this.btnRight.InitialImage = null;
+            this.btnRight.Location = new System.Drawing.Point(355, 103);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.Padding = new System.Windows.Forms.Padding(2);
+            this.btnRight.Size = new System.Drawing.Size(32, 32);
+            this.btnRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRight.TabIndex = 22;
+            this.btnRight.Zoom = 1;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // listStatsFactors
             // 
@@ -586,24 +608,6 @@
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "First Collect";
             // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(583, 56);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel6.TabIndex = 36;
-            this.metroLabel6.Text = "< 0.05";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(209, 56);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel7.TabIndex = 37;
-            this.metroLabel7.Text = "Close to 1";
-            // 
             // FirstCollectControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,17 +641,17 @@
         private MetroFramework.Controls.MetroLabel labeltext;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonFactorisationTest;
-        private JImageButton.JImageButton btnRight;
         private JImageButton.JImageButton btnLeft;
+        private JImageButton.JImageButton btnRight;
         private System.Windows.Forms.ListBox listStatsFactors;
         private System.Windows.Forms.ListBox listOriginalFactors;
         private MetroFramework.Controls.MetroLabel labelDescription;
         private System.Windows.Forms.Panel factorisationResults;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox textBoxKMOIndex;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox textBoxBartlett;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;

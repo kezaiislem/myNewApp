@@ -11,6 +11,9 @@ using PFE.Model;
 using PFE.ViewModel;
 using PFE.Constants;
 using PFE.model;
+using PFE.Shared;
+using System.IO;
+using PFE.CustomObjects;
 
 namespace PFE.UserContol
 {
@@ -28,11 +31,11 @@ namespace PFE.UserContol
         private void Init(Survey survey)
         {
             viewModel = new FirstCollectControlViewModel(survey);
-            listOriginalFactors.DataSource = this.viewModel.survey.factors;
+            listOriginalFactors.DataSource = this.viewModel.originalFactors;
             listStatsFactors.DataSource = this.viewModel.selectedFactors;
         }
 
-        private void btnLeft_Click(object sender, EventArgs e)
+        private void btnRight_Click(object sender, EventArgs e)
         {
             foreach(Factor factor in listOriginalFactors.SelectedItems)
             {
@@ -43,7 +46,7 @@ namespace PFE.UserContol
             }
         }
 
-        private void btnRight_Click(object sender, EventArgs e)
+        private void btnLeft_Click(object sender, EventArgs e)
         {
             if (listStatsFactors.SelectedItem != null)
             {
@@ -53,23 +56,49 @@ namespace PFE.UserContol
 
         private void buttonFactorisationTest_Click(object sender, EventArgs e)
         {
-
+            if (validateFactorisation())
+            {
+                viewModel.calculateFirstResults();
+                fillValues();
+            }
         }
 
         public Boolean validateFactorisation()
         {
             if (this.viewModel.selectedFactors.Count < 2)
             {
-                // You must select at least two factors
+                MessageBox.Show("You must select at least two factors", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (!checkBoxBartlett.Checked && !checkBoxKMO.Checked)
             {
-                // You must select at least at least KMO or Bartlett
+                MessageBox.Show("You must select at least at least KMO or Bartlett", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             return true;
+        }
+
+        private void fillValues()
+        {
+            if (checkBoxBartlett.Checked)
+            {
+                textBoxBartlett.Text = this.viewModel.bartlettStatsResults.pch.ToString();
+            }
+            if (checkBoxKMO.Checked)
+            {
+                textBoxKMOIndex.Text = this.viewModel.KMOIndex.ToString();
+            }
+        }
+
+        private void checkBoxBartlett_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            this.viewModel.bartlettChecked = e.Checked;
+        }
+
+        private void checkBoxKMO_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            this.viewModel.kmoChecked = e.Checked;
         }
     }
 }

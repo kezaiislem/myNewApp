@@ -53,7 +53,7 @@ namespace PFE.ViewModel
                 if (data != "")
                 {
                     this.personalAnswers = JsonConvert.DeserializeObject<List<CustomPersonalAnswer>>(data);
-                    buildEvaluationExel(path);
+                    buildExel(path);
                 }
             }
             catch (Exception ex)

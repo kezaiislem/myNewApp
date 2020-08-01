@@ -132,6 +132,7 @@ namespace PFE.UserContol
                         if (survey != null)
                         {
                             this.viewModel.survey.host = survey.host;
+                            this.viewModel.survey.id = survey.id;
                             this.viewModel.survey.model.id = survey.model.id;
                             ProjectHandler.saveProject();
                             using (var formS = new HostSuccessForm(survey.host.id))
