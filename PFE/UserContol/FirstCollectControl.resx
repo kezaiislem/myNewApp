@@ -128,6 +128,43 @@
         cLbjtGnpmCUr5QvlVSz59LXbzwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="buttonReduceAlpha.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+</value>
+  </data>
+  <data name="buttonCor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKQAAAAgCAYAAACclNOPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVHhe7dwhTgNRFIXhtxQWggCDIiTsgc5kmMJsgATV
+        BIPEsQJQCFzTpXQDKFYw5JFnSGqZHvGd5HNX/voWs7j1fX/Sraf3YRhmWNpqPX3WBluOpdyM0+764WU+
+        fd7C4i4fX+fu9n7fciylVnroEJZSG2w5CpLjEyRRBEkUQRJFkEQRJFEESRRBEkWQRBEkUQRJFEESRZBE
+        ESRRBEkUQRJFkEQRJFEESRRBEkWQRBEkUQRJFEESRZBE+RNkfWNxsXk7eAj/7fzpY+6G8bvl+Pts6qwf
+        775qpbC0GuNqnK5ajmYpK+UHrnlSB64AjWwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="buttonChronbach.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAKQAAAAgCAYAAACclNOPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVHhe7dwhTgNRFIXhtxQWggCDIiTsgc5kmMJsgATV
+        BIPEsQJQCFzTpXQDKFYw5JFnSGqZHvGd5HNX/voWs7j1fX/Sraf3YRhmWNpqPX3WBluOpdyM0+764WU+
+        fd7C4i4fX+fu9n7fciylVnroEJZSG2w5CpLjEyRRBEkUQRJFkEQRJFEESRRBEkWQRBEkUQRJFEESRZBE
+        ESRRBEkUQRJFkEQRJFEESRRBEkWQRBEkUQRJFEESRZBE+RNkfWNxsXk7eAj/7fzpY+6G8bvl+Pts6qwf
+        775qpbC0GuNqnK5ajmYpK+UHrnlSB64AjWwAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="checkBoxBartlett.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

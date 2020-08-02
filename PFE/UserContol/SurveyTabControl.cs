@@ -94,9 +94,6 @@ namespace PFE
             resultsControl.Dock = DockStyle.Fill;
             resultsControl.AutoScaleMode = AutoScaleMode.None;
             OnNotifyPropertyChanged(resultsControl, "");
-            //this.Parent.Parent.Parent.Parent.Controls.Add(resultsControl);
-            //resultsControl.Show();
-            //resultsControl.BringToFront();
         }
     }
 }

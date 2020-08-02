@@ -353,6 +353,16 @@ namespace PFE.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reduce {
+            get {
+                object obj = ResourceManager.GetObject("reduce", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap reduced_volume {
             get {
                 object obj = ResourceManager.GetObject("reduced_volume", resourceCulture);

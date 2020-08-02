@@ -42,6 +42,11 @@ namespace PFE.ViewModel
             Task.Run(async () => await getAnswers());
         }
 
+        public void reloadAnswers()
+        {
+            Task.Run(async () => await getAnswers());
+        }
+
         private async Task getAnswers()
         {
             try
@@ -54,6 +59,7 @@ namespace PFE.ViewModel
             }
             catch (Exception ex)
             {
+                this.personalAnswers = null;
                 Console.WriteLine(ex.Message);
             }
         }
@@ -70,6 +76,45 @@ namespace PFE.ViewModel
             {
                 KMOIndex = RCalculator.KMOStats(Path.GetTempPath() + "/testcsv.csv");
             }
+        }
+
+        public void calculateCorelationMatrix()
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            Exporter.exportCsv(Path.GetTempPath() + "/testcsv.csv", ";", dt);
+            RCalculator.showCorelationTable(Path.GetTempPath() + "/testcsv.csv");
+        }
+
+        public DataTable calculateChrobachTable()
+        {
+            DataTable temp;
+            DataTable result = new DataTable();
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            DataRow dataRow = result.NewRow();
+
+            foreach (Factor factor in this.selectedFactors)
+            {
+                result.Columns.Add(factor.title);
+                if (factor.questions.Count > 1)
+                {
+                    temp = dt.Copy();
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        if (!column.ColumnName.StartsWith(factor.title))
+                        {
+                            temp.Columns.Remove(column.ColumnName);
+                        }
+                    }
+                    Exporter.exportCsv("C:/Users/ISLEM/Desktop/FF/" + factor.title + ".csv", ";", temp);
+                    dataRow[factor.title] = RCalculator.CalculateAlpha("C:/Users/ISLEM/Desktop/FF/" + factor.title + ".csv").ToString();
+                }
+                else
+                {
+                    dataRow[factor.title] = "None";
+                }
+            }
+            result.Rows.Add(dataRow);
+            return result;
         }
     }
 }

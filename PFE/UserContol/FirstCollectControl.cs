@@ -37,7 +37,7 @@ namespace PFE.UserContol
 
         private void btnRight_Click(object sender, EventArgs e)
         {
-            foreach(Factor factor in listOriginalFactors.SelectedItems)
+            foreach (Factor factor in listOriginalFactors.SelectedItems)
             {
                 if (!this.viewModel.selectedFactors.Contains(listOriginalFactors.SelectedItem))
                 {
@@ -60,6 +60,7 @@ namespace PFE.UserContol
             {
                 viewModel.calculateFirstResults();
                 fillValues();
+                factorisationResults.Visible = true;
             }
         }
 
@@ -67,12 +68,28 @@ namespace PFE.UserContol
         {
             if (this.viewModel.selectedFactors.Count < 2)
             {
-                MessageBox.Show("You must select at least two factors", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You must select at least two factors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else if (!checkBoxBartlett.Checked && !checkBoxKMO.Checked)
             {
-                MessageBox.Show("You must select at least at least KMO or Bartlett", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You must select at least at least KMO or Bartlett", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (this.viewModel.personalAnswers == null)
+            {
+                MessageBox.Show("An error has been occured please check your connection and restart again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.viewModel.reloadAnswers();
+                return false;
+            }
+            int questionsCount = 0;
+            foreach (Factor factor in this.viewModel.selectedFactors)
+            {
+                questionsCount += factor.questions.Count;
+            }
+            if (questionsCount > this.viewModel.personalAnswers.Count)
+            {
+                MessageBox.Show("Number of answers must be higher than number of questions", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -105,6 +122,23 @@ namespace PFE.UserContol
         private void buttonACP_Click(object sender, EventArgs e)
         {
             RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
+        }
+
+        private void buttonChronbach_Click(object sender, EventArgs e)
+        {
+            DataTable dt = this.viewModel.calculateChrobachTable();
+            dataGridAlpha.DataSource = dt;
+            panelCronbach.Visible = true;
+        }
+
+        private void buttonReduceAlpha_Click(object sender, EventArgs e)
+        {
+            this.panelCronbach.Visible = false;
+        }
+
+        private void buttonCor_Click(object sender, EventArgs e)
+        {
+            viewModel.calculateCorelationMatrix();
         }
     }
 }

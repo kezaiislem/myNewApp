@@ -820,6 +820,9 @@
   <ItemGroup>
     <None Include="Resources\red_cross.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reduce.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
