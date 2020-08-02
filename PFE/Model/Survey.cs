@@ -17,6 +17,7 @@ namespace PFE.Model
         public List<Factor> factors  { get; set; }
         public List<Answer> answers { get; set; }
         public Host host { get; set; }
+        public List<Hypothesis> hypotheses { get; set; }
         [XmlIgnore]
         public Model model { get; set; }
     }

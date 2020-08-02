@@ -284,6 +284,7 @@
             this.buttonACP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonACP.TextMarginLeft = 0;
             this.buttonACP.UseDefaultRadiusAndThickness = true;
+            this.buttonACP.Click += new System.EventHandler(this.buttonACP_Click);
             // 
             // bunifuSeparator1
             // 

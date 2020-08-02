@@ -246,6 +246,7 @@
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
     <Compile Include="model\Answer.cs" />
     <Compile Include="model\Factor.cs" />
+    <Compile Include="model\Hypothesis.cs" />
     <Compile Include="model\ProjectEvent.cs" />
     <Compile Include="model\Technology.cs" />
     <Compile Include="model\Model.cs" />
@@ -261,6 +262,12 @@
     </Compile>
     <Compile Include="UserContol\AddEventForm.Designer.cs">
       <DependentUpon>AddEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\AddHypothesisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserContol\AddHypothesisForm.Designer.cs">
+      <DependentUpon>AddHypothesisForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\AddQuestionForm.cs">
       <SubType>Form</SubType>
@@ -279,6 +286,12 @@
     </Compile>
     <Compile Include="UserContol\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserContol\HypothesisControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\HypothesisControl.Designer.cs">
+      <DependentUpon>HypothesisControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserContol\FirstCollectControl.cs">
       <SubType>UserControl</SubType>
@@ -370,6 +383,12 @@
     <Compile Include="UserContol\SectionResultControl.Designer.cs">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\HypothesisTabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\HypothesisTabControl.Designer.cs">
+      <DependentUpon>HypothesisTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\ValidationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -457,6 +476,7 @@
     <Compile Include="UserContol\FactorSugesstionForm.Designer.cs">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AddHypothesisViewModel.cs" />
     <Compile Include="ViewModel\AddSurveyFormViewModel.cs" />
     <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
@@ -471,6 +491,8 @@
     <Compile Include="ViewModel\SectionResultControlViewModel.cs" />
     <Compile Include="ViewModel\FirstCollectControlViewModel.cs" />
     <Compile Include="ViewModel\StatisticsControlViewModel.cs" />
+    <Compile Include="ViewModel\HypothesisControlViewModel.cs" />
+    <Compile Include="ViewModel\HypothesisTabControlViewModel.cs" />
     <Compile Include="ViewModel\ValidationControlViewModel.cs" />
     <Compile Include="ViewModel\SurveysControlViewModel.cs" />
     <Compile Include="ViewModel\SurveyTabControlViewModel.cs" />
@@ -507,6 +529,9 @@
     <EmbeddedResource Include="UserContol\AddEventForm.resx">
       <DependentUpon>AddEventForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\AddHypothesisForm.resx">
+      <DependentUpon>AddHypothesisForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserContol\AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -515,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\HypothesisControl.resx">
+      <DependentUpon>HypothesisControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\FirstCollectControl.resx">
       <DependentUpon>FirstCollectControl.cs</DependentUpon>
@@ -560,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\SectionResultControl.resx">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\HypothesisTabControl.resx">
+      <DependentUpon>HypothesisTabControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\ValidationControl.resx">
       <DependentUpon>ValidationControl.cs</DependentUpon>

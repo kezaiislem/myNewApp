@@ -26,6 +26,8 @@ namespace PFE.UserContol
 
         FactorControl activeSection;
 
+        HypothesisControl hypothesisControl;
+
         public PhaseControl(Survey survey)
         {
             InitializeComponent();
@@ -52,6 +54,11 @@ namespace PFE.UserContol
 
         private void swichSection(FactorControl section)
         {
+            if(hypothesisControl != null)
+            {
+                this.hypothesisControl.Dispose();
+                this.hypothesisControl = null;
+            }
             if (activeSection != null)
             {
                 this.activeSection.Dispose();
@@ -196,9 +203,26 @@ namespace PFE.UserContol
             }
         }
 
-        private void PhaseControl_VisibleChanged(object sender, EventArgs e)
+        private void buttonHypothesis_Click(object sender, EventArgs e)
         {
-           
+            if(activeSection != null)
+            {
+                activeSection.Dispose();
+                activeSection = null;
+            }
+            if(hypothesisControl == null)
+            {
+                if (this.viewModel.survey.hypotheses == null)
+                {
+                    this.viewModel.survey.hypotheses = new List<Hypothesis>();
+                }
+                this.hypothesisControl = new HypothesisControl(this.viewModel.survey.hypotheses, this.viewModel.survey.factors);
+                this.hypothesisControl.Dock = DockStyle.Fill;
+                this.hypothesisControl.AutoScaleMode = AutoScaleMode.None;
+                this.hypothesisControl.Show();
+                this.panelSectionContent.Controls.Add(hypothesisControl);
+            }
+            
         }
     }
 }

@@ -39,8 +39,10 @@ namespace PFE.Shared
             //init the R engine            
             engine = getInststance();
 
+            csvPath = csvPath.Replace('\\', '/');
+
             //executing script
-            engine.Evaluate("data <- read.csv('C:/Users/ISLEM/Desktop/Sheet.csv', sep = ';')\n" +
+            engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
                 "R <- cor(data)\n" +
                 "n <- nrow(data)\n" +
                 "p <- ncol(data)\n" +
@@ -49,6 +51,7 @@ namespace PFE.Shared
                 "pch <- pchisq(chi2,ddl,lower.tail=F)");
 
             BartlettStatsResults results = new BartlettStatsResults();
+            Console.WriteLine(engine.GetSymbol("chi2").AsCharacter()[0]);
             results.chi2 = Double.Parse(engine.GetSymbol("chi2").AsCharacter()[0], CultureInfo.InvariantCulture);
             results.ddl = Double.Parse(engine.GetSymbol("ddl").AsCharacter()[0], CultureInfo.InvariantCulture);
             results.pch = Double.Parse(engine.GetSymbol("pch").AsCharacter()[0], CultureInfo.InvariantCulture);
@@ -63,8 +66,10 @@ namespace PFE.Shared
             //init the R engine            
             engine = getInststance();
 
+            csvPath = csvPath.Replace('\\', '/');
+
             //executing script
-            engine.Evaluate("data <- read.csv('C:/Users/ISLEM/Desktop/Sheet.csv', sep = ';')\n" +
+            engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
                 "R <- cor(data)\n" +
                 "A <- solve(R)\n" +
                 "kmo.num <- sum(R^2) - sum(diag(R^2))\n" +
@@ -83,8 +88,10 @@ namespace PFE.Shared
             //init the R engine            
             engine = getInststance();
 
+            csvPath = csvPath.Replace('\\', '/');
+
             //executing script
-            engine.Evaluate("data <- read.csv('C:/Users/ISLEM/Desktop/Sheet.csv', sep = ';')\n" +
+            engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
                 "pca <- princomp(data, cor=T)\n" +
                 "part <- pca$sdev^2/sum(pca$sdev^2)*100\n" +
                 "biplot(pca)");

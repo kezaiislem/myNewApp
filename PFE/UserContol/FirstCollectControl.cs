@@ -89,6 +89,7 @@ namespace PFE.UserContol
             {
                 textBoxKMOIndex.Text = this.viewModel.KMOIndex.ToString();
             }
+            buttonACP.Enabled = true;
         }
 
         private void checkBoxBartlett_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
@@ -99,6 +100,11 @@ namespace PFE.UserContol
         private void checkBoxKMO_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
             this.viewModel.kmoChecked = e.Checked;
+        }
+
+        private void buttonACP_Click(object sender, EventArgs e)
+        {
+            RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
         }
     }
 }
