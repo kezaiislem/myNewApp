@@ -105,7 +105,6 @@ namespace PFE.UserContol
             this.comboBoxStart.Size = new System.Drawing.Size(187, 29);
             this.comboBoxStart.TabIndex = 9;
             this.comboBoxStart.UseCustomBackColor = true;
-            this.comboBoxStart.SelectedIndexChanged += new System.EventHandler(this.comboBoxStart_SelectedIndexChanged);
             // 
             // comboBoxArrival
             // 

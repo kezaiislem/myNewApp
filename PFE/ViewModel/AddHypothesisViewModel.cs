@@ -12,12 +12,10 @@ using System.Threading.Tasks;
 
 namespace PFE.ViewModel
 {
-    public class AddHypothesisViewModel : INotifyPropertyChanged
+    public class AddHypothesisViewModel
     {
         public BindingList<Factor> start { get; set; }
         public BindingList<Factor> arrival { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Factor selectedStart;
 
@@ -61,16 +59,6 @@ namespace PFE.ViewModel
                 }
             }
             selectedArrival = arrival.First<Factor>();
-            OnNotifyPropertyChanged("");
-        }
-
-        private void OnNotifyPropertyChanged(string propertyName)
-        {
-            var tmp = PropertyChanged;
-            if (tmp != null)
-            {
-                tmp(null, new PropertyChangedEventArgs(propertyName));
-            }
         }
     }
 }

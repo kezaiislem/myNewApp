@@ -29,11 +29,10 @@ namespace PFE.UserContol
             this.viewModel = new AddHypothesisViewModel(factors, hypotheses);
             comboBoxStart.BindingContext = new BindingContext();
             comboBoxArrival.BindingContext = new BindingContext();
-            this.viewModel.PropertyChanged += PropretyChanged;
             this.comboBoxStart.DataSource = this.viewModel.start;
             this.comboBoxArrival.DataSource = this.viewModel.arrival;
-            this.comboBoxStart.DataBindings.Add("SelectedItem", this.viewModel, "SelectedStart", false, DataSourceUpdateMode.OnPropertyChanged); 
-            this.comboBoxArrival.DataBindings.Add("SelectedItem", this.viewModel, "selectedArrival", false, DataSourceUpdateMode.OnPropertyChanged); 
+            this.comboBoxStart.DataBindings.Add("SelectedValue", this.viewModel, "selectedStart", true, DataSourceUpdateMode.OnPropertyChanged); ; 
+            this.comboBoxArrival.DataBindings.Add("SelectedValue", this.viewModel, "selectedArrival", true, DataSourceUpdateMode.OnPropertyChanged); 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -65,16 +64,6 @@ namespace PFE.UserContol
                 }
             }
             return true;
-        }
-
-        private void PropretyChanged(object o, PropertyChangedEventArgs e)
-        {
-            comboBoxArrival.SelectedItem = this.viewModel.selectedArrival;
-        }
-
-        private void comboBoxStart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            viewModel.selectedStart = (Factor)comboBoxStart.SelectedItem;
         }
     }
 }
