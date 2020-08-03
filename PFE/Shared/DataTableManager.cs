@@ -91,14 +91,20 @@ namespace PFE.Shared
                     {
                         if (answer.questions.ElementAt(i).type <= QuestionTypes.LIKERT_7)
                         {
-                            dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
+                            try
+                            {
+                                dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
+                            }
+                            catch (Exception e) { 
+
+                            }
                         }
                     }
                     dt.Rows.Add(dataRow);
                 }
                 foreach (Factor f in factors)
                 {
-                    if (!f.evaluationFactor)
+                    if (f.evaluationFactor)
                     {
                         int i = 0;
                         foreach (Question q in f.questions)

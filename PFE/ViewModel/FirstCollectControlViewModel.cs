@@ -78,15 +78,24 @@ namespace PFE.ViewModel
             }
         }
 
-        public void calculateCorelationMatrix()
+        public bool calculateCorelationMatrix()
         {
+            if (selectedFactors.Count < 2)
+            {
+                return false;
+            }
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            Exporter.exportCsv(Path.GetTempPath() + "/testcsv.csv", ";", dt);
-            RCalculator.showCorelationTable(Path.GetTempPath() + "/testcsv.csv");
+            Exporter.exportCsv(Path.GetTempPath() + "/corelation-tmp.csv", ";", dt);
+            RCalculator.showCorelationTable(Path.GetTempPath() + "/corelation-tmp.csv");
+            return true;
         }
 
         public DataTable calculateChrobachTable()
         {
+            if (selectedFactors.Count < 1)
+            {
+                return null;
+            }
             DataTable temp;
             DataTable result = new DataTable();
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
@@ -105,12 +114,12 @@ namespace PFE.ViewModel
                             temp.Columns.Remove(column.ColumnName);
                         }
                     }
-                    Exporter.exportCsv("C:/Users/ISLEM/Desktop/FF/" + factor.title + ".csv", ";", temp);
-                    dataRow[factor.title] = RCalculator.CalculateAlpha("C:/Users/ISLEM/Desktop/FF/" + factor.title + ".csv").ToString();
+                    Exporter.exportCsv(Path.GetTempPath() + "/chronbach-tmp.csv", ";", temp);
+                    dataRow[factor.title] = RCalculator.CalculateAlpha(Path.GetTempPath() + "/chronbach-tmp.csv").ToString();
                 }
                 else
                 {
-                    dataRow[factor.title] = "None";
+                    dataRow[factor.title] = 1;
                 }
             }
             result.Rows.Add(dataRow);

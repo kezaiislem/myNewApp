@@ -73,7 +73,7 @@ namespace PFE.UserContol
             }
             else if (!checkBoxBartlett.Checked && !checkBoxKMO.Checked)
             {
-                MessageBox.Show("You must select at least at least KMO or Bartlett", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("You must select at least KMO or Bartlett", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             if (this.viewModel.personalAnswers == null)
@@ -127,8 +127,15 @@ namespace PFE.UserContol
         private void buttonChronbach_Click(object sender, EventArgs e)
         {
             DataTable dt = this.viewModel.calculateChrobachTable();
-            dataGridAlpha.DataSource = dt;
-            panelCronbach.Visible = true;
+            if (dt != null)
+            {
+                dataGridAlpha.DataSource = dt;
+                panelCronbach.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Tou must at least select one factor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void buttonReduceAlpha_Click(object sender, EventArgs e)
@@ -138,7 +145,10 @@ namespace PFE.UserContol
 
         private void buttonCor_Click(object sender, EventArgs e)
         {
-            viewModel.calculateCorelationMatrix();
+            if (!viewModel.calculateCorelationMatrix())
+            {
+                MessageBox.Show("You must select at least two factors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
