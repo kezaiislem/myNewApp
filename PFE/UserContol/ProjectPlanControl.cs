@@ -43,12 +43,11 @@ namespace PFE.UserContol
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
             var form = new AddEventForm();
 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                ProjectEvent pe = new ProjectEvent { name = form.text, startDate = form.startDate, endDate = form.endDate, color = "#6699ff" };
+                ProjectEvent pe = new ProjectEvent { name = form.text, startDate = form.startDate, endDate = form.endDate, color = ColorTranslator.ToHtml(form.eventColor) };
                 CalendarItem calendarItem = new CalendarItem(pe);
                 calendar1.AddEvent(calendarItem.customEvent);
             }

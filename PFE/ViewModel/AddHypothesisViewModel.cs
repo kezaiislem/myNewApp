@@ -38,7 +38,7 @@ namespace PFE.ViewModel
             this.start = new BindingList<Factor>();
             foreach (Factor factor in factors)
             {
-                if (factor.title != "None")
+                if (factor.evaluationFactor)
                 {
                     start.Add(factor);
                 }

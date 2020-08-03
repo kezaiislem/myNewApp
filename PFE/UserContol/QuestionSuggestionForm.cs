@@ -53,8 +53,7 @@ namespace PFE.UserContol
             }
             else
             {
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
+                MessageBox.Show("You Must at least select a question", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

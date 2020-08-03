@@ -20,7 +20,7 @@ namespace PFE.UserContol
         public string text { get; set; }
         public DateTime startDate { set; get; }
         public DateTime endDate { set; get; }
-        public Color eventColor { set; get; }
+        public Color eventColor { set; get; } = Color.Red;
 
         public AddEventForm()
         {
@@ -35,6 +35,7 @@ namespace PFE.UserContol
             inputEndtDate.DataBindings.Add("Value", this, "endDate", true, DataSourceUpdateMode.OnPropertyChanged);
             inputStartDate.MinDate = DateTime.Today;
             inputEndtDate.DataBindings.Add("MinDate", this, "startDate", true, DataSourceUpdateMode.OnPropertyChanged);
+            panel1.DataBindings.Add("BackColor", this, "eventColor", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
@@ -55,18 +56,28 @@ namespace PFE.UserContol
             this.Close();
         }
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private Boolean checkValues()
         {
             if (string.IsNullOrWhiteSpace(text))
             {
+                MessageBox.Show("Event test cant be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (DateTime.Compare(startDate, endDate) >= 0)
+            {
+                MessageBox.Show("End date must be higher than start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
+        }
+
+        private void panel1_DoubleClick(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.panel1.BackColor = colorDialog.Color;
+            }
         }
     }
 }

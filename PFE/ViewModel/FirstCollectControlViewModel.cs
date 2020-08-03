@@ -33,7 +33,7 @@ namespace PFE.ViewModel
             this.originalFactors = new BindingList<Factor>();
             foreach (Factor f in survey.factors)
             {
-                if (f.title != "None")
+                if (f.evaluationFactor)
                 {
                     this.originalFactors.Add(f);
                 }

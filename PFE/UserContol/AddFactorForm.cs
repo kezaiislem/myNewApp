@@ -47,12 +47,14 @@ namespace PFE.UserContol
             }
             else
             {
-                MessageBox.Show("Title and description cant be empty", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Title and description cant be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private Boolean checkFields()
         {
+            if (this.viewModel.mtaDefault)
+                return true;
             if (string.IsNullOrWhiteSpace(viewModel.Description) || string.IsNullOrWhiteSpace(viewModel.Title))
                 return false;
             return true;
@@ -76,18 +78,26 @@ namespace PFE.UserContol
 
         private void checkBoxDefaultMta_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
         {
+            this.viewModel.mtaDefault = e.Checked;
             if (e.Checked)
             {
                 comboBoxFactor.Enabled = true;
                 textBoxTitle.Enabled = false;
                 textBoxDescription.Enabled = false;
+                checkBoxEvaluationFactor.Enabled = false;
             }
             else
             {
                 comboBoxFactor.Enabled = false;
                 textBoxTitle.Enabled = true;
                 textBoxDescription.Enabled = true;
+                checkBoxEvaluationFactor.Enabled = true;
             }
+        }
+
+        private void checkBoxEvaluationFactor_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            this.viewModel.evaluationFactor = e.Checked;
         }
     }
 }

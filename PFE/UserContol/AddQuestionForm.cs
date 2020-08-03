@@ -54,7 +54,7 @@ namespace PFE.UserContol
             }
             else
             {
-                MessageBox.Show("Question text field cant be empty", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Question text field cant be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
         }

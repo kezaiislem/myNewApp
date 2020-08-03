@@ -13,6 +13,7 @@ namespace PFE.model
         public String title { get; set; }
         public String description { get; set; }
         public List<Question> questions { get; set; }
+        public bool evaluationFactor { get; set; }
 
         public override string ToString()
         {

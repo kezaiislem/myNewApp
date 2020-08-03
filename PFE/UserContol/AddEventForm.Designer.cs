@@ -82,7 +82,7 @@ namespace PFE.UserContol
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseCustomBackColor = true;
             this.buttonCancel.UseCustomForeColor = true;
-            this.buttonCancel.UseSelectable = true;
+            this.buttonCancel.UseSelectable = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonOk
@@ -96,7 +96,7 @@ namespace PFE.UserContol
             this.buttonOk.Text = "OK";
             this.buttonOk.UseCustomBackColor = true;
             this.buttonOk.UseCustomForeColor = true;
-            this.buttonOk.UseSelectable = true;
+            this.buttonOk.UseSelectable = false;
             this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
             // 
             // textEventName
@@ -197,7 +197,7 @@ namespace PFE.UserContol
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(29, 19);
             this.panel1.TabIndex = 12;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.DoubleClick += new System.EventHandler(this.panel1_DoubleClick);
             // 
             // AddEventForm
             // 

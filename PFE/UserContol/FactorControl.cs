@@ -49,7 +49,7 @@ namespace PFE.UserContol
 
         private void buttonAddQuestion_Click(object sender, EventArgs e)
         {
-            using (var form = new AddQuestionForm(this.viewModel.factor.title != "None"))
+            using (var form = new AddQuestionForm(this.viewModel.factor.evaluationFactor))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)

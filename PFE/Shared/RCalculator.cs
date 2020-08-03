@@ -114,7 +114,7 @@ namespace PFE.Shared
 
             //executing script
             engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                "R <- cor(data)\n " +
+                "R <- cor(data, method='pearson')\n " +
                 "library(gridExtra)\n " +
                 "library(grid)\n " +
                 "grid.table(R)");

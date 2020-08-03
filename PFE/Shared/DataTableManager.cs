@@ -61,7 +61,7 @@ namespace PFE.Shared
                 }
                 return dt;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }
@@ -75,7 +75,7 @@ namespace PFE.Shared
                 DataTable dt = new DataTable();
                 foreach (Factor f in factors)
                 {
-                    if (f.title != "None")
+                    if (f.evaluationFactor)
                     {
                         foreach (Question q in f.questions)
                         {
@@ -98,7 +98,7 @@ namespace PFE.Shared
                 }
                 foreach (Factor f in factors)
                 {
-                    if (f.title != "None")
+                    if (!f.evaluationFactor)
                     {
                         int i = 0;
                         foreach (Question q in f.questions)

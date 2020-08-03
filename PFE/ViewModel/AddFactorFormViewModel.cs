@@ -19,6 +19,8 @@ namespace PFE.ViewModel
         public Factor Factor { get; set; }
         public String Description { get; set; }
         public List<Question> selectedQuestions { get; set; }
+        public bool mtaDefault { get; set; } = false;
+        public bool evaluationFactor { get; set; } = false;
 
         public AddFactorFormViewModel()
         {
@@ -34,11 +36,10 @@ namespace PFE.ViewModel
                 else
                     factors.Clear();
 
-                factors.Add(new Factor { title = "None"});
-                factors.Add(new Factor { title = "Ease of use", description = "Ease of use description" });
-                factors.Add(new Factor { title = "Communication", description = "Communication description" });
-                factors.Add(new Factor { title = "Adaptabillity", description = "Adaptabillity description" });
-                factors.Add(new Factor { title = "Usefullness", description = "Usefullness description" });
+                factors.Add(new Factor { title = "Ease of use", description = "Ease of use description", evaluationFactor = true });
+                factors.Add(new Factor { title = "Communication", description = "Communication description", evaluationFactor = true });
+                factors.Add(new Factor { title = "Adaptabillity", description = "Adaptabillity description", evaluationFactor = true });
+                factors.Add(new Factor { title = "Usefullness", description = "Usefullness description", evaluationFactor = true });
 
             }
             catch (Exception ex)

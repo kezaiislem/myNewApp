@@ -75,8 +75,7 @@ namespace PFE.UserContol
             }
             else
             {
-                this.DialogResult = DialogResult.Cancel;
-                this.Close();
+                MessageBox.Show("You Must at least select a factor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

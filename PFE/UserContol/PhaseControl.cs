@@ -74,9 +74,17 @@ namespace PFE.UserContol
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions };
-                    this.viewModel.survey.factors.Add(factor);
-                    addFactor(factor);
+                    if (form.viewModel.mtaDefault)
+                    {
+                        this.viewModel.survey.factors.Add(form.viewModel.selectedItem);
+                        addFactor(form.viewModel.selectedItem);
+                    }
+                    else
+                    {
+                        Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions, evaluationFactor = form.viewModel.evaluationFactor };
+                        this.viewModel.survey.factors.Add(factor);
+                        addFactor(factor);
+                    }
                 }
             }
         }
