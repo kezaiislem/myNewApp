@@ -25,6 +25,11 @@ namespace PFE.UserContol
 
         StatisticsControlViewModel viewModel;
 
+        FirstCollectControl firstCollectConrol;
+
+        ConfirmatoryAnalysisControl confirmatoryAnalysisControl;
+
+
         public StatisticsControl(Survey survey)
         {
             InitializeComponent();
@@ -35,7 +40,6 @@ namespace PFE.UserContol
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
             panelSections.Controls.SetChildIndex(buttonFirstCollect, 0);
-            panelSections.Controls.SetChildIndex(buttonSeconCollect, 0);
             panelSections.Controls.SetChildIndex(buttonConfirmatory, 0);
             this.viewModel = new StatisticsControlViewModel(survey);
         }
@@ -47,149 +51,52 @@ namespace PFE.UserContol
 
         private void buttonFirstCollect_Click(object sender, EventArgs e)
         {
-            FirstCollectControl firstCollectConrol = new FirstCollectControl(this.viewModel.survey);
-            firstCollectConrol.Dock = DockStyle.Fill;
-            firstCollectConrol.AutoScaleMode = AutoScaleMode.None;
-            firstCollectConrol.Show();
-            this.panelStepContent.Controls.Add(firstCollectConrol);
-        }
-
-        private void buttonSeconCollect_Click(object sender, EventArgs e)
-        {
-
+            this.hideConfirmatoryAnalisis();
+            if (this.firstCollectConrol != null)
+            {
+                firstCollectConrol.Show();
+            }
+            else
+            {
+                this.firstCollectConrol = new FirstCollectControl(this.viewModel.survey);
+                this.firstCollectConrol.Dock = DockStyle.Fill;
+                this.firstCollectConrol.AutoScaleMode = AutoScaleMode.None;
+                this.firstCollectConrol.Show();
+                this.panelStepContent.Controls.Add(firstCollectConrol);
+            }
         }
 
         private void buttonConfirmatory_Click(object sender, EventArgs e)
         {
-
-        }
-
-        /*private void swichSection(FactorControl section)
-        {
-            if (activeSection != null)
+            this.hideExploratoryAnalisis();
+            if (this.confirmatoryAnalysisControl != null)
             {
-                this.activeSection.Dispose();
+                confirmatoryAnalysisControl.Show();
             }
-            this.activeSection = section;
-            this.panelSectionContent.Controls.Add(section);
-        }
-
-        private void buttonAddSection_Click(object sender, EventArgs e)
-        {
-            using (var form = new AddFactorForm())
+            else
             {
-                var result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    Factor factor = new Factor { title = form.viewModel.Title, description = form.viewModel.Description, questions = form.viewModel.selectedQuestions };
-                    this.viewModel.survey.factors.Add(factor);
-                    addFactor(factor);
-                }
+                this.confirmatoryAnalysisControl = new ConfirmatoryAnalysisControl(this.viewModel.survey);
+                this.confirmatoryAnalysisControl.Dock = DockStyle.Fill;
+                this.confirmatoryAnalysisControl.AutoScaleMode = AutoScaleMode.None;
+                this.confirmatoryAnalysisControl.Show();
+                this.panelStepContent.Controls.Add(confirmatoryAnalysisControl);
             }
         }
 
-        private void loadSections()
+        private void hideExploratoryAnalisis()
         {
-            foreach (Factor factor in viewModel.survey.factors)
+            if (this.firstCollectConrol != null)
             {
-                addFactor(factor);
+                this.firstCollectConrol.Hide();
             }
         }
-
-        public void factorClick(Factor factor)
+        
+        private void hideConfirmatoryAnalisis()
         {
-            FactorControl sectionControl = new FactorControl(factor);
-            sectionControl.Visible = true;
-            sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            sectionControl.AutoScaleMode = AutoScaleMode.None;
-            this.swichSection(sectionControl);
-        }
-
-        public static void removeFactor()
-        {
-
-        }
-
-        private async void buttonHost_Click(object sender, EventArgs e)
-        {
-            if (checkFields())
+            if (this.confirmatoryAnalysisControl != null)
             {
-                using (var form = new HostForm())
-                {
-                    var result = form.ShowDialog();
-                    if (result == DialogResult.OK)
-                    {
-                        String res = await RestHelper.hostSurvey(this.viewModel.survey);
-                        Survey survey = JsonConvert.DeserializeObject<Survey>(res);
-                        if (survey != null)
-                        {
-                            this.viewModel.survey.host = survey.host;
-                            this.viewModel.survey.model.id = survey.model.id;
-                            ProjectHandler.saveProject();
-                            using (var formS = new HostSuccessForm(survey.host.id))
-                            {
-                                formS.ShowDialog();
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("This survey is already hosted. You need to delete the host from MySurveys tab in order to host it again.");
-                        }
-                    }
-                }
+                this.confirmatoryAnalysisControl.Hide();
             }
         }
-
-        private Boolean checkFields()
-        {
-            if (string.IsNullOrWhiteSpace(this.viewModel.survey.model.technology.technologyName) || this.viewModel.survey.model.technology.technologyField == null)
-            {
-                MetroMessageBox.Show(this, "\nYou need to fill technology informations first before passing to this step. To do that Go to project context tab", "Error", MessageBoxButtons.OK);
-                return false;
-            }
-            else if (string.IsNullOrWhiteSpace(this.viewModel.survey.model.evaluationContext))
-            {
-                MetroMessageBox.Show(this, "\nYou need to fill evaluation first before passing to this step. To do that Go to model info tab", "Error", MessageBoxButtons.OK);
-                return false;
-            }
-
-            foreach (Factor factor in this.viewModel.survey.factors)
-            {
-                foreach (Question q in factor.questions)
-                {
-                    if (q.type == QuestionTypes.CHECK_BOX || q.type == QuestionTypes.RADIO)
-                    {
-                        if (q.choices.Count() < 2)
-                        {
-                            MetroMessageBox.Show(this, "\nCheckbox and radio questions must have two choices or more", "Error", MessageBoxButtons.OK);
-                            return false;
-                        }
-                    }
-                }
-            }
-
-            return true;
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void buttonShare_Click(object sender, EventArgs e)
-        {
-            if (this.viewModel.survey.host != null)
-            {
-                using (var formS = new HostSuccessForm(this.viewModel.survey.host.id))
-                {
-                    formS.ShowDialog();
-                }
-            }
-        }
-
-        private void PhaseControl_VisibleChanged(object sender, EventArgs e)
-        {
-           
-        }*/
     }
 }

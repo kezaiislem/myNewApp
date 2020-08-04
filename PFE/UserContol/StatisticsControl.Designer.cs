@@ -31,12 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsControl));
             this.panelSections = new Bunifu.Framework.UI.BunifuCards();
             this.buttonConfirmatory = new System.Windows.Forms.Button();
-            this.buttonSeconCollect = new System.Windows.Forms.Button();
             this.buttonFirstCollect = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonBack = new JImageButton.JImageButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelStepContent = new System.Windows.Forms.Panel();
-            this.buttonBack = new JImageButton.JImageButton();
             this.panelSections.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +49,6 @@
             this.panelSections.BottomSahddow = true;
             this.panelSections.color = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.panelSections.Controls.Add(this.buttonConfirmatory);
-            this.panelSections.Controls.Add(this.buttonSeconCollect);
             this.panelSections.Controls.Add(this.buttonFirstCollect);
             this.panelSections.Controls.Add(this.panel2);
             this.panelSections.LeftSahddow = false;
@@ -71,7 +69,7 @@
             this.buttonConfirmatory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConfirmatory.ForeColor = System.Drawing.Color.White;
             this.buttonConfirmatory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonConfirmatory.Location = new System.Drawing.Point(0, 124);
+            this.buttonConfirmatory.Location = new System.Drawing.Point(0, 84);
             this.buttonConfirmatory.Name = "buttonConfirmatory";
             this.buttonConfirmatory.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonConfirmatory.Size = new System.Drawing.Size(211, 40);
@@ -81,27 +79,6 @@
             this.buttonConfirmatory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonConfirmatory.UseVisualStyleBackColor = false;
             this.buttonConfirmatory.Click += new System.EventHandler(this.buttonConfirmatory_Click);
-            // 
-            // buttonSeconCollect
-            // 
-            this.buttonSeconCollect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.buttonSeconCollect.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonSeconCollect.FlatAppearance.BorderSize = 0;
-            this.buttonSeconCollect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonSeconCollect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonSeconCollect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSeconCollect.ForeColor = System.Drawing.Color.White;
-            this.buttonSeconCollect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSeconCollect.Location = new System.Drawing.Point(0, 84);
-            this.buttonSeconCollect.Name = "buttonSeconCollect";
-            this.buttonSeconCollect.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonSeconCollect.Size = new System.Drawing.Size(211, 40);
-            this.buttonSeconCollect.TabIndex = 10;
-            this.buttonSeconCollect.Text = "Second Collect";
-            this.buttonSeconCollect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSeconCollect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonSeconCollect.UseVisualStyleBackColor = false;
-            this.buttonSeconCollect.Click += new System.EventHandler(this.buttonSeconCollect_Click);
             // 
             // buttonFirstCollect
             // 
@@ -136,6 +113,25 @@
             this.panel2.Size = new System.Drawing.Size(211, 44);
             this.panel2.TabIndex = 8;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBack.CausesValidation = false;
+            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonBack.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.ErrorImage")));
+            this.buttonBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonBack.Image")));
+            this.buttonBack.ImageHover = null;
+            this.buttonBack.InitialImage = null;
+            this.buttonBack.Location = new System.Drawing.Point(10, 8);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonBack.Size = new System.Drawing.Size(24, 24);
+            this.buttonBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonBack.TabIndex = 5;
+            this.buttonBack.Zoom = 1;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // labelPhaseTitle
             // 
             this.labelPhaseTitle.AutoSize = true;
@@ -157,25 +153,6 @@
             this.panelStepContent.Name = "panelStepContent";
             this.panelStepContent.Size = new System.Drawing.Size(760, 561);
             this.panelStepContent.TabIndex = 8;
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonBack.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBack.CausesValidation = false;
-            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonBack.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonBack.ErrorImage")));
-            this.buttonBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonBack.Image")));
-            this.buttonBack.ImageHover = null;
-            this.buttonBack.InitialImage = null;
-            this.buttonBack.Location = new System.Drawing.Point(10, 8);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Padding = new System.Windows.Forms.Padding(2);
-            this.buttonBack.Size = new System.Drawing.Size(24, 24);
-            this.buttonBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.buttonBack.TabIndex = 5;
-            this.buttonBack.Zoom = 1;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // StatisticsControl
             // 
@@ -199,7 +176,6 @@
         private JImageButton.JImageButton buttonBack;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private System.Windows.Forms.Button buttonConfirmatory;
-        private System.Windows.Forms.Button buttonSeconCollect;
         private System.Windows.Forms.Button buttonFirstCollect;
     }
 }

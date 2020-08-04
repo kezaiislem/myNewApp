@@ -95,7 +95,8 @@ namespace PFE.Shared
                             {
                                 dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
                             }
-                            catch (Exception e) { 
+                            catch (Exception e)
+                            {
 
                             }
                         }
@@ -115,6 +116,60 @@ namespace PFE.Shared
                     }
                 }
                 return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            return null;
+        }
+
+        public static DataTable PCADataFrametoDataTable(RDotNet.DataFrame dataFrame)
+        {
+            try
+            {
+                DataTable dtable = new DataTable();
+
+                dtable.Columns.Add("");
+
+                for (int i = 0; i < dataFrame.ColumnCount; ++i)
+                {
+                    dtable.Columns.Add(dataFrame.ColumnNames[i]);
+                }
+
+                for (int i = 0; i < dataFrame.RowCount; i++)
+                {
+                    DataRow newRow = dtable.Rows.Add();
+                    switch (i)
+                    {
+                        case 0:
+                            newRow[0] = "Value";
+                            break;
+                        case 1:
+                            newRow[0] = "Varriability (%)";
+                            break;
+                        case 2:
+                            newRow[0] = "Cumulated Value";
+                            break;
+                        case 3:
+                            newRow[0] = "Cumulated V (%)";
+                            break;
+                    }
+                    for (int j = 0; j < dataFrame.ColumnCount; j++)
+                    {
+                        if (i == 0 || i == 2)
+                        {
+                            newRow[j + 1] = Math.Round(Double.Parse(dataFrame[i, j].ToString()), 7);
+                        }
+                        else
+                        {
+                            newRow[j + 1] = Math.Round(Double.Parse(dataFrame[i, j].ToString()), 3) + "%";
+                        }
+                       
+                    }
+                }
+
+                return dtable;
             }
             catch (Exception e)
             {

@@ -32,7 +32,7 @@ namespace PFE.UserContol
             viewModel = new AddQuestionFormViewModel(hasFactor);
             textBoxText.DataBindings.Add("Text", viewModel.question, "text", true, DataSourceUpdateMode.OnPropertyChanged);
             comboBoxType.DataSource = viewModel.questionCombos;
-            comboBoxType.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
+            comboBoxType.DataBindings.Add("SelectedValue", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

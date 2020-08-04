@@ -287,6 +287,12 @@
     <Compile Include="UserContol\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserContol\ConfirmatoryAnalysisControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserContol\ConfirmatoryAnalysisControl.Designer.cs">
+      <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserContol\HypothesisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -479,6 +485,7 @@
     <Compile Include="ViewModel\AddHypothesisViewModel.cs" />
     <Compile Include="ViewModel\AddSurveyFormViewModel.cs" />
     <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
+    <Compile Include="ViewModel\ConfirmatoryAnalysisControlViewModel.cs" />
     <Compile Include="ViewModel\LoginFormViewModel.cs" />
     <Compile Include="ViewModel\MainFormViewModel.cs" />
     <Compile Include="ViewModel\ResultSurveyControlViewModel .cs" />
@@ -540,6 +547,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserContol\ConfirmatoryAnalysisControl.resx">
+      <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserContol\HypothesisControl.resx">
       <DependentUpon>HypothesisControl.cs</DependentUpon>

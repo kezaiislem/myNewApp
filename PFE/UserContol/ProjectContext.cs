@@ -46,7 +46,8 @@ namespace PFE.UserContol
                 }
             }
             comboBoxTechnologyNature.DataSource = viewModel.fields;
-            comboBoxTechnologyNature.DataBindings.Add("SelectedItem", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
+            comboBoxTechnologyNature.SelectedItem = viewModel.selectedItem;
+            comboBoxTechnologyNature.DataBindings.Add("SelectedValue", viewModel, "selectedItem", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void addObjectiveButton_Click(object sender, EventArgs e)

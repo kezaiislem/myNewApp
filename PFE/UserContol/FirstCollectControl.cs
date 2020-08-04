@@ -33,6 +33,10 @@ namespace PFE.UserContol
             viewModel = new FirstCollectControlViewModel(survey);
             listOriginalFactors.DataSource = this.viewModel.originalFactors;
             listStatsFactors.DataSource = this.viewModel.selectedFactors;
+            listBoxRmvFactors.DataSource = this.viewModel.rmvFactors;
+            listBoxQuestions.DataSource = this.viewModel.questions;
+            listBoxToRmvQuestions.DataSource = this.viewModel.rmvQuestions;
+            listBoxRmvFactors.DataBindings.Add("SelectedValue", this.viewModel, "selectedRmvFactor", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void btnRight_Click(object sender, EventArgs e)
@@ -58,6 +62,8 @@ namespace PFE.UserContol
         {
             if (validateFactorisation())
             {
+                this.panelCronbach.Visible = false;
+                this.panelACPResults.Visible = false;
                 viewModel.calculateFirstResults();
                 fillValues();
                 factorisationResults.Visible = true;
@@ -92,7 +98,6 @@ namespace PFE.UserContol
                 MessageBox.Show("Number of answers must be higher than number of questions", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
             return true;
         }
 
@@ -121,20 +126,32 @@ namespace PFE.UserContol
 
         private void buttonACP_Click(object sender, EventArgs e)
         {
-            RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
+            this.panelCronbach.Visible = false;
+            DataTable results = this.viewModel.ACP();
+            if (results != null)
+            {
+                dataGridPrincipalComponents.DataSource = results;
+                panelACPResults.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("An error has been occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void buttonChronbach_Click(object sender, EventArgs e)
         {
-            DataTable dt = this.viewModel.calculateChrobachTable();
-            if (dt != null)
+            var msg = this.viewModel.validateChrobach();
+            if (msg == null)
             {
+                DataTable dt = this.viewModel.calculateChrobachTable();
                 dataGridAlpha.DataSource = dt;
                 panelCronbach.Visible = true;
             }
             else
             {
-                MessageBox.Show("Tou must at least select one factor", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -145,9 +162,33 @@ namespace PFE.UserContol
 
         private void buttonCor_Click(object sender, EventArgs e)
         {
-            if (!viewModel.calculateCorelationMatrix())
+            var msg = this.viewModel.validateCorelationMatrix();
+            if (msg == null)
             {
-                MessageBox.Show("You must select at least two factors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                viewModel.calculateCorelationMatrix();
+            }
+            else
+            {
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addRmvQuestion_Click(object sender, EventArgs e)
+        {
+            foreach (Question question in listBoxQuestions.SelectedItems)
+            {
+                if (!this.viewModel.rmvQuestions.Contains(listBoxQuestions.SelectedItem))
+                {
+                    this.viewModel.rmvQuestions.Add(question);
+                }
+            }
+        }
+
+        private void removeRmvQuestion_Click(object sender, EventArgs e)
+        {
+            if (listBoxToRmvQuestions.SelectedItem != null)
+            {
+                this.viewModel.rmvQuestions.Remove((Question)listBoxToRmvQuestions.SelectedItem);
             }
         }
     }

@@ -14,5 +14,9 @@ namespace PFE.Model
         public List<String> choices { get; set; }
         public List<Answer> answers { get; set; }
 
+        public override string ToString()
+        {
+            return text;
+        }
     }
 }

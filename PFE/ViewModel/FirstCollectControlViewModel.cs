@@ -18,9 +18,23 @@ namespace PFE.ViewModel
     public class FirstCollectControlViewModel
     {
         public Survey survey { get; set; }
-
         public BindingList<Factor> selectedFactors { get; set; }
         public BindingList<Factor> originalFactors { get; set; }
+        public BindingList<Factor> rmvFactors { get; set; }
+        public BindingList<Question> questions { get; set; }
+        public BindingList<Question> rmvQuestions { get; set; }
+
+        public Factor selectedRmvFactor;
+
+        public Factor SelectedRmvFactor
+        {
+            get => selectedRmvFactor;
+            set
+            {
+                selectedRmvFactor = value;
+                UpdateQuestions();
+            }
+        }
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
         public BartlettStatsResults bartlettStatsResults { get; set; }
         public bool bartlettChecked { get; set; }
@@ -31,6 +45,9 @@ namespace PFE.ViewModel
         {
             this.survey = survey;
             this.originalFactors = new BindingList<Factor>();
+            this.rmvFactors = new BindingList<Factor>();
+            this.questions = new BindingList<Question>();
+            this.rmvQuestions = new BindingList<Question>();
             foreach (Factor f in survey.factors)
             {
                 if (f.evaluationFactor)
@@ -67,35 +84,62 @@ namespace PFE.ViewModel
         public void calculateFirstResults()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            Exporter.exportCsv(Path.GetTempPath() + "/testcsv.csv", ";", dt);
+            Exporter.exportCsv(Path.GetTempPath() + "/factorisation-test.csv", ";", dt);
             if (bartlettChecked)
             {
-                bartlettStatsResults = RCalculator.BartlettStats(Path.GetTempPath() + "/testcsv.csv");
+                bartlettStatsResults = RCalculator.BartlettStats(Path.GetTempPath() + "/factorisation-test.csv");
             }
             if (kmoChecked)
             {
-                KMOIndex = RCalculator.KMOStats(Path.GetTempPath() + "/testcsv.csv");
+                KMOIndex = RCalculator.KMOStats(Path.GetTempPath() + "/factorisation-test.csv");
             }
         }
 
-        public bool calculateCorelationMatrix()
+        public string validateCorelationMatrix()
         {
             if (selectedFactors.Count < 2)
             {
-                return false;
+                return "You must select at least two factors";
             }
+            if (personalAnswers == null)
+            {
+                this.reloadAnswers();
+                return "An error has been occured please check your connection and restart again";
+            }
+            if (personalAnswers.Count == 0)
+            {
+                return "There are no answers";
+            }
+            return null;
+        }
+
+        public void calculateCorelationMatrix()
+        {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/corelation-tmp.csv", ";", dt);
             RCalculator.showCorelationTable(Path.GetTempPath() + "/corelation-tmp.csv");
-            return true;
+        }
+
+        public string validateChrobach()
+        {
+            if (selectedFactors.Count < 1)
+            {
+                return "Tou must at least select one factor";
+            }
+            if (personalAnswers == null)
+            {
+                this.reloadAnswers();
+                return "An error has been occured please check your connection and restart again";
+            }
+            if (personalAnswers.Count == 0)
+            {
+                return "There are no answers";
+            }
+            return null;
         }
 
         public DataTable calculateChrobachTable()
         {
-            if (selectedFactors.Count < 1)
-            {
-                return null;
-            }
             DataTable temp;
             DataTable result = new DataTable();
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
@@ -124,6 +168,50 @@ namespace PFE.ViewModel
             }
             result.Rows.Add(dataRow);
             return result;
+        }
+
+        public DataTable ACP()
+        {
+            RDotNet.DataFrame df = RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
+            if (df != null)
+            {
+                prepareACPData();
+                return DataTableManager.PCADataFrametoDataTable(df);
+            }
+            return null;
+        }
+
+        public void prepareACPData()
+        {
+            this.rmvFactors.Clear();
+            this.rmvQuestions.Clear();
+            this.questions.Clear();
+            foreach (Factor factor in this.selectedFactors)
+            {
+                Factor f = new Factor { id = factor.id, title = factor.title, questions = new List<Question>() };
+                int i = 0;
+                foreach (Question question in factor.questions)
+                {
+                    Question q = new Question { text = f.title + i };
+                    f.questions.Add(q);
+                }
+                rmvFactors.Add(f);
+            }
+            this.selectedRmvFactor = rmvFactors.First<Factor>();
+            UpdateQuestions();
+        }
+
+        private void UpdateQuestions()
+        {
+            this.questions.Clear();
+            if (selectedRmvFactor != null)
+            {
+                foreach (Question q in selectedRmvFactor.questions)
+                {
+                    this.questions.Add(q);
+                }
+            }
+            
         }
     }
 }
