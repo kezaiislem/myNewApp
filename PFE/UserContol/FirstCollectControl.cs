@@ -77,11 +77,6 @@ namespace PFE.UserContol
                 MessageBox.Show("You must select at least two factors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (!checkBoxBartlett.Checked && !checkBoxKMO.Checked)
-            {
-                MessageBox.Show("You must select at least KMO or Bartlett", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
             if (this.viewModel.personalAnswers == null)
             {
                 MessageBox.Show("An error has been occured please check your connection and restart again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,25 +98,12 @@ namespace PFE.UserContol
 
         private void fillValues()
         {
-            if (checkBoxBartlett.Checked)
+            if (checkBoxSphericity.Checked)
             {
-                textBoxBartlett.Text = this.viewModel.bartlettStatsResults.pch.ToString();
-            }
-            if (checkBoxKMO.Checked)
-            {
-                textBoxKMOIndex.Text = this.viewModel.KMOIndex.ToString();
+                textBoxBartlett.Text = this.viewModel.sphericityTestResults.bartlett.ToString();
+                textBoxKMOIndex.Text = this.viewModel.sphericityTestResults.kmo.ToString();
             }
             buttonACP.Enabled = true;
-        }
-
-        private void checkBoxBartlett_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            this.viewModel.bartlettChecked = e.Checked;
-        }
-
-        private void checkBoxKMO_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
-        {
-            this.viewModel.kmoChecked = e.Checked;
         }
 
         private void buttonACP_Click(object sender, EventArgs e)
@@ -190,6 +172,11 @@ namespace PFE.UserContol
             {
                 this.viewModel.rmvQuestions.Remove((Question)listBoxToRmvQuestions.SelectedItem);
             }
+        }
+
+        private void checkBoxSphericity_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            this.viewModel.sphericityTestChecked = e.Checked;
         }
     }
 }

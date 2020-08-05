@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace PFE.CustomObjects
 {
-    public class BartlettStatsResults
+    public class SphericityTestResults
     {
-        public double chi2 { get; set; }
-        public double ddl { get; set; }
-        public double pch { get; set; }
+        public double kmo { get; set; }
+        public double bartlett { get; set; }
     }
 }

@@ -234,7 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
-    <Compile Include="CustomObjects\BartlettStatsResults.cs" />
+    <Compile Include="CustomObjects\SphericityTestResults.cs" />
     <Compile Include="CustomObjects\CalendarItem.cs" />
     <Compile Include="CustomObjects\CustomGridQuestion.cs" />
     <Compile Include="CustomObjects\CustomHostObject.cs" />

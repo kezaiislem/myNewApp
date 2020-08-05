@@ -38,7 +38,7 @@ namespace PFE.Shared
 
         }
 
-        public static BartlettStatsResults BartlettStats(String csvPath)
+        public static SphericityTestResults SphericityTest(String csvPath)
         {
             try
             {
@@ -49,18 +49,17 @@ namespace PFE.Shared
                 csvPath = csvPath.Replace('\\', '/');
 
                 //executing script
-                engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "R <- cor(data)\n" +
-                    "n <- nrow(data)\n" +
-                    "p <- ncol(data)\n" +
-                    "chi2 <- -(n-1-(2*p+5)/6)*log(det(R))\n" +
-                    "ddl <- p*(p-1)/2\n" +
-                    "pch <- pchisq(chi2,ddl,lower.tail=F)");
+                engine.Evaluate("library(psych)\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "R <- cor(data, method = 'pearson')\n" +
+                    "kmo <- KMO(R)\n" +
+                    "kmov <- kmo$MSA\n" +
+                    "bartlett <- cortest.bartlett(R)\n" +
+                    "bartlettv <- bartlett$p.value");
 
-                BartlettStatsResults results = new BartlettStatsResults();
-                results.chi2 = Double.Parse(engine.GetSymbol("chi2").AsCharacter()[0], CultureInfo.InvariantCulture);
-                results.ddl = Double.Parse(engine.GetSymbol("ddl").AsCharacter()[0], CultureInfo.InvariantCulture);
-                results.pch = Double.Parse(engine.GetSymbol("pch").AsCharacter()[0], CultureInfo.InvariantCulture);
+                SphericityTestResults results = new SphericityTestResults();
+                results.kmo = Double.Parse(engine.GetSymbol("kmov").AsCharacter()[0], CultureInfo.InvariantCulture);
+                results.bartlett = Double.Parse(engine.GetSymbol("bartlettv").AsCharacter()[0], CultureInfo.InvariantCulture);
 
                 Clear();
                 return results;
@@ -69,36 +68,6 @@ namespace PFE.Shared
             {
                 Console.WriteLine(e.StackTrace);
                 return null;
-            }
-        }
-
-        public static double KMOStats(String csvPath)
-        {
-            try
-            {
-                REngine engine;
-                //init the R engine            
-                engine = getInststance();
-
-                csvPath = csvPath.Replace('\\', '/');
-
-                //executing script
-                engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "R <- cor(data)\n" +
-                    "A <- solve(R)\n" +
-                    "kmo.num <- sum(R^2) - sum(diag(R^2))\n" +
-                    "kmo.denom <- kmo.num + (sum(A^2) - sum(diag(A^2)))\n" +
-                    "kmo <- kmo.num/kmo.denom");
-
-                double kmo = Double.Parse(engine.GetSymbol("kmo").AsCharacter()[0], CultureInfo.InvariantCulture);
-
-                Clear();
-                return kmo;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.StackTrace);
-                return -1;
             }
         }
 
@@ -113,11 +82,10 @@ namespace PFE.Shared
                 csvPath = csvPath.Replace('\\', '/');
 
                 //executing script
-                engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "pca <- princomp(data, cor=T)\n" +
-                    "part <- pca$sdev^2/sum(pca$sdev^2)*100\n" +
-                    "result <- as.data.frame.matrix(rbind(pca$sdev, part, cumsum(pca$sdev), cumsum(part)))\n" +
-                    "biplot(pca, cex = 0.7, col = 'black', xlab = paste('PC1(', round(part[1], digits=2),'%)'), ylab = paste('PC2(', round(part[2], digits=2),'%)'))");
+                engine.Evaluate("library(psych)\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "pca <- principal(data, 2, rotate='varimax')\n" +
+                    "biplot(pca)");
 
                 DataFrame df = engine.GetSymbol("result").AsDataFrame();
 
@@ -144,7 +112,7 @@ namespace PFE.Shared
 
                 //executing script
                 engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "R <- cor(data, method='pearson')\n " +
+                    "R <- cor(data)\n " +
                     "library(gridExtra)\n " +
                     "library(grid)\n " +
                     "grid.table(R)");
@@ -170,7 +138,7 @@ namespace PFE.Shared
                 //executing script
                 engine.Evaluate("library(psych)\n" +
                     "data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "x <- alpha(data)\n" +
+                    "x <- alpha(data, check.keys=TRUE)\n" +
                     "ca <- x[['total']][['raw_alpha']]");
 
                 double alpha = Double.Parse(engine.GetSymbol("ca").AsCharacter()[0], CultureInfo.InvariantCulture);

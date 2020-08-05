@@ -36,10 +36,8 @@ namespace PFE.ViewModel
             }
         }
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
-        public BartlettStatsResults bartlettStatsResults { get; set; }
-        public bool bartlettChecked { get; set; }
-        public bool kmoChecked { get; set; }
-        public double KMOIndex { get; set; }
+        public SphericityTestResults sphericityTestResults { get; set; }
+        public bool sphericityTestChecked { get; set; }
 
         public FirstCollectControlViewModel(Survey survey)
         {
@@ -85,13 +83,9 @@ namespace PFE.ViewModel
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/factorisation-test.csv", ";", dt);
-            if (bartlettChecked)
+            if (sphericityTestChecked)
             {
-                bartlettStatsResults = RCalculator.BartlettStats(Path.GetTempPath() + "/factorisation-test.csv");
-            }
-            if (kmoChecked)
-            {
-                KMOIndex = RCalculator.KMOStats(Path.GetTempPath() + "/factorisation-test.csv");
+                this.sphericityTestResults = RCalculator.SphericityTest(Path.GetTempPath() + "/factorisation-test.csv");
             }
         }
 
@@ -172,6 +166,8 @@ namespace PFE.ViewModel
 
         public DataTable ACP()
         {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            Exporter.exportCsv(Path.GetTempPath() + "/testcsv.csv", ";", dt);
             RDotNet.DataFrame df = RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
             if (df != null)
             {
@@ -194,6 +190,7 @@ namespace PFE.ViewModel
                 {
                     Question q = new Question { text = f.title + i };
                     f.questions.Add(q);
+                    i++;
                 }
                 rmvFactors.Add(f);
             }
@@ -211,7 +208,16 @@ namespace PFE.ViewModel
                     this.questions.Add(q);
                 }
             }
-            
+        }
+
+        public void calculateNewStats()
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            foreach(Question q in this.rmvQuestions)
+            {
+                dt.Columns.Remove(q.text);
+            }
+            Exporter.exportCsv(Path.GetTempPath() + "/factorisation-test.csv", ";", dt);
         }
     }
 }
