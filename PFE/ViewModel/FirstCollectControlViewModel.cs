@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,7 @@ namespace PFE.ViewModel
         }
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
         public SphericityTestResults sphericityTestResults { get; set; }
+        public SphericityTestResults newSphericityTestResults { get; set; }
         public bool sphericityTestChecked { get; set; }
 
         public FirstCollectControlViewModel(Survey survey)
@@ -195,7 +197,7 @@ namespace PFE.ViewModel
             foreach (Factor factor in this.selectedFactors)
             {
                 Factor f = new Factor { id = factor.id, title = factor.title, questions = new List<Question>() };
-                int i = 0;
+                int i = 1;
                 foreach (Question question in factor.questions)
                 {
                     Question q = new Question { text = f.title + i };
@@ -227,7 +229,32 @@ namespace PFE.ViewModel
             {
                 dt.Columns.Remove(q.text);
             }
-            Exporter.exportCsv(Path.GetTempPath() + "/factorisation-test.csv", ";", dt);
+            if (dt.Columns.Count < 2)
+            {
+                // hahahahahahahahahahaha
+            }
+            else
+            {
+                Exporter.exportCsv(Path.GetTempPath() + "/new-results-tmp.csv", ";", dt);
+                this.newSphericityTestResults = RCalculator.SphericityTest(Path.GetTempPath() + "/new-results-tmp.csv");
+            }
+        }
+
+        public void saveExel(string path)
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            foreach (Question q in this.rmvQuestions)
+            {
+                dt.Columns.Remove(q.text);
+            }
+            if (path.EndsWith(".xlsx"))
+            {
+                Exporter.exportExel(path, dt);
+            }
+            else if (path.EndsWith(".csv"))
+            {
+                Exporter.exportCsv(path, ";", dt);
+            }
         }
     }
 }

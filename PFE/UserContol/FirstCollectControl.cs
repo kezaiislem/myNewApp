@@ -184,5 +184,35 @@ namespace PFE.UserContol
             this.viewModel.PlotPCA();
         }
 
+        private void buttonNewStats_Click(object sender, EventArgs e)
+        {
+            this.viewModel.calculateNewStats();
+            if(this.viewModel.newSphericityTestResults != null)
+            {
+                this.textBoxNewKMO.Text = this.viewModel.newSphericityTestResults.kmo.ToString();
+                this.textBoxNewBartlett.Text = this.viewModel.newSphericityTestResults.bartlett.ToString();
+                panelNewStats.Show();
+            }
+        }
+
+        private void buttonHideNewStats_Click(object sender, EventArgs e)
+        {
+            this.panelNewStats.Hide();
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
+            using (var saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.FileName = "Sheet";
+                saveFileDialog.Filter = "Exel File|*.xlsx|CSV File|*.csv";
+                saveFileDialog.Title = "Export";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    viewModel.saveExel(saveFileDialog.FileName);
+                }
+            }
+        }
     }
 }
