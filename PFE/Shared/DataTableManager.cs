@@ -124,7 +124,7 @@ namespace PFE.Shared
             return null;
         }
 
-        public static DataTable PCADataFrametoDataTable(RDotNet.DataFrame dataFrame)
+        public static DataTable PCATableToDataTable(RDotNet.DataFrame dataFrame)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace PFE.Shared
 
                 for (int i = 0; i < dataFrame.ColumnCount; ++i)
                 {
-                    dtable.Columns.Add(dataFrame.ColumnNames[i]);
+                    dtable.Columns.Add("PC " + (i + 1));
                 }
 
                 for (int i = 0; i < dataFrame.RowCount; i++)
@@ -165,7 +165,47 @@ namespace PFE.Shared
                         {
                             newRow[j + 1] = Math.Round(Double.Parse(dataFrame[i, j].ToString()), 3) + "%";
                         }
-                       
+
+                    }
+                }
+
+                return dtable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            return null;
+        }
+
+        public static DataTable PCALoadingstoDataTable(RDotNet.DataFrame dataFrame)
+        {
+            try
+            {
+                DataTable dtable = new DataTable();
+
+                dtable.Columns.Add("Component");
+
+                for (int i = 0; i < dataFrame.ColumnCount; ++i)
+                {
+                    dtable.Columns.Add(dataFrame.ColumnNames[i]);
+                }
+
+                for (int i = 0; i < dataFrame.RowCount; i++)
+                {
+                    DataRow newRow = dtable.Rows.Add();
+                    switch (i)
+                    {
+                        case 0:
+                            newRow[0] = "PC 1";
+                            break;
+                        case 1:
+                            newRow[0] = "PC 2";
+                            break;
+                    }
+                    for (int j = 0; j < dataFrame.ColumnCount; j++)
+                    {
+                        newRow[j + 1] = Math.Round(Double.Parse(dataFrame[i, j].ToString()), 3);
                     }
                 }
 

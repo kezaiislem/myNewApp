@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsControl));
             this.panelSections = new Bunifu.Framework.UI.BunifuCards();
             this.buttonConfirmatory = new System.Windows.Forms.Button();
-            this.buttonFirstCollect = new System.Windows.Forms.Button();
+            this.buttonExploratoryAnalysis = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonBack = new JImageButton.JImageButton();
             this.labelPhaseTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -49,7 +49,7 @@
             this.panelSections.BottomSahddow = true;
             this.panelSections.color = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             this.panelSections.Controls.Add(this.buttonConfirmatory);
-            this.panelSections.Controls.Add(this.buttonFirstCollect);
+            this.panelSections.Controls.Add(this.buttonExploratoryAnalysis);
             this.panelSections.Controls.Add(this.panel2);
             this.panelSections.LeftSahddow = false;
             this.panelSections.Location = new System.Drawing.Point(31, 25);
@@ -80,26 +80,26 @@
             this.buttonConfirmatory.UseVisualStyleBackColor = false;
             this.buttonConfirmatory.Click += new System.EventHandler(this.buttonConfirmatory_Click);
             // 
-            // buttonFirstCollect
+            // buttonExploratoryAnalysis
             // 
-            this.buttonFirstCollect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.buttonFirstCollect.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonFirstCollect.FlatAppearance.BorderSize = 0;
-            this.buttonFirstCollect.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonFirstCollect.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonFirstCollect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFirstCollect.ForeColor = System.Drawing.Color.White;
-            this.buttonFirstCollect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFirstCollect.Location = new System.Drawing.Point(0, 44);
-            this.buttonFirstCollect.Name = "buttonFirstCollect";
-            this.buttonFirstCollect.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonFirstCollect.Size = new System.Drawing.Size(211, 40);
-            this.buttonFirstCollect.TabIndex = 9;
-            this.buttonFirstCollect.Text = "First Collect";
-            this.buttonFirstCollect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFirstCollect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFirstCollect.UseVisualStyleBackColor = false;
-            this.buttonFirstCollect.Click += new System.EventHandler(this.buttonFirstCollect_Click);
+            this.buttonExploratoryAnalysis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.buttonExploratoryAnalysis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonExploratoryAnalysis.FlatAppearance.BorderSize = 0;
+            this.buttonExploratoryAnalysis.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonExploratoryAnalysis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonExploratoryAnalysis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExploratoryAnalysis.ForeColor = System.Drawing.Color.White;
+            this.buttonExploratoryAnalysis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExploratoryAnalysis.Location = new System.Drawing.Point(0, 44);
+            this.buttonExploratoryAnalysis.Name = "buttonExploratoryAnalysis";
+            this.buttonExploratoryAnalysis.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonExploratoryAnalysis.Size = new System.Drawing.Size(211, 40);
+            this.buttonExploratoryAnalysis.TabIndex = 9;
+            this.buttonExploratoryAnalysis.Text = "Exploratory Analysis";
+            this.buttonExploratoryAnalysis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonExploratoryAnalysis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonExploratoryAnalysis.UseVisualStyleBackColor = false;
+            this.buttonExploratoryAnalysis.Click += new System.EventHandler(this.buttonExploratoryAnalysis_Click);
             // 
             // panel2
             // 
@@ -176,6 +176,6 @@
         private JImageButton.JImageButton buttonBack;
         private Bunifu.Framework.UI.BunifuCustomLabel labelPhaseTitle;
         private System.Windows.Forms.Button buttonConfirmatory;
-        private System.Windows.Forms.Button buttonFirstCollect;
+        private System.Windows.Forms.Button buttonExploratoryAnalysis;
     }
 }

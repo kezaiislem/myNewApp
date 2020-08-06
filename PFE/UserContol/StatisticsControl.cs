@@ -39,7 +39,7 @@ namespace PFE.UserContol
         private void Init(Survey survey)
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
-            panelSections.Controls.SetChildIndex(buttonFirstCollect, 0);
+            panelSections.Controls.SetChildIndex(buttonExploratoryAnalysis, 0);
             panelSections.Controls.SetChildIndex(buttonConfirmatory, 0);
             this.viewModel = new StatisticsControlViewModel(survey);
         }
@@ -49,7 +49,7 @@ namespace PFE.UserContol
             this.Dispose();
         }
 
-        private void buttonFirstCollect_Click(object sender, EventArgs e)
+        private void buttonExploratoryAnalysis_Click(object sender, EventArgs e)
         {
             this.hideConfirmatoryAnalisis();
             if (this.firstCollectConrol != null)

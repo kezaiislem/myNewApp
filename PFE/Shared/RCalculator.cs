@@ -71,7 +71,7 @@ namespace PFE.Shared
             }
         }
 
-        public static DataFrame PCA(String csvPath)
+        public static void plotPCALoadings(String csvPath)
         {
             try
             {
@@ -87,10 +87,61 @@ namespace PFE.Shared
                     "pca <- principal(data, 2, rotate='varimax')\n" +
                     "biplot(pca)");
 
-                DataFrame df = engine.GetSymbol("result").AsDataFrame();
+                Clear();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+        
+        public static void plotPrincipalCompnnents(String csvPath)
+        {
+            try
+            {
+                REngine engine;
+                //init the R engine            
+                engine = getInststance();
+
+                csvPath = csvPath.Replace('\\', '/');
+
+                //executing script
+                engine.Evaluate("library(psych)\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "pca <- principal(data, 2, rotate='varimax')\n" +
+                    "plot(pca$values, type = 'o', xlab = 'Components', ylab = 'Values')");
 
                 Clear();
-                return df;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
+        public static PCAResults PCA(String csvPath)
+        {
+            try
+            {
+                REngine engine;
+                //init the R engine            
+                engine = getInststance();
+
+                csvPath = csvPath.Replace('\\', '/');
+
+                //executing script
+                engine.Evaluate("library(psych)\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "pca <- principal(data, 2, rotate='varimax')\n" +
+                    "pcaTable <- as.data.frame.matrix(rbind(pca$values, pca$values/sum(pca$values)*100, cumsum(pca$values), cumsum(pca$values/sum(pca$values)*100)))\n" +
+                    "loadings <- as.data.frame.matrix(t(pca$loadings))");
+
+                PCAResults pCAResults = new PCAResults();
+                pCAResults.pcaTable = engine.GetSymbol("pcaTable").AsDataFrame();
+                pCAResults.loadings = engine.GetSymbol("loadings").AsDataFrame();
+
+                Clear();
+                return pCAResults;
             }
             catch (Exception e)
             {

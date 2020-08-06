@@ -58,14 +58,26 @@ namespace PFE.UserContol
             }
         }
 
-        private void buttonFactorisationTest_Click(object sender, EventArgs e)
+        private void buttonRunACP_Click(object sender, EventArgs e)
         {
             if (validateFactorisation())
             {
                 this.panelCronbach.Visible = false;
-                this.panelACPResults.Visible = false;
-                viewModel.calculateFirstResults();
-                fillValues();
+                if (this.viewModel.sphericityTestChecked)
+                {
+                    viewModel.calculateFirstResults();
+                    fillValues();
+                }
+                PCAResults results = this.viewModel.ACP();
+                if (results != null)
+                {
+                    dataGridPrincipalComponents.DataSource = DataTableManager.PCATableToDataTable(results.pcaTable);
+                    dataGridPCALoadings.DataSource = DataTableManager.PCALoadingstoDataTable(results.loadings);
+                }
+                else
+                {
+                    MessageBox.Show("An error has been occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 factorisationResults.Visible = true;
             }
         }
@@ -103,23 +115,6 @@ namespace PFE.UserContol
                 textBoxBartlett.Text = this.viewModel.sphericityTestResults.bartlett.ToString();
                 textBoxKMOIndex.Text = this.viewModel.sphericityTestResults.kmo.ToString();
             }
-            buttonACP.Enabled = true;
-        }
-
-        private void buttonACP_Click(object sender, EventArgs e)
-        {
-            this.panelCronbach.Visible = false;
-            DataTable results = this.viewModel.ACP();
-            if (results != null)
-            {
-                dataGridPrincipalComponents.DataSource = results;
-                panelACPResults.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("An error has been occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
         }
 
         private void buttonChronbach_Click(object sender, EventArgs e)
@@ -178,5 +173,16 @@ namespace PFE.UserContol
         {
             this.viewModel.sphericityTestChecked = e.Checked;
         }
+
+        private void buttonPlotPCA_Click(object sender, EventArgs e)
+        {
+            this.viewModel.PlotComponenets();
+        }
+
+        private void buttonPlotLoadings_Click(object sender, EventArgs e)
+        {
+            this.viewModel.PlotPCA();
+        }
+
     }
 }

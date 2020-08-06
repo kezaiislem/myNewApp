@@ -164,17 +164,27 @@ namespace PFE.ViewModel
             return result;
         }
 
-        public DataTable ACP()
+        public PCAResults ACP()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            Exporter.exportCsv(Path.GetTempPath() + "/testcsv.csv", ";", dt);
-            RDotNet.DataFrame df = RCalculator.PCA(Path.GetTempPath() + "/testcsv.csv");
-            if (df != null)
-            {
-                prepareACPData();
-                return DataTableManager.PCADataFrametoDataTable(df);
-            }
-            return null;
+            Exporter.exportCsv(Path.GetTempPath() + "/pca-tmp.csv", ";", dt);
+            PCAResults results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv");
+            prepareACPData();
+            return results;
+        }
+
+        public void PlotPCA()
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            Exporter.exportCsv(Path.GetTempPath() + "/pca-plot-tmp.csv", ";", dt);
+            RCalculator.plotPCALoadings(Path.GetTempPath() + "/pca-plot-tmp.csv");
+        }
+        
+        public void PlotComponenets()
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            Exporter.exportCsv(Path.GetTempPath() + "/componenet-plot-tmp.csv", ";", dt);
+            RCalculator.plotPrincipalCompnnents(Path.GetTempPath() + "/componenet-plot-tmp.csv");
         }
 
         public void prepareACPData()

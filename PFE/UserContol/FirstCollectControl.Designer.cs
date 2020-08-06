@@ -50,6 +50,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelNewStats = new System.Windows.Forms.Panel();
@@ -65,7 +68,11 @@
             this.dataGridNewCronbachAlpha = new System.Windows.Forms.DataGridView();
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.panelACPResults = new System.Windows.Forms.Panel();
+            this.factorisationResults = new System.Windows.Forms.Panel();
+            this.buttonPlotPCA = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.buttonPlotLoadings = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.dataGridPCALoadings = new System.Windows.Forms.DataGridView();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.buttonNewStats = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.buttonSave = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
@@ -79,8 +86,6 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.dataGridPrincipalComponents = new System.Windows.Forms.DataGridView();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.factorisationResults = new System.Windows.Forms.Panel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.textBoxBartlett = new MetroFramework.Controls.MetroTextBox();
@@ -88,7 +93,6 @@
             this.textBoxKMOIndex = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.buttonACP = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panelCronbach = new System.Windows.Forms.Panel();
             this.buttonReduceAlpha = new JImageButton.JImageButton();
@@ -100,7 +104,7 @@
             this.buttonChronbach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.checkBoxSphericity = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.labeltext = new MetroFramework.Controls.MetroLabel();
-            this.buttonFactorisationTest = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.buttonRunACP = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnLeft = new JImageButton.JImageButton();
             this.btnRight = new JImageButton.JImageButton();
             this.listStatsFactors = new System.Windows.Forms.ListBox();
@@ -112,9 +116,9 @@
             this.mainPanel.SuspendLayout();
             this.panelNewStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNewCronbachAlpha)).BeginInit();
-            this.panelACPResults.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipalComponents)).BeginInit();
             this.factorisationResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPCALoadings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipalComponents)).BeginInit();
             this.panelCronbach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlpha)).BeginInit();
             this.panel2.SuspendLayout();
@@ -142,7 +146,6 @@
             // 
             this.mainPanel.AutoScroll = true;
             this.mainPanel.Controls.Add(this.panelNewStats);
-            this.mainPanel.Controls.Add(this.panelACPResults);
             this.mainPanel.Controls.Add(this.factorisationResults);
             this.mainPanel.Controls.Add(this.panelCronbach);
             this.mainPanel.Controls.Add(this.panel2);
@@ -167,7 +170,7 @@
             this.panelNewStats.Controls.Add(this.metroLabel14);
             this.panelNewStats.Controls.Add(this.bunifuSeparator4);
             this.panelNewStats.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNewStats.Location = new System.Drawing.Point(0, 1103);
+            this.panelNewStats.Location = new System.Drawing.Point(0, 1196);
             this.panelNewStats.Name = "panelNewStats";
             this.panelNewStats.Size = new System.Drawing.Size(743, 211);
             this.panelNewStats.TabIndex = 25;
@@ -402,28 +405,193 @@
             this.bunifuSeparator4.Transparency = 128;
             this.bunifuSeparator4.Vertical = false;
             // 
-            // panelACPResults
+            // factorisationResults
             // 
-            this.panelACPResults.Controls.Add(this.buttonNewStats);
-            this.panelACPResults.Controls.Add(this.buttonSave);
-            this.panelACPResults.Controls.Add(this.metroLabel13);
-            this.panelACPResults.Controls.Add(this.metroLabel11);
-            this.panelACPResults.Controls.Add(this.metroLabel10);
-            this.panelACPResults.Controls.Add(this.removeRmvQuestion);
-            this.panelACPResults.Controls.Add(this.addRmvQuestion);
-            this.panelACPResults.Controls.Add(this.listBoxToRmvQuestions);
-            this.panelACPResults.Controls.Add(this.listBoxQuestions);
-            this.panelACPResults.Controls.Add(this.listBoxRmvFactors);
-            this.panelACPResults.Controls.Add(this.metroLabel9);
-            this.panelACPResults.Controls.Add(this.dataGridPrincipalComponents);
-            this.panelACPResults.Controls.Add(this.metroLabel8);
-            this.panelACPResults.Controls.Add(this.bunifuSeparator3);
-            this.panelACPResults.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelACPResults.Location = new System.Drawing.Point(0, 589);
-            this.panelACPResults.Name = "panelACPResults";
-            this.panelACPResults.Size = new System.Drawing.Size(743, 514);
-            this.panelACPResults.TabIndex = 24;
-            this.panelACPResults.Visible = false;
+            this.factorisationResults.Controls.Add(this.buttonPlotPCA);
+            this.factorisationResults.Controls.Add(this.buttonPlotLoadings);
+            this.factorisationResults.Controls.Add(this.dataGridPCALoadings);
+            this.factorisationResults.Controls.Add(this.metroLabel1);
+            this.factorisationResults.Controls.Add(this.buttonNewStats);
+            this.factorisationResults.Controls.Add(this.buttonSave);
+            this.factorisationResults.Controls.Add(this.metroLabel13);
+            this.factorisationResults.Controls.Add(this.metroLabel11);
+            this.factorisationResults.Controls.Add(this.metroLabel10);
+            this.factorisationResults.Controls.Add(this.removeRmvQuestion);
+            this.factorisationResults.Controls.Add(this.addRmvQuestion);
+            this.factorisationResults.Controls.Add(this.listBoxToRmvQuestions);
+            this.factorisationResults.Controls.Add(this.listBoxQuestions);
+            this.factorisationResults.Controls.Add(this.listBoxRmvFactors);
+            this.factorisationResults.Controls.Add(this.metroLabel9);
+            this.factorisationResults.Controls.Add(this.dataGridPrincipalComponents);
+            this.factorisationResults.Controls.Add(this.metroLabel8);
+            this.factorisationResults.Controls.Add(this.metroLabel7);
+            this.factorisationResults.Controls.Add(this.metroLabel6);
+            this.factorisationResults.Controls.Add(this.textBoxBartlett);
+            this.factorisationResults.Controls.Add(this.metroLabel5);
+            this.factorisationResults.Controls.Add(this.textBoxKMOIndex);
+            this.factorisationResults.Controls.Add(this.metroLabel4);
+            this.factorisationResults.Controls.Add(this.metroLabel3);
+            this.factorisationResults.Controls.Add(this.bunifuSeparator1);
+            this.factorisationResults.Dock = System.Windows.Forms.DockStyle.Top;
+            this.factorisationResults.Location = new System.Drawing.Point(0, 456);
+            this.factorisationResults.Name = "factorisationResults";
+            this.factorisationResults.Size = new System.Drawing.Size(743, 740);
+            this.factorisationResults.TabIndex = 22;
+            this.factorisationResults.Visible = false;
+            // 
+            // buttonPlotPCA
+            // 
+            this.buttonPlotPCA.AllowToggling = false;
+            this.buttonPlotPCA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPlotPCA.AnimationSpeed = 200;
+            this.buttonPlotPCA.AutoGenerateColors = false;
+            this.buttonPlotPCA.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPlotPCA.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonPlotPCA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPlotPCA.BackgroundImage")));
+            this.buttonPlotPCA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonPlotPCA.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonPlotPCA.ButtonText = "Plot Pricipal Components";
+            this.buttonPlotPCA.ButtonTextMarginLeft = 0;
+            this.buttonPlotPCA.ColorContrastOnClick = 45;
+            this.buttonPlotPCA.ColorContrastOnHover = 45;
+            this.buttonPlotPCA.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.buttonPlotPCA.CustomizableEdges = borderEdges2;
+            this.buttonPlotPCA.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonPlotPCA.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonPlotPCA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonPlotPCA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonPlotPCA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonPlotPCA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonPlotPCA.ForeColor = System.Drawing.Color.White;
+            this.buttonPlotPCA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPlotPCA.IconMarginLeft = 11;
+            this.buttonPlotPCA.IconPadding = 10;
+            this.buttonPlotPCA.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPlotPCA.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonPlotPCA.IdleBorderRadius = 3;
+            this.buttonPlotPCA.IdleBorderThickness = 1;
+            this.buttonPlotPCA.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonPlotPCA.IdleIconLeftImage = null;
+            this.buttonPlotPCA.IdleIconRightImage = null;
+            this.buttonPlotPCA.IndicateFocus = false;
+            this.buttonPlotPCA.Location = new System.Drawing.Point(458, 381);
+            this.buttonPlotPCA.Name = "buttonPlotPCA";
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties3.BorderRadius = 3;
+            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties3.BorderThickness = 1;
+            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.ForeColor = System.Drawing.Color.White;
+            stateProperties3.IconLeftImage = null;
+            stateProperties3.IconRightImage = null;
+            this.buttonPlotPCA.onHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.BorderRadius = 3;
+            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties4.BorderThickness = 1;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.IconLeftImage = null;
+            stateProperties4.IconRightImage = null;
+            this.buttonPlotPCA.OnPressedState = stateProperties4;
+            this.buttonPlotPCA.Size = new System.Drawing.Size(174, 32);
+            this.buttonPlotPCA.TabIndex = 63;
+            this.buttonPlotPCA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonPlotPCA.TextMarginLeft = 0;
+            this.buttonPlotPCA.UseDefaultRadiusAndThickness = true;
+            this.buttonPlotPCA.Click += new System.EventHandler(this.buttonPlotPCA_Click);
+            // 
+            // buttonPlotLoadings
+            // 
+            this.buttonPlotLoadings.AllowToggling = false;
+            this.buttonPlotLoadings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPlotLoadings.AnimationSpeed = 200;
+            this.buttonPlotLoadings.AutoGenerateColors = false;
+            this.buttonPlotLoadings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonPlotLoadings.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonPlotLoadings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonPlotLoadings.BackgroundImage")));
+            this.buttonPlotLoadings.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonPlotLoadings.ButtonText = "Plot PCA";
+            this.buttonPlotLoadings.ButtonTextMarginLeft = 0;
+            this.buttonPlotLoadings.ColorContrastOnClick = 45;
+            this.buttonPlotLoadings.ColorContrastOnHover = 45;
+            this.buttonPlotLoadings.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.buttonPlotLoadings.CustomizableEdges = borderEdges3;
+            this.buttonPlotLoadings.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonPlotLoadings.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonPlotLoadings.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonPlotLoadings.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonPlotLoadings.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonPlotLoadings.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonPlotLoadings.ForeColor = System.Drawing.Color.White;
+            this.buttonPlotLoadings.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPlotLoadings.IconMarginLeft = 11;
+            this.buttonPlotLoadings.IconPadding = 10;
+            this.buttonPlotLoadings.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPlotLoadings.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonPlotLoadings.IdleBorderRadius = 3;
+            this.buttonPlotLoadings.IdleBorderThickness = 1;
+            this.buttonPlotLoadings.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonPlotLoadings.IdleIconLeftImage = null;
+            this.buttonPlotLoadings.IdleIconRightImage = null;
+            this.buttonPlotLoadings.IndicateFocus = false;
+            this.buttonPlotLoadings.Location = new System.Drawing.Point(638, 381);
+            this.buttonPlotLoadings.Name = "buttonPlotLoadings";
+            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties5.BorderRadius = 3;
+            stateProperties5.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties5.BorderThickness = 1;
+            stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties5.ForeColor = System.Drawing.Color.White;
+            stateProperties5.IconLeftImage = null;
+            stateProperties5.IconRightImage = null;
+            this.buttonPlotLoadings.onHoverState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties6.BorderRadius = 3;
+            stateProperties6.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties6.BorderThickness = 1;
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties6.ForeColor = System.Drawing.Color.White;
+            stateProperties6.IconLeftImage = null;
+            stateProperties6.IconRightImage = null;
+            this.buttonPlotLoadings.OnPressedState = stateProperties6;
+            this.buttonPlotLoadings.Size = new System.Drawing.Size(80, 32);
+            this.buttonPlotLoadings.TabIndex = 62;
+            this.buttonPlotLoadings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonPlotLoadings.TextMarginLeft = 0;
+            this.buttonPlotLoadings.UseDefaultRadiusAndThickness = true;
+            this.buttonPlotLoadings.Click += new System.EventHandler(this.buttonPlotLoadings_Click);
+            // 
+            // dataGridPCALoadings
+            // 
+            this.dataGridPCALoadings.AllowUserToAddRows = false;
+            this.dataGridPCALoadings.AllowUserToDeleteRows = false;
+            this.dataGridPCALoadings.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridPCALoadings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPCALoadings.Location = new System.Drawing.Point(26, 275);
+            this.dataGridPCALoadings.MultiSelect = false;
+            this.dataGridPCALoadings.Name = "dataGridPCALoadings";
+            this.dataGridPCALoadings.ReadOnly = true;
+            this.dataGridPCALoadings.Size = new System.Drawing.Size(696, 88);
+            this.dataGridPCALoadings.TabIndex = 61;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(23, 253);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel1.TabIndex = 60;
+            this.metroLabel1.Text = "Loadings";
             // 
             // buttonNewStats
             // 
@@ -441,11 +609,11 @@
             this.buttonNewStats.ColorContrastOnClick = 45;
             this.buttonNewStats.ColorContrastOnHover = 45;
             this.buttonNewStats.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.buttonNewStats.CustomizableEdges = borderEdges2;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.buttonNewStats.CustomizableEdges = borderEdges4;
             this.buttonNewStats.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonNewStats.DisabledBorderColor = System.Drawing.Color.Empty;
             this.buttonNewStats.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -464,28 +632,28 @@
             this.buttonNewStats.IdleIconLeftImage = null;
             this.buttonNewStats.IdleIconRightImage = null;
             this.buttonNewStats.IndicateFocus = false;
-            this.buttonNewStats.Location = new System.Drawing.Point(514, 462);
+            this.buttonNewStats.Location = new System.Drawing.Point(516, 695);
             this.buttonNewStats.Name = "buttonNewStats";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties3.BorderRadius = 3;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.buttonNewStats.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 3;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.buttonNewStats.OnPressedState = stateProperties4;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties7.BorderRadius = 3;
+            stateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties7.BorderThickness = 1;
+            stateProperties7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.ForeColor = System.Drawing.Color.White;
+            stateProperties7.IconLeftImage = null;
+            stateProperties7.IconRightImage = null;
+            this.buttonNewStats.onHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties8.BorderRadius = 3;
+            stateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties8.BorderThickness = 1;
+            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties8.ForeColor = System.Drawing.Color.White;
+            stateProperties8.IconLeftImage = null;
+            stateProperties8.IconRightImage = null;
+            this.buttonNewStats.OnPressedState = stateProperties8;
             this.buttonNewStats.Size = new System.Drawing.Size(118, 32);
-            this.buttonNewStats.TabIndex = 44;
+            this.buttonNewStats.TabIndex = 59;
             this.buttonNewStats.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonNewStats.TextMarginLeft = 0;
             this.buttonNewStats.UseDefaultRadiusAndThickness = true;
@@ -505,11 +673,11 @@
             this.buttonSave.ColorContrastOnClick = 45;
             this.buttonSave.ColorContrastOnHover = 45;
             this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.buttonSave.CustomizableEdges = borderEdges3;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.buttonSave.CustomizableEdges = borderEdges5;
             this.buttonSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonSave.DisabledBorderColor = System.Drawing.Color.Empty;
             this.buttonSave.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -528,28 +696,28 @@
             this.buttonSave.IdleIconLeftImage = null;
             this.buttonSave.IdleIconRightImage = null;
             this.buttonSave.IndicateFocus = false;
-            this.buttonSave.Location = new System.Drawing.Point(638, 462);
+            this.buttonSave.Location = new System.Drawing.Point(640, 695);
             this.buttonSave.Name = "buttonSave";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties5.BorderRadius = 3;
-            stateProperties5.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties5.BorderThickness = 1;
-            stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties5.ForeColor = System.Drawing.Color.White;
-            stateProperties5.IconLeftImage = null;
-            stateProperties5.IconRightImage = null;
-            this.buttonSave.onHoverState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties6.BorderRadius = 3;
-            stateProperties6.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties6.BorderThickness = 1;
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties6.ForeColor = System.Drawing.Color.White;
-            stateProperties6.IconLeftImage = null;
-            stateProperties6.IconRightImage = null;
-            this.buttonSave.OnPressedState = stateProperties6;
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties9.BorderRadius = 3;
+            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties9.BorderThickness = 1;
+            stateProperties9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties9.ForeColor = System.Drawing.Color.White;
+            stateProperties9.IconLeftImage = null;
+            stateProperties9.IconRightImage = null;
+            this.buttonSave.onHoverState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties10.BorderRadius = 3;
+            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties10.BorderThickness = 1;
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties10.ForeColor = System.Drawing.Color.White;
+            stateProperties10.IconLeftImage = null;
+            stateProperties10.IconRightImage = null;
+            this.buttonSave.OnPressedState = stateProperties10;
             this.buttonSave.Size = new System.Drawing.Size(80, 32);
-            this.buttonSave.TabIndex = 43;
+            this.buttonSave.TabIndex = 58;
             this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.buttonSave.TextMarginLeft = 0;
             this.buttonSave.UseDefaultRadiusAndThickness = true;
@@ -558,30 +726,30 @@
             // 
             this.metroLabel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(522, 223);
+            this.metroLabel13.Location = new System.Drawing.Point(524, 456);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(138, 19);
-            this.metroLabel13.TabIndex = 42;
+            this.metroLabel13.TabIndex = 57;
             this.metroLabel13.Text = "Questions to remove :";
             // 
             // metroLabel11
             // 
             this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(240, 223);
+            this.metroLabel11.Location = new System.Drawing.Point(242, 456);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(73, 19);
-            this.metroLabel11.TabIndex = 41;
+            this.metroLabel11.TabIndex = 56;
             this.metroLabel11.Text = "Questions :";
             // 
             // metroLabel10
             // 
             this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(24, 223);
+            this.metroLabel10.Location = new System.Drawing.Point(26, 456);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel10.TabIndex = 40;
+            this.metroLabel10.TabIndex = 55;
             this.metroLabel10.Text = "Factors :";
             // 
             // removeRmvQuestion
@@ -595,12 +763,12 @@
             this.removeRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.Image")));
             this.removeRmvQuestion.ImageHover = null;
             this.removeRmvQuestion.InitialImage = null;
-            this.removeRmvQuestion.Location = new System.Drawing.Point(463, 347);
+            this.removeRmvQuestion.Location = new System.Drawing.Point(465, 580);
             this.removeRmvQuestion.Name = "removeRmvQuestion";
             this.removeRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
             this.removeRmvQuestion.Size = new System.Drawing.Size(32, 32);
             this.removeRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.removeRmvQuestion.TabIndex = 39;
+            this.removeRmvQuestion.TabIndex = 54;
             this.removeRmvQuestion.Zoom = 1;
             this.removeRmvQuestion.Click += new System.EventHandler(this.removeRmvQuestion_Click);
             // 
@@ -615,12 +783,12 @@
             this.addRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.Image")));
             this.addRmvQuestion.ImageHover = null;
             this.addRmvQuestion.InitialImage = null;
-            this.addRmvQuestion.Location = new System.Drawing.Point(463, 309);
+            this.addRmvQuestion.Location = new System.Drawing.Point(465, 542);
             this.addRmvQuestion.Name = "addRmvQuestion";
             this.addRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
             this.addRmvQuestion.Size = new System.Drawing.Size(32, 32);
             this.addRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.addRmvQuestion.TabIndex = 38;
+            this.addRmvQuestion.TabIndex = 53;
             this.addRmvQuestion.Zoom = 1;
             this.addRmvQuestion.Click += new System.EventHandler(this.addRmvQuestion_Click);
             // 
@@ -628,36 +796,36 @@
             // 
             this.listBoxToRmvQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxToRmvQuestions.FormattingEnabled = true;
-            this.listBoxToRmvQuestions.Location = new System.Drawing.Point(522, 245);
+            this.listBoxToRmvQuestions.Location = new System.Drawing.Point(524, 478);
             this.listBoxToRmvQuestions.Name = "listBoxToRmvQuestions";
             this.listBoxToRmvQuestions.Size = new System.Drawing.Size(196, 199);
-            this.listBoxToRmvQuestions.TabIndex = 37;
+            this.listBoxToRmvQuestions.TabIndex = 52;
             // 
             // listBoxQuestions
             // 
             this.listBoxQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxQuestions.FormattingEnabled = true;
-            this.listBoxQuestions.Location = new System.Drawing.Point(240, 245);
+            this.listBoxQuestions.Location = new System.Drawing.Point(242, 478);
             this.listBoxQuestions.Name = "listBoxQuestions";
             this.listBoxQuestions.Size = new System.Drawing.Size(196, 199);
-            this.listBoxQuestions.TabIndex = 36;
+            this.listBoxQuestions.TabIndex = 51;
             // 
             // listBoxRmvFactors
             // 
             this.listBoxRmvFactors.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxRmvFactors.FormattingEnabled = true;
-            this.listBoxRmvFactors.Location = new System.Drawing.Point(24, 245);
+            this.listBoxRmvFactors.Location = new System.Drawing.Point(26, 478);
             this.listBoxRmvFactors.Name = "listBoxRmvFactors";
             this.listBoxRmvFactors.Size = new System.Drawing.Size(196, 199);
-            this.listBoxRmvFactors.TabIndex = 35;
+            this.listBoxRmvFactors.TabIndex = 50;
             // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(19, 180);
+            this.metroLabel9.Location = new System.Drawing.Point(26, 428);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(173, 19);
-            this.metroLabel9.TabIndex = 34;
+            this.metroLabel9.TabIndex = 49;
             this.metroLabel9.Text = "Select questions to remove :";
             // 
             // dataGridPrincipalComponents
@@ -667,54 +835,21 @@
             this.dataGridPrincipalComponents.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridPrincipalComponents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPrincipalComponents.Location = new System.Drawing.Point(24, 50);
+            this.dataGridPrincipalComponents.Location = new System.Drawing.Point(26, 122);
             this.dataGridPrincipalComponents.MultiSelect = false;
             this.dataGridPrincipalComponents.Name = "dataGridPrincipalComponents";
             this.dataGridPrincipalComponents.ReadOnly = true;
-            this.dataGridPrincipalComponents.Size = new System.Drawing.Size(696, 120);
-            this.dataGridPrincipalComponents.TabIndex = 33;
+            this.dataGridPrincipalComponents.Size = new System.Drawing.Size(696, 118);
+            this.dataGridPrincipalComponents.TabIndex = 48;
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(19, 20);
+            this.metroLabel8.Location = new System.Drawing.Point(21, 100);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(172, 19);
-            this.metroLabel8.TabIndex = 32;
+            this.metroLabel8.TabIndex = 47;
             this.metroLabel8.Text = "Principal Components Table";
-            // 
-            // bunifuSeparator3
-            // 
-            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator3.LineThickness = 1;
-            this.bunifuSeparator3.Location = new System.Drawing.Point(0, 0);
-            this.bunifuSeparator3.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(743, 10);
-            this.bunifuSeparator3.TabIndex = 27;
-            this.bunifuSeparator3.Transparency = 128;
-            this.bunifuSeparator3.Vertical = false;
-            // 
-            // factorisationResults
-            // 
-            this.factorisationResults.Controls.Add(this.metroLabel7);
-            this.factorisationResults.Controls.Add(this.metroLabel6);
-            this.factorisationResults.Controls.Add(this.textBoxBartlett);
-            this.factorisationResults.Controls.Add(this.metroLabel5);
-            this.factorisationResults.Controls.Add(this.textBoxKMOIndex);
-            this.factorisationResults.Controls.Add(this.metroLabel4);
-            this.factorisationResults.Controls.Add(this.metroLabel3);
-            this.factorisationResults.Controls.Add(this.buttonACP);
-            this.factorisationResults.Controls.Add(this.bunifuSeparator1);
-            this.factorisationResults.Dock = System.Windows.Forms.DockStyle.Top;
-            this.factorisationResults.Location = new System.Drawing.Point(0, 456);
-            this.factorisationResults.Name = "factorisationResults";
-            this.factorisationResults.Size = new System.Drawing.Size(743, 133);
-            this.factorisationResults.TabIndex = 22;
-            this.factorisationResults.Visible = false;
             // 
             // metroLabel7
             // 
@@ -819,75 +954,9 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(19, 20);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(146, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(75, 19);
             this.metroLabel3.TabIndex = 32;
-            this.metroLabel3.Text = "Factorisation test results";
-            // 
-            // buttonACP
-            // 
-            this.buttonACP.AllowToggling = false;
-            this.buttonACP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonACP.AnimationSpeed = 200;
-            this.buttonACP.AutoGenerateColors = false;
-            this.buttonACP.BackColor = System.Drawing.Color.Transparent;
-            this.buttonACP.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonACP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonACP.BackgroundImage")));
-            this.buttonACP.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.buttonACP.ButtonText = "Initiate ACP";
-            this.buttonACP.ButtonTextMarginLeft = 0;
-            this.buttonACP.ColorContrastOnClick = 45;
-            this.buttonACP.ColorContrastOnHover = 45;
-            this.buttonACP.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.buttonACP.CustomizableEdges = borderEdges4;
-            this.buttonACP.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonACP.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.buttonACP.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonACP.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonACP.Enabled = false;
-            this.buttonACP.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.buttonACP.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonACP.ForeColor = System.Drawing.Color.White;
-            this.buttonACP.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonACP.IconMarginLeft = 11;
-            this.buttonACP.IconPadding = 10;
-            this.buttonACP.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonACP.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.buttonACP.IdleBorderRadius = 3;
-            this.buttonACP.IdleBorderThickness = 1;
-            this.buttonACP.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonACP.IdleIconLeftImage = null;
-            this.buttonACP.IdleIconRightImage = null;
-            this.buttonACP.IndicateFocus = false;
-            this.buttonACP.Location = new System.Drawing.Point(629, 88);
-            this.buttonACP.Name = "buttonACP";
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties7.BorderRadius = 3;
-            stateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties7.BorderThickness = 1;
-            stateProperties7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties7.ForeColor = System.Drawing.Color.White;
-            stateProperties7.IconLeftImage = null;
-            stateProperties7.IconRightImage = null;
-            this.buttonACP.onHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties8.BorderRadius = 3;
-            stateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties8.BorderThickness = 1;
-            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties8.ForeColor = System.Drawing.Color.White;
-            stateProperties8.IconLeftImage = null;
-            stateProperties8.IconRightImage = null;
-            this.buttonACP.OnPressedState = stateProperties8;
-            this.buttonACP.Size = new System.Drawing.Size(91, 32);
-            this.buttonACP.TabIndex = 31;
-            this.buttonACP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonACP.TextMarginLeft = 0;
-            this.buttonACP.UseDefaultRadiusAndThickness = true;
-            this.buttonACP.Click += new System.EventHandler(this.buttonACP_Click);
+            this.metroLabel3.Text = "ACP results";
             // 
             // bunifuSeparator1
             // 
@@ -980,7 +1049,7 @@
             this.panel2.Controls.Add(this.buttonChronbach);
             this.panel2.Controls.Add(this.checkBoxSphericity);
             this.panel2.Controls.Add(this.labeltext);
-            this.panel2.Controls.Add(this.buttonFactorisationTest);
+            this.panel2.Controls.Add(this.buttonRunACP);
             this.panel2.Controls.Add(this.btnLeft);
             this.panel2.Controls.Add(this.btnRight);
             this.panel2.Controls.Add(this.listStatsFactors);
@@ -1008,11 +1077,11 @@
             this.buttonCor.ColorContrastOnClick = 45;
             this.buttonCor.ColorContrastOnHover = 45;
             this.buttonCor.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.buttonCor.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.buttonCor.CustomizableEdges = borderEdges6;
             this.buttonCor.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonCor.DisabledBorderColor = System.Drawing.Color.Empty;
             this.buttonCor.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1033,24 +1102,24 @@
             this.buttonCor.IndicateFocus = false;
             this.buttonCor.Location = new System.Drawing.Point(298, 307);
             this.buttonCor.Name = "buttonCor";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties9.BorderRadius = 3;
-            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties9.BorderThickness = 1;
-            stateProperties9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties9.ForeColor = System.Drawing.Color.White;
-            stateProperties9.IconLeftImage = null;
-            stateProperties9.IconRightImage = null;
-            this.buttonCor.onHoverState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties10.BorderRadius = 3;
-            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties10.BorderThickness = 1;
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties10.ForeColor = System.Drawing.Color.White;
-            stateProperties10.IconLeftImage = null;
-            stateProperties10.IconRightImage = null;
-            this.buttonCor.OnPressedState = stateProperties10;
+            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties11.BorderRadius = 3;
+            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties11.BorderThickness = 1;
+            stateProperties11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties11.ForeColor = System.Drawing.Color.White;
+            stateProperties11.IconLeftImage = null;
+            stateProperties11.IconRightImage = null;
+            this.buttonCor.onHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.BorderRadius = 3;
+            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties12.BorderThickness = 1;
+            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties12.ForeColor = System.Drawing.Color.White;
+            stateProperties12.IconLeftImage = null;
+            stateProperties12.IconRightImage = null;
+            this.buttonCor.OnPressedState = stateProperties12;
             this.buttonCor.Size = new System.Drawing.Size(164, 32);
             this.buttonCor.TabIndex = 32;
             this.buttonCor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1074,11 +1143,11 @@
             this.buttonChronbach.ColorContrastOnClick = 45;
             this.buttonChronbach.ColorContrastOnHover = 45;
             this.buttonChronbach.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.buttonChronbach.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.buttonChronbach.CustomizableEdges = borderEdges7;
             this.buttonChronbach.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonChronbach.DisabledBorderColor = System.Drawing.Color.Empty;
             this.buttonChronbach.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1099,24 +1168,24 @@
             this.buttonChronbach.IndicateFocus = false;
             this.buttonChronbach.Location = new System.Drawing.Point(468, 307);
             this.buttonChronbach.Name = "buttonChronbach";
-            stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties11.BorderRadius = 3;
-            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties11.BorderThickness = 1;
-            stateProperties11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties11.ForeColor = System.Drawing.Color.White;
-            stateProperties11.IconLeftImage = null;
-            stateProperties11.IconRightImage = null;
-            this.buttonChronbach.onHoverState = stateProperties11;
-            stateProperties12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties12.BorderRadius = 3;
-            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties12.BorderThickness = 1;
-            stateProperties12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties12.ForeColor = System.Drawing.Color.White;
-            stateProperties12.IconLeftImage = null;
-            stateProperties12.IconRightImage = null;
-            this.buttonChronbach.OnPressedState = stateProperties12;
+            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties13.BorderRadius = 3;
+            stateProperties13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties13.BorderThickness = 1;
+            stateProperties13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties13.ForeColor = System.Drawing.Color.White;
+            stateProperties13.IconLeftImage = null;
+            stateProperties13.IconRightImage = null;
+            this.buttonChronbach.onHoverState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties14.BorderRadius = 3;
+            stateProperties14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties14.BorderThickness = 1;
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties14.ForeColor = System.Drawing.Color.White;
+            stateProperties14.IconLeftImage = null;
+            stateProperties14.IconRightImage = null;
+            this.buttonChronbach.OnPressedState = stateProperties14;
             this.buttonChronbach.Size = new System.Drawing.Size(164, 32);
             this.buttonChronbach.TabIndex = 31;
             this.buttonChronbach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1187,70 +1256,70 @@
             this.labeltext.TabIndex = 27;
             this.labeltext.Text = "KMO ang Bartlett test of sphericity";
             // 
-            // buttonFactorisationTest
+            // buttonRunACP
             // 
-            this.buttonFactorisationTest.AllowToggling = false;
-            this.buttonFactorisationTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFactorisationTest.AnimationSpeed = 200;
-            this.buttonFactorisationTest.AutoGenerateColors = false;
-            this.buttonFactorisationTest.BackColor = System.Drawing.Color.Transparent;
-            this.buttonFactorisationTest.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonFactorisationTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFactorisationTest.BackgroundImage")));
-            this.buttonFactorisationTest.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.buttonFactorisationTest.ButtonText = "Begin Test";
-            this.buttonFactorisationTest.ButtonTextMarginLeft = 0;
-            this.buttonFactorisationTest.ColorContrastOnClick = 45;
-            this.buttonFactorisationTest.ColorContrastOnHover = 45;
-            this.buttonFactorisationTest.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges7.BottomLeft = true;
-            borderEdges7.BottomRight = true;
-            borderEdges7.TopLeft = true;
-            borderEdges7.TopRight = true;
-            this.buttonFactorisationTest.CustomizableEdges = borderEdges7;
-            this.buttonFactorisationTest.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonFactorisationTest.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.buttonFactorisationTest.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonFactorisationTest.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonFactorisationTest.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.buttonFactorisationTest.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonFactorisationTest.ForeColor = System.Drawing.Color.White;
-            this.buttonFactorisationTest.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFactorisationTest.IconMarginLeft = 11;
-            this.buttonFactorisationTest.IconPadding = 10;
-            this.buttonFactorisationTest.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonFactorisationTest.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.buttonFactorisationTest.IdleBorderRadius = 3;
-            this.buttonFactorisationTest.IdleBorderThickness = 1;
-            this.buttonFactorisationTest.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonFactorisationTest.IdleIconLeftImage = null;
-            this.buttonFactorisationTest.IdleIconRightImage = null;
-            this.buttonFactorisationTest.IndicateFocus = false;
-            this.buttonFactorisationTest.Location = new System.Drawing.Point(638, 307);
-            this.buttonFactorisationTest.Name = "buttonFactorisationTest";
-            stateProperties13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties13.BorderRadius = 3;
-            stateProperties13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties13.BorderThickness = 1;
-            stateProperties13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties13.ForeColor = System.Drawing.Color.White;
-            stateProperties13.IconLeftImage = null;
-            stateProperties13.IconRightImage = null;
-            this.buttonFactorisationTest.onHoverState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties14.BorderRadius = 3;
-            stateProperties14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties14.BorderThickness = 1;
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties14.ForeColor = System.Drawing.Color.White;
-            stateProperties14.IconLeftImage = null;
-            stateProperties14.IconRightImage = null;
-            this.buttonFactorisationTest.OnPressedState = stateProperties14;
-            this.buttonFactorisationTest.Size = new System.Drawing.Size(82, 32);
-            this.buttonFactorisationTest.TabIndex = 24;
-            this.buttonFactorisationTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonFactorisationTest.TextMarginLeft = 0;
-            this.buttonFactorisationTest.UseDefaultRadiusAndThickness = true;
-            this.buttonFactorisationTest.Click += new System.EventHandler(this.buttonFactorisationTest_Click);
+            this.buttonRunACP.AllowToggling = false;
+            this.buttonRunACP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRunACP.AnimationSpeed = 200;
+            this.buttonRunACP.AutoGenerateColors = false;
+            this.buttonRunACP.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRunACP.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonRunACP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRunACP.BackgroundImage")));
+            this.buttonRunACP.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRunACP.ButtonText = "Run ACP";
+            this.buttonRunACP.ButtonTextMarginLeft = 0;
+            this.buttonRunACP.ColorContrastOnClick = 45;
+            this.buttonRunACP.ColorContrastOnHover = 45;
+            this.buttonRunACP.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.buttonRunACP.CustomizableEdges = borderEdges8;
+            this.buttonRunACP.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonRunACP.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonRunACP.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonRunACP.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonRunACP.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonRunACP.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonRunACP.ForeColor = System.Drawing.Color.White;
+            this.buttonRunACP.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRunACP.IconMarginLeft = 11;
+            this.buttonRunACP.IconPadding = 10;
+            this.buttonRunACP.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRunACP.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonRunACP.IdleBorderRadius = 3;
+            this.buttonRunACP.IdleBorderThickness = 1;
+            this.buttonRunACP.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonRunACP.IdleIconLeftImage = null;
+            this.buttonRunACP.IdleIconRightImage = null;
+            this.buttonRunACP.IndicateFocus = false;
+            this.buttonRunACP.Location = new System.Drawing.Point(638, 307);
+            this.buttonRunACP.Name = "buttonRunACP";
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties15.BorderRadius = 3;
+            stateProperties15.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties15.BorderThickness = 1;
+            stateProperties15.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.ForeColor = System.Drawing.Color.White;
+            stateProperties15.IconLeftImage = null;
+            stateProperties15.IconRightImage = null;
+            this.buttonRunACP.onHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties16.BorderRadius = 3;
+            stateProperties16.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties16.BorderThickness = 1;
+            stateProperties16.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties16.ForeColor = System.Drawing.Color.White;
+            stateProperties16.IconLeftImage = null;
+            stateProperties16.IconRightImage = null;
+            this.buttonRunACP.OnPressedState = stateProperties16;
+            this.buttonRunACP.Size = new System.Drawing.Size(82, 32);
+            this.buttonRunACP.TabIndex = 24;
+            this.buttonRunACP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonRunACP.TextMarginLeft = 0;
+            this.buttonRunACP.UseDefaultRadiusAndThickness = true;
+            this.buttonRunACP.Click += new System.EventHandler(this.buttonRunACP_Click);
             // 
             // btnLeft
             // 
@@ -1353,11 +1422,10 @@
             this.panelNewStats.ResumeLayout(false);
             this.panelNewStats.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNewCronbachAlpha)).EndInit();
-            this.panelACPResults.ResumeLayout(false);
-            this.panelACPResults.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipalComponents)).EndInit();
             this.factorisationResults.ResumeLayout(false);
             this.factorisationResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPCALoadings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPrincipalComponents)).EndInit();
             this.panelCronbach.ResumeLayout(false);
             this.panelCronbach.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlpha)).EndInit();
@@ -1378,7 +1446,7 @@
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuCheckBox checkBoxSphericity;
         private MetroFramework.Controls.MetroLabel labeltext;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonFactorisationTest;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonRunACP;
         private JImageButton.JImageButton btnLeft;
         private JImageButton.JImageButton btnRight;
         private System.Windows.Forms.ListBox listStatsFactors;
@@ -1393,7 +1461,6 @@
         private MetroFramework.Controls.MetroTextBox textBoxKMOIndex;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonACP;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel panelCronbach;
         private MetroFramework.Controls.MetroLabel metroLabel12;
@@ -1401,21 +1468,6 @@
         private System.Windows.Forms.DataGridView dataGridAlpha;
         private JImageButton.JImageButton buttonReduceAlpha;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonCor;
-        private System.Windows.Forms.Panel panelACPResults;
-        private System.Windows.Forms.DataGridView dataGridPrincipalComponents;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private JImageButton.JImageButton removeRmvQuestion;
-        private JImageButton.JImageButton addRmvQuestion;
-        private System.Windows.Forms.ListBox listBoxToRmvQuestions;
-        private System.Windows.Forms.ListBox listBoxQuestions;
-        private System.Windows.Forms.ListBox listBoxRmvFactors;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonNewStats;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonSave;
         private System.Windows.Forms.Panel panelNewStats;
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private JImageButton.JImageButton buttonHideNewStats;
@@ -1429,5 +1481,22 @@
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private MetroFramework.Controls.MetroTextBox textBoxNewKMO;
         private MetroFramework.Controls.MetroLabel metroLabel19;
+        private System.Windows.Forms.DataGridView dataGridPCALoadings;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private JImageButton.JImageButton removeRmvQuestion;
+        private JImageButton.JImageButton addRmvQuestion;
+        private System.Windows.Forms.ListBox listBoxToRmvQuestions;
+        private System.Windows.Forms.ListBox listBoxQuestions;
+        private System.Windows.Forms.ListBox listBoxRmvFactors;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private System.Windows.Forms.DataGridView dataGridPrincipalComponents;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonPlotPCA;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonPlotLoadings;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonNewStats;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonSave;
     }
 }
