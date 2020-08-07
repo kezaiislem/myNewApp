@@ -96,6 +96,9 @@
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.textBoxFactors = new MetroFramework.Controls.MetroTextBox();
+            this.checkBoxCustomFactors = new Bunifu.UI.WinForms.BunifuCheckBox();
             this.buttonCor = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.buttonChronbach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.checkBoxSphericity = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -165,7 +168,7 @@
             this.panelNewStats.Controls.Add(this.metroLabel14);
             this.panelNewStats.Controls.Add(this.bunifuSeparator4);
             this.panelNewStats.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNewStats.Location = new System.Drawing.Point(0, 1196);
+            this.panelNewStats.Location = new System.Drawing.Point(0, 1259);
             this.panelNewStats.Name = "panelNewStats";
             this.panelNewStats.Size = new System.Drawing.Size(743, 176);
             this.panelNewStats.TabIndex = 25;
@@ -366,7 +369,7 @@
             this.factorisationResults.Dock = System.Windows.Forms.DockStyle.Top;
             this.factorisationResults.Location = new System.Drawing.Point(0, 456);
             this.factorisationResults.Name = "factorisationResults";
-            this.factorisationResults.Size = new System.Drawing.Size(743, 740);
+            this.factorisationResults.Size = new System.Drawing.Size(743, 803);
             this.factorisationResults.TabIndex = 22;
             this.factorisationResults.Visible = false;
             // 
@@ -409,7 +412,7 @@
             this.buttonExport.IdleIconLeftImage = null;
             this.buttonExport.IdleIconRightImage = null;
             this.buttonExport.IndicateFocus = false;
-            this.buttonExport.Location = new System.Drawing.Point(614, 693);
+            this.buttonExport.Location = new System.Drawing.Point(614, 758);
             this.buttonExport.Name = "buttonExport";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             stateProperties1.BorderRadius = 3;
@@ -475,7 +478,7 @@
             this.buttonPlotPCA.IdleIconLeftImage = null;
             this.buttonPlotPCA.IdleIconRightImage = null;
             this.buttonPlotPCA.IndicateFocus = false;
-            this.buttonPlotPCA.Location = new System.Drawing.Point(458, 381);
+            this.buttonPlotPCA.Location = new System.Drawing.Point(458, 453);
             this.buttonPlotPCA.Name = "buttonPlotPCA";
             stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             stateProperties3.BorderRadius = 3;
@@ -540,7 +543,7 @@
             this.buttonPlotLoadings.IdleIconLeftImage = null;
             this.buttonPlotLoadings.IdleIconRightImage = null;
             this.buttonPlotLoadings.IndicateFocus = false;
-            this.buttonPlotLoadings.Location = new System.Drawing.Point(638, 381);
+            this.buttonPlotLoadings.Location = new System.Drawing.Point(638, 453);
             this.buttonPlotLoadings.Name = "buttonPlotLoadings";
             stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             stateProperties5.BorderRadius = 3;
@@ -578,7 +581,7 @@
             this.dataGridPCALoadings.MultiSelect = false;
             this.dataGridPCALoadings.Name = "dataGridPCALoadings";
             this.dataGridPCALoadings.ReadOnly = true;
-            this.dataGridPCALoadings.Size = new System.Drawing.Size(696, 88);
+            this.dataGridPCALoadings.Size = new System.Drawing.Size(696, 172);
             this.dataGridPCALoadings.TabIndex = 61;
             // 
             // metroLabel1
@@ -629,7 +632,7 @@
             this.buttonNewStats.IdleIconLeftImage = null;
             this.buttonNewStats.IdleIconRightImage = null;
             this.buttonNewStats.IndicateFocus = false;
-            this.buttonNewStats.Location = new System.Drawing.Point(478, 693);
+            this.buttonNewStats.Location = new System.Drawing.Point(478, 758);
             this.buttonNewStats.Name = "buttonNewStats";
             stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             stateProperties7.BorderRadius = 3;
@@ -660,7 +663,7 @@
             // 
             this.metroLabel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(524, 456);
+            this.metroLabel13.Location = new System.Drawing.Point(524, 521);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(138, 19);
             this.metroLabel13.TabIndex = 57;
@@ -670,7 +673,7 @@
             // 
             this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(242, 456);
+            this.metroLabel11.Location = new System.Drawing.Point(242, 521);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(73, 19);
             this.metroLabel11.TabIndex = 56;
@@ -680,7 +683,7 @@
             // 
             this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(26, 456);
+            this.metroLabel10.Location = new System.Drawing.Point(26, 521);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(57, 19);
             this.metroLabel10.TabIndex = 55;
@@ -697,7 +700,7 @@
             this.removeRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.Image")));
             this.removeRmvQuestion.ImageHover = null;
             this.removeRmvQuestion.InitialImage = null;
-            this.removeRmvQuestion.Location = new System.Drawing.Point(465, 580);
+            this.removeRmvQuestion.Location = new System.Drawing.Point(465, 645);
             this.removeRmvQuestion.Name = "removeRmvQuestion";
             this.removeRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
             this.removeRmvQuestion.Size = new System.Drawing.Size(32, 32);
@@ -717,7 +720,7 @@
             this.addRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.Image")));
             this.addRmvQuestion.ImageHover = null;
             this.addRmvQuestion.InitialImage = null;
-            this.addRmvQuestion.Location = new System.Drawing.Point(465, 542);
+            this.addRmvQuestion.Location = new System.Drawing.Point(465, 607);
             this.addRmvQuestion.Name = "addRmvQuestion";
             this.addRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
             this.addRmvQuestion.Size = new System.Drawing.Size(32, 32);
@@ -730,7 +733,7 @@
             // 
             this.listBoxToRmvQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxToRmvQuestions.FormattingEnabled = true;
-            this.listBoxToRmvQuestions.Location = new System.Drawing.Point(524, 478);
+            this.listBoxToRmvQuestions.Location = new System.Drawing.Point(524, 543);
             this.listBoxToRmvQuestions.Name = "listBoxToRmvQuestions";
             this.listBoxToRmvQuestions.Size = new System.Drawing.Size(196, 199);
             this.listBoxToRmvQuestions.TabIndex = 52;
@@ -739,7 +742,7 @@
             // 
             this.listBoxQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxQuestions.FormattingEnabled = true;
-            this.listBoxQuestions.Location = new System.Drawing.Point(242, 478);
+            this.listBoxQuestions.Location = new System.Drawing.Point(242, 543);
             this.listBoxQuestions.Name = "listBoxQuestions";
             this.listBoxQuestions.Size = new System.Drawing.Size(196, 199);
             this.listBoxQuestions.TabIndex = 51;
@@ -748,7 +751,7 @@
             // 
             this.listBoxRmvFactors.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listBoxRmvFactors.FormattingEnabled = true;
-            this.listBoxRmvFactors.Location = new System.Drawing.Point(26, 478);
+            this.listBoxRmvFactors.Location = new System.Drawing.Point(26, 543);
             this.listBoxRmvFactors.Name = "listBoxRmvFactors";
             this.listBoxRmvFactors.Size = new System.Drawing.Size(196, 199);
             this.listBoxRmvFactors.TabIndex = 50;
@@ -756,7 +759,7 @@
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(26, 428);
+            this.metroLabel9.Location = new System.Drawing.Point(26, 493);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(173, 19);
             this.metroLabel9.TabIndex = 49;
@@ -979,6 +982,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.metroLabel2);
+            this.panel2.Controls.Add(this.textBoxFactors);
+            this.panel2.Controls.Add(this.checkBoxCustomFactors);
             this.panel2.Controls.Add(this.buttonCor);
             this.panel2.Controls.Add(this.buttonChronbach);
             this.panel2.Controls.Add(this.checkBoxSphericity);
@@ -994,6 +1000,103 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(743, 345);
             this.panel2.TabIndex = 19;
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(60, 297);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(149, 19);
+            this.metroLabel2.TabIndex = 36;
+            this.metroLabel2.Text = "Custom factor number :";
+            // 
+            // textBoxFactors
+            // 
+            // 
+            // 
+            // 
+            this.textBoxFactors.CustomButton.Image = null;
+            this.textBoxFactors.CustomButton.Location = new System.Drawing.Point(22, 1);
+            this.textBoxFactors.CustomButton.Name = "";
+            this.textBoxFactors.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.textBoxFactors.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textBoxFactors.CustomButton.TabIndex = 1;
+            this.textBoxFactors.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textBoxFactors.CustomButton.UseSelectable = true;
+            this.textBoxFactors.CustomButton.Visible = false;
+            this.textBoxFactors.Enabled = false;
+            this.textBoxFactors.Lines = new string[0];
+            this.textBoxFactors.Location = new System.Drawing.Point(211, 294);
+            this.textBoxFactors.MaxLength = 32767;
+            this.textBoxFactors.Name = "textBoxFactors";
+            this.textBoxFactors.PasswordChar = '\0';
+            this.textBoxFactors.PromptText = "Ex : 2";
+            this.textBoxFactors.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textBoxFactors.SelectedText = "";
+            this.textBoxFactors.SelectionLength = 0;
+            this.textBoxFactors.SelectionStart = 0;
+            this.textBoxFactors.ShortcutsEnabled = true;
+            this.textBoxFactors.Size = new System.Drawing.Size(44, 23);
+            this.textBoxFactors.TabIndex = 35;
+            this.textBoxFactors.UseSelectable = true;
+            this.textBoxFactors.WaterMark = "Ex : 2";
+            this.textBoxFactors.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.textBoxFactors.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.textBoxFactors.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFactors_KeyPress);
+            // 
+            // checkBoxCustomFactors
+            // 
+            this.checkBoxCustomFactors.AllowBindingControlAnimation = true;
+            this.checkBoxCustomFactors.AllowBindingControlColorChanges = false;
+            this.checkBoxCustomFactors.AllowBindingControlLocation = true;
+            this.checkBoxCustomFactors.AllowCheckBoxAnimation = false;
+            this.checkBoxCustomFactors.AllowCheckmarkAnimation = true;
+            this.checkBoxCustomFactors.AllowOnHoverStates = true;
+            this.checkBoxCustomFactors.AutoCheck = true;
+            this.checkBoxCustomFactors.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxCustomFactors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("checkBoxCustomFactors.BackgroundImage")));
+            this.checkBoxCustomFactors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.checkBoxCustomFactors.BindingControl = null;
+            this.checkBoxCustomFactors.BindingControlPosition = Bunifu.UI.WinForms.BunifuCheckBox.BindingControlPositions.Right;
+            this.checkBoxCustomFactors.Checked = false;
+            this.checkBoxCustomFactors.CheckState = Bunifu.UI.WinForms.BunifuCheckBox.CheckStates.Unchecked;
+            this.checkBoxCustomFactors.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxCustomFactors.CustomCheckmarkImage = null;
+            this.checkBoxCustomFactors.Location = new System.Drawing.Point(37, 299);
+            this.checkBoxCustomFactors.MinimumSize = new System.Drawing.Size(17, 17);
+            this.checkBoxCustomFactors.Name = "checkBoxCustomFactors";
+            this.checkBoxCustomFactors.OnCheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.checkBoxCustomFactors.OnCheck.BorderRadius = 2;
+            this.checkBoxCustomFactors.OnCheck.BorderThickness = 2;
+            this.checkBoxCustomFactors.OnCheck.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.checkBoxCustomFactors.OnCheck.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxCustomFactors.OnCheck.CheckmarkThickness = 2;
+            this.checkBoxCustomFactors.OnDisable.BorderColor = System.Drawing.Color.LightGray;
+            this.checkBoxCustomFactors.OnDisable.BorderRadius = 2;
+            this.checkBoxCustomFactors.OnDisable.BorderThickness = 2;
+            this.checkBoxCustomFactors.OnDisable.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxCustomFactors.OnDisable.CheckmarkColor = System.Drawing.Color.LightGray;
+            this.checkBoxCustomFactors.OnDisable.CheckmarkThickness = 2;
+            this.checkBoxCustomFactors.OnHoverChecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxCustomFactors.OnHoverChecked.BorderRadius = 2;
+            this.checkBoxCustomFactors.OnHoverChecked.BorderThickness = 2;
+            this.checkBoxCustomFactors.OnHoverChecked.CheckBoxColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxCustomFactors.OnHoverChecked.CheckmarkColor = System.Drawing.Color.White;
+            this.checkBoxCustomFactors.OnHoverChecked.CheckmarkThickness = 2;
+            this.checkBoxCustomFactors.OnHoverUnchecked.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.checkBoxCustomFactors.OnHoverUnchecked.BorderRadius = 2;
+            this.checkBoxCustomFactors.OnHoverUnchecked.BorderThickness = 2;
+            this.checkBoxCustomFactors.OnHoverUnchecked.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxCustomFactors.OnUncheck.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.checkBoxCustomFactors.OnUncheck.BorderRadius = 2;
+            this.checkBoxCustomFactors.OnUncheck.BorderThickness = 2;
+            this.checkBoxCustomFactors.OnUncheck.CheckBoxColor = System.Drawing.Color.Transparent;
+            this.checkBoxCustomFactors.Size = new System.Drawing.Size(17, 17);
+            this.checkBoxCustomFactors.Style = Bunifu.UI.WinForms.BunifuCheckBox.CheckBoxStyles.Bunifu;
+            this.checkBoxCustomFactors.TabIndex = 34;
+            this.checkBoxCustomFactors.ThreeState = false;
+            this.checkBoxCustomFactors.ToolTipText = null;
+            this.checkBoxCustomFactors.CheckedChanged += new System.EventHandler<Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs>(this.checkBoxCustomFactors_CheckedChanged);
             // 
             // buttonCor
             // 
@@ -1431,5 +1534,8 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonPlotPCA;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonPlotLoadings;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonNewStats;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroTextBox textBoxFactors;
+        private Bunifu.UI.WinForms.BunifuCheckBox checkBoxCustomFactors;
     }
 }

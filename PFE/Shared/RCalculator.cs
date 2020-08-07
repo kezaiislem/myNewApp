@@ -119,7 +119,7 @@ namespace PFE.Shared
             }
         }
 
-        public static PCAResults PCA(String csvPath)
+        public static PCAResults PCA(String csvPath, int numberOfFactors)
         {
             try
             {
@@ -132,7 +132,7 @@ namespace PFE.Shared
                 //executing script
                 engine.Evaluate("library(psych)\n" +
                     "data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "pca <- principal(data, 2, rotate='varimax')\n" +
+                    "pca <- principal(data, "+ numberOfFactors +", rotate='varimax')\n" +
                     "pcaTable <- as.data.frame.matrix(rbind(pca$values, pca$values/sum(pca$values)*100, cumsum(pca$values), cumsum(pca$values/sum(pca$values)*100)))\n" +
                     "loadings <- as.data.frame.matrix(t(pca$loadings))");
 

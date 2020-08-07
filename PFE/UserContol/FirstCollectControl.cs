@@ -37,6 +37,7 @@ namespace PFE.UserContol
             listBoxQuestions.DataSource = this.viewModel.questions;
             listBoxToRmvQuestions.DataSource = this.viewModel.rmvQuestions;
             listBoxRmvFactors.DataBindings.Add("SelectedValue", this.viewModel, "selectedRmvFactor", true, DataSourceUpdateMode.OnPropertyChanged);
+            textBoxFactors.DataBindings.Add("Text", this.viewModel, "factorsText", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void btnRight_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace PFE.UserContol
                 }
                 else
                 {
-                    MessageBox.Show("An error has been occured", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("An error has been occured or number of chosen factors is more than the number of questions", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 factorisationResults.Visible = true;
             }
@@ -187,7 +188,7 @@ namespace PFE.UserContol
         private void buttonNewStats_Click(object sender, EventArgs e)
         {
             this.viewModel.calculateNewStats();
-            if(this.viewModel.newSphericityTestResults != null)
+            if (this.viewModel.newSphericityTestResults != null)
             {
                 this.textBoxNewKMO.Text = this.viewModel.newSphericityTestResults.kmo.ToString();
                 this.textBoxNewBartlett.Text = this.viewModel.newSphericityTestResults.bartlett.ToString();
@@ -212,6 +213,27 @@ namespace PFE.UserContol
                 {
                     viewModel.saveExel(saveFileDialog.FileName);
                 }
+            }
+        }
+
+        private void checkBoxCustomFactors_CheckedChanged(object sender, Bunifu.UI.WinForms.BunifuCheckBox.CheckedChangedEventArgs e)
+        {
+            this.viewModel.cutomFactorsChecked = e.Checked;
+            if (e.Checked)
+            {
+                textBoxFactors.Enabled = true;
+            }
+            else
+            {
+                textBoxFactors.Enabled = false;
+            }
+        }
+
+        private void textBoxFactors_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

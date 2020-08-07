@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Atalasoft.Imaging.ImageProcessing.Filters;
+using Newtonsoft.Json;
 using PFE.CustomObjects;
 using PFE.model;
 using PFE.Model;
@@ -40,6 +41,19 @@ namespace PFE.ViewModel
         public SphericityTestResults sphericityTestResults { get; set; }
         public SphericityTestResults newSphericityTestResults { get; set; }
         public bool sphericityTestChecked { get; set; }
+        public bool cutomFactorsChecked { get; set; }
+        public int numberOfFactors { get; set; }
+
+        public string factorsText;
+        public string FactorsText
+        {
+            get => factorsText;
+            set
+            {
+                numberOfFactors = Int16.Parse(value);
+                factorsText = value;
+            }
+        }
 
         public FirstCollectControlViewModel(Survey survey)
         {
@@ -170,9 +184,34 @@ namespace PFE.ViewModel
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/pca-tmp.csv", ";", dt);
-            PCAResults results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv");
+            PCAResults results;
+            if (cutomFactorsChecked)
+            {
+                if (numberOfFactors <= getNumberOfQuestions())
+                {
+                    results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", numberOfFactors);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", selectedFactors.Count);
+            }
             prepareACPData();
             return results;
+        }
+
+        private int getNumberOfQuestions()
+        {
+            int i = 0;
+            foreach(Factor f in selectedFactors)
+            {
+                i += f.questions.Count;
+            }
+            return i;
         }
 
         public void PlotPCA()

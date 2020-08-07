@@ -194,15 +194,7 @@ namespace PFE.Shared
                 for (int i = 0; i < dataFrame.RowCount; i++)
                 {
                     DataRow newRow = dtable.Rows.Add();
-                    switch (i)
-                    {
-                        case 0:
-                            newRow[0] = "PC 1";
-                            break;
-                        case 1:
-                            newRow[0] = "PC 2";
-                            break;
-                    }
+                    newRow[0] = "PC " + (i + 1);
                     for (int j = 0; j < dataFrame.ColumnCount; j++)
                     {
                         newRow[j + 1] = Math.Round(Double.Parse(dataFrame[i, j].ToString()), 3);

@@ -265,6 +265,15 @@
         hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
 </value>
   </data>
+  <data name="checkBoxCustomFactors.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACMSURBVDhPY6AqsK/fz2HVvSvDund3A3F4V4F9134JqHag
+        Af37Bax7dr+36d3znxQMNOy7VddOA7AhIBeAJXr23Me0ETsGqj0ONqhndwXYELAgxOQGsAARAEPPqCGj
+        hmABtDUEiPeD2MRgkFoUQ0CZCGoI6bhnTwDYEBCw6d3tgW4bIWzTvSeCgYGBAQAu2EpGc/3hZAAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
   <data name="buttonCor.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKQAAAAgCAYAAACclNOPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
