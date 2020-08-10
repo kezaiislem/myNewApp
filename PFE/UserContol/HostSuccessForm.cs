@@ -37,7 +37,7 @@ namespace PFE.UserContol
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(hostId);
+            Clipboard.SetText("http://localhost:4200/survey/" + this.hostId);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

@@ -187,12 +187,19 @@ namespace PFE.UserContol
 
         private void buttonNewStats_Click(object sender, EventArgs e)
         {
-            this.viewModel.calculateNewStats();
-            if (this.viewModel.newSphericityTestResults != null)
+            string err = this.viewModel.calculateNewStats();
+            if (err == null)
             {
-                this.textBoxNewKMO.Text = this.viewModel.newSphericityTestResults.kmo.ToString();
-                this.textBoxNewBartlett.Text = this.viewModel.newSphericityTestResults.bartlett.ToString();
-                panelNewStats.Show();
+                if (this.viewModel.newSphericityTestResults != null)
+                {
+                    this.textBoxNewKMO.Text = this.viewModel.newSphericityTestResults.kmo.ToString();
+                    this.textBoxNewBartlett.Text = this.viewModel.newSphericityTestResults.bartlett.ToString();
+                    panelNewStats.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show(err, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

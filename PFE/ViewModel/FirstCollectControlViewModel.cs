@@ -268,7 +268,7 @@ namespace PFE.ViewModel
             }
         }
 
-        public void calculateNewStats()
+        public string calculateNewStats()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             foreach(Question q in this.rmvQuestions)
@@ -277,12 +277,13 @@ namespace PFE.ViewModel
             }
             if (dt.Columns.Count < 2)
             {
-                // hahahahahahahahahahaha
+                return "Number of questions must be 2 or higher";
             }
             else
             {
                 Exporter.exportCsv(Path.GetTempPath() + "/new-results-tmp.csv", ";", dt);
                 this.newSphericityTestResults = RCalculator.SphericityTest(Path.GetTempPath() + "/new-results-tmp.csv");
+                return null;
             }
         }
 
