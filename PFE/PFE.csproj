@@ -258,182 +258,182 @@
     <Compile Include="Shared\Exporter.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
     <Compile Include="Shared\RCalculator.cs" />
-    <Compile Include="UserContol\AddEventForm.cs">
+    <Compile Include="GUI\Events\AddEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddEventForm.Designer.cs">
+    <Compile Include="GUI\Events\AddEventForm.Designer.cs">
       <DependentUpon>AddEventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddHypothesisForm.cs">
+    <Compile Include="GUI\Survey\Hypothesis\AddHypothesisForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddHypothesisForm.Designer.cs">
+    <Compile Include="GUI\Survey\Hypothesis\AddHypothesisForm.Designer.cs">
       <DependentUpon>AddHypothesisForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddQuestionForm.cs">
+    <Compile Include="GUI\Survey\Factor\AddQuestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddQuestionForm.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\AddQuestionForm.Designer.cs">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddMailForm.cs">
+    <Compile Include="GUI\Survey\AddMailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddMailForm.Designer.cs">
+    <Compile Include="GUI\Survey\AddMailForm.Designer.cs">
       <DependentUpon>AddMailForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\CheckChoiceControl.cs">
+    <Compile Include="GUI\Survey\Factor\CheckChoiceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\CheckChoiceControl.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ConfirmatoryAnalysisControl.cs">
+    <Compile Include="GUI\Analysis\ConfirmatoryAnalysisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ConfirmatoryAnalysisControl.Designer.cs">
+    <Compile Include="GUI\Analysis\ConfirmatoryAnalysisControl.Designer.cs">
       <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\HypothesisControl.cs">
+    <Compile Include="GUI\Survey\Hypothesis\HypothesisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\HypothesisControl.Designer.cs">
+    <Compile Include="GUI\Survey\Hypothesis\HypothesisControl.Designer.cs">
       <DependentUpon>HypothesisControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\FirstCollectControl.cs">
+    <Compile Include="GUI\Analysis\FirstCollectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\FirstCollectControl.Designer.cs">
+    <Compile Include="GUI\Analysis\FirstCollectControl.Designer.cs">
       <DependentUpon>FirstCollectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\StatisticsControl.cs">
+    <Compile Include="GUI\Analysis\StatisticsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\StatisticsControl.Designer.cs">
+    <Compile Include="GUI\Analysis\StatisticsControl.Designer.cs">
       <DependentUpon>StatisticsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ResultSurveyControl.cs">
+    <Compile Include="GUI\Analysis\ResultSurveyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ResultSurveyControl.Designer.cs">
+    <Compile Include="GUI\Analysis\ResultSurveyControl.Designer.cs">
       <DependentUpon>ResultSurveyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\RadioChoiceControl.cs">
+    <Compile Include="GUI\Survey\Factor\RadioChoiceControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\RadioChoiceControl.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\RadioChoiceControl.Designer.cs">
       <DependentUpon>RadioChoiceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\RadioBoxQuestionControl.cs">
+    <Compile Include="GUI\Survey\Factor\RadioBoxQuestionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\RadioBoxQuestionControl.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\RadioBoxQuestionControl.Designer.cs">
       <DependentUpon>RadioBoxQuestionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ProjectPlanControl.cs">
+    <Compile Include="GUI\Events\ProjectPlanControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ProjectPlanControl.Designer.cs">
+    <Compile Include="GUI\Events\ProjectPlanControl.Designer.cs">
       <DependentUpon>ProjectPlanControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\QuestionResultControl.cs">
+    <Compile Include="GUI\Results\QuestionResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\QuestionResultControl.Designer.cs">
+    <Compile Include="GUI\Results\QuestionResultControl.Designer.cs">
       <DependentUpon>QuestionResultControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\HostSuccessForm.cs">
+    <Compile Include="GUI\Survey\Host\HostSuccessForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\HostSuccessForm.Designer.cs">
+    <Compile Include="GUI\Survey\Host\HostSuccessForm.Designer.cs">
       <DependentUpon>HostSuccessForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddSurveyForm.cs">
+    <Compile Include="GUI\EvauationModel\AddSurveyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddSurveyForm.Designer.cs">
+    <Compile Include="GUI\EvauationModel\AddSurveyForm.Designer.cs">
       <DependentUpon>AddSurveyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\AddFactorForm.cs">
+    <Compile Include="GUI\Survey\AddFactorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\AddFactorForm.Designer.cs">
+    <Compile Include="GUI\Survey\AddFactorForm.Designer.cs">
       <DependentUpon>AddFactorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\HostForm.cs">
+    <Compile Include="GUI\Survey\Host\HostForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\HostForm.Designer.cs">
+    <Compile Include="GUI\Survey\Host\HostForm.Designer.cs">
       <DependentUpon>HostForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ResultsControl.cs">
+    <Compile Include="GUI\Results\ResultsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ResultsControl.Designer.cs">
+    <Compile Include="GUI\Results\ResultsControl.Designer.cs">
       <DependentUpon>ResultsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ModelSurveyControl.cs">
+    <Compile Include="GUI\EvauationModel\ModelSurveyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ModelSurveyControl.Designer.cs">
+    <Compile Include="GUI\EvauationModel\ModelSurveyControl.Designer.cs">
       <DependentUpon>ModelSurveyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ModelInfo.cs">
+    <Compile Include="GUI\EvauationModel\ModelInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ModelInfo.Designer.cs">
+    <Compile Include="GUI\EvauationModel\ModelInfo.Designer.cs">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\SectionResultControl.cs">
+    <Compile Include="GUI\Results\SectionResultControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\SectionResultControl.Designer.cs">
+    <Compile Include="GUI\Results\SectionResultControl.Designer.cs">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\HypothesisTabControl.cs">
+    <Compile Include="GUI\Survey\Hypothesis\HypothesisTabControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\HypothesisTabControl.Designer.cs">
+    <Compile Include="GUI\Survey\Hypothesis\HypothesisTabControl.Designer.cs">
       <DependentUpon>HypothesisTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ValidationControl.cs">
+    <Compile Include="GUI\Analysis\ValidationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ValidationControl.Designer.cs">
+    <Compile Include="GUI\Analysis\ValidationControl.Designer.cs">
       <DependentUpon>ValidationControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\SurveyTabControl.cs">
+    <Compile Include="GUI\Results\SurveyTabControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\SurveyTabControl.Designer.cs">
+    <Compile Include="GUI\Results\SurveyTabControl.Designer.cs">
       <DependentUpon>SurveyTabControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ObjectiveControl.cs">
+    <Compile Include="GUI\ProjectContext\ObjectiveControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ObjectiveControl.Designer.cs">
+    <Compile Include="GUI\ProjectContext\ObjectiveControl.Designer.cs">
       <DependentUpon>ObjectiveControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Field.cs" />
     <Compile Include="model\Project.cs" />
     <Compile Include="model\Session.cs" />
     <Compile Include="model\User.cs" />
-    <Compile Include="NewProjectForm.cs">
+    <Compile Include="GUI\NewProjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewProjectForm.Designer.cs">
+    <Compile Include="GUI\NewProjectForm.Designer.cs">
       <DependentUpon>NewProjectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -441,46 +441,46 @@
     <Compile Include="Shared\ComboboxItem.cs" />
     <Compile Include="Shared\Data.cs" />
     <Compile Include="Shared\RestHelper.cs" />
-    <Compile Include="UserContol\PhaseControl.cs">
+    <Compile Include="GUI\Survey\PhaseControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\PhaseControl.Designer.cs">
+    <Compile Include="GUI\Survey\PhaseControl.Designer.cs">
       <DependentUpon>PhaseControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\SurveysControl.cs">
+    <Compile Include="GUI\Results\SurveysControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\SurveysControl.Designer.cs">
+    <Compile Include="GUI\Results\SurveysControl.Designer.cs">
       <DependentUpon>SurveysControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\ProjectContext.cs">
+    <Compile Include="GUI\ProjectContext\ProjectContext.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\ProjectContext.Designer.cs">
+    <Compile Include="GUI\ProjectContext\ProjectContext.Designer.cs">
       <DependentUpon>ProjectContext.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\LikertQuestionControl.cs">
+    <Compile Include="GUI\Survey\Factor\LikertQuestionControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\LikertQuestionControl.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\LikertQuestionControl.Designer.cs">
       <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\FactorControl.cs">
+    <Compile Include="GUI\Survey\Factor\FactorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserContol\FactorControl.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\FactorControl.Designer.cs">
       <DependentUpon>FactorControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\QuestionSuggestionForm.cs">
+    <Compile Include="GUI\Survey\Factor\QuestionSuggestionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\QuestionSuggestionForm.Designer.cs">
+    <Compile Include="GUI\Survey\Factor\QuestionSuggestionForm.Designer.cs">
       <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserContol\FactorSugesstionForm.cs">
+    <Compile Include="GUI\Survey\FactorSugesstionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserContol\FactorSugesstionForm.Designer.cs">
+    <Compile Include="GUI\Survey\FactorSugesstionForm.Designer.cs">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddHypothesisViewModel.cs" />
@@ -515,13 +515,13 @@
     <Compile Include="Welcome From.Designer.cs">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewProjectForm.resx">
+    <EmbeddedResource Include="GUI\NewProjectForm.resx">
       <DependentUpon>NewProjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -534,103 +534,103 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserContol\AddEventForm.resx">
+    <EmbeddedResource Include="GUI\Events\AddEventForm.resx">
       <DependentUpon>AddEventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddHypothesisForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Hypothesis\AddHypothesisForm.resx">
       <DependentUpon>AddHypothesisForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddQuestionForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddMailForm.resx">
+    <EmbeddedResource Include="GUI\Survey\AddMailForm.resx">
       <DependentUpon>AddMailForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\CheckChoiceControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ConfirmatoryAnalysisControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\ConfirmatoryAnalysisControl.resx">
       <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\HypothesisControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Hypothesis\HypothesisControl.resx">
       <DependentUpon>HypothesisControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\FirstCollectControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\FirstCollectControl.resx">
       <DependentUpon>FirstCollectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\StatisticsControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\StatisticsControl.resx">
       <DependentUpon>StatisticsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ResultSurveyControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\ResultSurveyControl.resx">
       <DependentUpon>ResultSurveyControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\RadioChoiceControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\RadioChoiceControl.resx">
       <DependentUpon>RadioChoiceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\RadioBoxQuestionControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\RadioBoxQuestionControl.resx">
       <DependentUpon>RadioBoxQuestionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ProjectPlanControl.resx">
+    <EmbeddedResource Include="GUI\Events\ProjectPlanControl.resx">
       <DependentUpon>ProjectPlanControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\QuestionResultControl.resx">
+    <EmbeddedResource Include="GUI\Results\QuestionResultControl.resx">
       <DependentUpon>QuestionResultControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\HostSuccessForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Host\HostSuccessForm.resx">
       <DependentUpon>HostSuccessForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddSurveyForm.resx">
+    <EmbeddedResource Include="GUI\EvauationModel\AddSurveyForm.resx">
       <DependentUpon>AddSurveyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\AddFactorForm.resx">
+    <EmbeddedResource Include="GUI\Survey\AddFactorForm.resx">
       <DependentUpon>AddFactorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\HostForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Host\HostForm.resx">
       <DependentUpon>HostForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ResultsControl.resx">
+    <EmbeddedResource Include="GUI\Results\ResultsControl.resx">
       <DependentUpon>ResultsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ModelSurveyControl.resx">
+    <EmbeddedResource Include="GUI\EvauationModel\ModelSurveyControl.resx">
       <DependentUpon>ModelSurveyControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ModelInfo.resx">
+    <EmbeddedResource Include="GUI\EvauationModel\ModelInfo.resx">
       <DependentUpon>ModelInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\SectionResultControl.resx">
+    <EmbeddedResource Include="GUI\Results\SectionResultControl.resx">
       <DependentUpon>SectionResultControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\HypothesisTabControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Hypothesis\HypothesisTabControl.resx">
       <DependentUpon>HypothesisTabControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ValidationControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\ValidationControl.resx">
       <DependentUpon>ValidationControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\SurveyTabControl.resx">
+    <EmbeddedResource Include="GUI\Results\SurveyTabControl.resx">
       <DependentUpon>SurveyTabControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ObjectiveControl.resx">
+    <EmbeddedResource Include="GUI\ProjectContext\ObjectiveControl.resx">
       <DependentUpon>ObjectiveControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\PhaseControl.resx">
+    <EmbeddedResource Include="GUI\Survey\PhaseControl.resx">
       <DependentUpon>PhaseControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\SurveysControl.resx">
+    <EmbeddedResource Include="GUI\Results\SurveysControl.resx">
       <DependentUpon>SurveysControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\ProjectContext.resx">
+    <EmbeddedResource Include="GUI\ProjectContext\ProjectContext.resx">
       <DependentUpon>ProjectContext.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\LikertQuestionControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\LikertQuestionControl.resx">
       <DependentUpon>LikertQuestionControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\FactorControl.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\FactorControl.resx">
       <DependentUpon>FactorControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\QuestionSuggestionForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Factor\QuestionSuggestionForm.resx">
       <DependentUpon>QuestionSuggestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserContol\FactorSugesstionForm.resx">
+    <EmbeddedResource Include="GUI\Survey\FactorSugesstionForm.resx">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome From.resx">
@@ -834,6 +834,7 @@
   <ItemGroup>
     <None Include="Resources\reduce.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets" Condition="Exists('..\packages\Atalasoft.dotImage.Lib.x64.11.2.0.4372\build\Atalasoft.dotImage.Lib.x64.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
