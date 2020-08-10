@@ -236,5 +236,17 @@ namespace PFE.UserContol
                 e.Handled = true;
             }
         }
+
+        private void buttonParallel_Click(object sender, EventArgs e)
+        {
+            if (this.viewModel.selectedFactors.Count >= 2)
+            {
+                this.viewModel.Parallel();
+            }
+            else
+            {
+                MessageBox.Show("You must select at least two factors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

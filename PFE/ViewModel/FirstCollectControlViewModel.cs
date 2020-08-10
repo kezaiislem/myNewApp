@@ -204,6 +204,13 @@ namespace PFE.ViewModel
             return results;
         }
 
+        public void Parallel()
+        {
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
+            Exporter.exportCsv(Path.GetTempPath() + "/parallel-tmp.csv", ";", dt);
+            RCalculator.Parallel(Path.GetTempPath() + "/parallel-tmp.csv");
+        }
+
         private int getNumberOfQuestions()
         {
             int i = 0;

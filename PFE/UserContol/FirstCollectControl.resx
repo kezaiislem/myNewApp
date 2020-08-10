@@ -265,6 +265,16 @@
         hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
 </value>
   </data>
+  <data name="buttonParallel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHIAAAAgCAYAAADOmyyBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVGhD7duxCUIxFIXhO4qDWGhjJYI7+F6IeZoFBCvB
+        xtLOCbSysBNHcQErJ4hE0ghvAHP4D/zd7b42MSY059yg7eLFe5+onpou3rJdYTRbhPiYb45peLhTRU23
+        p9Qu18/CaJZ1+w7p/8t2hRHImgNSJCBFAlIkIEUCUiQgRQJSJCBFAlIkIEUCUiQgRQJSJCBFAlIkIEUC
+        UiQgRQJSJCBFAlIkIEUCUiQgRfqBzM/OJ7tz7yH9b+P9NbU+vAvj9xPPyIXVK+tSPWXEJsRZYWT1z+wD
+        KdSwnn1XbPUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="checkBoxCustomFactors.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

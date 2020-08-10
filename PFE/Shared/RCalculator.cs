@@ -38,6 +38,31 @@ namespace PFE.Shared
 
         }
 
+        public static void Parallel(String csvPath)
+        {
+            try
+            {
+                REngine engine;
+                //init the R engine            
+                engine = getInststance();
+
+                csvPath = csvPath.Replace('\\', '/');
+
+                //executing script
+                engine.Evaluate("library(nFactors)\n");
+                engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n");
+                engine.Evaluate("ev <- eigen(cor(data))\n");
+                engine.Evaluate("ap <- parallel(subject = nrow(data), var = ncol(data), rep = 100, cent = .95)\n");
+                engine.Evaluate("nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)\n");
+                engine.Evaluate("plotnScree(nS)");
+
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+        }
+
         public static SphericityTestResults SphericityTest(String csvPath)
         {
             try
