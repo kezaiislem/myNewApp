@@ -72,7 +72,7 @@ namespace PFE
 
         private void logOut_Click(object sender, EventArgs e)
         {
-            LoginForm l = new LoginForm();
+            NewUserForm l = new NewUserForm();
             l.Show();
             this.Hide();
         }

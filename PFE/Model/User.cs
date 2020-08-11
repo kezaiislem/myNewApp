@@ -17,5 +17,6 @@ namespace PFE.Model
 		public string adress { get; set; }
 		//public List<Project> projects { get; set; }
 		public string phoneNumber { get; set; }
+		public Role role { get; set; }
 	}
 }

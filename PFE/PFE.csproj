@@ -102,6 +102,10 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
@@ -245,6 +249,12 @@
     <Compile Include="CustomObjects\QuestionType.cs" />
     <Compile Include="CustomObjects\MailingRequest.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
+    <Compile Include="GUI\NewUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\NewUserForm.Designer.cs">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\Answer.cs" />
     <Compile Include="model\Factor.cs" />
     <Compile Include="model\Hypothesis.cs" />
@@ -254,6 +264,7 @@
     <Compile Include="model\Question.cs" />
     <Compile Include="model\Survey.cs" />
     <Compile Include="model\Host.cs" />
+    <Compile Include="model\Role.cs" />
     <Compile Include="Shared\DataTableManager.cs" />
     <Compile Include="Shared\Exporter.cs" />
     <Compile Include="Shared\ProjectHandler.cs" />
@@ -483,6 +494,7 @@
     <Compile Include="GUI\Survey\FactorSugesstionForm.Designer.cs">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\NewUserFormViewModel.cs" />
     <Compile Include="ViewModel\AddHypothesisViewModel.cs" />
     <Compile Include="ViewModel\AddSurveyFormViewModel.cs" />
     <Compile Include="ViewModel\AddQuestionFormViewModel.cs" />
@@ -509,10 +521,10 @@
     <Compile Include="ViewModel\ProjectContextViewModel.cs" />
     <Compile Include="ViewModel\QuestionSugestionViewModel.cs" />
     <Compile Include="ViewModel\FactorSugesstionViewModel.cs" />
-    <Compile Include="Welcome From.cs">
+    <Compile Include="GUI\Welcome From.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Welcome From.Designer.cs">
+    <Compile Include="GUI\Welcome From.Designer.cs">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GUI\LoginForm.resx">
@@ -520,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NewUserForm.resx">
+      <DependentUpon>NewUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NewProjectForm.resx">
       <DependentUpon>NewProjectForm.cs</DependentUpon>
@@ -633,7 +648,7 @@
     <EmbeddedResource Include="GUI\Survey\FactorSugesstionForm.resx">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Welcome From.resx">
+    <EmbeddedResource Include="GUI\Welcome From.resx">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
