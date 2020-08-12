@@ -115,6 +115,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
       <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\Desktop\PFE DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -287,10 +290,10 @@
     <Compile Include="GUI\Survey\Factor\AddQuestionForm.Designer.cs">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Survey\AddMailForm.cs">
+    <Compile Include="GUI\Survey\Host\AddMailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Survey\AddMailForm.Designer.cs">
+    <Compile Include="GUI\Survey\Host\AddMailForm.Designer.cs">
       <DependentUpon>AddMailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Survey\Factor\CheckChoiceControl.cs">
@@ -558,7 +561,7 @@
     <EmbeddedResource Include="GUI\Survey\Factor\AddQuestionForm.resx">
       <DependentUpon>AddQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Survey\AddMailForm.resx">
+    <EmbeddedResource Include="GUI\Survey\Host\AddMailForm.resx">
       <DependentUpon>AddMailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Survey\Factor\CheckChoiceControl.resx">

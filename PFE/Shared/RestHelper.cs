@@ -271,5 +271,70 @@ namespace PFE.Shared
             }
             return String.Empty;
         }
+        
+        public static async Task<bool> checkUsername(string username)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "chkU/" + username))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return Boolean.Parse(data);
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static async Task<bool> checkEmail(string email)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "chkE/" + email))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return Boolean.Parse(data);
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+
+        public static async Task<bool> addUser(User user)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var myContent = JsonConvert.SerializeObject(user);
+                var buffer = Encoding.UTF8.GetBytes(myContent);
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage resonse = await client.PostAsync(BaseUrl + "newUser", byteContent))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return Boolean.Parse(data);
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
