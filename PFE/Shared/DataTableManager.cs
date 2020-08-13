@@ -111,7 +111,7 @@ namespace PFE.Shared
                         foreach (Question q in f.questions)
                         {
                             i++;
-                            dt.Columns[q.text].ColumnName = f.title + i;
+                            dt.Columns[q.text].ColumnName = f.title + "_" + i;
                         }
                     }
                 }

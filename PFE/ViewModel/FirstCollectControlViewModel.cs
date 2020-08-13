@@ -246,7 +246,7 @@ namespace PFE.ViewModel
                 int i = 1;
                 foreach (Question question in factor.questions)
                 {
-                    Question q = new Question { text = f.title + i };
+                    Question q = new Question { text = f.title + "_" + i };
                     f.questions.Add(q);
                     i++;
                 }

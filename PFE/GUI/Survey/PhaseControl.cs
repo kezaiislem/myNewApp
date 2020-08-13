@@ -24,7 +24,7 @@ namespace PFE.UserContol
 
         PhaseControlViewModel viewModel;
 
-        FactorControl activeSection;
+        FactorControl activeFactor;
 
         HypothesisControl hypothesisControl;
 
@@ -59,11 +59,11 @@ namespace PFE.UserContol
                 this.hypothesisControl.Dispose();
                 this.hypothesisControl = null;
             }
-            if (activeSection != null)
+            if (activeFactor != null)
             {
-                this.activeSection.Dispose();
+                this.activeFactor.Dispose();
             }
-            this.activeSection = section;
+            this.activeFactor = section;
             this.panelSectionContent.Controls.Add(section);
         }
 
@@ -99,33 +99,34 @@ namespace PFE.UserContol
 
         private void addFactor(Factor factor)
         {
-            Button panelSection = new Button();
-            panelSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            panelSection.Dock = System.Windows.Forms.DockStyle.Top;
-            panelSection.FlatAppearance.BorderSize = 0;
-            panelSection.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            panelSection.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            panelSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            panelSection.ForeColor = System.Drawing.Color.White;
-            panelSection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            panelSection.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            panelSection.Height = 40;
-            panelSection.Text = factor.title;
-            panelSection.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            panelSection.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            panelSection.UseVisualStyleBackColor = false;
-            panelSection.Click += (s, ev) => factorClick(factor);
-            panelSections.Controls.Add(panelSection);
-            panelSections.Controls.SetChildIndex(panelSection, 0);
+            Button buttonFactor = new Button();
+            buttonFactor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            buttonFactor.Dock = System.Windows.Forms.DockStyle.Top;
+            buttonFactor.FlatAppearance.BorderSize = 0;
+            buttonFactor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            buttonFactor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            buttonFactor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            buttonFactor.ForeColor = System.Drawing.Color.White;
+            buttonFactor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonFactor.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            buttonFactor.Height = 40;
+            buttonFactor.Text = factor.title;
+            buttonFactor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            buttonFactor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            buttonFactor.UseVisualStyleBackColor = false;
+            buttonFactor.Click += (s, ev) => factorClick(factor, buttonFactor);
+            panelSections.Controls.Add(buttonFactor);
+            panelSections.Controls.SetChildIndex(buttonFactor, 0);
         }
 
-        public void factorClick(Factor factor)
+        public void factorClick(Factor factor, Button factorButton)
         {
-            FactorControl sectionControl = new FactorControl(factor);
-            sectionControl.Visible = true;
-            sectionControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            sectionControl.AutoScaleMode = AutoScaleMode.None;
-            this.swichSection(sectionControl);
+            FactorControl factorControl = new FactorControl(factor, factorButton);
+            factorControl.PropertyChanged += FactorRemoved;
+            factorControl.Visible = true;
+            factorControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            factorControl.AutoScaleMode = AutoScaleMode.None;
+            this.swichSection(factorControl);
         }
 
         public static void removeFactor()
@@ -213,10 +214,10 @@ namespace PFE.UserContol
 
         private void buttonHypothesis_Click(object sender, EventArgs e)
         {
-            if(activeSection != null)
+            if(activeFactor != null)
             {
-                activeSection.Dispose();
-                activeSection = null;
+                activeFactor.Dispose();
+                activeFactor = null;
             }
             if(hypothesisControl == null)
             {
@@ -230,7 +231,18 @@ namespace PFE.UserContol
                 this.hypothesisControl.Show();
                 this.panelSectionContent.Controls.Add(hypothesisControl);
             }
-            
+        }
+
+        private void FactorRemoved(object o, PropertyChangedEventArgs e)
+        {
+            if (o != null)
+            {
+                FactorControl control = (FactorControl)o;
+                this.panelSections.Controls.Remove(control.factorButton);
+                this.viewModel.survey.factors.Remove(control.viewModel.factor);
+                this.panelSectionContent.Controls.Remove(control);
+                this.activeFactor = null;
+            }
         }
     }
 }

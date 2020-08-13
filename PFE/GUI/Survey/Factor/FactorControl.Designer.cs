@@ -35,10 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddQuestion = new Guna.UI.WinForms.GunaCircleButton();
             this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.buttonRemoveFactor = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveFactor)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -70,11 +72,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonRemoveFactor);
             this.panel2.Controls.Add(this.labelDescription);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 49);
+            this.panel2.Size = new System.Drawing.Size(760, 67);
             this.panel2.TabIndex = 1;
             // 
             // labelDescription
@@ -129,16 +132,32 @@
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(15, 15);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(63, 20);
+            this.labelTitle.Size = new System.Drawing.Size(55, 20);
             this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Section";
+            this.labelTitle.Text = "Factor";
             // 
-            // SectionControl
+            // buttonRemoveFactor
+            // 
+            this.buttonRemoveFactor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemoveFactor.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRemoveFactor.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveFactor.ImageActive = null;
+            this.buttonRemoveFactor.Location = new System.Drawing.Point(720, 9);
+            this.buttonRemoveFactor.Name = "buttonRemoveFactor";
+            this.buttonRemoveFactor.Size = new System.Drawing.Size(24, 24);
+            this.buttonRemoveFactor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonRemoveFactor.TabIndex = 6;
+            this.buttonRemoveFactor.TabStop = false;
+            this.buttonRemoveFactor.Visible = false;
+            this.buttonRemoveFactor.Zoom = 10;
+            this.buttonRemoveFactor.Click += new System.EventHandler(this.buttonRemoveFactor_Click);
+            // 
+            // FactorControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.bunifuCards2);
-            this.Name = "SectionControl";
+            this.Name = "FactorControl";
             this.Size = new System.Drawing.Size(760, 561);
             this.bunifuCards2.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
@@ -146,6 +165,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveFactor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +179,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel labelDescription;
+        private Bunifu.Framework.UI.BunifuImageButton buttonRemoveFactor;
     }
 }

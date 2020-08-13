@@ -18,9 +18,13 @@ namespace PFE.UserContol
     {
 
         public FactorControlViewModel viewModel { get; set; }
+        public Button factorButton { get; set; }
 
-        public FactorControl(Factor factor)
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public FactorControl(Factor factor, Button factorButton)
         {
+            this.factorButton = factorButton;
             viewModel = new FactorControlViewModel(factor);
             InitializeComponent();
             LoadQuestions();
@@ -106,6 +110,20 @@ namespace PFE.UserContol
             questionControl.AutoScaleMode = AutoScaleMode.None;
             mainPanel.Controls.Add(questionControl);
             mainPanel.Controls.SetChildIndex(questionControl, 0);
+        }
+
+        private void buttonRemoveFactor_Click(object sender, EventArgs e)
+        {
+            NotifyOnPropertyRemoved("remove");
+        }
+
+        private void NotifyOnPropertyRemoved(string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
