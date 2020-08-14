@@ -1514,9 +1514,9 @@
             this.labelTitle.ForeColor = System.Drawing.Color.White;
             this.labelTitle.Location = new System.Drawing.Point(15, 15);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(92, 20);
+            this.labelTitle.Size = new System.Drawing.Size(150, 20);
             this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "First Collect";
+            this.labelTitle.Text = "Exploratory Analysis";
             // 
             // FirstCollectControl
             // 

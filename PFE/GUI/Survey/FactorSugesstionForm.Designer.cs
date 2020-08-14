@@ -131,9 +131,9 @@
             this.metroLabel3.ForeColor = System.Drawing.Color.White;
             this.metroLabel3.Location = new System.Drawing.Point(42, 95);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(49, 19);
             this.metroLabel3.TabIndex = 16;
-            this.metroLabel3.Text = "Field";
+            this.metroLabel3.Text = "Nature";
             this.metroLabel3.UseCustomBackColor = true;
             this.metroLabel3.UseCustomForeColor = true;
             // 

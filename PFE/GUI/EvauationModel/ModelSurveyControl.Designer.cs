@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModelSurveyControl));
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.textBoxTitle = new MetroFramework.Controls.MetroTextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonApply = new JImageButton.JImageButton();
+            this.textBoxDescription = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ButtonRemove = new JImageButton.JImageButton();
             this.buttonEdit = new JImageButton.JImageButton();
@@ -39,18 +46,11 @@
             this.labelPhase = new MetroFramework.Controls.MetroLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.labelTitle = new MetroFramework.Controls.MetroLabel();
-            this.panelEdit = new System.Windows.Forms.Panel();
-            this.textBoxTitle = new MetroFramework.Controls.MetroTextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonApply = new JImageButton.JImageButton();
-            this.textBoxDescription = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.bunifuCards1.SuspendLayout();
             this.panelMain.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.panelEdit.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -82,128 +82,6 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(326, 280);
             this.panelMain.TabIndex = 1;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.ButtonRemove, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEdit, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.buttonEnter, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(72, 217);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(181, 42);
-            this.tableLayoutPanel1.TabIndex = 22;
-            // 
-            // ButtonRemove
-            // 
-            this.ButtonRemove.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ButtonRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ButtonRemove.BackColor = System.Drawing.Color.Transparent;
-            this.ButtonRemove.CausesValidation = false;
-            this.ButtonRemove.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ButtonRemove.ErrorImage = ((System.Drawing.Image)(resources.GetObject("ButtonRemove.ErrorImage")));
-            this.ButtonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
-            this.ButtonRemove.ImageHover = null;
-            this.ButtonRemove.InitialImage = null;
-            this.ButtonRemove.Location = new System.Drawing.Point(134, 5);
-            this.ButtonRemove.Name = "ButtonRemove";
-            this.ButtonRemove.Padding = new System.Windows.Forms.Padding(2);
-            this.ButtonRemove.Size = new System.Drawing.Size(32, 32);
-            this.ButtonRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ButtonRemove.TabIndex = 3;
-            this.ButtonRemove.Zoom = 1;
-            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEdit.CausesValidation = false;
-            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonEdit.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEdit.ErrorImage")));
-            this.buttonEdit.Image = global::PFE.Properties.Resources.pencil;
-            this.buttonEdit.ImageHover = null;
-            this.buttonEdit.InitialImage = null;
-            this.buttonEdit.Location = new System.Drawing.Point(74, 5);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Padding = new System.Windows.Forms.Padding(2);
-            this.buttonEdit.Size = new System.Drawing.Size(32, 32);
-            this.buttonEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.buttonEdit.TabIndex = 2;
-            this.buttonEdit.Zoom = 1;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonEnter
-            // 
-            this.buttonEnter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonEnter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonEnter.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEnter.CausesValidation = false;
-            this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonEnter.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEnter.ErrorImage")));
-            this.buttonEnter.Image = global::PFE.Properties.Resources.register;
-            this.buttonEnter.ImageHover = null;
-            this.buttonEnter.InitialImage = null;
-            this.buttonEnter.Location = new System.Drawing.Point(14, 5);
-            this.buttonEnter.Name = "buttonEnter";
-            this.buttonEnter.Padding = new System.Windows.Forms.Padding(2);
-            this.buttonEnter.Size = new System.Drawing.Size(32, 32);
-            this.buttonEnter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.buttonEnter.TabIndex = 1;
-            this.buttonEnter.Zoom = 1;
-            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
-            // 
-            // labelDescription
-            // 
-            this.labelDescription.Location = new System.Drawing.Point(17, 59);
-            this.labelDescription.Name = "labelDescription";
-            this.labelDescription.Size = new System.Drawing.Size(291, 146);
-            this.labelDescription.TabIndex = 21;
-            this.labelDescription.Text = "lnformation sur le model and what to do ext";
-            this.labelDescription.WrapToLine = true;
-            // 
-            // labelPhase
-            // 
-            this.labelPhase.AutoSize = true;
-            this.labelPhase.Location = new System.Drawing.Point(256, 20);
-            this.labelPhase.Name = "labelPhase";
-            this.labelPhase.Size = new System.Drawing.Size(52, 19);
-            this.labelPhase.TabIndex = 20;
-            this.labelPhase.Text = "Phase 1";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(17, 39);
-            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(291, 10);
-            this.bunifuSeparator1.TabIndex = 19;
-            this.bunifuSeparator1.Transparency = 128;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.labelTitle.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.labelTitle.ForeColor = System.Drawing.Color.Black;
-            this.labelTitle.Location = new System.Drawing.Point(17, 14);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(233, 25);
-            this.labelTitle.TabIndex = 18;
-            this.labelTitle.Text = "Model Info";
-            this.labelTitle.UseCustomBackColor = true;
-            this.labelTitle.UseCustomForeColor = true;
             // 
             // panelEdit
             // 
@@ -338,6 +216,128 @@
             this.metroLabel1.Text = "Survey Title";
             this.metroLabel1.WrapToLine = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.ButtonRemove, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonEdit, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonEnter, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(72, 217);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(181, 42);
+            this.tableLayoutPanel1.TabIndex = 22;
+            // 
+            // ButtonRemove
+            // 
+            this.ButtonRemove.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ButtonRemove.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ButtonRemove.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonRemove.CausesValidation = false;
+            this.ButtonRemove.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ButtonRemove.ErrorImage = ((System.Drawing.Image)(resources.GetObject("ButtonRemove.ErrorImage")));
+            this.ButtonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.ButtonRemove.ImageHover = null;
+            this.ButtonRemove.InitialImage = null;
+            this.ButtonRemove.Location = new System.Drawing.Point(134, 5);
+            this.ButtonRemove.Name = "ButtonRemove";
+            this.ButtonRemove.Padding = new System.Windows.Forms.Padding(2);
+            this.ButtonRemove.Size = new System.Drawing.Size(32, 32);
+            this.ButtonRemove.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ButtonRemove.TabIndex = 3;
+            this.ButtonRemove.Zoom = 1;
+            this.ButtonRemove.Click += new System.EventHandler(this.ButtonRemove_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonEdit.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEdit.CausesValidation = false;
+            this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonEdit.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEdit.ErrorImage")));
+            this.buttonEdit.Image = global::PFE.Properties.Resources.pencil;
+            this.buttonEdit.ImageHover = null;
+            this.buttonEdit.InitialImage = null;
+            this.buttonEdit.Location = new System.Drawing.Point(74, 5);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonEdit.Size = new System.Drawing.Size(32, 32);
+            this.buttonEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonEdit.TabIndex = 2;
+            this.buttonEdit.Zoom = 1;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonEnter
+            // 
+            this.buttonEnter.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonEnter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonEnter.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEnter.CausesValidation = false;
+            this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonEnter.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEnter.ErrorImage")));
+            this.buttonEnter.Image = global::PFE.Properties.Resources.register;
+            this.buttonEnter.ImageHover = null;
+            this.buttonEnter.InitialImage = null;
+            this.buttonEnter.Location = new System.Drawing.Point(14, 5);
+            this.buttonEnter.Name = "buttonEnter";
+            this.buttonEnter.Padding = new System.Windows.Forms.Padding(2);
+            this.buttonEnter.Size = new System.Drawing.Size(32, 32);
+            this.buttonEnter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonEnter.TabIndex = 1;
+            this.buttonEnter.Zoom = 1;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnter_Click);
+            // 
+            // labelDescription
+            // 
+            this.labelDescription.Location = new System.Drawing.Point(17, 59);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(291, 146);
+            this.labelDescription.TabIndex = 21;
+            this.labelDescription.Text = "lnformation sur le model and what to do ext";
+            this.labelDescription.WrapToLine = true;
+            // 
+            // labelPhase
+            // 
+            this.labelPhase.AutoSize = true;
+            this.labelPhase.Location = new System.Drawing.Point(256, 20);
+            this.labelPhase.Name = "labelPhase";
+            this.labelPhase.Size = new System.Drawing.Size(52, 19);
+            this.labelPhase.TabIndex = 20;
+            this.labelPhase.Text = "Phase 1";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(17, 39);
+            this.bunifuSeparator1.Margin = new System.Windows.Forms.Padding(0);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(291, 10);
+            this.bunifuSeparator1.TabIndex = 19;
+            this.bunifuSeparator1.Transparency = 128;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitle.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.labelTitle.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelTitle.ForeColor = System.Drawing.Color.Black;
+            this.labelTitle.Location = new System.Drawing.Point(17, 14);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(233, 25);
+            this.labelTitle.TabIndex = 18;
+            this.labelTitle.Text = "Model Info";
+            this.labelTitle.UseCustomBackColor = true;
+            this.labelTitle.UseCustomForeColor = true;
+            // 
             // ModelSurveyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,10 +349,10 @@
             this.bunifuCards1.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

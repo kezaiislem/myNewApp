@@ -26,6 +26,11 @@ namespace PFE.UserContol
         {
             InitializeComponent();
             viewModel = new ValidationControlViewModel(model);
+            labelStepDescription.Text = "This application allows you to apply both exploratory and confirmatory analyzes to your surveys data within these conditions\n\n" +
+                "   1 - R must be installed in your pc with the folowing libraries (psych, nFactors, GridExrtra)\n" +
+                "   2 - Your survey must have at least two factors\n" +
+                "   3 - Your survey must be hosted\n" +
+                "   4 - The number of answers must be greater than the total number of questions";
             loadSurveys();
         }
 

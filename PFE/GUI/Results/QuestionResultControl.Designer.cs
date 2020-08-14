@@ -38,16 +38,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelQuestion.Location = new System.Drawing.Point(24, 19);
             this.labelQuestion.Name = "labelQuestion";
-            this.labelQuestion.Size = new System.Drawing.Size(360, 213);
+            this.labelQuestion.Size = new System.Drawing.Size(346, 213);
             this.labelQuestion.TabIndex = 0;
             this.labelQuestion.Text = "metroLabel1";
+            this.labelQuestion.WrapToLine = true;
             // 
             // pieChart
             // 
             this.pieChart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pieChart.Location = new System.Drawing.Point(349, 19);
+            this.pieChart.Location = new System.Drawing.Point(376, 19);
             this.pieChart.Name = "pieChart";
-            this.pieChart.Size = new System.Drawing.Size(421, 213);
+            this.pieChart.Size = new System.Drawing.Size(394, 213);
             this.pieChart.TabIndex = 1;
             this.pieChart.Text = "pieChart1";
             this.pieChart.Visible = false;

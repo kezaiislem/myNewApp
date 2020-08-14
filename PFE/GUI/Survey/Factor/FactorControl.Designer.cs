@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FactorControl));
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -35,12 +36,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonAddQuestion = new Guna.UI.WinForms.GunaCircleButton();
             this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.buttonRemoveFactor = new Bunifu.Framework.UI.BunifuImageButton();
+            this.buttonRemoveFactor = new JImageButton.JImageButton();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveFactor)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -72,7 +72,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.buttonRemoveFactor);
             this.panel2.Controls.Add(this.labelDescription);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -92,6 +91,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel1.Controls.Add(this.buttonRemoveFactor);
             this.panel1.Controls.Add(this.buttonAddQuestion);
             this.panel1.Controls.Add(this.labelTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -138,18 +138,21 @@
             // 
             // buttonRemoveFactor
             // 
-            this.buttonRemoveFactor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRemoveFactor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonRemoveFactor.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveFactor.Image = global::PFE.Properties.Resources.criss_cross;
-            this.buttonRemoveFactor.ImageActive = null;
-            this.buttonRemoveFactor.Location = new System.Drawing.Point(720, 9);
+            this.buttonRemoveFactor.CausesValidation = false;
+            this.buttonRemoveFactor.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonRemoveFactor.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonRemoveFactor.ErrorImage")));
+            this.buttonRemoveFactor.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonRemoveFactor.ImageHover = null;
+            this.buttonRemoveFactor.InitialImage = null;
+            this.buttonRemoveFactor.Location = new System.Drawing.Point(687, 12);
             this.buttonRemoveFactor.Name = "buttonRemoveFactor";
+            this.buttonRemoveFactor.Padding = new System.Windows.Forms.Padding(2);
             this.buttonRemoveFactor.Size = new System.Drawing.Size(24, 24);
-            this.buttonRemoveFactor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.buttonRemoveFactor.TabIndex = 6;
-            this.buttonRemoveFactor.TabStop = false;
-            this.buttonRemoveFactor.Visible = false;
-            this.buttonRemoveFactor.Zoom = 10;
+            this.buttonRemoveFactor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.buttonRemoveFactor.TabIndex = 7;
+            this.buttonRemoveFactor.Zoom = 1;
             this.buttonRemoveFactor.Click += new System.EventHandler(this.buttonRemoveFactor_Click);
             // 
             // FactorControl
@@ -165,7 +168,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonRemoveFactor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -179,6 +181,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel labelDescription;
-        private Bunifu.Framework.UI.BunifuImageButton buttonRemoveFactor;
+        private JImageButton.JImageButton buttonRemoveFactor;
     }
 }

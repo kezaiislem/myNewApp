@@ -40,7 +40,7 @@ namespace PFE.ViewModel
                 factors.Add(new Factor { title = "Communication", description = "Communication description", evaluationFactor = true });
                 factors.Add(new Factor { title = "Adaptabillity", description = "Adaptabillity description", evaluationFactor = true });
                 factors.Add(new Factor { title = "Usefullness", description = "Usefullness description", evaluationFactor = true });
-
+                selectedItem = factors.First<Factor>();
             }
             catch (Exception ex)
             {

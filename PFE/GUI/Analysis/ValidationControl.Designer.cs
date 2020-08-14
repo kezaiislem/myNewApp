@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.labelStepDescription = new MetroFramework.Controls.MetroLabel();
             this.panelSurveysContainer = new System.Windows.Forms.Panel();
             this.bunifuCards2.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             this.bunifuCards2.BorderRadius = 15;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.bunifuCards2.Controls.Add(this.metroLabel3);
+            this.bunifuCards2.Controls.Add(this.labelStepDescription);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(18, 18);
             this.bunifuCards2.Name = "bunifuCards2";
@@ -51,13 +51,16 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1028, 254);
             this.bunifuCards2.TabIndex = 11;
             // 
-            // metroLabel3
+            // labelStepDescription
             // 
-            this.metroLabel3.Location = new System.Drawing.Point(15, 19);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(994, 215);
-            this.metroLabel3.TabIndex = 9;
-            this.metroLabel3.Text = "Description de cette etape";
+            this.labelStepDescription.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.labelStepDescription.Location = new System.Drawing.Point(15, 19);
+            this.labelStepDescription.Name = "labelStepDescription";
+            this.labelStepDescription.Size = new System.Drawing.Size(994, 215);
+            this.labelStepDescription.TabIndex = 9;
+            this.labelStepDescription.Text = "This application allows you to apply both exploratory and confirmatory analyses t" +
+    "o your surveys data within these conditions";
+            this.labelStepDescription.WrapToLine = true;
             // 
             // panelSurveysContainer
             // 
@@ -85,7 +88,7 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel labelStepDescription;
         private System.Windows.Forms.Panel panelSurveysContainer;
     }
 }

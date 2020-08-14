@@ -44,10 +44,17 @@ namespace PFE.UserContol
             var tmp = PropertyChanged;
             if (tmp != null)
             {
-                StatisticsControl statisticsControl = new StatisticsControl(this.viewModel.survey.host.id);
-                statisticsControl.Dock = DockStyle.Fill;
-                statisticsControl.AutoScaleMode = AutoScaleMode.None;
-                tmp(statisticsControl, new PropertyChangedEventArgs(propertyName));
+                if (this.viewModel.survey.host != null)
+                {
+                    StatisticsControl statisticsControl = new StatisticsControl(this.viewModel.survey.host.id);
+                    statisticsControl.Dock = DockStyle.Fill;
+                    statisticsControl.AutoScaleMode = AutoScaleMode.None;
+                    tmp(statisticsControl, new PropertyChangedEventArgs(propertyName));
+                }
+                else
+                {
+                    MessageBox.Show("This survey is not yet hosted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

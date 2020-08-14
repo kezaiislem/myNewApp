@@ -101,7 +101,7 @@ namespace PFE.UserContol
             {
                 questionsCount += factor.questions.Count;
             }
-            if (questionsCount > this.viewModel.personalAnswers.Count)
+            if (questionsCount >= this.viewModel.personalAnswers.Count)
             {
                 MessageBox.Show("Number of answers must be higher than number of questions", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
