@@ -41,6 +41,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -50,9 +53,6 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panelNewStats = new System.Windows.Forms.Panel();
@@ -99,6 +99,7 @@
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonParallel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.textBoxFactors = new MetroFramework.Controls.MetroTextBox();
             this.checkBoxCustomFactors = new Bunifu.UI.WinForms.BunifuCheckBox();
@@ -114,7 +115,6 @@
             this.labelDescription = new MetroFramework.Controls.MetroLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.buttonParallel = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panelNewStats.SuspendLayout();
@@ -1006,6 +1006,72 @@
             this.panel2.Size = new System.Drawing.Size(743, 345);
             this.panel2.TabIndex = 19;
             // 
+            // buttonParallel
+            // 
+            this.buttonParallel.AllowToggling = false;
+            this.buttonParallel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonParallel.AnimationSpeed = 200;
+            this.buttonParallel.AutoGenerateColors = false;
+            this.buttonParallel.BackColor = System.Drawing.Color.Transparent;
+            this.buttonParallel.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonParallel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonParallel.BackgroundImage")));
+            this.buttonParallel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonParallel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonParallel.ButtonText = "Parallel Analysis";
+            this.buttonParallel.ButtonTextMarginLeft = 0;
+            this.buttonParallel.ColorContrastOnClick = 45;
+            this.buttonParallel.ColorContrastOnHover = 45;
+            this.buttonParallel.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.buttonParallel.CustomizableEdges = borderEdges5;
+            this.buttonParallel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonParallel.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonParallel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonParallel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonParallel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonParallel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonParallel.ForeColor = System.Drawing.Color.White;
+            this.buttonParallel.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonParallel.IconMarginLeft = 11;
+            this.buttonParallel.IconPadding = 10;
+            this.buttonParallel.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonParallel.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonParallel.IdleBorderRadius = 3;
+            this.buttonParallel.IdleBorderThickness = 1;
+            this.buttonParallel.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonParallel.IdleIconLeftImage = null;
+            this.buttonParallel.IdleIconRightImage = null;
+            this.buttonParallel.IndicateFocus = false;
+            this.buttonParallel.Location = new System.Drawing.Point(178, 307);
+            this.buttonParallel.Name = "buttonParallel";
+            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties9.BorderRadius = 3;
+            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties9.BorderThickness = 1;
+            stateProperties9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties9.ForeColor = System.Drawing.Color.White;
+            stateProperties9.IconLeftImage = null;
+            stateProperties9.IconRightImage = null;
+            this.buttonParallel.onHoverState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties10.BorderRadius = 3;
+            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties10.BorderThickness = 1;
+            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties10.ForeColor = System.Drawing.Color.White;
+            stateProperties10.IconLeftImage = null;
+            stateProperties10.IconRightImage = null;
+            this.buttonParallel.OnPressedState = stateProperties10;
+            this.buttonParallel.Size = new System.Drawing.Size(114, 32);
+            this.buttonParallel.TabIndex = 37;
+            this.buttonParallel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonParallel.TextMarginLeft = 0;
+            this.buttonParallel.UseDefaultRadiusAndThickness = true;
+            this.buttonParallel.Click += new System.EventHandler(this.buttonParallel_Click);
+            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
@@ -1451,72 +1517,6 @@
             this.labelTitle.Size = new System.Drawing.Size(92, 20);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "First Collect";
-            // 
-            // buttonParallel
-            // 
-            this.buttonParallel.AllowToggling = false;
-            this.buttonParallel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonParallel.AnimationSpeed = 200;
-            this.buttonParallel.AutoGenerateColors = false;
-            this.buttonParallel.BackColor = System.Drawing.Color.Transparent;
-            this.buttonParallel.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonParallel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonParallel.BackgroundImage")));
-            this.buttonParallel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonParallel.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.buttonParallel.ButtonText = "Parallel Analysis";
-            this.buttonParallel.ButtonTextMarginLeft = 0;
-            this.buttonParallel.ColorContrastOnClick = 45;
-            this.buttonParallel.ColorContrastOnHover = 45;
-            this.buttonParallel.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.buttonParallel.CustomizableEdges = borderEdges5;
-            this.buttonParallel.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonParallel.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.buttonParallel.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonParallel.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonParallel.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.buttonParallel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonParallel.ForeColor = System.Drawing.Color.White;
-            this.buttonParallel.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonParallel.IconMarginLeft = 11;
-            this.buttonParallel.IconPadding = 10;
-            this.buttonParallel.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonParallel.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.buttonParallel.IdleBorderRadius = 3;
-            this.buttonParallel.IdleBorderThickness = 1;
-            this.buttonParallel.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonParallel.IdleIconLeftImage = null;
-            this.buttonParallel.IdleIconRightImage = null;
-            this.buttonParallel.IndicateFocus = false;
-            this.buttonParallel.Location = new System.Drawing.Point(178, 307);
-            this.buttonParallel.Name = "buttonParallel";
-            stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties9.BorderRadius = 3;
-            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties9.BorderThickness = 1;
-            stateProperties9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties9.ForeColor = System.Drawing.Color.White;
-            stateProperties9.IconLeftImage = null;
-            stateProperties9.IconRightImage = null;
-            this.buttonParallel.onHoverState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties10.BorderRadius = 3;
-            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties10.BorderThickness = 1;
-            stateProperties10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties10.ForeColor = System.Drawing.Color.White;
-            stateProperties10.IconLeftImage = null;
-            stateProperties10.IconRightImage = null;
-            this.buttonParallel.OnPressedState = stateProperties10;
-            this.buttonParallel.Size = new System.Drawing.Size(114, 32);
-            this.buttonParallel.TabIndex = 37;
-            this.buttonParallel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonParallel.TextMarginLeft = 0;
-            this.buttonParallel.UseDefaultRadiusAndThickness = true;
-            this.buttonParallel.Click += new System.EventHandler(this.buttonParallel_Click);
             // 
             // FirstCollectControl
             // 

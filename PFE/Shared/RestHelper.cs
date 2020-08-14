@@ -252,6 +252,26 @@ namespace PFE.Shared
             return String.Empty;
         }
 
+        public static async Task<String> getSurvey(string id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage resonse = await client.GetAsync(BaseUrl + "survey/" + id))
+                {
+                    using (HttpContent content = resonse.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Debug.WriteLine(data);
+                            return data;
+                        }
+                    }
+                }
+            }
+            return String.Empty;
+        }
+
         public static async Task<String> getPersonalAnswers(long id)
         {
             using (HttpClient client = new HttpClient())

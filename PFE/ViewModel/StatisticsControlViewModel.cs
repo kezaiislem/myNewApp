@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PFE.CustomObjects;
+using PFE.model;
 using PFE.Model;
 using PFE.Shared;
 using PFE.UserContol;
@@ -15,26 +16,26 @@ namespace PFE.ViewModel
     {
         public Survey survey { get; set; }
 
-        public StatisticsControlViewModel(Survey survey )
+        public StatisticsControlViewModel(String id)
         {
-            this.survey = survey;
-            //Task.Run(async () => await getSurveys());
+            Task.Run(async () => await loadSurvey(id));
         }
 
-        /*private async Task getSurveys()
+        public async Task loadSurvey(string id)
         {
             try
             {
-                String data = await RestHelper.getModelSurveys(this.modelId);
+                String data = await RestHelper.getSurvey(id);
                 if (data != "")
                 {
-                    this.surveys = JsonConvert.DeserializeObject<List<CustomSurveysObject>>(data);
+                    Survey survey = JsonConvert.DeserializeObject<Survey>(data);
+                    this.survey = survey;
                 }
             }
             catch (Exception ex)
             {
-                this.surveys = new List<CustomSurveysObject>();
+                this.survey = null;
             }
-        }*/
+        }
     }
 }

@@ -30,18 +30,18 @@ namespace PFE.UserContol
         ConfirmatoryAnalysisControl confirmatoryAnalysisControl;
 
 
-        public StatisticsControl(Survey survey)
+        public StatisticsControl(String id)
         {
             InitializeComponent();
-            Init(survey);
+            Init(id);
         }
 
-        private void Init(Survey survey)
+        private void Init(String id)
         {
             panelSections.Controls.SetChildIndex(panel2, 0);
             panelSections.Controls.SetChildIndex(buttonExploratoryAnalysis, 0);
             panelSections.Controls.SetChildIndex(buttonConfirmatory, 0);
-            this.viewModel = new StatisticsControlViewModel(survey);
+            this.viewModel = new StatisticsControlViewModel(id);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -51,19 +51,27 @@ namespace PFE.UserContol
 
         private void buttonExploratoryAnalysis_Click(object sender, EventArgs e)
         {
-            this.hideConfirmatoryAnalisis();
-            if (this.firstCollectConrol != null)
+            if (this.viewModel.survey != null)
             {
-                firstCollectConrol.Show();
+                this.hideConfirmatoryAnalisis();
+                if (this.firstCollectConrol != null)
+                {
+                    firstCollectConrol.Show();
+                }
+                else
+                {
+                    this.firstCollectConrol = new FirstCollectControl(this.viewModel.survey);
+                    this.firstCollectConrol.Dock = DockStyle.Fill;
+                    this.firstCollectConrol.AutoScaleMode = AutoScaleMode.None;
+                    this.firstCollectConrol.Show();
+                    this.panelStepContent.Controls.Add(firstCollectConrol);
+                }
             }
             else
             {
-                this.firstCollectConrol = new FirstCollectControl(this.viewModel.survey);
-                this.firstCollectConrol.Dock = DockStyle.Fill;
-                this.firstCollectConrol.AutoScaleMode = AutoScaleMode.None;
-                this.firstCollectConrol.Show();
-                this.panelStepContent.Controls.Add(firstCollectConrol);
+                MessageBox.Show("Cant load survey please check ur connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void buttonConfirmatory_Click(object sender, EventArgs e)

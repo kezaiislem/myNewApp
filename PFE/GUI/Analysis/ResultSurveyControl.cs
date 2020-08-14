@@ -44,7 +44,7 @@ namespace PFE.UserContol
             var tmp = PropertyChanged;
             if (tmp != null)
             {
-                StatisticsControl statisticsControl = new StatisticsControl(this.viewModel.survey);
+                StatisticsControl statisticsControl = new StatisticsControl(this.viewModel.survey.host.id);
                 statisticsControl.Dock = DockStyle.Fill;
                 statisticsControl.AutoScaleMode = AutoScaleMode.None;
                 tmp(statisticsControl, new PropertyChangedEventArgs(propertyName));
