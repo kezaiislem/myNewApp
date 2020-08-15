@@ -124,6 +124,75 @@ namespace PFE.Shared
             return null;
         }
 
+        public static DataTable prepareConfirmatoryEvalTable(List<Factor> factors, List<CustomPersonalAnswer> personalAnswers, List<Question> rmvquestions)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                foreach (Factor f in factors)
+                {
+                    if (f.evaluationFactor)
+                    {
+                        foreach (Question q in f.questions)
+                        {
+                            dt.Columns.Add(q.text, typeof(string));
+                        }
+                    }
+                }
+                List<DataRow> dataRows = new List<DataRow>();
+                foreach (CustomPersonalAnswer answer in personalAnswers)
+                {
+                    DataRow dataRow = dt.NewRow();
+                    for (int i = 0; i < answer.answers.Count; i++)
+                    {
+                        if (answer.questions.ElementAt(i).type <= QuestionTypes.LIKERT_7)
+                        {
+                            try
+                            {
+                                dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
+                            }
+                            catch (Exception e)
+                            {
+
+                            }
+                        }
+                    }
+                    dt.Rows.Add(dataRow);
+                }
+
+                foreach(Question q in rmvquestions)
+                {
+                    dt.Columns.Remove(q.text);
+                }
+
+                foreach (Factor f in factors)
+                {
+                    if (f.evaluationFactor)
+                    {
+                        int i = 0;
+                        foreach (Question q in f.questions)
+                        {
+                            try
+                            {
+                                i++;
+                                dt.Columns[q.text].ColumnName = f.title + "_" + i;
+                            }
+                            catch (NullReferenceException ex)
+                            {
+                                i--;
+                            }
+                        }
+                    }
+                }
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            return null;
+        }
+
         public static DataTable PCATableToDataTable(RDotNet.DataFrame dataFrame)
         {
             try

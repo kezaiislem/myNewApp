@@ -70,7 +70,11 @@ namespace PFE.UserContol
                 request.subject = "Survey Link";
                 request.destinations = items.ToList<String>();
                 Task.Run(async () => await RestHelper.shareSurvey(hostId, request));
-                MessageBox.Show("Survey shared successfuly");           
+                MessageBox.Show("Survey shared successfuly", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+            }
+            else
+            {
+                MessageBox.Show("You must at least add one email adress", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -69,26 +69,38 @@ namespace PFE.UserContol
             }
             else
             {
-                MessageBox.Show("Cant load survey please check ur connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                surveyError();
             }
-            
+
         }
 
         private void buttonConfirmatory_Click(object sender, EventArgs e)
         {
-            this.hideExploratoryAnalisis();
-            if (this.confirmatoryAnalysisControl != null)
+            if (this.viewModel.survey != null)
             {
-                confirmatoryAnalysisControl.Show();
+                this.hideExploratoryAnalisis();
+                if (this.confirmatoryAnalysisControl != null)
+                {
+                    confirmatoryAnalysisControl.Show();
+                }
+                else
+                {
+                    this.confirmatoryAnalysisControl = new ConfirmatoryAnalysisControl(this.viewModel.survey);
+                    this.confirmatoryAnalysisControl.Dock = DockStyle.Fill;
+                    this.confirmatoryAnalysisControl.AutoScaleMode = AutoScaleMode.None;
+                    this.confirmatoryAnalysisControl.Show();
+                    this.panelStepContent.Controls.Add(confirmatoryAnalysisControl);
+                }
             }
             else
             {
-                this.confirmatoryAnalysisControl = new ConfirmatoryAnalysisControl(this.viewModel.survey);
-                this.confirmatoryAnalysisControl.Dock = DockStyle.Fill;
-                this.confirmatoryAnalysisControl.AutoScaleMode = AutoScaleMode.None;
-                this.confirmatoryAnalysisControl.Show();
-                this.panelStepContent.Controls.Add(confirmatoryAnalysisControl);
+                surveyError();
             }
+        }
+
+        private void surveyError() 
+        {
+            MessageBox.Show("Cant load survey please check ur connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void hideExploratoryAnalisis()
@@ -98,7 +110,7 @@ namespace PFE.UserContol
                 this.firstCollectConrol.Hide();
             }
         }
-        
+
         private void hideConfirmatoryAnalisis()
         {
             if (this.confirmatoryAnalysisControl != null)

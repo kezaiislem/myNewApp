@@ -39,7 +39,7 @@ namespace PFE.UserContol
             }
             else
             {
-                MessageBox.Show("Invalid Mail adress", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Invalid email adress", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

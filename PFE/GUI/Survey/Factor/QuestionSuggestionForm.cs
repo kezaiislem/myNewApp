@@ -33,8 +33,8 @@ namespace PFE.UserContol
 
         private async void metroButtonSearch_Click(object sender, EventArgs e)
         {
-            List<Question> sections = await viewModel.loadSuggestions();
-            gridResult.DataSource = sections;
+            List<Question> questions = await viewModel.loadSuggestions();
+            gridResult.DataSource = questions;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

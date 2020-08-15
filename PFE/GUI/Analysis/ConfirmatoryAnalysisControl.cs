@@ -30,7 +30,43 @@ namespace PFE.UserContol
 
         private void Init(Survey survey)
         {
-            viewModel = new ConfirmatoryAnalysisControlViewModel(survey);
+            this.viewModel = new ConfirmatoryAnalysisControlViewModel(survey);
+            listBoxFactors.DataSource = viewModel.factors;
+            listBoxQuestions.DataSource = viewModel.questions;
+            listBoxToRmvQuestions.DataSource = viewModel.rmvQuestions;
+            listBoxFactors.DataBindings.Add("SelectedValue", this.viewModel, "selectedFactor", true, DataSourceUpdateMode.OnPropertyChanged);
+            listBoxQuestions.DataBindings.Add("SelectedValue", this.viewModel, "selectedQuestion", true, DataSourceUpdateMode.OnPropertyChanged);
+            listBoxToRmvQuestions.DataBindings.Add("SelectedValue", this.viewModel, "selectedRmvQuestion", true, DataSourceUpdateMode.OnPropertyChanged);
+        }
+
+        private void buttonRunCFA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addRmvQuestion_Click(object sender, EventArgs e)
+        {
+            this.viewModel.addRmvQuestion();
+        }
+
+        private void removeRmvQuestion_Click(object sender, EventArgs e)
+        {
+            this.viewModel.removeRmvQuestion();
+        }
+
+        private void buttonChronbach_Click(object sender, EventArgs e)
+        {
+            var msg = this.viewModel.validateChrobach();
+            if (msg == null)
+            {
+                DataTable dt = this.viewModel.calculateChrobachTable();
+                dataGridAlpha.DataSource = dt;
+                panelCronbach.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

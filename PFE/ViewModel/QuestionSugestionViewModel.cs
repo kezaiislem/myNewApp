@@ -22,9 +22,16 @@ namespace PFE.ViewModel
 
         public async Task<List<Question>> loadSuggestions()
         {
-            String data = await RestHelper.loadQuestionSuggestion(requestObject);
-            List<Question> result = JsonConvert.DeserializeObject<List<Question>>(data);
-            return result;
+            try
+            {
+                String data = await RestHelper.loadQuestionSuggestion(requestObject);
+                List<Question> result = JsonConvert.DeserializeObject<List<Question>>(data);
+                return result;
+            }
+            catch(Exception e)
+            {
+                return new List<Question>();
+            }
         }
     }
 }

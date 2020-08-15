@@ -143,14 +143,13 @@ namespace PFE.UserContol
                     var result = form.ShowDialog();
                     if (result == DialogResult.OK)
                     {
-                        String res = await RestHelper.hostSurvey(this.viewModel.survey);
-                        Survey survey = JsonConvert.DeserializeObject<Survey>(res);
-                        if (survey != null)
+                        Survey survey = await viewModel.hostSurvey();
+                        if(survey == null)
                         {
-                            this.viewModel.survey.host = survey.host;
-                            this.viewModel.survey.id = survey.id;
-                            this.viewModel.survey.model.id = survey.model.id;
-                            ProjectHandler.saveProject();
+                            MessageBox.Show("Cant reach server, please check your internet connection and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (survey.host != null)
+                        {
                             using (var formS = new HostSuccessForm(survey.host.id))
                             {
                                 formS.ShowDialog();
