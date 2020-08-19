@@ -57,7 +57,7 @@ namespace PFE.Shared
                 engine.Evaluate("plotnScree(nS)");
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }
@@ -119,7 +119,7 @@ namespace PFE.Shared
                 Console.WriteLine(e.StackTrace);
             }
         }
-        
+
         public static void plotPrincipalCompnnents(String csvPath)
         {
             try
@@ -155,11 +155,22 @@ namespace PFE.Shared
                 csvPath = csvPath.Replace('\\', '/');
 
                 //executing script
-                engine.Evaluate("library(psych)\n" +
+                if (numberOfFactors > 0)
+                {
+                    engine.Evaluate("library(psych)\n" +
                     "data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "pca <- principal(data, "+ numberOfFactors +", rotate='varimax')\n" +
+                    "pca <- principal(data, " + numberOfFactors + ", rotate='varimax')\n" +
                     "pcaTable <- as.data.frame.matrix(rbind(pca$values, pca$values/sum(pca$values)*100, cumsum(pca$values), cumsum(pca$values/sum(pca$values)*100)))\n" +
                     "loadings <- as.data.frame.matrix(t(pca$loadings))");
+                }
+                else
+                {
+                    engine.Evaluate("library(psych)\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "pca <- principal(data, rotate='varimax')\n" +
+                    "pcaTable <- as.data.frame.matrix(rbind(pca$values, pca$values/sum(pca$values)*100, cumsum(pca$values), cumsum(pca$values/sum(pca$values)*100)))\n" +
+                    "loadings <- as.data.frame.matrix(t(pca$loadings))");
+                }
 
                 PCAResults pCAResults = new PCAResults();
                 pCAResults.pcaTable = engine.GetSymbol("pcaTable").AsDataFrame();

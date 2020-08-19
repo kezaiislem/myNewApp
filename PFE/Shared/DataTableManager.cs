@@ -95,10 +95,7 @@ namespace PFE.Shared
                             {
                                 dataRow[answer.questions.ElementAt(i).text] = answer.answers.ElementAt(i).value;
                             }
-                            catch (Exception e)
-                            {
-
-                            }
+                            catch { }
                         }
                     }
                     dt.Rows.Add(dataRow);

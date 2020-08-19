@@ -20,48 +20,39 @@ namespace PFE.ViewModel
     public class FirstCollectControlViewModel
     {
         public Survey survey { get; set; }
-        public BindingList<Factor> selectedFactors { get; set; }
         public BindingList<Factor> originalFactors { get; set; }
-        public BindingList<Factor> rmvFactors { get; set; }
-        public BindingList<Question> questions { get; set; }
-        public BindingList<Question> rmvQuestions { get; set; }
+        public BindingList<Question> originalQuestions { get; set; }
+        public BindingList<Question> excludedQuestions { get; set; }
 
-        public Factor selectedRmvFactor;
+        public List<Factor> selectedFactors;
 
-        public Factor SelectedRmvFactor
+        public Factor selectedFactor;
+
+        public Factor SelectedFactor
         {
-            get => selectedRmvFactor;
+            get => selectedFactor;
             set
             {
-                selectedRmvFactor = value;
+                selectedFactor = value;
                 UpdateQuestions();
             }
         }
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
         public SphericityTestResults sphericityTestResults { get; set; }
         public SphericityTestResults newSphericityTestResults { get; set; }
-        public bool sphericityTestChecked { get; set; }
-        public bool cutomFactorsChecked { get; set; }
         public int numberOfFactors { get; set; }
-
-        public string factorsText;
-        public string FactorsText
-        {
-            get => factorsText;
-            set
-            {
-                numberOfFactors = Int16.Parse(value);
-                factorsText = value;
-            }
-        }
+        public DataTable chronbachTable { get; set; }
 
         public FirstCollectControlViewModel(Survey survey)
         {
             this.survey = survey;
             this.originalFactors = new BindingList<Factor>();
-            this.rmvFactors = new BindingList<Factor>();
-            this.questions = new BindingList<Question>();
-            this.rmvQuestions = new BindingList<Question>();
+            this.originalQuestions = new BindingList<Question>();
+            this.excludedQuestions = new BindingList<Question>();
+            this.excludedQuestions.ListChanged += (sender, e) =>
+            {
+                UpdateSelectedFactors();
+            };
             foreach (Factor f in survey.factors)
             {
                 if (f.evaluationFactor)
@@ -69,7 +60,7 @@ namespace PFE.ViewModel
                     this.originalFactors.Add(f);
                 }
             }
-            selectedFactors = new BindingList<Factor>();
+            UpdateSelectedFactors();
             Task.Run(async () => await getAnswers());
         }
 
@@ -95,14 +86,11 @@ namespace PFE.ViewModel
             }
         }
 
-        public void calculateFirstResults()
+        private SphericityTestResults calculateSpherity()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            Exporter.exportCsv(Path.GetTempPath() + "/factorisation-test.csv", ";", dt);
-            if (sphericityTestChecked)
-            {
-                this.sphericityTestResults = RCalculator.SphericityTest(Path.GetTempPath() + "/factorisation-test.csv");
-            }
+            Exporter.exportCsv(Path.GetTempPath() + "/spherity-test.csv", ";", dt);
+            return RCalculator.SphericityTest(Path.GetTempPath() + "/spherity-test.csv");
         }
 
         public string validateCorelationMatrix()
@@ -130,25 +118,37 @@ namespace PFE.ViewModel
             RCalculator.showCorelationTable(Path.GetTempPath() + "/corelation-tmp.csv");
         }
 
-        public string validateChrobach()
+        private string validateFiabilityTest()
         {
-            if (selectedFactors.Count < 1)
-            {
-                return "Tou must at least select one factor";
-            }
             if (personalAnswers == null)
             {
                 this.reloadAnswers();
-                return "An error has been occured please check your connection and restart again";
+                return "An error has been occured please check your connection and restart again.";
             }
-            if (personalAnswers.Count == 0)
+            if (selectedFactors.Count < 1)
             {
-                return "There are no answers";
+                return "Tou must at least select one factor.";
+            }
+            if (personalAnswers.Count <= this.getNumberOfQuestions())
+            {
+                return "The number of answers must be higher than the number of questions.";
             }
             return null;
         }
 
-        public DataTable calculateChrobachTable()
+        public string fiabilityTest()
+        {
+            string validate = validateFiabilityTest();
+            if (validate != null)
+            {
+                return validate;
+            }
+            this.chronbachTable = calculateCronbachTable();
+            this.sphericityTestResults = calculateSpherity();
+            return null;
+        }
+
+        private DataTable calculateCronbachTable()
         {
             DataTable temp;
             DataTable result = new DataTable();
@@ -177,44 +177,30 @@ namespace PFE.ViewModel
                 }
             }
             result.Rows.Add(dataRow);
+
             return result;
         }
 
-        public PCAResults ACP()
+        public PCAResults ACP(int customFactorsCount)
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/pca-tmp.csv", ";", dt);
             PCAResults results;
-            if (cutomFactorsChecked)
-            {
-                if (numberOfFactors <= getNumberOfQuestions())
-                {
-                    results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", numberOfFactors);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            else
-            {
-                results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", selectedFactors.Count);
-            }
-            prepareACPData();
+            results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", customFactorsCount);
             return results;
         }
 
-        public void Parallel()
+        public void Parallel(object o, PropertyChangedEventArgs e)
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/parallel-tmp.csv", ";", dt);
             RCalculator.Parallel(Path.GetTempPath() + "/parallel-tmp.csv");
         }
 
-        private int getNumberOfQuestions()
+        public int getNumberOfQuestions()
         {
             int i = 0;
-            foreach(Factor f in selectedFactors)
+            foreach (Factor f in selectedFactors)
             {
                 i += f.questions.Count;
             }
@@ -227,7 +213,7 @@ namespace PFE.ViewModel
             Exporter.exportCsv(Path.GetTempPath() + "/pca-plot-tmp.csv", ";", dt);
             RCalculator.plotPCALoadings(Path.GetTempPath() + "/pca-plot-tmp.csv");
         }
-        
+
         public void PlotComponenets()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
@@ -235,7 +221,7 @@ namespace PFE.ViewModel
             RCalculator.plotPrincipalCompnnents(Path.GetTempPath() + "/componenet-plot-tmp.csv");
         }
 
-        public void prepareACPData()
+        /*public void prepareACPData()
         {
             this.rmvFactors.Clear();
             this.rmvQuestions.Clear();
@@ -254,21 +240,21 @@ namespace PFE.ViewModel
             }
             this.selectedRmvFactor = rmvFactors.First<Factor>();
             UpdateQuestions();
-        }
+        }*/
 
         private void UpdateQuestions()
         {
-            this.questions.Clear();
-            if (selectedRmvFactor != null)
+            this.originalQuestions.Clear();
+            if (selectedFactor != null)
             {
-                foreach (Question q in selectedRmvFactor.questions)
+                foreach (Question q in selectedFactor.questions)
                 {
-                    this.questions.Add(q);
+                    this.originalQuestions.Add(q);
                 }
             }
         }
 
-        public string calculateNewStats()
+        /*public string calculateNewStats()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             foreach(Question q in this.rmvQuestions)
@@ -301,6 +287,26 @@ namespace PFE.ViewModel
             else if (path.EndsWith(".csv"))
             {
                 Exporter.exportCsv(path, ";", dt);
+            }
+        }*/
+
+        private void UpdateSelectedFactors()
+        {
+            selectedFactors = new List<Factor>();
+            foreach (Factor factor in originalFactors)
+            {
+                Factor f = new Factor { id = factor.id, title = factor.title, description = factor.description, evaluationFactor = factor.evaluationFactor, questions = new List<Question>() };
+                foreach (Question question in factor.questions)
+                {
+                    if (!excludedQuestions.Contains(question))
+                    {
+                        f.questions.Add(question);
+                    }
+                }
+                if (f.questions.Count > 0)
+                {
+                    selectedFactors.Add(f);
+                }
             }
         }
     }

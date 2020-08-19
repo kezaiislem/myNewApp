@@ -252,6 +252,12 @@
     <Compile Include="CustomObjects\QuestionType.cs" />
     <Compile Include="CustomObjects\MailingRequest.cs" />
     <Compile Include="CustomObjects\SectionSuggestionsRequestObject.cs" />
+    <Compile Include="GUI\Analysis\ExploratoryAnalysis\ACPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Analysis\ExploratoryAnalysis\ACPForm.Designer.cs">
+      <DependentUpon>ACPForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NewUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,10 +308,10 @@
     <Compile Include="GUI\Survey\Factor\CheckChoiceControl.Designer.cs">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Analysis\ConfirmatoryAnalysisControl.cs">
+    <Compile Include="GUI\Analysis\ConfirmatoryAnalysis\ConfirmatoryAnalysisControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Analysis\ConfirmatoryAnalysisControl.Designer.cs">
+    <Compile Include="GUI\Analysis\ConfirmatoryAnalysis\ConfirmatoryAnalysisControl.Designer.cs">
       <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Survey\Hypothesis\HypothesisControl.cs">
@@ -314,10 +320,10 @@
     <Compile Include="GUI\Survey\Hypothesis\HypothesisControl.Designer.cs">
       <DependentUpon>HypothesisControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Analysis\FirstCollectControl.cs">
+    <Compile Include="GUI\Analysis\ExploratoryAnalysis\FirstCollectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Analysis\FirstCollectControl.Designer.cs">
+    <Compile Include="GUI\Analysis\ExploratoryAnalysis\FirstCollectControl.Designer.cs">
       <DependentUpon>FirstCollectControl.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Analysis\StatisticsControl.cs">
@@ -497,6 +503,7 @@
     <Compile Include="GUI\Survey\FactorSugesstionForm.Designer.cs">
       <DependentUpon>FactorSugesstionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ACPFormViewModel.cs" />
     <Compile Include="ViewModel\NewUserFormViewModel.cs" />
     <Compile Include="ViewModel\AddHypothesisViewModel.cs" />
     <Compile Include="ViewModel\AddSurveyFormViewModel.cs" />
@@ -530,6 +537,9 @@
     <Compile Include="GUI\Welcome From.Designer.cs">
       <DependentUpon>Welcome From.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Analysis\ExploratoryAnalysis\ACPForm.resx">
+      <DependentUpon>ACPForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -567,13 +577,13 @@
     <EmbeddedResource Include="GUI\Survey\Factor\CheckChoiceControl.resx">
       <DependentUpon>CheckChoiceControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Analysis\ConfirmatoryAnalysisControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\ConfirmatoryAnalysis\ConfirmatoryAnalysisControl.resx">
       <DependentUpon>ConfirmatoryAnalysisControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Survey\Hypothesis\HypothesisControl.resx">
       <DependentUpon>HypothesisControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Analysis\FirstCollectControl.resx">
+    <EmbeddedResource Include="GUI\Analysis\ExploratoryAnalysis\FirstCollectControl.resx">
       <DependentUpon>FirstCollectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Analysis\StatisticsControl.resx">
