@@ -18,9 +18,10 @@ namespace PFE.ViewModel
     {
 
         public Survey survey { get; set; }
-        public BindingList<Factor> factors { get; set; }
-        public BindingList<Question> questions { get; set; }
-        public BindingList<Question> rmvQuestions { get; set; }
+        public BindingList<Factor> originalFactors { get; set; }
+        public BindingList<Question> originalQuestions { get; set; }
+        public BindingList<Question> excludedQuestions { get; set; }
+        public List<Factor> selectedFactors { get; set; }
 
         public Factor selectedFactor;
         public Factor SelectedFactor
@@ -32,24 +33,27 @@ namespace PFE.ViewModel
                 UpdateQuestions();
             }
         }
-        public Question selectedQuestion { get; set; }
-        public Question selectedRmvQuestion { get; set; }
+
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
 
         public ConfirmatoryAnalysisControlViewModel(Survey survey)
         {
             this.survey = survey;
-            this.factors = new BindingList<Factor>();
-            this.questions = new BindingList<Question>();
-            this.rmvQuestions = new BindingList<Question>();
+            this.originalFactors = new BindingList<Factor>();
+            this.originalQuestions = new BindingList<Question>();
+            this.excludedQuestions = new BindingList<Question>();
+            this.excludedQuestions.ListChanged += (sender, e) =>
+            {
+                UpdateSelectedFactors();
+            };
             foreach (Factor f in survey.factors)
             {
                 if (f.evaluationFactor)
                 {
-                    factors.Add(f);
+                    this.originalFactors.Add(f);
                 }
             }
-            SelectedFactor = this.factors.First<Factor>();
+            UpdateSelectedFactors();
             Task.Run(async () => await getAnswers());
         }
 
@@ -77,41 +81,13 @@ namespace PFE.ViewModel
 
         private void UpdateQuestions()
         {
+            this.originalQuestions.Clear();
             if (selectedFactor != null)
             {
-                questions.Clear();
-                foreach (Question question in selectedFactor.questions)
+                foreach (Question q in selectedFactor.questions)
                 {
-                    questions.Add(question);
+                    this.originalQuestions.Add(q);
                 }
-            }
-        }
-
-        public void addRmvQuestion()
-        {
-            if (selectedQuestion != null)
-            {
-                bool exists = false;
-                foreach (Question q in rmvQuestions)
-                {
-                    if (q.text == selectedQuestion.text)
-                    {
-                        exists = true;
-                        break;
-                    }
-                }
-                if (!exists)
-                {
-                    this.rmvQuestions.Add(selectedQuestion);
-                }
-            }
-        }
-
-        public void removeRmvQuestion()
-        {
-            if (selectedRmvQuestion != null)
-            {
-                this.rmvQuestions.Remove(selectedRmvQuestion);
             }
         }
 
@@ -133,10 +109,10 @@ namespace PFE.ViewModel
         {
             DataTable temp;
             DataTable result = new DataTable();
-            DataTable dt = DataTableManager.prepareConfirmatoryEvalTable(this.factors.ToList<Factor>(), this.personalAnswers, rmvQuestions.ToList<Question>());
+            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors, this.personalAnswers);
             DataRow dataRow = result.NewRow();
 
-            foreach (Factor factor in this.factors)
+            foreach (Factor factor in this.selectedFactors)
             {
                 result.Columns.Add(factor.title);
                 if (factor.questions.Count > 1)
@@ -159,6 +135,26 @@ namespace PFE.ViewModel
             }
             result.Rows.Add(dataRow);
             return result;
+        }
+
+        private void UpdateSelectedFactors()
+        {
+            selectedFactors = new List<Factor>();
+            foreach (Factor factor in originalFactors)
+            {
+                Factor f = new Factor { id = factor.id, title = factor.title, description = factor.description, evaluationFactor = factor.evaluationFactor, questions = new List<Question>() };
+                foreach (Question question in factor.questions)
+                {
+                    if (!excludedQuestions.Contains(question))
+                    {
+                        f.questions.Add(question);
+                    }
+                }
+                if (f.questions.Count > 0)
+                {
+                    selectedFactors.Add(f);
+                }
+            }
         }
     }
 }

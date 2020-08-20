@@ -23,8 +23,7 @@ namespace PFE.ViewModel
         public BindingList<Factor> originalFactors { get; set; }
         public BindingList<Question> originalQuestions { get; set; }
         public BindingList<Question> excludedQuestions { get; set; }
-
-        public List<Factor> selectedFactors;
+        public List<Factor> selectedFactors { get; set; }
 
         public Factor selectedFactor;
 

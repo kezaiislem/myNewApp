@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfirmatoryAnalysisControl));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.buttonRunCFA = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.listBoxFactors = new System.Windows.Forms.ListBox();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.listBoxQuestions = new System.Windows.Forms.ListBox();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.listBoxToRmvQuestions = new System.Windows.Forms.ListBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.addRmvQuestion = new JImageButton.JImageButton();
-            this.removeRmvQuestion = new JImageButton.JImageButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelCronbach = new System.Windows.Forms.Panel();
             this.buttonReduceAlpha = new JImageButton.JImageButton();
             this.dataGridAlpha = new System.Windows.Forms.DataGridView();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.removeRmvQuestion = new JImageButton.JImageButton();
+            this.addRmvQuestion = new JImageButton.JImageButton();
+            this.listBoxExcludedQuestions = new System.Windows.Forms.ListBox();
+            this.listBoxOriginalQuestions = new System.Windows.Forms.ListBox();
+            this.listBoxOriginalFactors = new System.Windows.Forms.ListBox();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.buttonChronbach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.buttonRunCFA = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panelCronbach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAlpha)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuCards2
@@ -91,218 +91,6 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(760, 511);
             this.mainPanel.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.buttonChronbach);
-            this.panel2.Controls.Add(this.metroLabel9);
-            this.panel2.Controls.Add(this.buttonRunCFA);
-            this.panel2.Controls.Add(this.listBoxFactors);
-            this.panel2.Controls.Add(this.metroLabel13);
-            this.panel2.Controls.Add(this.listBoxQuestions);
-            this.panel2.Controls.Add(this.metroLabel11);
-            this.panel2.Controls.Add(this.listBoxToRmvQuestions);
-            this.panel2.Controls.Add(this.metroLabel10);
-            this.panel2.Controls.Add(this.addRmvQuestion);
-            this.panel2.Controls.Add(this.removeRmvQuestion);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 332);
-            this.panel2.TabIndex = 68;
-            // 
-            // metroLabel9
-            // 
-            this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(15, 18);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(111, 19);
-            this.metroLabel9.TabIndex = 58;
-            this.metroLabel9.Text = "Exclude questions";
-            // 
-            // buttonRunCFA
-            // 
-            this.buttonRunCFA.AllowToggling = false;
-            this.buttonRunCFA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonRunCFA.AnimationSpeed = 200;
-            this.buttonRunCFA.AutoGenerateColors = false;
-            this.buttonRunCFA.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRunCFA.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonRunCFA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRunCFA.BackgroundImage")));
-            this.buttonRunCFA.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.buttonRunCFA.ButtonText = "Run CFA";
-            this.buttonRunCFA.ButtonTextMarginLeft = 0;
-            this.buttonRunCFA.ColorContrastOnClick = 45;
-            this.buttonRunCFA.ColorContrastOnHover = 45;
-            this.buttonRunCFA.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.buttonRunCFA.CustomizableEdges = borderEdges2;
-            this.buttonRunCFA.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonRunCFA.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.buttonRunCFA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonRunCFA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonRunCFA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.buttonRunCFA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonRunCFA.ForeColor = System.Drawing.Color.White;
-            this.buttonRunCFA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRunCFA.IconMarginLeft = 11;
-            this.buttonRunCFA.IconPadding = 10;
-            this.buttonRunCFA.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonRunCFA.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.buttonRunCFA.IdleBorderRadius = 3;
-            this.buttonRunCFA.IdleBorderThickness = 1;
-            this.buttonRunCFA.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonRunCFA.IdleIconLeftImage = null;
-            this.buttonRunCFA.IdleIconRightImage = null;
-            this.buttonRunCFA.IndicateFocus = false;
-            this.buttonRunCFA.Location = new System.Drawing.Point(656, 286);
-            this.buttonRunCFA.Name = "buttonRunCFA";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties3.BorderRadius = 3;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.buttonRunCFA.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 3;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.buttonRunCFA.OnPressedState = stateProperties4;
-            this.buttonRunCFA.Size = new System.Drawing.Size(82, 32);
-            this.buttonRunCFA.TabIndex = 67;
-            this.buttonRunCFA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonRunCFA.TextMarginLeft = 0;
-            this.buttonRunCFA.UseDefaultRadiusAndThickness = true;
-            this.buttonRunCFA.Click += new System.EventHandler(this.buttonRunCFA_Click);
-            // 
-            // listBoxFactors
-            // 
-            this.listBoxFactors.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.listBoxFactors.FormattingEnabled = true;
-            this.listBoxFactors.Location = new System.Drawing.Point(44, 68);
-            this.listBoxFactors.Name = "listBoxFactors";
-            this.listBoxFactors.Size = new System.Drawing.Size(196, 199);
-            this.listBoxFactors.TabIndex = 59;
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.Location = new System.Drawing.Point(525, 46);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(138, 19);
-            this.metroLabel13.TabIndex = 66;
-            this.metroLabel13.Text = "Questions to remove :";
-            // 
-            // listBoxQuestions
-            // 
-            this.listBoxQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.listBoxQuestions.FormattingEnabled = true;
-            this.listBoxQuestions.Location = new System.Drawing.Point(260, 68);
-            this.listBoxQuestions.Name = "listBoxQuestions";
-            this.listBoxQuestions.Size = new System.Drawing.Size(196, 199);
-            this.listBoxQuestions.TabIndex = 60;
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(260, 46);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(73, 19);
-            this.metroLabel11.TabIndex = 65;
-            this.metroLabel11.Text = "Questions :";
-            // 
-            // listBoxToRmvQuestions
-            // 
-            this.listBoxToRmvQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.listBoxToRmvQuestions.FormattingEnabled = true;
-            this.listBoxToRmvQuestions.Location = new System.Drawing.Point(534, 68);
-            this.listBoxToRmvQuestions.Name = "listBoxToRmvQuestions";
-            this.listBoxToRmvQuestions.Size = new System.Drawing.Size(196, 199);
-            this.listBoxToRmvQuestions.TabIndex = 61;
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(44, 46);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel10.TabIndex = 64;
-            this.metroLabel10.Text = "Factors :";
-            // 
-            // addRmvQuestion
-            // 
-            this.addRmvQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addRmvQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.addRmvQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.addRmvQuestion.CausesValidation = false;
-            this.addRmvQuestion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.addRmvQuestion.ErrorImage = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.ErrorImage")));
-            this.addRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.Image")));
-            this.addRmvQuestion.ImageHover = null;
-            this.addRmvQuestion.InitialImage = null;
-            this.addRmvQuestion.Location = new System.Drawing.Point(483, 132);
-            this.addRmvQuestion.Name = "addRmvQuestion";
-            this.addRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
-            this.addRmvQuestion.Size = new System.Drawing.Size(32, 32);
-            this.addRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.addRmvQuestion.TabIndex = 62;
-            this.addRmvQuestion.Zoom = 1;
-            this.addRmvQuestion.Click += new System.EventHandler(this.addRmvQuestion_Click);
-            // 
-            // removeRmvQuestion
-            // 
-            this.removeRmvQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.removeRmvQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.removeRmvQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.removeRmvQuestion.CausesValidation = false;
-            this.removeRmvQuestion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.removeRmvQuestion.ErrorImage = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.ErrorImage")));
-            this.removeRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.Image")));
-            this.removeRmvQuestion.ImageHover = null;
-            this.removeRmvQuestion.InitialImage = null;
-            this.removeRmvQuestion.Location = new System.Drawing.Point(483, 170);
-            this.removeRmvQuestion.Name = "removeRmvQuestion";
-            this.removeRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
-            this.removeRmvQuestion.Size = new System.Drawing.Size(32, 32);
-            this.removeRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.removeRmvQuestion.TabIndex = 63;
-            this.removeRmvQuestion.Zoom = 1;
-            this.removeRmvQuestion.Click += new System.EventHandler(this.removeRmvQuestion_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.panel1.Controls.Add(this.labelTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 50);
-            this.panel1.TabIndex = 7;
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(15, 15);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(161, 20);
-            this.labelTitle.TabIndex = 1;
-            this.labelTitle.Text = "Confirmatory Analysis";
             // 
             // panelCronbach
             // 
@@ -373,6 +161,131 @@
             this.bunifuSeparator2.Transparency = 128;
             this.bunifuSeparator2.Vertical = false;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.metroLabel13);
+            this.panel2.Controls.Add(this.metroLabel11);
+            this.panel2.Controls.Add(this.metroLabel10);
+            this.panel2.Controls.Add(this.removeRmvQuestion);
+            this.panel2.Controls.Add(this.addRmvQuestion);
+            this.panel2.Controls.Add(this.listBoxExcludedQuestions);
+            this.panel2.Controls.Add(this.listBoxOriginalQuestions);
+            this.panel2.Controls.Add(this.listBoxOriginalFactors);
+            this.panel2.Controls.Add(this.metroLabel9);
+            this.panel2.Controls.Add(this.buttonChronbach);
+            this.panel2.Controls.Add(this.buttonRunCFA);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(760, 332);
+            this.panel2.TabIndex = 68;
+            // 
+            // metroLabel13
+            // 
+            this.metroLabel13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel13.AutoSize = true;
+            this.metroLabel13.Location = new System.Drawing.Point(502, 40);
+            this.metroLabel13.Name = "metroLabel13";
+            this.metroLabel13.Size = new System.Drawing.Size(129, 19);
+            this.metroLabel13.TabIndex = 78;
+            this.metroLabel13.Text = "Excluded Questions :";
+            // 
+            // metroLabel11
+            // 
+            this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel11.AutoSize = true;
+            this.metroLabel11.Location = new System.Drawing.Point(248, 40);
+            this.metroLabel11.Name = "metroLabel11";
+            this.metroLabel11.Size = new System.Drawing.Size(73, 19);
+            this.metroLabel11.TabIndex = 77;
+            this.metroLabel11.Text = "Questions :";
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(32, 40);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel10.TabIndex = 76;
+            this.metroLabel10.Text = "Factors :";
+            // 
+            // removeRmvQuestion
+            // 
+            this.removeRmvQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.removeRmvQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.removeRmvQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.removeRmvQuestion.CausesValidation = false;
+            this.removeRmvQuestion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.removeRmvQuestion.ErrorImage = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.ErrorImage")));
+            this.removeRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("removeRmvQuestion.Image")));
+            this.removeRmvQuestion.ImageHover = null;
+            this.removeRmvQuestion.InitialImage = null;
+            this.removeRmvQuestion.Location = new System.Drawing.Point(458, 164);
+            this.removeRmvQuestion.Name = "removeRmvQuestion";
+            this.removeRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
+            this.removeRmvQuestion.Size = new System.Drawing.Size(32, 32);
+            this.removeRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.removeRmvQuestion.TabIndex = 75;
+            this.removeRmvQuestion.Zoom = 1;
+            this.removeRmvQuestion.Click += new System.EventHandler(this.removeRmvQuestion_Click);
+            // 
+            // addRmvQuestion
+            // 
+            this.addRmvQuestion.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addRmvQuestion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.addRmvQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.addRmvQuestion.CausesValidation = false;
+            this.addRmvQuestion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.addRmvQuestion.ErrorImage = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.ErrorImage")));
+            this.addRmvQuestion.Image = ((System.Drawing.Image)(resources.GetObject("addRmvQuestion.Image")));
+            this.addRmvQuestion.ImageHover = null;
+            this.addRmvQuestion.InitialImage = null;
+            this.addRmvQuestion.Location = new System.Drawing.Point(458, 126);
+            this.addRmvQuestion.Name = "addRmvQuestion";
+            this.addRmvQuestion.Padding = new System.Windows.Forms.Padding(2);
+            this.addRmvQuestion.Size = new System.Drawing.Size(32, 32);
+            this.addRmvQuestion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.addRmvQuestion.TabIndex = 74;
+            this.addRmvQuestion.Zoom = 1;
+            this.addRmvQuestion.Click += new System.EventHandler(this.addRmvQuestion_Click);
+            // 
+            // listBoxExcludedQuestions
+            // 
+            this.listBoxExcludedQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.listBoxExcludedQuestions.FormattingEnabled = true;
+            this.listBoxExcludedQuestions.Location = new System.Drawing.Point(502, 62);
+            this.listBoxExcludedQuestions.Name = "listBoxExcludedQuestions";
+            this.listBoxExcludedQuestions.Size = new System.Drawing.Size(196, 199);
+            this.listBoxExcludedQuestions.TabIndex = 73;
+            // 
+            // listBoxOriginalQuestions
+            // 
+            this.listBoxOriginalQuestions.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.listBoxOriginalQuestions.FormattingEnabled = true;
+            this.listBoxOriginalQuestions.Location = new System.Drawing.Point(248, 62);
+            this.listBoxOriginalQuestions.Name = "listBoxOriginalQuestions";
+            this.listBoxOriginalQuestions.Size = new System.Drawing.Size(196, 199);
+            this.listBoxOriginalQuestions.TabIndex = 72;
+            // 
+            // listBoxOriginalFactors
+            // 
+            this.listBoxOriginalFactors.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.listBoxOriginalFactors.FormattingEnabled = true;
+            this.listBoxOriginalFactors.Location = new System.Drawing.Point(32, 62);
+            this.listBoxOriginalFactors.Name = "listBoxOriginalFactors";
+            this.listBoxOriginalFactors.Size = new System.Drawing.Size(196, 199);
+            this.listBoxOriginalFactors.TabIndex = 71;
+            // 
+            // metroLabel9
+            // 
+            this.metroLabel9.AutoSize = true;
+            this.metroLabel9.Location = new System.Drawing.Point(19, 12);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(338, 19);
+            this.metroLabel9.TabIndex = 70;
+            this.metroLabel9.Text = "The selected questions will be excluded from the analysis";
+            // 
             // buttonChronbach
             // 
             this.buttonChronbach.AllowToggling = false;
@@ -439,6 +352,93 @@
             this.buttonChronbach.UseDefaultRadiusAndThickness = true;
             this.buttonChronbach.Click += new System.EventHandler(this.buttonChronbach_Click);
             // 
+            // buttonRunCFA
+            // 
+            this.buttonRunCFA.AllowToggling = false;
+            this.buttonRunCFA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRunCFA.AnimationSpeed = 200;
+            this.buttonRunCFA.AutoGenerateColors = false;
+            this.buttonRunCFA.BackColor = System.Drawing.Color.Transparent;
+            this.buttonRunCFA.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonRunCFA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonRunCFA.BackgroundImage")));
+            this.buttonRunCFA.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonRunCFA.ButtonText = "Run CFA";
+            this.buttonRunCFA.ButtonTextMarginLeft = 0;
+            this.buttonRunCFA.ColorContrastOnClick = 45;
+            this.buttonRunCFA.ColorContrastOnHover = 45;
+            this.buttonRunCFA.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.buttonRunCFA.CustomizableEdges = borderEdges2;
+            this.buttonRunCFA.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonRunCFA.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonRunCFA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonRunCFA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonRunCFA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonRunCFA.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonRunCFA.ForeColor = System.Drawing.Color.White;
+            this.buttonRunCFA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRunCFA.IconMarginLeft = 11;
+            this.buttonRunCFA.IconPadding = 10;
+            this.buttonRunCFA.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRunCFA.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonRunCFA.IdleBorderRadius = 3;
+            this.buttonRunCFA.IdleBorderThickness = 1;
+            this.buttonRunCFA.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonRunCFA.IdleIconLeftImage = null;
+            this.buttonRunCFA.IdleIconRightImage = null;
+            this.buttonRunCFA.IndicateFocus = false;
+            this.buttonRunCFA.Location = new System.Drawing.Point(656, 286);
+            this.buttonRunCFA.Name = "buttonRunCFA";
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties3.BorderRadius = 3;
+            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties3.BorderThickness = 1;
+            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.ForeColor = System.Drawing.Color.White;
+            stateProperties3.IconLeftImage = null;
+            stateProperties3.IconRightImage = null;
+            this.buttonRunCFA.onHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.BorderRadius = 3;
+            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties4.BorderThickness = 1;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.IconLeftImage = null;
+            stateProperties4.IconRightImage = null;
+            this.buttonRunCFA.OnPressedState = stateProperties4;
+            this.buttonRunCFA.Size = new System.Drawing.Size(82, 32);
+            this.buttonRunCFA.TabIndex = 67;
+            this.buttonRunCFA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonRunCFA.TextMarginLeft = 0;
+            this.buttonRunCFA.UseDefaultRadiusAndThickness = true;
+            this.buttonRunCFA.Click += new System.EventHandler(this.buttonRunCFA_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.panel1.Controls.Add(this.labelTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(760, 50);
+            this.panel1.TabIndex = 7;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.Transparent;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(15, 15);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(161, 20);
+            this.labelTitle.TabIndex = 1;
+            this.labelTitle.Text = "Confirmatory Analysis";
+            // 
             // ConfirmatoryAnalysisControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,13 +448,13 @@
             this.Size = new System.Drawing.Size(760, 561);
             this.bunifuCards2.ResumeLayout(false);
             this.mainPanel.ResumeLayout(false);
+            this.panelCronbach.ResumeLayout(false);
+            this.panelCronbach.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlpha)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelCronbach.ResumeLayout(false);
-            this.panelCronbach.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAlpha)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,15 +465,6 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuCustomLabel labelTitle;
         private System.Windows.Forms.Panel mainPanel;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private JImageButton.JImageButton removeRmvQuestion;
-        private JImageButton.JImageButton addRmvQuestion;
-        private System.Windows.Forms.ListBox listBoxToRmvQuestions;
-        private System.Windows.Forms.ListBox listBoxQuestions;
-        private System.Windows.Forms.ListBox listBoxFactors;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonRunCFA;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelCronbach;
@@ -482,5 +473,14 @@
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonChronbach;
+        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private JImageButton.JImageButton removeRmvQuestion;
+        private JImageButton.JImageButton addRmvQuestion;
+        private System.Windows.Forms.ListBox listBoxExcludedQuestions;
+        private System.Windows.Forms.ListBox listBoxOriginalQuestions;
+        private System.Windows.Forms.ListBox listBoxOriginalFactors;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
     }
 }
