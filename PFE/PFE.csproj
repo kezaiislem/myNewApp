@@ -242,6 +242,7 @@
   <ItemGroup>
     <Compile Include="Constants\QuestionTypes.cs" />
     <Compile Include="CustomObjects\CFAResults.cs" />
+    <Compile Include="CustomObjects\ConvergentValidityTab.cs" />
     <Compile Include="CustomObjects\PCAResults.cs" />
     <Compile Include="CustomObjects\SphericityTestResults.cs" />
     <Compile Include="CustomObjects\CalendarItem.cs" />

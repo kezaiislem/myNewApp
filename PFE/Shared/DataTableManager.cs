@@ -108,7 +108,7 @@ namespace PFE.Shared
                         foreach (Question q in f.questions)
                         {
                             i++;
-                            dt.Columns[q.text].ColumnName = f.title + "_" + i;
+                            dt.Columns[q.text].ColumnName = f.title.Replace(" ", "_") + "_" + i;
                         }
                     }
                 }
@@ -157,7 +157,7 @@ namespace PFE.Shared
                     dt.Rows.Add(dataRow);
                 }
 
-                foreach(Question q in rmvquestions)
+                foreach (Question q in rmvquestions)
                 {
                     dt.Columns.Remove(q.text);
                 }

@@ -156,23 +156,23 @@ namespace PFE.ViewModel
 
             foreach (Factor factor in this.selectedFactors)
             {
-                result.Columns.Add(factor.title);
+                result.Columns.Add(factor.title.Replace(" ", "_"));
                 if (factor.questions.Count > 1)
                 {
                     temp = dt.Copy();
                     foreach (DataColumn column in dt.Columns)
                     {
-                        if (!column.ColumnName.StartsWith(factor.title))
+                        if (!column.ColumnName.StartsWith(factor.title.Replace(" ", "_")))
                         {
                             temp.Columns.Remove(column.ColumnName);
                         }
                     }
                     Exporter.exportCsv(Path.GetTempPath() + "/chronbach-tmp.csv", ";", temp);
-                    dataRow[factor.title] = RCalculator.CalculateAlpha(Path.GetTempPath() + "/chronbach-tmp.csv").ToString();
+                    dataRow[factor.title.Replace(" ", "_")] = RCalculator.CalculateAlpha(Path.GetTempPath() + "/chronbach-tmp.csv").ToString();
                 }
                 else
                 {
-                    dataRow[factor.title] = 1;
+                    dataRow[factor.title.Replace(" ", "_")] = 1;
                 }
             }
             result.Rows.Add(dataRow);

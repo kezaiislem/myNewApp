@@ -252,16 +252,8 @@ namespace PFE.Shared
 
                 //executing script
                 engine.Evaluate("library(lavaan)\n" +
-                    "data <- read.csv('C:/Users/ISLEM/Desktop/Final Analysis/data1.csv', sep = ';')\n" +
-                    "model <- 'TAC=~TAC1+TAC2+TAC3+TAC4\n"+
-                        "PU=~PU1+PU2+PU4\n"+
-                        "PEO=~PEO1+PEO2+PEO3+PEO4\n" +
-                        "FAM=~FAM1\n" +
-                        "ADP=~ADP1\n" +
-                        "SI=~SI1+SI2+SI3\n" +
-                        "EN=~EN1+EN2+EN3\n" +
-                        "FCT=~FCT1\n" +
-                        "RA=~RA1+RA2+RA3+RA4'\n" +
+                    "data <- read.csv('" + csvPath + "', sep = ';')\n" +
+                    "model <- '" + model + "'\n" +
                     "fit <- cfa(model,data)\n" +
                     "res <- summary(fit,fit.measures=TRUE,standardized=TRUE)\n" +
                     "indexes <- as.data.frame.matrix(rbind(res$FIT))\n" +
