@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PFE.CustomObjects;
 using PFE.Model;
 using PFE.Shared;
 using System;
@@ -19,6 +20,13 @@ namespace PFE
             newProject.UseSelectable = false;
             loadProjects.UseSelectable = false;
             logOut.UseSelectable = false;
+
+            CFAResults res = RCalculator.CFA("", "");
+            if (res != null)
+            {
+                Console.WriteLine(res.indexes.ColumnCount);
+                Console.WriteLine(res.loadings.ColumnCount);
+            }
         }
 
         private void newProject_Click(object sender, EventArgs e)

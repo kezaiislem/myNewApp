@@ -42,21 +42,6 @@ namespace PFE.UserContol
 
         }
 
-        private void buttonChronbach_Click(object sender, EventArgs e)
-        {
-            var msg = this.viewModel.validateChrobach();
-            if (msg == null)
-            {
-                DataTable dt = this.viewModel.calculateChrobachTable();
-                dataGridAlpha.DataSource = dt;
-                panelCronbach.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void addRmvQuestion_Click(object sender, EventArgs e)
         {
             foreach (Question question in listBoxOriginalQuestions.SelectedItems)
@@ -76,5 +61,19 @@ namespace PFE.UserContol
             }
         }
 
+        private void buttonFiabilityTest_Click(object sender, EventArgs e)
+        {
+            var msg = this.viewModel.validateChrobach();
+            if (msg == null)
+            {
+                DataTable dt = this.viewModel.calculateChrobachTable();
+                dataGridAlpha.DataSource = dt;
+                panelCronbach.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

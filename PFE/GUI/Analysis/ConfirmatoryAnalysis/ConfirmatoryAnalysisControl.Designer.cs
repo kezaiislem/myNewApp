@@ -52,10 +52,10 @@
             this.listBoxOriginalQuestions = new System.Windows.Forms.ListBox();
             this.listBoxOriginalFactors = new System.Windows.Forms.ListBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.buttonChronbach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.buttonRunCFA = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.buttonFiabilityTest = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCards2.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panelCronbach.SuspendLayout();
@@ -98,10 +98,11 @@
             this.panelCronbach.Controls.Add(this.dataGridAlpha);
             this.panelCronbach.Controls.Add(this.metroLabel12);
             this.panelCronbach.Controls.Add(this.bunifuSeparator2);
+            this.panelCronbach.Controls.Add(this.buttonRunCFA);
             this.panelCronbach.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCronbach.Location = new System.Drawing.Point(0, 332);
             this.panelCronbach.Name = "panelCronbach";
-            this.panelCronbach.Size = new System.Drawing.Size(760, 128);
+            this.panelCronbach.Size = new System.Drawing.Size(760, 162);
             this.panelCronbach.TabIndex = 69;
             this.panelCronbach.Visible = false;
             // 
@@ -163,6 +164,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonFiabilityTest);
             this.panel2.Controls.Add(this.metroLabel13);
             this.panel2.Controls.Add(this.metroLabel11);
             this.panel2.Controls.Add(this.metroLabel10);
@@ -172,8 +174,6 @@
             this.panel2.Controls.Add(this.listBoxOriginalQuestions);
             this.panel2.Controls.Add(this.listBoxOriginalFactors);
             this.panel2.Controls.Add(this.metroLabel9);
-            this.panel2.Controls.Add(this.buttonChronbach);
-            this.panel2.Controls.Add(this.buttonRunCFA);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -286,72 +286,6 @@
             this.metroLabel9.TabIndex = 70;
             this.metroLabel9.Text = "The selected questions will be excluded from the analysis";
             // 
-            // buttonChronbach
-            // 
-            this.buttonChronbach.AllowToggling = false;
-            this.buttonChronbach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonChronbach.AnimationSpeed = 200;
-            this.buttonChronbach.AutoGenerateColors = false;
-            this.buttonChronbach.BackColor = System.Drawing.Color.Transparent;
-            this.buttonChronbach.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonChronbach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonChronbach.BackgroundImage")));
-            this.buttonChronbach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonChronbach.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.buttonChronbach.ButtonText = "Show Chronbach Alpha";
-            this.buttonChronbach.ButtonTextMarginLeft = 0;
-            this.buttonChronbach.ColorContrastOnClick = 45;
-            this.buttonChronbach.ColorContrastOnHover = 45;
-            this.buttonChronbach.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.buttonChronbach.CustomizableEdges = borderEdges1;
-            this.buttonChronbach.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.buttonChronbach.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.buttonChronbach.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.buttonChronbach.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.buttonChronbach.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.buttonChronbach.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.buttonChronbach.ForeColor = System.Drawing.Color.White;
-            this.buttonChronbach.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonChronbach.IconMarginLeft = 11;
-            this.buttonChronbach.IconPadding = 10;
-            this.buttonChronbach.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonChronbach.IdleBorderColor = System.Drawing.Color.DimGray;
-            this.buttonChronbach.IdleBorderRadius = 3;
-            this.buttonChronbach.IdleBorderThickness = 1;
-            this.buttonChronbach.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.buttonChronbach.IdleIconLeftImage = null;
-            this.buttonChronbach.IdleIconRightImage = null;
-            this.buttonChronbach.IndicateFocus = false;
-            this.buttonChronbach.Location = new System.Drawing.Point(483, 286);
-            this.buttonChronbach.Name = "buttonChronbach";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties1.BorderRadius = 3;
-            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties1.ForeColor = System.Drawing.Color.White;
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.buttonChronbach.onHoverState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties2.BorderRadius = 3;
-            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties2.BorderThickness = 1;
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties2.ForeColor = System.Drawing.Color.White;
-            stateProperties2.IconLeftImage = null;
-            stateProperties2.IconRightImage = null;
-            this.buttonChronbach.OnPressedState = stateProperties2;
-            this.buttonChronbach.Size = new System.Drawing.Size(164, 32);
-            this.buttonChronbach.TabIndex = 69;
-            this.buttonChronbach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonChronbach.TextMarginLeft = 0;
-            this.buttonChronbach.UseDefaultRadiusAndThickness = true;
-            this.buttonChronbach.Click += new System.EventHandler(this.buttonChronbach_Click);
-            // 
             // buttonRunCFA
             // 
             this.buttonRunCFA.AllowToggling = false;
@@ -367,11 +301,11 @@
             this.buttonRunCFA.ColorContrastOnClick = 45;
             this.buttonRunCFA.ColorContrastOnHover = 45;
             this.buttonRunCFA.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.buttonRunCFA.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.buttonRunCFA.CustomizableEdges = borderEdges1;
             this.buttonRunCFA.DialogResult = System.Windows.Forms.DialogResult.None;
             this.buttonRunCFA.DisabledBorderColor = System.Drawing.Color.Empty;
             this.buttonRunCFA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -390,26 +324,26 @@
             this.buttonRunCFA.IdleIconLeftImage = null;
             this.buttonRunCFA.IdleIconRightImage = null;
             this.buttonRunCFA.IndicateFocus = false;
-            this.buttonRunCFA.Location = new System.Drawing.Point(656, 286);
+            this.buttonRunCFA.Location = new System.Drawing.Point(655, 119);
             this.buttonRunCFA.Name = "buttonRunCFA";
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            stateProperties3.BorderRadius = 3;
-            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties3.BorderThickness = 1;
-            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.ForeColor = System.Drawing.Color.White;
-            stateProperties3.IconLeftImage = null;
-            stateProperties3.IconRightImage = null;
-            this.buttonRunCFA.onHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.BorderRadius = 3;
-            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties4.BorderThickness = 1;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.IconLeftImage = null;
-            stateProperties4.IconRightImage = null;
-            this.buttonRunCFA.OnPressedState = stateProperties4;
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties1.BorderRadius = 3;
+            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties1.ForeColor = System.Drawing.Color.White;
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.buttonRunCFA.onHoverState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.BorderRadius = 3;
+            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties2.BorderThickness = 1;
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties2.ForeColor = System.Drawing.Color.White;
+            stateProperties2.IconLeftImage = null;
+            stateProperties2.IconRightImage = null;
+            this.buttonRunCFA.OnPressedState = stateProperties2;
             this.buttonRunCFA.Size = new System.Drawing.Size(82, 32);
             this.buttonRunCFA.TabIndex = 67;
             this.buttonRunCFA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -438,6 +372,72 @@
             this.labelTitle.Size = new System.Drawing.Size(161, 20);
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Confirmatory Analysis";
+            // 
+            // buttonFiabilityTest
+            // 
+            this.buttonFiabilityTest.AllowToggling = false;
+            this.buttonFiabilityTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonFiabilityTest.AnimationSpeed = 200;
+            this.buttonFiabilityTest.AutoGenerateColors = false;
+            this.buttonFiabilityTest.BackColor = System.Drawing.Color.Transparent;
+            this.buttonFiabilityTest.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonFiabilityTest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFiabilityTest.BackgroundImage")));
+            this.buttonFiabilityTest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonFiabilityTest.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.buttonFiabilityTest.ButtonText = "Run Fiability test";
+            this.buttonFiabilityTest.ButtonTextMarginLeft = 0;
+            this.buttonFiabilityTest.ColorContrastOnClick = 45;
+            this.buttonFiabilityTest.ColorContrastOnHover = 45;
+            this.buttonFiabilityTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.buttonFiabilityTest.CustomizableEdges = borderEdges2;
+            this.buttonFiabilityTest.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.buttonFiabilityTest.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.buttonFiabilityTest.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.buttonFiabilityTest.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.buttonFiabilityTest.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.buttonFiabilityTest.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
+            this.buttonFiabilityTest.ForeColor = System.Drawing.Color.White;
+            this.buttonFiabilityTest.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFiabilityTest.IconMarginLeft = 11;
+            this.buttonFiabilityTest.IconPadding = 10;
+            this.buttonFiabilityTest.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFiabilityTest.IdleBorderColor = System.Drawing.Color.DimGray;
+            this.buttonFiabilityTest.IdleBorderRadius = 3;
+            this.buttonFiabilityTest.IdleBorderThickness = 1;
+            this.buttonFiabilityTest.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            this.buttonFiabilityTest.IdleIconLeftImage = null;
+            this.buttonFiabilityTest.IdleIconRightImage = null;
+            this.buttonFiabilityTest.IndicateFocus = false;
+            this.buttonFiabilityTest.Location = new System.Drawing.Point(619, 283);
+            this.buttonFiabilityTest.Name = "buttonFiabilityTest";
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
+            stateProperties3.BorderRadius = 3;
+            stateProperties3.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties3.BorderThickness = 1;
+            stateProperties3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.ForeColor = System.Drawing.Color.White;
+            stateProperties3.IconLeftImage = null;
+            stateProperties3.IconRightImage = null;
+            this.buttonFiabilityTest.onHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.BorderRadius = 3;
+            stateProperties4.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties4.BorderThickness = 1;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.IconLeftImage = null;
+            stateProperties4.IconRightImage = null;
+            this.buttonFiabilityTest.OnPressedState = stateProperties4;
+            this.buttonFiabilityTest.Size = new System.Drawing.Size(118, 32);
+            this.buttonFiabilityTest.TabIndex = 79;
+            this.buttonFiabilityTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonFiabilityTest.TextMarginLeft = 0;
+            this.buttonFiabilityTest.UseDefaultRadiusAndThickness = true;
+            this.buttonFiabilityTest.Click += new System.EventHandler(this.buttonFiabilityTest_Click);
             // 
             // ConfirmatoryAnalysisControl
             // 
@@ -472,7 +472,6 @@
         private System.Windows.Forms.DataGridView dataGridAlpha;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonChronbach;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroLabel metroLabel10;
@@ -482,5 +481,6 @@
         private System.Windows.Forms.ListBox listBoxOriginalQuestions;
         private System.Windows.Forms.ListBox listBoxOriginalFactors;
         private MetroFramework.Controls.MetroLabel metroLabel9;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton buttonFiabilityTest;
     }
 }
