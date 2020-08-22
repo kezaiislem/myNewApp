@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using PFE.CustomObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,16 @@ namespace PFE.Shared
         {
             XLWorkbook wb = new XLWorkbook();
             wb.Worksheets.Add(dataTable, "Survey results");
+            wb.SaveAs(path);
+        }
+
+        public static void exportExel(string path, List<ExcelTab> tabs)
+        {
+            XLWorkbook wb = new XLWorkbook();
+            foreach(ExcelTab tab in tabs)
+            {
+                wb.Worksheets.Add(tab.data, tab.tabName);
+            }
             wb.SaveAs(path);
         }
 

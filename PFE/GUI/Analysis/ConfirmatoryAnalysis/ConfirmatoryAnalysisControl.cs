@@ -43,7 +43,7 @@ namespace PFE.UserContol
         private void buttonRunCFA_Click(object sender, EventArgs e)
         {
             var msg = viewModel.runCFA();
-            if(msg == null)
+            if (msg == null)
             {
                 fillConstructValidity();
                 initTable();
@@ -107,7 +107,7 @@ namespace PFE.UserContol
             {
                 panelConvergentValidity.Controls.Remove(convergentValidityTable);
             }
-            
+
             convergentValidityTable = new TableLayoutPanel();
             convergentValidityTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             convergentValidityTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
@@ -121,8 +121,8 @@ namespace PFE.UserContol
             convergentValidityTable.Location = new System.Drawing.Point(133, 72);
             convergentValidityTable.Name = "convergentValidityTable";
             fillTable();
-            convergentValidityTable.Size = new System.Drawing.Size(500, (viewModel.selectedFactors.Count + 1) * ( rowHeigh + 5/3 ));
-            panelConvergentValidity.Height = panelConvergentValidityHeigh + viewModel.selectedFactors.Count*rowHeigh;
+            convergentValidityTable.Size = new System.Drawing.Size(500, (viewModel.selectedFactors.Count + 1) * (rowHeigh + 5 / 3));
+            panelConvergentValidity.Height = panelConvergentValidityHeigh + viewModel.selectedFactors.Count * rowHeigh;
             panelConfirmatoryResults.Height = panelCFAHeigh + viewModel.selectedFactors.Count * rowHeigh;
             convergentValidityTable.TabIndex = 74;
             panelConvergentValidity.Controls.Add(convergentValidityTable);
@@ -169,7 +169,7 @@ namespace PFE.UserContol
             if (msg == null)
             {
                 var msg2 = viewModel.openDiscriminantValidityTable();
-                if(msg2 != null)
+                if (msg2 != null)
                 {
                     MessageBox.Show(msg2, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -182,7 +182,24 @@ namespace PFE.UserContol
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
+            using (var saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.FileName = "Sheet";
+                saveFileDialog.Filter = "Exel File|*.xlsx";
+                saveFileDialog.Title = "Export";
 
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        viewModel.exportAllToExel(saveFileDialog.FileName);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("File is already opened please close it first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }

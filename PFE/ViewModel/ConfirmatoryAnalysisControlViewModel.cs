@@ -44,7 +44,7 @@ namespace PFE.ViewModel
         public string srmr { get; set; }
         public string chisqDf { get; set; }
         public DataTable chrobachTable { get; set; }
-        public DataTable discriminantValisityTable { get; set; }
+        public DataTable discriminantValidityTable { get; set; }
 
         public ConfirmatoryAnalysisControlViewModel(Survey survey)
         {
@@ -327,8 +327,8 @@ namespace PFE.ViewModel
                     dataTable.Rows.Add(dataRow);
                     n--;
                 }
-                this.discriminantValisityTable = dataTable;
-            } 
+                this.discriminantValidityTable = dataTable;
+            }
             catch (Exception e)
             {
                 return "Unexpected Error please try again";
@@ -340,13 +340,141 @@ namespace PFE.ViewModel
         {
             try
             {
-                Exporter.exportCsv(Path.GetTempPath() + "/cfa.csv", ";", discriminantValisityTable);
+                Exporter.exportCsv(Path.GetTempPath() + "/cfa.csv", ";", discriminantValidityTable);
                 System.Diagnostics.Process.Start(Path.GetTempPath() + "/cfa.csv");
             }
             catch (Exception e)
             {
                 return "File is already opened please close it first";
             }
+            return null;
+        }
+
+        public void exportAllToExel(string path)
+        {
+            List<ExcelTab> tabs = new List<ExcelTab>();
+
+            // Data Tab
+            DataTable data = DataTableManager.prepareEvalTable(this.selectedFactors, this.personalAnswers);
+            tabs.Add(new ExcelTab { tabName = "Data", data = data });
+
+            // Loadings Tab
+            DataTable loadings = buildLoadings();
+            if (loadings != null)
+            {
+                tabs.Add(new ExcelTab { tabName = "Loadings", data = loadings });
+            }
+
+            // Convergent Validity Tab
+            DataTable convergentValidity = buildConvergentValidityTable();
+            if (convergentValidity != null)
+            {
+                tabs.Add(new ExcelTab { tabName = "Convergent Validity", data = convergentValidity });
+            }
+
+            // Construct Validity Tab
+            DataTable constructValidity = buildConstructValidityTable();
+            if (constructValidity != null)
+            {
+                tabs.Add(new ExcelTab { tabName = "Construct Validity", data = constructValidity });
+            }
+
+            // Discrimant Validity Tab
+            var msg = createCorelationsTable();
+            if (msg == null)
+            {
+                tabs.Add(new ExcelTab { tabName = "Discriminant Validity", data = this.discriminantValidityTable });
+            }
+
+            Exporter.exportExel(path, tabs);
+        }
+
+        private DataTable buildConvergentValidityTable()
+        {
+            if (convergentValidityTabs != null)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Factor");
+                dataTable.Columns.Add("AVE");
+                dataTable.Columns.Add("CR");
+                foreach (ConvergentValidityTab tab in convergentValidityTabs)
+                {
+                    DataRow row = dataTable.NewRow();
+                    row["Factor"] = tab.factor;
+                    row["AVE"] = tab.AVE;
+                    row["CR"] = tab.CR;
+                    dataTable.Rows.Add(row);
+                }
+                return dataTable;
+            }
+            return null;
+        }
+
+        private DataTable buildConstructValidityTable()
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Index");
+                dataTable.Columns.Add("Value");
+
+                // RMSEA
+                DataRow row = dataTable.NewRow();
+                row["Index"] = "RMSEA";
+                row["Value"] = rmsea;
+                dataTable.Rows.Add(row);
+
+                // SRMR
+                row = dataTable.NewRow();
+                row["Index"] = "SRMR";
+                row["Value"] = srmr;
+                dataTable.Rows.Add(row);
+
+                // CFI
+                row = dataTable.NewRow();
+                row["Index"] = "CFI";
+                row["Value"] = cfi;
+                dataTable.Rows.Add(row);
+
+                // TLI
+                row = dataTable.NewRow();
+                row["Index"] = "TLI";
+                row["Value"] = tli;
+                dataTable.Rows.Add(row);
+
+                // chisqDf
+                row = dataTable.NewRow();
+                row["Index"] = "chisqDf";
+                row["Value"] = chisqDf;
+                dataTable.Rows.Add(row);
+
+                return dataTable;
+            }
+            catch { }
+            return null;
+        }
+
+        private DataTable buildLoadings()
+        {
+            try
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Factor");
+                dataTable.Columns.Add("Item");
+                dataTable.Columns.Add("Loading");
+                DataRow row;
+
+                for(int i = 0; i < getQuestionsCount(); i++)
+                {
+                    row = dataTable.NewRow();
+                    row["Factor"] = this.cFAResults.loadings["lhs"][i];
+                    row["Item"] = this.cFAResults.loadings["rhs"][i];
+                    row["Loading"] = Math.Round(Double.Parse(this.cFAResults.loadings["std.all"][i].ToString()), 3);
+                    dataTable.Rows.Add(row);
+                }
+                return dataTable;
+            }
+            catch { }
             return null;
         }
     }

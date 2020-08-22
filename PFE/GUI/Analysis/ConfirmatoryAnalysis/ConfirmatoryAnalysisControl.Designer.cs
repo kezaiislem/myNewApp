@@ -143,7 +143,7 @@
             this.panelConfirmatoryResults.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelConfirmatoryResults.Location = new System.Drawing.Point(0, 494);
             this.panelConfirmatoryResults.Name = "panelConfirmatoryResults";
-            this.panelConfirmatoryResults.Size = new System.Drawing.Size(743, 451);
+            this.panelConfirmatoryResults.Size = new System.Drawing.Size(743, 405);
             this.panelConfirmatoryResults.TabIndex = 70;
             this.panelConfirmatoryResults.Visible = false;
             // 
@@ -155,7 +155,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 351);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(743, 97);
+            this.panel3.Size = new System.Drawing.Size(743, 51);
             this.panel3.TabIndex = 74;
             // 
             // descriminantValidity
@@ -907,7 +907,7 @@
             this.buttonExport.IdleIconLeftImage = null;
             this.buttonExport.IdleIconRightImage = null;
             this.buttonExport.IndicateFocus = false;
-            this.buttonExport.Location = new System.Drawing.Point(616, 52);
+            this.buttonExport.Location = new System.Drawing.Point(616, 6);
             this.buttonExport.Name = "buttonExport";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
             stateProperties1.BorderRadius = 3;
