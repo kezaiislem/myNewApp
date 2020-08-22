@@ -190,6 +190,7 @@
             this.Controls.Add(this.loadPanel);
             this.Name = "WelcomeFrom";
             this.Text = "Welcome";
+            this.Shown += new System.EventHandler(this.WelcomeFrom_Shown);
             this.ResizeEnd += new System.EventHandler(this.pageResized);
             this.menuPanel.ResumeLayout(false);
             this.loadPanel.ResumeLayout(false);

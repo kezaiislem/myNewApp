@@ -31,6 +31,7 @@
             this.metroTextBoxPassword = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBoxUsername = new MetroFramework.Controls.MetroTextBox();
             this.signinButton = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroTextBoxPassword
@@ -113,19 +114,31 @@
             // signinButton
             // 
             this.signinButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.signinButton.Location = new System.Drawing.Point(137, 142);
+            this.signinButton.Location = new System.Drawing.Point(174, 145);
             this.signinButton.Name = "signinButton";
-            this.signinButton.Size = new System.Drawing.Size(109, 25);
+            this.signinButton.Size = new System.Drawing.Size(73, 25);
             this.signinButton.TabIndex = 7;
             this.signinButton.Text = "Sign in";
             this.signinButton.UseSelectable = true;
             this.signinButton.Click += new System.EventHandler(this.signinButton_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton1.Location = new System.Drawing.Point(94, 145);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(73, 25);
+            this.metroButton1.TabIndex = 8;
+            this.metroButton1.Text = "Sign up";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 190);
+            this.ClientSize = new System.Drawing.Size(270, 183);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.signinButton);
             this.Controls.Add(this.metroTextBoxPassword);
             this.Controls.Add(this.metroTextBoxUsername);
@@ -134,6 +147,7 @@
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Sign in";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.ResumeLayout(false);
 
         }
@@ -143,6 +157,7 @@
         private MetroFramework.Controls.MetroTextBox metroTextBoxPassword;
         private MetroFramework.Controls.MetroTextBox metroTextBoxUsername;
         private MetroFramework.Controls.MetroButton signinButton;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

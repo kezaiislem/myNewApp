@@ -675,6 +675,7 @@
             this.Name = "NewUserForm";
             this.Resizable = false;
             this.Text = "Sign Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewUserForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

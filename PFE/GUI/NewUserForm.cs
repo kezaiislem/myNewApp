@@ -4,6 +4,7 @@ using PFE.Shared;
 using PFE.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -13,7 +14,10 @@ namespace PFE
 {
     public partial class NewUserForm : MetroFramework.Forms.MetroForm
     {
+
         private NewUserFormViewModel viewModel;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public NewUserForm()
         {
@@ -49,6 +53,7 @@ namespace PFE
             if (await this.viewModel.checkFields())
             {
                 this.viewModel.addUser();
+                OnNotifyPropertyChanged("Success");
             }
             else
             {
@@ -134,6 +139,20 @@ namespace PFE
             {
                 labelInvalidRpassword.Visible = true;
             }
+        }        
+
+        private void OnNotifyPropertyChanged(string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
+        private void NewUserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            OnNotifyPropertyChanged("Exit");
         }
     }
 }

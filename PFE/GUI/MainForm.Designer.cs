@@ -47,6 +47,7 @@ namespace PFE
             this.saveButton = new XanderUI.XUISuperButton();
             this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelCurrentView = new System.Windows.Forms.Panel();
+            this.buttonCloseProject = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +58,7 @@ namespace PFE
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.panelSideMenu.Controls.Add(this.buttonCloseProject);
             this.panelSideMenu.Controls.Add(this.buttonAbout);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnHelp);
@@ -326,6 +328,28 @@ namespace PFE
             this.panelCurrentView.Size = new System.Drawing.Size(1064, 607);
             this.panelCurrentView.TabIndex = 7;
             // 
+            // buttonCloseProject
+            // 
+            this.buttonCloseProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.buttonCloseProject.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCloseProject.FlatAppearance.BorderSize = 0;
+            this.buttonCloseProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonCloseProject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonCloseProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseProject.ForeColor = System.Drawing.Color.White;
+            this.buttonCloseProject.Image = global::PFE.Properties.Resources.logout;
+            this.buttonCloseProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCloseProject.Location = new System.Drawing.Point(0, 591);
+            this.buttonCloseProject.Name = "buttonCloseProject";
+            this.buttonCloseProject.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonCloseProject.Size = new System.Drawing.Size(200, 45);
+            this.buttonCloseProject.TabIndex = 11;
+            this.buttonCloseProject.Text = "  Close Project";
+            this.buttonCloseProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCloseProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCloseProject.UseVisualStyleBackColor = false;
+            this.buttonCloseProject.Click += new System.EventHandler(this.buttonCloseProject_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -372,5 +396,6 @@ namespace PFE
         private XanderUI.XUISuperButton saveButton;
         private System.Windows.Forms.Button ButtonProjectPlan;
         private System.Windows.Forms.Button buttonAbout;
+        private System.Windows.Forms.Button buttonCloseProject;
     }
 }

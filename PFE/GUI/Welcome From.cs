@@ -4,6 +4,7 @@ using PFE.Model;
 using PFE.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace PFE
@@ -43,10 +44,11 @@ namespace PFE
                 {
                     ProjectHandler.loadProject(openFileDialog.FileName);
                     this.Hide();
-                    new MainForm().Show();
+                    MainForm main = new MainForm();
+                    main.PropertyChanged += MainChanged;
+                    main.Show();
                 }
             }
-            //menuPanel.Hide();
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -71,11 +73,56 @@ namespace PFE
             }*/
         }
 
+        public void MainChanged(object o, PropertyChangedEventArgs e)
+        {
+            if(o != null)
+            {
+                MainForm main = (MainForm)o;
+                if (e.PropertyName.Equals("close"))
+                {
+                    main.Close();
+                    this.Show();
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+        }
+
         private void logOut_Click(object sender, EventArgs e)
         {
-            NewUserForm l = new NewUserForm();
-            l.Show();
-            this.Hide();
+            this.login();
+        }
+
+        private void login()
+        {
+            this.Visible = false;
+            LoginForm form = new LoginForm();
+            form.PropertyChanged += LoginChanged;
+            form.Show();
+        }
+
+        public void LoginChanged(object o, PropertyChangedEventArgs e)
+        {
+            if (o != null)
+            {
+                LoginForm loginForm = (LoginForm)o;
+                if (e.PropertyName == "Exit")
+                {
+                    this.Close();
+                }
+                else
+                {
+                    loginForm.Close();
+                    this.Show();
+                }
+            }
+        }
+
+        private void WelcomeFrom_Shown(object sender, EventArgs e)
+        {
+            this.login();
         }
     }
 }

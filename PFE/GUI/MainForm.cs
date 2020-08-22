@@ -22,7 +22,11 @@ namespace PFE
         private SurveysControl surveysControl { get; set; }
         private ProjectPlanControl projectPlanView { get; set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private UserControl currentView;
+
+        private bool closeProject = false;
 
         public MainForm()
         {
@@ -84,6 +88,10 @@ namespace PFE
             this.validationView.AutoScaleMode = AutoScaleMode.None;
             this.validationView.Name = "projectContextView";
             this.panelCurrentView.Controls.Add(this.validationView);
+
+            // First Page
+            switchView(projectContextView);
+            labelPageName.Text = "Project Context";
         }
 
         private void showSubMenu(Panel subMenu)
@@ -238,17 +246,24 @@ namespace PFE
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MetroMessageBox.Show(this, "\nDo u want to save your current project ?", "Exit?", MessageBoxButtons.YesNoCancel);
-            
-            if (result == DialogResult.Cancel)
+            if (!closeProject)
             {
-                e.Cancel = true;
+                DialogResult result = MetroMessageBox.Show(this, "\nDo u want to save your current project ?", "Exit?", MessageBoxButtons.YesNoCancel);
+
+                if (result == DialogResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+                else if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                    ProjectHandler.saveProject();
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
             }
-            else if (result == DialogResult.Yes)
-            {
-                e.Cancel = false;
-                ProjectHandler.saveProject();
-            } 
             else
             {
                 e.Cancel = false;
@@ -257,7 +272,11 @@ namespace PFE
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (!closeProject)
+            {
+                this.Hide();
+                OnNotifyPropertyChanged("exit");
+            }
         }
 
         private void ButtonProjectPlan_Click(object sender, EventArgs e)
@@ -272,6 +291,34 @@ namespace PFE
             if (e.PropertyName != null)
             {
                 this.viewModel.RemoveHost(e.PropertyName);
+            }
+        }
+
+        private void buttonCloseProject_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MetroMessageBox.Show(this, "\nDo u want to save your current project ?", "Exit?", MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.No)
+            {
+                closeProject = true;
+                this.Hide();
+                OnNotifyPropertyChanged("close");
+            }
+            else if (result == DialogResult.Yes)
+            {
+                closeProject = true;
+                ProjectHandler.saveProject();
+                this.Hide();
+                OnNotifyPropertyChanged("close");
+            }
+        }
+
+        private void OnNotifyPropertyChanged(string propertyName)
+        {
+            var tmp = PropertyChanged;
+            if (tmp != null)
+            {
+                tmp(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

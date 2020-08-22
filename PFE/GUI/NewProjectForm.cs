@@ -17,10 +17,8 @@ namespace PFE
 
         public NewProjectForm()
         {
-           
             InitializeComponent();
             InitializeView();
-            //getDomains();
         }
 
         private void InitializeView()
@@ -29,32 +27,17 @@ namespace PFE
             textBoxProjectName.DataBindings.Add("Text", viewModel, "projectName");
         }
 
-        private async void getDomains()
-        {
-            /*String data = await RestHelper.getDomains();
-            if(data != "")
-            {
-                Console.WriteLine("here");
-                domains = JsonConvert.DeserializeObject<List<Field>>(data);
-            }
-            InitializeCombo();*/
-        }
-
-        private void InitializeCombo()
-        {
-            /*foreach(Field domain in domains)
-            {
-                domainComboBox.Items.Add(new ComboboxItem { Text = domain.name, Value = domain });
-                domainComboBox.SelectedIndex = 0;
-            }*/
-        }
-
         private void NewProjectForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!viewModel.success)
                 welcomeForm.Show();
             else
-                new MainForm().Show();
+            {
+                MainForm main = new MainForm();
+                main.PropertyChanged += welcomeForm.MainChanged;
+                main.Show();
+            }
+                
         }
 
         private void createProjectBtn_Click(object sender, EventArgs e)
@@ -79,9 +62,6 @@ namespace PFE
                     this.Close();
                 }
             }
-            /*ComboboxItem selecteditem = (ComboboxItem)domainComboBox.SelectedItem;
-            Project project = new Project { name = projectName.Text, technologyName = technologyName.Text, companyName = organizationName.Text, technologyNature = (Field)selecteditem.Value };
-            String result = await RestHelper.createProject(project);*/
         }
     }
 }
