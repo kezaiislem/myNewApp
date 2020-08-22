@@ -24,6 +24,7 @@ namespace PFE.ViewModel
         public BindingList<Question> originalQuestions { get; set; }
         public BindingList<Question> excludedQuestions { get; set; }
         public List<Factor> selectedFactors { get; set; }
+        public PCAResults PCAResults { get; set; }
 
         public Factor selectedFactor;
 
@@ -38,7 +39,6 @@ namespace PFE.ViewModel
         }
         public List<CustomPersonalAnswer> personalAnswers { get; set; }
         public SphericityTestResults sphericityTestResults { get; set; }
-        public SphericityTestResults newSphericityTestResults { get; set; }
         public int numberOfFactors { get; set; }
         public DataTable chronbachTable { get; set; }
 
@@ -110,11 +110,12 @@ namespace PFE.ViewModel
             return null;
         }
 
-        public void calculateCorelationMatrix()
+        public DataTable calculateCorelationMatrix()
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
             Exporter.exportCsv(Path.GetTempPath() + "/corelation-tmp.csv", ";", dt);
-            RCalculator.showCorelationTable(Path.GetTempPath() + "/corelation-tmp.csv");
+            DataTable results = DataTableManager.CorelationFrameToDataTable(RCalculator.showCorelationTable(Path.GetTempPath() + "/corelation-tmp.csv"));
+            return results;
         }
 
         private string validateFiabilityTest()
@@ -186,6 +187,7 @@ namespace PFE.ViewModel
             Exporter.exportCsv(Path.GetTempPath() + "/pca-tmp.csv", ";", dt);
             PCAResults results;
             results = RCalculator.PCA(Path.GetTempPath() + "/pca-tmp.csv", customFactorsCount);
+            this.PCAResults = results;
             return results;
         }
 
@@ -232,23 +234,45 @@ namespace PFE.ViewModel
             }
         }
 
-        /*
+        
         public void saveExel(string path)
         {
-            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            foreach (Question q in this.rmvQuestions)
+            List<ExcelTab> tabs = new List<ExcelTab>();
+
+            // Data Tab
+            DataTable data = DataTableManager.prepareEvalTable(this.selectedFactors, this.personalAnswers);
+            tabs.Add(new ExcelTab { tabName = "Data", data = data });
+
+            // Chrobach Tab
+            DataTable chrobachTabe = this.chronbachTable;
+            if (chrobachTabe != null)
             {
-                dt.Columns.Remove(q.text);
+                tabs.Add(new ExcelTab { tabName = "Chronbach", data = chrobachTabe });
             }
-            if (path.EndsWith(".xlsx"))
+
+            // Loadings Tab
+            DataTable loadings = DataTableManager.PCALoadingstoDataTable(this.PCAResults.loadings);
+            if (loadings != null)
             {
-                Exporter.exportExel(path, dt);
+                tabs.Add(new ExcelTab { tabName = "Loadings", data = loadings });
             }
-            else if (path.EndsWith(".csv"))
+
+            // Componnents Tab
+            DataTable componnents = DataTableManager.PCATableToDataTable(this.PCAResults.pcaTable);
+            if (componnents != null)
             {
-                Exporter.exportCsv(path, ";", dt);
+                tabs.Add(new ExcelTab { tabName = "Component Table", data = componnents });
             }
-        }*/
+
+            // Correlations Tab
+            DataTable correlations = this.calculateCorelationMatrix();
+            if (correlations != null)
+            {
+                tabs.Add(new ExcelTab { tabName = "Corelations", data = correlations });
+            }
+
+            Exporter.exportExel(path, tabs);
+        }
 
         private void UpdateSelectedFactors()
         {
@@ -268,6 +292,16 @@ namespace PFE.ViewModel
                     selectedFactors.Add(f);
                 }
             }
+        }
+
+        public void openDataTableOnExcel(DataTable dt)
+        {
+            if (dt != null)
+            {
+                Exporter.exportCsv(Path.GetTempPath() + "/excel-tmp.csv", ";", dt);
+                System.Diagnostics.Process.Start(Path.GetTempPath() + "/excel-tmp.csv");
+            }
+            
         }
     }
 }

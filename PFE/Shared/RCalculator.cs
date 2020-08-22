@@ -187,7 +187,7 @@ namespace PFE.Shared
 
         }
 
-        public static void showCorelationTable(String csvPath)
+        public static DataFrame showCorelationTable(String csvPath)
         {
             try
             {
@@ -199,17 +199,17 @@ namespace PFE.Shared
 
                 //executing script
                 engine.Evaluate("data <- read.csv('" + csvPath + "', sep = ';')\n" +
-                    "R <- cor(data)\n " +
-                    "library(gridExtra)\n " +
-                    "library(grid)\n " +
-                    "grid.table(R)");
+                    "R <- as.data.frame.matrix(cor(data))");
 
+                DataFrame dataFrame = engine.GetSymbol("R").AsDataFrame();
+                return dataFrame;
                 Clear();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.StackTrace);
             }
+            return null;
         }
 
         public static double CalculateAlpha(String csvPath)

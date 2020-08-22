@@ -275,5 +275,36 @@ namespace PFE.Shared
             }
             return null;
         }
+
+        public static DataTable CorelationFrameToDataTable(RDotNet.DataFrame dataFrame)
+        {
+            try
+            {
+                DataTable dtable = new DataTable();
+
+                dtable.Columns.Add("item");
+                for (int i = 0; i < dataFrame.ColumnCount; ++i)
+                {
+                    dtable.Columns.Add(dataFrame.ColumnNames[i]);
+                }
+
+                for (int i = 0; i < dataFrame.RowCount; i++)
+                {
+                    DataRow newRow = dtable.Rows.Add();
+                    newRow[0] = dataFrame.ColumnNames[i];
+                    for (int j = 0; j < dataFrame.ColumnCount; j++)
+                    {
+                        newRow[j + 1] = dataFrame[i, j];
+                    }
+                }
+
+                return dtable;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            return null;
+        }
     }
 }

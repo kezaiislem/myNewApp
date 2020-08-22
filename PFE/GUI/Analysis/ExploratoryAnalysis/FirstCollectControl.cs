@@ -91,7 +91,14 @@ namespace PFE.UserContol
             var msg = this.viewModel.validateCorelationMatrix();
             if (msg == null)
             {
-                viewModel.calculateCorelationMatrix();
+                try
+                {
+                    viewModel.openDataTableOnExcel(viewModel.calculateCorelationMatrix());
+                }
+                catch
+                {
+                    MessageBox.Show("File is already opened please close it first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -138,7 +145,14 @@ namespace PFE.UserContol
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    //viewModel.saveExel(saveFileDialog.FileName);
+                    try
+                    {
+                        viewModel.saveExel(saveFileDialog.FileName);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("File is already opened please close it first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
