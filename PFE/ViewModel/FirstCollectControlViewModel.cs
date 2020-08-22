@@ -220,27 +220,6 @@ namespace PFE.ViewModel
             RCalculator.plotPrincipalCompnnents(Path.GetTempPath() + "/componenet-plot-tmp.csv");
         }
 
-        /*public void prepareACPData()
-        {
-            this.rmvFactors.Clear();
-            this.rmvQuestions.Clear();
-            this.questions.Clear();
-            foreach (Factor factor in this.selectedFactors)
-            {
-                Factor f = new Factor { id = factor.id, title = factor.title, questions = new List<Question>() };
-                int i = 1;
-                foreach (Question question in factor.questions)
-                {
-                    Question q = new Question { text = f.title + "_" + i };
-                    f.questions.Add(q);
-                    i++;
-                }
-                rmvFactors.Add(f);
-            }
-            this.selectedRmvFactor = rmvFactors.First<Factor>();
-            UpdateQuestions();
-        }*/
-
         private void UpdateQuestions()
         {
             this.originalQuestions.Clear();
@@ -253,25 +232,7 @@ namespace PFE.ViewModel
             }
         }
 
-        /*public string calculateNewStats()
-        {
-            DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);
-            foreach(Question q in this.rmvQuestions)
-            {
-                dt.Columns.Remove(q.text);
-            }
-            if (dt.Columns.Count < 2)
-            {
-                return "Number of questions must be 2 or higher";
-            }
-            else
-            {
-                Exporter.exportCsv(Path.GetTempPath() + "/new-results-tmp.csv", ";", dt);
-                this.newSphericityTestResults = RCalculator.SphericityTest(Path.GetTempPath() + "/new-results-tmp.csv");
-                return null;
-            }
-        }
-
+        /*
         public void saveExel(string path)
         {
             DataTable dt = DataTableManager.prepareEvalTable(this.selectedFactors.ToList<Factor>(), this.personalAnswers);

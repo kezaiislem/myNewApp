@@ -118,6 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonExport.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGgAAAAgCAYAAAD+Fz2gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADUSURBVGhD7dqxCQJBFEXRX4qFGGhiJII9uDuMszoNCEaC
+        iaGZFWhkYLZYig0YWcHIyCTCxu4T7oOb/eyk39gfzDk3qJt48d4n6r+qibdsUnjMFiHe55tjGh5aEmi6
+        PaV6uX4UHrOs1nVI/ZVNCg9AigEkHkDiASQeQOIBJB5A4gEkHkDiASQeQOIBJB5A4gEkHkDiASQeQOIB
+        JB5A4gEkHkDiASQeQOIBJB5A4n0B5TfTye7ceUi/b7y/ptqHV+H5PM+PXFg9sxr1X8apQpwVHqY7szeg
+        CcOJBVVepAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="descriminantValidity.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGcAAAAgCAYAAAAPHGYtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

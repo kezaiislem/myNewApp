@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,7 @@ namespace PFE.ViewModel
         public string srmr { get; set; }
         public string chisqDf { get; set; }
         public DataTable chrobachTable { get; set; }
+        public DataTable discriminantValisityTable { get; set; }
 
         public ConfirmatoryAnalysisControlViewModel(Survey survey)
         {
@@ -126,7 +128,6 @@ namespace PFE.ViewModel
                 double one_lambda2Sum = 0;
                 for (int i = 0; i < this.getQuestionsCount(); i++)
                 {
-                    Console.WriteLine(cFAResults.loadings["rhs"][i].ToString());
                     if (cFAResults.loadings["lhs"][i].ToString().Equals(factor.title.Replace(" ", "_")))
                     {
                         double val = Math.Abs(Double.Parse(cFAResults.loadings["std.all"][i].ToString()));
@@ -139,10 +140,6 @@ namespace PFE.ViewModel
                 convergentValidityTab.AVE = Math.Round(lambda2Sum / factor.questions.Count, 3);
                 convergentValidityTab.CR = Math.Round(Math.Pow(lambdaSum, 2) / (Math.Pow(lambdaSum, 2) + one_lambda2Sum), 3);
                 convergentValidityTabs.Add(convergentValidityTab);
-            }
-            foreach (ConvergentValidityTab t in convergentValidityTabs)
-            {
-                Console.WriteLine(t.factor + " " + t.AVE + " " + t.CR);
             }
         }
 
@@ -290,6 +287,67 @@ namespace PFE.ViewModel
                 res += "\n";
             }
             return res;
+        }
+
+        public string createCorelationsTable()
+        {
+            try
+            {
+                int rowsNumber = selectedFactors.Count * (selectedFactors.Count - 1) / 2;
+                int rowIndex = cFAResults.loadings.RowCount - rowsNumber;
+
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Factors");
+                foreach (Factor f in selectedFactors)
+                {
+                    dataTable.Columns.Add(f.title.Replace(" ", "_"));
+                }
+
+                int n = selectedFactors.Count - 1;
+
+                foreach (Factor f in selectedFactors)
+                {
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["Factors"] = f.title.Replace(" ", "_");
+
+                    foreach (ConvergentValidityTab tab in convergentValidityTabs)
+                    {
+                        if (f.title.Equals(tab.factor))
+                        {
+                            dataRow[f.title.Replace(" ", "_")] = Math.Sqrt(tab.AVE);
+                            break;
+                        }
+                    }
+
+                    for (int i = 0; i < n; i++)
+                    {
+                        dataRow[cFAResults.loadings["rhs"][rowIndex].ToString()] = cFAResults.loadings["std.all"][rowIndex];
+                        rowIndex++;
+                    }
+                    dataTable.Rows.Add(dataRow);
+                    n--;
+                }
+                this.discriminantValisityTable = dataTable;
+            } 
+            catch (Exception e)
+            {
+                return "Unexpected Error please try again";
+            }
+            return null;
+        }
+
+        public string openDiscriminantValidityTable()
+        {
+            try
+            {
+                Exporter.exportCsv(Path.GetTempPath() + "/cfa.csv", ";", discriminantValisityTable);
+                System.Diagnostics.Process.Start(Path.GetTempPath() + "/cfa.csv");
+            }
+            catch (Exception e)
+            {
+                return "File is already opened please close it first";
+            }
+            return null;
         }
     }
 }

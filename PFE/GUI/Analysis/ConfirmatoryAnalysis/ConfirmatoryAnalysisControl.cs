@@ -165,6 +165,23 @@ namespace PFE.UserContol
 
         private void descriminantValidity_Click(object sender, EventArgs e)
         {
+            var msg = viewModel.createCorelationsTable();
+            if (msg == null)
+            {
+                var msg2 = viewModel.openDiscriminantValidityTable();
+                if(msg2 != null)
+                {
+                    MessageBox.Show(msg2, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonExport_Click(object sender, EventArgs e)
+        {
 
         }
     }
