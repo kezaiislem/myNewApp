@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="JImageButton">
-      <HintPath>..\..\..\..\Desktop\PFE DLLS\JImageButton.dll</HintPath>
+      <HintPath>..\Custom DLLS\JImageButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
