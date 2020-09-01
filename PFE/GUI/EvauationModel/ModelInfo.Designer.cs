@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.buttonAddPhase = new Guna.UI.WinForms.GunaCircleButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.labelDescription = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelPhasesContainer = new System.Windows.Forms.Panel();
             this.bunifuCards2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.textBoxEvaluationContext.CustomButton.UseSelectable = true;
             this.textBoxEvaluationContext.CustomButton.Visible = false;
             this.textBoxEvaluationContext.Lines = new string[0];
-            this.textBoxEvaluationContext.Location = new System.Drawing.Point(188, 87);
+            this.textBoxEvaluationContext.Location = new System.Drawing.Point(175, 87);
             this.textBoxEvaluationContext.MaxLength = 32767;
             this.textBoxEvaluationContext.Name = "textBoxEvaluationContext";
             this.textBoxEvaluationContext.PasswordChar = '\0';
@@ -76,8 +76,7 @@
             // 
             // bunifuCards2
             // 
-            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCards2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuCards2.BackColor = System.Drawing.Color.White;
             this.bunifuCards2.BorderRadius = 15;
             this.bunifuCards2.BottomSahddow = true;
@@ -86,17 +85,17 @@
             this.bunifuCards2.Controls.Add(this.textBoxEvaluationContext);
             this.bunifuCards2.Controls.Add(this.panel1);
             this.bunifuCards2.LeftSahddow = false;
-            this.bunifuCards2.Location = new System.Drawing.Point(403, 18);
+            this.bunifuCards2.Location = new System.Drawing.Point(661, 18);
             this.bunifuCards2.Name = "bunifuCards2";
             this.bunifuCards2.RightSahddow = true;
             this.bunifuCards2.ShadowDepth = 50;
-            this.bunifuCards2.Size = new System.Drawing.Size(643, 254);
+            this.bunifuCards2.Size = new System.Drawing.Size(385, 254);
             this.bunifuCards2.TabIndex = 10;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(38, 89);
+            this.metroLabel3.Location = new System.Drawing.Point(25, 89);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(117, 19);
             this.metroLabel3.TabIndex = 9;
@@ -110,7 +109,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 50);
+            this.panel1.Size = new System.Drawing.Size(385, 50);
             this.panel1.TabIndex = 7;
             // 
             // metroLabel1
@@ -141,7 +140,7 @@
             this.buttonAddPhase.ForeColor = System.Drawing.Color.White;
             this.buttonAddPhase.Image = global::PFE.Properties.Resources.add_plus;
             this.buttonAddPhase.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAddPhase.Location = new System.Drawing.Point(601, 10);
+            this.buttonAddPhase.Location = new System.Drawing.Point(343, 10);
             this.buttonAddPhase.Name = "buttonAddPhase";
             this.buttonAddPhase.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
             this.buttonAddPhase.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -152,24 +151,27 @@
             this.buttonAddPhase.TabIndex = 4;
             this.buttonAddPhase.Click += new System.EventHandler(this.buttonAddPhase_Click);
             // 
-            // metroLabel2
+            // labelDescription
             // 
-            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroLabel2.Location = new System.Drawing.Point(15, 15);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(333, 224);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "lnformation sur le model and what to do ext";
+            this.labelDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelDescription.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.labelDescription.Location = new System.Drawing.Point(15, 15);
+            this.labelDescription.Name = "labelDescription";
+            this.labelDescription.Size = new System.Drawing.Size(597, 224);
+            this.labelDescription.TabIndex = 8;
+            this.labelDescription.WrapToLine = true;
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.metroLabel2);
+            this.panel2.Controls.Add(this.labelDescription);
             this.panel2.Location = new System.Drawing.Point(18, 18);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.panel2.Size = new System.Drawing.Size(363, 254);
+            this.panel2.Size = new System.Drawing.Size(627, 254);
             this.panel2.TabIndex = 9;
             // 
             // panelPhasesContainer
@@ -206,7 +208,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaCircleButton buttonAddPhase;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel labelDescription;
         private System.Windows.Forms.Panel panel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Panel panelPhasesContainer;

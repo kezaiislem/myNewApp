@@ -34,6 +34,12 @@ namespace PFE.UserContol
 
         private void loadExistingSurveys()
         {
+            this.labelDescription.Text = "You can evaluate your technology according to 3 different levels.\n" +
+                " - Level (Phase) 1 : Technology addoption or first use.\n" +
+                " - Level (Phase) 2 : Medium-Term use.\n" +
+                " - Level (Phase) 3 : Long-Term use.\n" +
+                "First you need to spesify the context of the evaluation (ex : Educational use).\n" +
+                "Then you can add surveys (Only one is allowed for each level) by clicking on the button ( + ).";
             this.viewModel.model.surveys = viewModel.model.surveys.OrderByDescending(q => q.phaseNumber).ToList<Survey>();
             foreach (Survey survey in this.viewModel.model.surveys)
             {
