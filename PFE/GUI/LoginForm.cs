@@ -63,7 +63,7 @@ namespace PFE
             }
             catch (HttpRequestException ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                MetroMessageBox.Show(this, "\n\nCant Connect Server, Please check yout internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

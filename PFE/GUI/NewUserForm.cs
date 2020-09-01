@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -52,7 +53,14 @@ namespace PFE
         {
             if (await this.viewModel.checkFields())
             {
-                this.viewModel.addUser();
+                try
+                {
+                    this.viewModel.addUser();
+                }
+                catch(HttpRequestException ex)
+                {
+                    MessageBox.Show("Http connection error please check your internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 OnNotifyPropertyChanged("Success");
             }
             else
@@ -67,13 +75,22 @@ namespace PFE
             {
                 if (Regex.IsMatch(this.viewModel.user.username, "^[a-zA-Z][a-zA-Z0-9]*$"))
                 {
-                    if (await viewModel.usernameUsed())
+                    try
                     {
-                        labelUserUnaviable.Visible = true;
+                        if (await viewModel.usernameUsed())
+                        {
+                            labelUserUnaviable.Visible = true;
+                        }
+                        else
+                        {
+                            labelUserAviable.Visible = true;
+                        }
                     }
-                    else
+                    catch (HttpRequestException ex)
                     {
-                        labelUserAviable.Visible = true;
+                        labelUserUnaviable.Visible = false;
+                        labelUserAviable.Visible = false;
+                        MessageBox.Show("An error has benn occured while checking your username. Please check your internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -90,9 +107,17 @@ namespace PFE
             {
                 if (Regex.IsMatch(this.viewModel.user.email, @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,6}$", RegexOptions.IgnoreCase))
                 {
-                    if (await viewModel.emailUsed())
+                    try
                     {
-                        labelEmailUnaviable.Visible = true;
+                        if (await viewModel.emailUsed())
+                        {
+                            labelEmailUnaviable.Visible = true;
+                        }
+                    }
+                    catch (HttpRequestException ex)
+                    {
+                        labelEmailUnaviable.Visible = false;
+                        MessageBox.Show("An error has benn occured while checking your email. Please check your internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
