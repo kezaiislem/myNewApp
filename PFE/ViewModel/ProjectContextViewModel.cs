@@ -39,9 +39,11 @@ namespace PFE.ViewModel
 
         private List<Field> InitializeFields()
         {
-            return new List<Field> { new Field { id = 0, name = "Computer Science" }, 
-                                     new Field { id = 1, name = "Marketing" }, 
-                                     new Field { id = 2, name = "Buisness" } };
+            return new List<Field> { new Field { id = 0, name = "Operational Application" }, 
+                                     new Field { id = 1, name = "Strategic Application" }, 
+                                     new Field { id = 2, name = "Infrastructure Application" },
+                                     new Field { id = 3, name = "Global IS" },
+                                     new Field { id = 4, name = "Other" }};
         }
 
         public void InitSelectedItem()

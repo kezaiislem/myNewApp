@@ -51,21 +51,21 @@ namespace PFE
 
         private async void buttonSignUp_Click(object sender, EventArgs e)
         {
-            if (await this.viewModel.checkFields())
+            try
             {
-                try
+                if (await this.viewModel.checkFields())
                 {
                     this.viewModel.addUser();
+                    OnNotifyPropertyChanged("Success");
                 }
-                catch(HttpRequestException ex)
+                else
                 {
-                    MessageBox.Show("Http connection error please check your internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    labelRequired.Visible = true;
                 }
-                OnNotifyPropertyChanged("Success");
             }
-            else
+            catch (HttpRequestException ex)
             {
-                labelRequired.Visible = true;
+                MessageBox.Show("Http connection error please check your internet connection and try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
