@@ -150,7 +150,7 @@
             this.buttonApply.CausesValidation = false;
             this.buttonApply.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonApply.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonApply.ErrorImage")));
-            this.buttonApply.Image = global::PFE.Properties.Resources.tick;
+            this.buttonApply.Image = global::TechEval.Properties.Resources.tick;
             this.buttonApply.ImageHover = null;
             this.buttonApply.InitialImage = null;
             this.buttonApply.Location = new System.Drawing.Point(129, 5);
@@ -240,7 +240,7 @@
             this.ButtonRemove.CausesValidation = false;
             this.ButtonRemove.Cursor = System.Windows.Forms.Cursors.Default;
             this.ButtonRemove.ErrorImage = ((System.Drawing.Image)(resources.GetObject("ButtonRemove.ErrorImage")));
-            this.ButtonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.ButtonRemove.Image = global::TechEval.Properties.Resources.trash_10_32;
             this.ButtonRemove.ImageHover = null;
             this.ButtonRemove.InitialImage = null;
             this.ButtonRemove.Location = new System.Drawing.Point(134, 5);
@@ -260,7 +260,7 @@
             this.buttonEdit.CausesValidation = false;
             this.buttonEdit.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonEdit.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEdit.ErrorImage")));
-            this.buttonEdit.Image = global::PFE.Properties.Resources.pencil;
+            this.buttonEdit.Image = global::TechEval.Properties.Resources.pencil;
             this.buttonEdit.ImageHover = null;
             this.buttonEdit.InitialImage = null;
             this.buttonEdit.Location = new System.Drawing.Point(74, 5);
@@ -280,7 +280,7 @@
             this.buttonEnter.CausesValidation = false;
             this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonEnter.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEnter.ErrorImage")));
-            this.buttonEnter.Image = global::PFE.Properties.Resources.register;
+            this.buttonEnter.Image = global::TechEval.Properties.Resources.register;
             this.buttonEnter.ImageHover = null;
             this.buttonEnter.InitialImage = null;
             this.buttonEnter.Location = new System.Drawing.Point(14, 5);

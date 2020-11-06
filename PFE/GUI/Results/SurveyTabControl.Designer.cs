@@ -132,7 +132,7 @@
             this.buttonRemove.CausesValidation = false;
             this.buttonRemove.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonRemove.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonRemove.ErrorImage")));
-            this.buttonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonRemove.Image = global::TechEval.Properties.Resources.trash_10_32;
             this.buttonRemove.ImageHover = null;
             this.buttonRemove.InitialImage = null;
             this.buttonRemove.Location = new System.Drawing.Point(63, 7);
@@ -151,7 +151,7 @@
             this.buttonStatus.CausesValidation = false;
             this.buttonStatus.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonStatus.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonStatus.ErrorImage")));
-            this.buttonStatus.Image = global::PFE.Properties.Resources.no_wifi;
+            this.buttonStatus.Image = global::TechEval.Properties.Resources.no_wifi;
             this.buttonStatus.ImageHover = null;
             this.buttonStatus.InitialImage = null;
             this.buttonStatus.Location = new System.Drawing.Point(115, 5);
@@ -170,7 +170,7 @@
             this.buttonResults.CausesValidation = false;
             this.buttonResults.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonResults.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonResults.ErrorImage")));
-            this.buttonResults.Image = global::PFE.Properties.Resources.register;
+            this.buttonResults.Image = global::TechEval.Properties.Resources.register;
             this.buttonResults.ImageHover = null;
             this.buttonResults.InitialImage = null;
             this.buttonResults.Location = new System.Drawing.Point(13, 7);

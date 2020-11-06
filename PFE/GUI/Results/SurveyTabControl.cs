@@ -46,7 +46,7 @@ namespace PFE
             labelNumberOfAnswers.Text = viewModel.answersCount.ToString();
             if (viewModel.status == "Offline")
             {
-                this.buttonStatus.Image = global::PFE.Properties.Resources.wifi;
+                this.buttonStatus.Image = global::TechEval.Properties.Resources.wifi;
             }
         }
 
@@ -78,11 +78,11 @@ namespace PFE
             {
                 if (this.viewModel.status == "Online")
                 {
-                    this.buttonStatus.Image = global::PFE.Properties.Resources.no_wifi;
+                    this.buttonStatus.Image = global::TechEval.Properties.Resources.no_wifi;
                 }
                 else
                 {
-                    this.buttonStatus.Image = global::PFE.Properties.Resources.wifi;
+                    this.buttonStatus.Image = global::TechEval.Properties.Resources.wifi;
                 }
                 metroLabelStatus.Text = viewModel.status;
             }

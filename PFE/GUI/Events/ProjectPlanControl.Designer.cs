@@ -40,7 +40,7 @@
             this.buttonAdd.CausesValidation = false;
             this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonAdd.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonAdd.ErrorImage")));
-            this.buttonAdd.Image = global::PFE.Properties.Resources.adding_;
+            this.buttonAdd.Image = global::TechEval.Properties.Resources.adding_;
             this.buttonAdd.ImageHover = null;
             this.buttonAdd.InitialImage = null;
             this.buttonAdd.Location = new System.Drawing.Point(178, 17);

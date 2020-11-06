@@ -543,7 +543,7 @@
             this.buttonReduceAlpha.CausesValidation = false;
             this.buttonReduceAlpha.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonReduceAlpha.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonReduceAlpha.ErrorImage")));
-            this.buttonReduceAlpha.Image = global::PFE.Properties.Resources.reduce;
+            this.buttonReduceAlpha.Image = global::TechEval.Properties.Resources.reduce;
             this.buttonReduceAlpha.ImageHover = null;
             this.buttonReduceAlpha.InitialImage = null;
             this.buttonReduceAlpha.Location = new System.Drawing.Point(694, 13);

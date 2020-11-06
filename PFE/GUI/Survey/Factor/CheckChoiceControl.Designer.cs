@@ -40,7 +40,7 @@
             // 
             this.buttonRemoveChoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemoveChoice.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveChoice.Image = global::PFE.Properties.Resources.red_cross;
+            this.buttonRemoveChoice.Image = global::TechEval.Properties.Resources.red_cross;
             this.buttonRemoveChoice.ImageActive = null;
             this.buttonRemoveChoice.Location = new System.Drawing.Point(639, 5);
             this.buttonRemoveChoice.Name = "buttonRemoveChoice";

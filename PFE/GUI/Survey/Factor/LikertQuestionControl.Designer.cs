@@ -471,7 +471,7 @@
             // 
             this.buttonRemoveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemoveQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveQuestion.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveQuestion.Image = global::TechEval.Properties.Resources.criss_cross;
             this.buttonRemoveQuestion.ImageActive = null;
             this.buttonRemoveQuestion.Location = new System.Drawing.Point(638, 11);
             this.buttonRemoveQuestion.Name = "buttonRemoveQuestion";

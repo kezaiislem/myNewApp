@@ -138,7 +138,7 @@
             this.buttonAddPhase.FocusedColor = System.Drawing.Color.Empty;
             this.buttonAddPhase.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAddPhase.ForeColor = System.Drawing.Color.White;
-            this.buttonAddPhase.Image = global::PFE.Properties.Resources.add_plus;
+            this.buttonAddPhase.Image = global::TechEval.Properties.Resources.add_plus;
             this.buttonAddPhase.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAddPhase.Location = new System.Drawing.Point(343, 10);
             this.buttonAddPhase.Name = "buttonAddPhase";

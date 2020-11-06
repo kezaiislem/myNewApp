@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using PFE.Model;
 using PFE.Constants;
 using Microsoft.VisualBasic;
-using Atalasoft.Imaging.Lib;
 
 namespace PFE.UserContol
 {

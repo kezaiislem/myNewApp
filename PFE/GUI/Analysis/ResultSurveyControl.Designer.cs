@@ -93,7 +93,7 @@
             this.buttonEnter.CausesValidation = false;
             this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonEnter.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonEnter.ErrorImage")));
-            this.buttonEnter.Image = global::PFE.Properties.Resources.register;
+            this.buttonEnter.Image = global::TechEval.Properties.Resources.register;
             this.buttonEnter.ImageHover = null;
             this.buttonEnter.InitialImage = null;
             this.buttonEnter.Location = new System.Drawing.Point(74, 5);

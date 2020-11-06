@@ -501,7 +501,7 @@
             this.addObjectiveButton.FocusedColor = System.Drawing.Color.Empty;
             this.addObjectiveButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addObjectiveButton.ForeColor = System.Drawing.Color.White;
-            this.addObjectiveButton.Image = global::PFE.Properties.Resources.add_plus;
+            this.addObjectiveButton.Image = global::TechEval.Properties.Resources.add_plus;
             this.addObjectiveButton.ImageSize = new System.Drawing.Size(24, 24);
             this.addObjectiveButton.Location = new System.Drawing.Point(930, 10);
             this.addObjectiveButton.Name = "addObjectiveButton";

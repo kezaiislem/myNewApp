@@ -228,7 +228,7 @@
             this.buttonAddHypothesis.FocusedColor = System.Drawing.Color.Empty;
             this.buttonAddHypothesis.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAddHypothesis.ForeColor = System.Drawing.Color.White;
-            this.buttonAddHypothesis.Image = global::PFE.Properties.Resources.add_plus;
+            this.buttonAddHypothesis.Image = global::TechEval.Properties.Resources.add_plus;
             this.buttonAddHypothesis.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAddHypothesis.Location = new System.Drawing.Point(718, 10);
             this.buttonAddHypothesis.Name = "buttonAddHypothesis";

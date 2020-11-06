@@ -111,7 +111,7 @@
             this.buttonAddQuestion.FocusedColor = System.Drawing.Color.Empty;
             this.buttonAddQuestion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAddQuestion.ForeColor = System.Drawing.Color.White;
-            this.buttonAddQuestion.Image = global::PFE.Properties.Resources.add_plus;
+            this.buttonAddQuestion.Image = global::TechEval.Properties.Resources.add_plus;
             this.buttonAddQuestion.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAddQuestion.Location = new System.Drawing.Point(718, 10);
             this.buttonAddQuestion.Name = "buttonAddQuestion";
@@ -143,7 +143,7 @@
             this.buttonRemoveFactor.CausesValidation = false;
             this.buttonRemoveFactor.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonRemoveFactor.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonRemoveFactor.ErrorImage")));
-            this.buttonRemoveFactor.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonRemoveFactor.Image = global::TechEval.Properties.Resources.trash_10_32;
             this.buttonRemoveFactor.ImageHover = null;
             this.buttonRemoveFactor.InitialImage = null;
             this.buttonRemoveFactor.Location = new System.Drawing.Point(687, 12);

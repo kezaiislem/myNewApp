@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFE", "PFE\PFE.csproj", "{51734A16-3F08-41C7-9801-4319A4ECE63D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechEval", "PFE\TechEval.csproj", "{51734A16-3F08-41C7-9801-4319A4ECE63D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calendar.NET", "Calendar.NET\Calendar.NET.csproj", "{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{CCEE9A20-9873-460E-90FF-BA2FD9FADD2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,8 @@ Global
 		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBC43B6-E950-49B2-B14A-563C50FCD5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEE9A20-9873-460E-90FF-BA2FD9FADD2D}.Debug|Any CPU.ActiveCfg = Debug
+		{CCEE9A20-9873-460E-90FF-BA2FD9FADD2D}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

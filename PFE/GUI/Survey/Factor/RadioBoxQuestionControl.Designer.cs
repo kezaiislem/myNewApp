@@ -144,7 +144,7 @@
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.Image = global::PFE.Properties.Resources.addGreen;
+            this.buttonAdd.Image = global::TechEval.Properties.Resources.addGreen;
             this.buttonAdd.ImageActive = null;
             this.buttonAdd.Location = new System.Drawing.Point(636, 47);
             this.buttonAdd.Name = "buttonAdd";
@@ -181,7 +181,7 @@
             // 
             this.buttonRemoveQuestion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRemoveQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveQuestion.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveQuestion.Image = global::TechEval.Properties.Resources.criss_cross;
             this.buttonRemoveQuestion.ImageActive = null;
             this.buttonRemoveQuestion.Location = new System.Drawing.Point(636, 11);
             this.buttonRemoveQuestion.Name = "buttonRemoveQuestion";

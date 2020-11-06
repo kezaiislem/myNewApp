@@ -33,6 +33,7 @@ namespace PFE
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.buttonCloseProject = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace PFE
             this.saveButton = new XanderUI.XUISuperButton();
             this.labelPageName = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panelCurrentView = new System.Windows.Forms.Panel();
-            this.buttonCloseProject = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,6 +74,28 @@ namespace PFE
             this.panelSideMenu.Size = new System.Drawing.Size(200, 681);
             this.panelSideMenu.TabIndex = 0;
             // 
+            // buttonCloseProject
+            // 
+            this.buttonCloseProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
+            this.buttonCloseProject.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCloseProject.FlatAppearance.BorderSize = 0;
+            this.buttonCloseProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.buttonCloseProject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.buttonCloseProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCloseProject.ForeColor = System.Drawing.Color.White;
+            this.buttonCloseProject.Image = global::TechEval.Properties.Resources.logout;
+            this.buttonCloseProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCloseProject.Location = new System.Drawing.Point(0, 591);
+            this.buttonCloseProject.Name = "buttonCloseProject";
+            this.buttonCloseProject.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonCloseProject.Size = new System.Drawing.Size(200, 45);
+            this.buttonCloseProject.TabIndex = 11;
+            this.buttonCloseProject.Text = "  Close Project";
+            this.buttonCloseProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCloseProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCloseProject.UseVisualStyleBackColor = false;
+            this.buttonCloseProject.Click += new System.EventHandler(this.buttonCloseProject_Click);
+            // 
             // buttonAbout
             // 
             this.buttonAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
@@ -83,7 +105,7 @@ namespace PFE
             this.buttonAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAbout.ForeColor = System.Drawing.Color.White;
-            this.buttonAbout.Image = global::PFE.Properties.Resources.about;
+            this.buttonAbout.Image = global::TechEval.Properties.Resources.about;
             this.buttonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAbout.Location = new System.Drawing.Point(0, 344);
             this.buttonAbout.Name = "buttonAbout";
@@ -104,7 +126,7 @@ namespace PFE
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::PFE.Properties.Resources.logout;
+            this.btnExit.Image = global::TechEval.Properties.Resources.logout;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(0, 636);
             this.btnExit.Name = "btnExit";
@@ -126,7 +148,7 @@ namespace PFE
             this.btnHelp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHelp.ForeColor = System.Drawing.Color.White;
-            this.btnHelp.Image = global::PFE.Properties.Resources.help;
+            this.btnHelp.Image = global::TechEval.Properties.Resources.help;
             this.btnHelp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHelp.Location = new System.Drawing.Point(0, 299);
             this.btnHelp.Name = "btnHelp";
@@ -148,7 +170,7 @@ namespace PFE
             this.btnTools.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTools.ForeColor = System.Drawing.Color.White;
-            this.btnTools.Image = global::PFE.Properties.Resources.stamp;
+            this.btnTools.Image = global::TechEval.Properties.Resources.stamp;
             this.btnTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTools.Location = new System.Drawing.Point(0, 254);
             this.btnTools.Name = "btnTools";
@@ -170,7 +192,7 @@ namespace PFE
             this.btnAnalistics.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnAnalistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnalistics.ForeColor = System.Drawing.Color.White;
-            this.btnAnalistics.Image = global::PFE.Properties.Resources.result;
+            this.btnAnalistics.Image = global::TechEval.Properties.Resources.result;
             this.btnAnalistics.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnalistics.Location = new System.Drawing.Point(0, 209);
             this.btnAnalistics.Name = "btnAnalistics";
@@ -192,7 +214,7 @@ namespace PFE
             this.btnModel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModel.ForeColor = System.Drawing.Color.White;
-            this.btnModel.Image = global::PFE.Properties.Resources.model;
+            this.btnModel.Image = global::TechEval.Properties.Resources.model;
             this.btnModel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModel.Location = new System.Drawing.Point(0, 164);
             this.btnModel.Name = "btnModel";
@@ -214,7 +236,7 @@ namespace PFE
             this.ButtonProjectPlan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.ButtonProjectPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonProjectPlan.ForeColor = System.Drawing.Color.White;
-            this.ButtonProjectPlan.Image = global::PFE.Properties.Resources.leader;
+            this.ButtonProjectPlan.Image = global::TechEval.Properties.Resources.leader;
             this.ButtonProjectPlan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ButtonProjectPlan.Location = new System.Drawing.Point(0, 119);
             this.ButtonProjectPlan.Name = "ButtonProjectPlan";
@@ -236,7 +258,7 @@ namespace PFE
             this.buttonProjectContext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.buttonProjectContext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProjectContext.ForeColor = System.Drawing.Color.White;
-            this.buttonProjectContext.Image = global::PFE.Properties.Resources.project__2_;
+            this.buttonProjectContext.Image = global::TechEval.Properties.Resources.project__2_;
             this.buttonProjectContext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonProjectContext.Location = new System.Drawing.Point(0, 74);
             this.buttonProjectContext.Name = "buttonProjectContext";
@@ -261,7 +283,7 @@ namespace PFE
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PFE.Properties.Resources.AppLogo1;
+            this.pictureBox1.Image = global::TechEval.Properties.Resources.AppLogo1;
             this.pictureBox1.Location = new System.Drawing.Point(16, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 60);
@@ -284,7 +306,7 @@ namespace PFE
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.saveButton.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(141)))), ((int)(((byte)(188)))));
-            this.saveButton.ButtonImage = global::PFE.Properties.Resources.save__3_;
+            this.saveButton.ButtonImage = global::TechEval.Properties.Resources.save__3_;
             this.saveButton.ButtonSmoothing = System.Drawing.Drawing2D.SmoothingMode.Default;
             this.saveButton.ButtonStyle = XanderUI.XUISuperButton.Style.Flat;
             this.saveButton.ButtonText = "";
@@ -328,28 +350,6 @@ namespace PFE
             this.panelCurrentView.Size = new System.Drawing.Size(1064, 607);
             this.panelCurrentView.TabIndex = 7;
             // 
-            // buttonCloseProject
-            // 
-            this.buttonCloseProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(45)))), ((int)(((byte)(49)))));
-            this.buttonCloseProject.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonCloseProject.FlatAppearance.BorderSize = 0;
-            this.buttonCloseProject.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.buttonCloseProject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
-            this.buttonCloseProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCloseProject.ForeColor = System.Drawing.Color.White;
-            this.buttonCloseProject.Image = global::PFE.Properties.Resources.logout;
-            this.buttonCloseProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCloseProject.Location = new System.Drawing.Point(0, 591);
-            this.buttonCloseProject.Name = "buttonCloseProject";
-            this.buttonCloseProject.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonCloseProject.Size = new System.Drawing.Size(200, 45);
-            this.buttonCloseProject.TabIndex = 11;
-            this.buttonCloseProject.Text = "  Close Project";
-            this.buttonCloseProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCloseProject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonCloseProject.UseVisualStyleBackColor = false;
-            this.buttonCloseProject.Click += new System.EventHandler(this.buttonCloseProject_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,7 +366,7 @@ namespace PFE
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "App Eval";
+            this.Text = "TechEval";
             this.TransparencyKey = System.Drawing.Color.Red;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);

@@ -79,7 +79,7 @@
             // 
             this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::PFE.Properties.Resources.target__Personnalisé_;
+            this.bunifuImageButton1.Image = global::TechEval.Properties.Resources.target__Personnalisé_;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(7, 7);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
@@ -104,7 +104,7 @@
             // 
             this.buttonRemoveObjective.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRemoveObjective.BackColor = System.Drawing.Color.Transparent;
-            this.buttonRemoveObjective.Image = global::PFE.Properties.Resources.criss_cross;
+            this.buttonRemoveObjective.Image = global::TechEval.Properties.Resources.criss_cross;
             this.buttonRemoveObjective.ImageActive = null;
             this.buttonRemoveObjective.Location = new System.Drawing.Point(857, 10);
             this.buttonRemoveObjective.Name = "buttonRemoveObjective";

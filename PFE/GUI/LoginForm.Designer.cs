@@ -52,7 +52,7 @@
             this.metroTextBoxPassword.CustomButton.UseSelectable = true;
             this.metroTextBoxPassword.CustomButton.Visible = false;
             this.metroTextBoxPassword.DisplayIcon = true;
-            this.metroTextBoxPassword.Icon = global::PFE.Properties.Resources.key;
+            this.metroTextBoxPassword.Icon = global::TechEval.Properties.Resources.key;
             this.metroTextBoxPassword.Lines = new string[0];
             this.metroTextBoxPassword.Location = new System.Drawing.Point(20, 107);
             this.metroTextBoxPassword.MaxLength = 32767;
@@ -90,7 +90,7 @@
             this.metroTextBoxUsername.CustomButton.UseSelectable = true;
             this.metroTextBoxUsername.CustomButton.Visible = false;
             this.metroTextBoxUsername.DisplayIcon = true;
-            this.metroTextBoxUsername.Icon = global::PFE.Properties.Resources.avatar;
+            this.metroTextBoxUsername.Icon = global::TechEval.Properties.Resources.avatar;
             this.metroTextBoxUsername.Lines = new string[0];
             this.metroTextBoxUsername.Location = new System.Drawing.Point(20, 76);
             this.metroTextBoxUsername.Margin = new System.Windows.Forms.Padding(3, 30, 3, 3);

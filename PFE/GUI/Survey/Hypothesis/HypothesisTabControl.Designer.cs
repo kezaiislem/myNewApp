@@ -93,7 +93,7 @@
             this.buttonRemove.CausesValidation = false;
             this.buttonRemove.Cursor = System.Windows.Forms.Cursors.Default;
             this.buttonRemove.ErrorImage = ((System.Drawing.Image)(resources.GetObject("buttonRemove.ErrorImage")));
-            this.buttonRemove.Image = global::PFE.Properties.Resources.trash_10_32;
+            this.buttonRemove.Image = global::TechEval.Properties.Resources.trash_10_32;
             this.buttonRemove.ImageHover = null;
             this.buttonRemove.InitialImage = null;
             this.buttonRemove.Location = new System.Drawing.Point(844, 9);

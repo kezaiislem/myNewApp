@@ -116,7 +116,7 @@
             this.buttonAddSection.FocusedColor = System.Drawing.Color.Empty;
             this.buttonAddSection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.buttonAddSection.ForeColor = System.Drawing.Color.White;
-            this.buttonAddSection.Image = global::PFE.Properties.Resources.add_plus;
+            this.buttonAddSection.Image = global::TechEval.Properties.Resources.add_plus;
             this.buttonAddSection.ImageSize = new System.Drawing.Size(24, 24);
             this.buttonAddSection.Location = new System.Drawing.Point(165, 5);
             this.buttonAddSection.Name = "buttonAddSection";
