@@ -42,5 +42,25 @@ namespace PFE.ViewModel
                 }
             }
         }
+
+        public void refreshAviableSurveys()
+        {
+            aviabePhases = new List<int> { 1, 2, 3 };
+            foreach (Survey survey in this.model.surveys)
+            {
+                switch (survey.phaseNumber)
+                {
+                    case 1:
+                        aviabePhases.Remove(1);
+                        break;
+                    case 2:
+                        aviabePhases.Remove(2);
+                        break;
+                    case 3:
+                        aviabePhases.Remove(3);
+                        break;
+                }
+            }
+        }
     }
 }

@@ -50,7 +50,8 @@ namespace PFE.UserContol
 
         private void buttonAddPhase_Click(object sender, EventArgs e)
         {
-            if(this.viewModel.aviabePhases.Count() > 0)
+            this.viewModel.refreshAviableSurveys();
+            if (this.viewModel.aviabePhases.Count() > 0)
             {
                 using (var form = new AddSurveyForm(this.viewModel.aviabePhases))
                 {

@@ -26,7 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -86,8 +86,8 @@
       <HintPath>..\packages\Atalasoft.Shared.11.2.0.4372\lib\net452\Atalasoft.Shared.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-	  <HintPath>..\Custom DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.core.dll</HintPath>
-	</Reference>
+      <HintPath>..\Custom DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.core.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
       <HintPath>..\Custom DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
