@@ -32,6 +32,7 @@ namespace PFE
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.buttonCloseProject = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
@@ -83,7 +84,7 @@ namespace PFE
             this.buttonCloseProject.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.buttonCloseProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCloseProject.ForeColor = System.Drawing.Color.White;
-            this.buttonCloseProject.Image = global::TechEval.Properties.Resources.logout;
+            this.buttonCloseProject.Image = global::TechEval.Properties.Resources.exit;
             this.buttonCloseProject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCloseProject.Location = new System.Drawing.Point(0, 591);
             this.buttonCloseProject.Name = "buttonCloseProject";
@@ -126,7 +127,7 @@ namespace PFE
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Image = global::TechEval.Properties.Resources.logout;
+            this.btnExit.Image = global::TechEval.Properties.Resources.on_off_button;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(0, 636);
             this.btnExit.Name = "btnExit";
@@ -283,8 +284,8 @@ namespace PFE
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TechEval.Properties.Resources.AppLogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 8);
+            this.pictureBox1.Image = global::TechEval.Properties.Resources.Title21;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(160, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -361,6 +362,7 @@ namespace PFE
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1280, 720);

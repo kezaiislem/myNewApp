@@ -63,6 +63,9 @@
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon 64.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.1, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
       <HintPath>..\Custom DLLS\Bunifu UI WinForms 1.11.5.1\Bunifu.core.dll</HintPath>
@@ -846,6 +849,28 @@
   <ItemGroup>
     <None Include="Resources\reduce.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-off-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon 32.ico" />
+    <Content Include="icon 64.ico" />
+    <Content Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

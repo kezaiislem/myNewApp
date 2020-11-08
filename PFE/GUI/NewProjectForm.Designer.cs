@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProjectForm));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.textBoxProjectName = new MetroFramework.Controls.MetroTextBox();
             this.createProjectBtn = new MetroFramework.Controls.MetroButton();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.createProjectBtn);
             this.Controls.Add(this.textBoxProjectName);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(560, 400);
             this.MinimumSize = new System.Drawing.Size(350, 200);
             this.Name = "NewProjectForm";

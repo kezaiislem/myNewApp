@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WelcomeFrom));
             this.menuPanel = new MetroFramework.Controls.MetroPanel();
             this.loadProjects = new MetroFramework.Controls.MetroTile();
             this.logOut = new MetroFramework.Controls.MetroTile();
@@ -188,6 +189,7 @@
             this.ClientSize = new System.Drawing.Size(400, 300);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.loadPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WelcomeFrom";
             this.Text = "Welcome";
             this.Shown += new System.EventHandler(this.WelcomeFrom_Shown);
